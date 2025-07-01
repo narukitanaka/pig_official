@@ -1,0 +1,34 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+component
+*************************************************/
+.btn-wrap {
+  .btn01 {
+    position: relative;
+    @include c.flex(center, center);
+    width: 27.1rem;
+    aspect-ratio: 1/0.22;
+    border-radius: 6px;
+    span {
+      position: absolute;
+      top: 50%;
+      transform: ttranslateY(-50%);
+      right: 15px;
+      @include c.flex(center, center);
+      border-radius: 15px;
+      background-color: #cfc1b8;
+      svg {
+        fill: v.$ttlTxt-color;
+      }
+    }
+    &.white {
+      background-color: #fff;
+      color: v.$ttlTxt-color;
+    }
+    &.brown {
+      background-color: v.$ttlTxt-color;
+      color: #fff;
+    }
+  }
+}
