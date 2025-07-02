@@ -162,9 +162,12 @@ html {
 
 body {
   scroll-behavior: smooth;
-  font-family: YakuHanJP, "Hiragino Sans", "Arial", "Hiragino Kaku Gothic ProN",
+  font-family: YakuHanJP, "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
     "Noto Sans JP", Meiryo, sans-serif;
   min-height: 100dvh;
+  &#top {
+    background-color: v.$bg-color01;
+  }
 }
 
 .clearfix:after {
@@ -203,16 +206,23 @@ input[type="button"] {
   }
 }
 
-.sub-ttl {
-  font-family: "Lora", serif;
-  font-size: 1.6rem;
-  font-weight: 400;
+h1,
+h2 {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.4;
+  color: v.$ttlTxt-color;
+  letter-spacing: 2px;
 }
 
 h2 {
-  font-family: "Noto Serif JP", serif;
   font-size: 2.8rem;
-  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2px;
 }
 
 h3,
@@ -227,6 +237,7 @@ a {
   font-size: 1.5rem;
   line-height: 1.7;
   font-weight: 400;
+  letter-spacing: 1px;
   color: v.$txt-color;
   @include mq() {
     font-size: 1.4rem;
@@ -271,5 +282,19 @@ div {
     img {
       transform: scale(1.1);
     }
+  }
+}
+
+.block {
+  &:has(> .left, > .right) {
+    display: flex;
+  }
+}
+
+.text-ell {
+  dd {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

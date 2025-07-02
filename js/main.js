@@ -2,20 +2,17 @@
 // Swiper
 ///////////////////////////////////////////////////////////////////////////////////////
 function initSwipers() {
-  const kvSlider = document.querySelector(".top-bannerSwiper");
-  if (kvSlider) {
-    const kvSwiperInstance = new Swiper(kvSlider, {
+  const caseSlider01 = document.querySelector(".top_pediatric-cases");
+  if (caseSlider01) {
+    const caseSlider01Instance = new Swiper(caseSlider01, {
       loop: true,
       speed: 1500,
       allowTouchMove: false,
-      slidesPerView: 1,
+      slidesPerView: 3,
+      spaceBetween: 24,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination", // 変更
-        clickable: true,
       },
       navigation: {
         nextEl: ".swiper-button-next", // 変更
@@ -24,28 +21,41 @@ function initSwipers() {
     });
   }
 
-  const PopularSwiper = document.querySelector(".PopularSwiper");
-  if (PopularSwiper) {
-    const popularSwiperInstance = new Swiper(PopularSwiper, {
+  const caseSlider02 = document.querySelector(".top_adult-cases");
+  if (caseSlider02) {
+    const caseSlider02Instance = new Swiper(caseSlider02, {
       loop: true,
-      speed: 1000,
+      speed: 1500,
       allowTouchMove: false,
-      slidesPerView: 2,
-      spaceBetween: 10,
+      slidesPerView: 3,
+      spaceBetween: 24,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
       },
-      breakpoints: {
-        // 画面幅が769px以上の場合
-        769: {
-          slidesPerView: 5,
-          spaceBetween: 20,
-        },
-      },
       navigation: {
         nextEl: ".swiper-button-next", // 変更
         prevEl: ".swiper-button-prev", // 変更
+      },
+    });
+  }
+
+  const infinitSlider = document.querySelector(".top_infinit-slider");
+  if (infinitSlider) {
+    const infinitSliderInstance = new Swiper(infinitSlider, {
+      loop: true,
+      speed: 8000,
+      allowTouchMove: false,
+      slidesPerView: 4.5,
+      spaceBetween: 30,
+      freeMode: {
+        enabled: true,
+        momentum: false,
+        sticky: true,
+      },
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
       },
     });
   }
@@ -58,78 +68,42 @@ document.addEventListener("DOMContentLoaded", function () {
 ///////////////////////////////////////////
 //ハンバーガーメニュー
 //////////////////////////////////////////
-$(".hambager").on("click", function () {
-  navOpen();
-});
-let navFlg = false;
-function navOpen() {
-  if (!navFlg) {
-    $(".hamberger-wrap").addClass("is-ham-open");
-    $(".drawer-menu").addClass("is-drawermenu-open");
-    $("header").addClass("is-drawermenu-header");
-    navFlg = true;
-  } else {
-    $(".hamberger-wrap").removeClass("is-ham-open");
-    $(".drawer-menu").removeClass("is-drawermenu-open");
-    $("header").removeClass("is-drawermenu-header");
-    navFlg = false;
-  }
-}
-// ページ内リンクをクリックしたときにメニューを閉じる
-$('.drawer-menu a[href^="#"]').on("click", function () {
-  if (navFlg) {
-    navOpen(); // メニューが開いている場合は閉じる
-  }
-});
-
-///////////////////////////////////////////
-//archive-flter アコーディオン
-///////////////////////////////////////////
-$(document).ready(function () {
-  function setAccordionState() {
-    if ($(window).width() <= 768) {
-      // スマホ表示の場合
-      $(".sp_accordion-hide").hide(); // 初期状態で非表示
-    } else {
-      // PC表示の場合
-      $(".sp_accordion-hide").show(); // 常に表示
-    }
-  }
-  // 初期実行
-  setAccordionState();
-  $(window).resize(function () {
-    setAccordionState();
-  });
-  // アコーディオントリガーのクリックイベント（スマホ時のみ動作）
-  $(".sp_accordion-trigger").on("click", function () {
-    if ($(window).width() <= 768) {
-      $(this).next(".sp_accordion-hide").slideToggle("fast");
-      if ($(this).hasClass("open")) {
-        $(this).removeClass("open");
-      } else {
-        $(this).addClass("open");
-      }
-    }
-  });
-  // Clearボタンのクリックイベント
-  $("#clear-filters").on("click", function (e) {
-    e.stopPropagation(); // アコーディオンのトグルを防止
-    $("input[type='checkbox']").prop("checked", false);
-  });
-});
+// $(".hambager").on("click", function () {
+//   navOpen();
+// });
+// let navFlg = false;
+// function navOpen() {
+//   if (!navFlg) {
+//     $(".hamberger-wrap").addClass("is-ham-open");
+//     $(".drawer-menu").addClass("is-drawermenu-open");
+//     $("header").addClass("is-drawermenu-header");
+//     navFlg = true;
+//   } else {
+//     $(".hamberger-wrap").removeClass("is-ham-open");
+//     $(".drawer-menu").removeClass("is-drawermenu-open");
+//     $("header").removeClass("is-drawermenu-header");
+//     navFlg = false;
+//   }
+// }
+// // ページ内リンクをクリックしたときにメニューを閉じる
+// $('.drawer-menu a[href^="#"]').on("click", function () {
+//   if (navFlg) {
+//     navOpen(); // メニューが開いている場合は閉じる
+//   }
+// });
 
 ///////////////////////////////////////////
 //サイドバー アコーディオン
 ///////////////////////////////////////////
-$(".sidebar-accordion nav").hide(); // 初期状態で非表示
-$(".sidebar-accordion p").on("click", function (e) {
-  $(this).next("nav").slideToggle("fast");
-  if ($(this).hasClass("open")) {
-    $(this).removeClass("open");
-  } else {
-    $(this).addClass("open");
-  }
-});
+// $(".sidebar-accordion nav").hide(); // 初期状態で非表示
+// $(".sidebar-accordion p").on("click", function (e) {
+//   $(this).next("nav").slideToggle("fast");
+//   if ($(this).hasClass("open")) {
+//     $(this).removeClass("open");
+//   } else {
+//     $(this).addClass("open");
+//   }
+// });
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // GSAP アニメーション

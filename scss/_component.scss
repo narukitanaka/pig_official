@@ -3,23 +3,46 @@
 /*************************************************
 component
 *************************************************/
+.sub-ttl {
+  position: relative;
+  font-family: "Lora", serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: v.$ttlTxt-color;
+  &::before {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    content: "";
+    width: 8px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: v.$gradient01;
+    filter: blur(1.5px);
+  }
+}
+
 .btn-wrap {
   .btn01 {
     position: relative;
     @include c.flex(center, center);
+    gap: 1rem;
     width: 27.1rem;
     aspect-ratio: 1/0.22;
     border-radius: 6px;
+    font-size: 1.8rem;
     span {
-      position: absolute;
-      top: 50%;
-      transform: ttranslateY(-50%);
-      right: 15px;
       @include c.flex(center, center);
       border-radius: 15px;
       background-color: #cfc1b8;
+      width: 2.4rem;
+      height: 1.4rem;
+      border-radius: 14px;
       svg {
-        fill: v.$ttlTxt-color;
+        path {
+          fill: v.$ttlTxt-color;
+        }
       }
     }
     &.white {
@@ -30,5 +53,169 @@ component
       background-color: v.$ttlTxt-color;
       color: #fff;
     }
+  }
+  .btn02 {
+    @include c.flex(start, center);
+    gap: 1rem;
+    span {
+      @include c.flex(center, center);
+      width: 2.4rem;
+      height: 1.4rem;
+      background-color: #cfc1b8;
+      border-radius: 14px;
+    }
+    svg {
+      path {
+        fill: v.$ttlTxt-color;
+      }
+    }
+  }
+  .btn03 {
+    @include c.flex(center, center);
+    gap: 1.2rem;
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.3rem;
+    color: v.$ttlTxt-color;
+    span {
+      @include c.flex(center, center);
+      padding-bottom: 1rem;
+      padding-right: 1rem;
+      width: 10rem;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background: url(../images/grade-noise.svg) no-repeat center/cover;
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  @include c.flex(center, center);
+  width: 2.4rem;
+  height: 1.4rem;
+  background-color: v.$ttlTxt-color;
+  border-radius: 14px;
+}
+
+#common-info {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  .inner {
+    max-width: 100rem;
+    padding: 9.2rem 0 4.5rem;
+  }
+  .block {
+    gap: 5rem;
+    .left {
+      flex-grow: 1;
+      .logo {
+        width: 36.3rem;
+        margin: 0 auto 5px;
+      }
+      p {
+        text-align: center;
+      }
+      .address {
+        margin-bottom: 3rem;
+      }
+      .contact {
+        .tel {
+          margin-bottom: 2rem;
+          p {
+            font-weight: 500;
+          }
+          a {
+            font-size: 3.2rem;
+            letter-spacing: 0.7px;
+            @include c.flex(center, center);
+            gap: 1rem;
+            span {
+              font-size: 2rem;
+            }
+          }
+        }
+        .mail {
+          margin-bottom: 2.8rem;
+          a {
+            @include c.flex(center, center);
+            gap: 1rem;
+            width: 100%;
+            aspect-ratio: 1/0.13;
+            border-radius: 6px;
+            background-color: v.$ttlTxt-color;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #fff;
+          }
+        }
+      }
+      .business_hours {
+        background-color: #fff;
+        padding: 1rem 3rem 2rem;
+        dl {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          border-bottom: 1px solid #c1bbb4;
+          padding: 1.2rem 0;
+          dt,
+          dd {
+            font-size: 1.4rem;
+            text-align: center;
+          }
+          dt {
+            width: 30%;
+          }
+          dd {
+            width: 7%;
+          }
+          &.bn_item {
+            dd {
+              font-size: 2.4rem;
+              line-height: 1;
+              color: v.$ttlTxt-color;
+            }
+          }
+          &:last-of-type {
+            margin-bottom: 1rem;
+          }
+        }
+        .note {
+          text-align: left;
+          span {
+            display: inline-block;
+            padding: 2px 6px;
+            background-color: #e9e2de;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+    .right {
+      width: 50rem;
+      aspect-ratio: 1/1;
+      height: 100%;
+      flex-shrink: 0;
+      iframe {
+        margin-bottom: 1.5rem;
+      }
+      p {
+        text-align: center;
+        color: v.$ttlTxt-color;
+      }
+    }
+  }
+  .obj-bluer {
+    position: absolute;
+    left: -22rem;
+    bottom: -18rem;
+    width: 90rem;
+    aspect-ratio: 1/0.63;
+    background: url(../images/common-info_obj.svg) no-repeat center/contain;
+    z-index: -1;
   }
 }

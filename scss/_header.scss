@@ -3,3 +3,61 @@
 /*************************************************
 header
 *************************************************/
+header {
+  .header-inner {
+    width: v.pxtovw(1320);
+    @include c.flex(between, center);
+    padding: 1.6rem 0;
+    margin: 0 auto;
+    .logo {
+      width: 27rem;
+    }
+    nav {
+      ul {
+        @include c.flex(center, center);
+        gap: 4rem;
+        li {
+          a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-direction: column;
+            font-size: 1.4rem;
+            font-weight: 500;
+            img {
+              width: 4rem;
+            }
+          }
+        }
+      }
+    }
+    .contact {
+      .tel {
+        a {
+          font-size: 3.2rem;
+          letter-spacing: 0.7px;
+          @include c.flex(start, center);
+          gap: 1rem;
+          span {
+            font-size: 2rem;
+          }
+        }
+      }
+      .mail {
+        a {
+          @include c.flex(center, center);
+          gap: 1rem;
+          width: 27.1rem;
+          aspect-ratio: 1/0.22;
+          border-radius: 6px;
+          background-color: v.$ttlTxt-color;
+          font-size: 1.8rem;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+  }
+  &#fixed {
+  }
+}
