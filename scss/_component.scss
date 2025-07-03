@@ -10,6 +10,10 @@ component
   font-weight: 400;
   letter-spacing: 2px;
   color: v.$ttlTxt-color;
+  @include c.mq() {
+    font-size: 1.4rem;
+    margin-left: 0.6rem;
+  }
   &::before {
     position: absolute;
     top: -1rem;
@@ -32,6 +36,7 @@ component
     aspect-ratio: 1/0.22;
     border-radius: 6px;
     font-size: 1.8rem;
+    transition: all 0.3s;
     span {
       @include c.flex(center, center);
       border-radius: 15px;
@@ -39,19 +44,36 @@ component
       width: 2.4rem;
       height: 1.4rem;
       border-radius: 14px;
+      transition: all 0.3s;
       svg {
         path {
           fill: v.$ttlTxt-color;
+          transition: all 0.3s;
         }
       }
     }
     &.white {
       background-color: #fff;
       color: v.$ttlTxt-color;
+      border: 2px solid #fff;
     }
     &.brown {
       background-color: v.$ttlTxt-color;
       color: #fff;
+      border: 2px solid v.$ttlTxt-color;
+    }
+    &:hover {
+      &.white {
+        background-color: v.$ttlTxt-color;
+        color: #fff;
+        span {
+          background-color: #fff;
+        }
+      }
+      &.brown {
+        background-color: #fff;
+        color: v.$ttlTxt-color;
+      }
     }
   }
   .btn02 {
@@ -63,10 +85,24 @@ component
       height: 1.4rem;
       background-color: #cfc1b8;
       border-radius: 14px;
+      transition: all 0.3s;
     }
     svg {
       path {
         fill: v.$ttlTxt-color;
+        transition: all 0.3s;
+      }
+    }
+    &:hover {
+      span {
+        background-color: v.$ttlTxt-color;
+        transform: translateX(1rem);
+        scale: 1.1;
+      }
+      svg {
+        path {
+          fill: #fff;
+        }
       }
     }
   }
@@ -76,6 +112,7 @@ component
     font-family: "Noto Serif JP", serif;
     font-size: 1.3rem;
     color: v.$ttlTxt-color;
+    transition: all 0.3s;
     span {
       @include c.flex(center, center);
       padding-bottom: 1rem;
@@ -84,6 +121,19 @@ component
       aspect-ratio: 1/1;
       border-radius: 50%;
       background: url(../images/grade-noise.svg) no-repeat center/cover;
+      transition: all 0.3s;
+      svg {
+        transition: all 0.3s;
+      }
+    }
+    &:hover {
+      gap: 6rem;
+      span {
+        transform: scale(1.8);
+        & > * {
+          transform: scale(0.5556);
+        }
+      }
     }
   }
 }
@@ -107,20 +157,35 @@ component
   .inner {
     max-width: 100rem;
     padding: 9.2rem 0 4.5rem;
+    @include c.mq() {
+      padding: 9.2rem 0 9.6rem;
+    }
   }
   .block {
     gap: 5rem;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 4rem;
+    }
     .left {
       flex-grow: 1;
       .logo {
         width: 36.3rem;
         margin: 0 auto 5px;
+        @include c.mq() {
+          width: v.pxtovw_sp(240);
+          max-width: 35rem;
+          margin-bottom: 2rem;
+        }
       }
       p {
         text-align: center;
       }
       .address {
         margin-bottom: 3rem;
+        @include c.mq() {
+          margin-bottom: 3rem;
+        }
       }
       .contact {
         .tel {
@@ -133,8 +198,14 @@ component
             letter-spacing: 0.7px;
             @include c.flex(center, center);
             gap: 1rem;
+            @include c.mq() {
+              font-size: 2.4rem;
+            }
             span {
               font-size: 2rem;
+              @include c.mq() {
+                font-size: 1.5rem;
+              }
             }
           }
         }
@@ -150,25 +221,43 @@ component
             font-size: 1.8rem;
             font-weight: 500;
             color: #fff;
+            @include c.mq() {
+              font-size: 1.6rem;
+              aspect-ratio: 1/0.15;
+            }
           }
         }
       }
       .business_hours {
         background-color: #fff;
         padding: 1rem 3rem 2rem;
+        @include c.mq() {
+          padding: 1rem 1.5rem 2rem;
+        }
         dl {
           display: flex;
           justify-content: space-around;
           align-items: center;
           border-bottom: 1px solid #c1bbb4;
           padding: 1.2rem 0;
+          @include c.mq() {
+            padding: 1rem 0;
+          }
           dt,
           dd {
             font-size: 1.4rem;
             text-align: center;
+            @include c.mq() {
+              font-size: 1.3rem;
+            }
           }
           dt {
             width: 30%;
+            @include c.mq() {
+              width: 16%;
+              text-align: left;
+              line-height: 1.4;
+            }
           }
           dd {
             width: 7%;
@@ -200,6 +289,9 @@ component
       aspect-ratio: 1/1;
       height: 100%;
       flex-shrink: 0;
+      @include c.mq() {
+        width: 100%;
+      }
       iframe {
         margin-bottom: 1.5rem;
       }

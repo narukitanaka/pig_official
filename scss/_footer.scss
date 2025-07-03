@@ -12,6 +12,9 @@ footer {
       justify-content: center;
       gap: 8rem;
       margin-bottom: 9rem;
+      @include c.mq() {
+        display: none;
+      }
       .column {
         max-width: 15.5rem;
         p {

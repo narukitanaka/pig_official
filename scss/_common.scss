@@ -223,6 +223,9 @@ h2 {
   font-size: 2.8rem;
   line-height: 1.6;
   letter-spacing: 2px;
+  @include mq() {
+    letter-spacing: 1px;
+  }
 }
 
 h3,

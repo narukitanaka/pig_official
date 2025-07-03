@@ -1,4 +1,47 @@
 ////////////////////////////////////////////////////////////////////////////////////////
+// Fv過ぎるとヘッダーを固定
+///////////////////////////////////////////////////////////////////////////////////////
+// document.addEventListener("DOMContentLoaded", function () {
+//   const header = document.querySelector("header");
+//   const fvHeight = document.querySelector(".fv").offsetHeight;
+
+//   function handleScroll() {
+//     if (window.scrollY > fvHeight) {
+//       header.classList.add("fixed");
+//     } else {
+//       header.classList.remove("fixed");
+//     }
+//   }
+
+//   window.addEventListener("scroll", handleScroll);
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+  const fvHeight = document.querySelector(".fv").offsetHeight;
+
+  function handleScroll() {
+    if (window.innerWidth > 768) {
+      if (window.scrollY > fvHeight) {
+        header.classList.add("fixed");
+      } else {
+        header.classList.remove("fixed");
+      }
+    } else {
+      if (window.scrollY > 50) {
+        // スマホ時は画面の一番上から50px離れたら固定を付与
+        header.classList.add("fixed");
+      } else {
+        header.classList.remove("fixed");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll); // リサイズ時にも処理を適用
+});
+
+////////////////////////////////////////////////////////////////////////////////////////
 // Swiper
 ///////////////////////////////////////////////////////////////////////////////////////
 function initSwipers() {
@@ -8,11 +51,17 @@ function initSwipers() {
       loop: true,
       speed: 1500,
       allowTouchMove: false,
-      slidesPerView: 3,
-      spaceBetween: 24,
+      slidesPerView: 1.11,
+      spaceBetween: 15,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
       },
       navigation: {
         nextEl: ".swiper-button-next", // 変更
@@ -27,11 +76,17 @@ function initSwipers() {
       loop: true,
       speed: 1500,
       allowTouchMove: false,
-      slidesPerView: 3,
-      spaceBetween: 24,
+      slidesPerView: 1.11,
+      spaceBetween: 15,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
       },
       navigation: {
         nextEl: ".swiper-button-next", // 変更
@@ -46,8 +101,8 @@ function initSwipers() {
       loop: true,
       speed: 8000,
       allowTouchMove: false,
-      slidesPerView: 4.5,
-      spaceBetween: 30,
+      slidesPerView: 2.5,
+      spaceBetween: 15,
       freeMode: {
         enabled: true,
         momentum: false,
@@ -56,6 +111,12 @@ function initSwipers() {
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 4.5,
+          spaceBetween: 30,
+        },
       },
     });
   }
@@ -68,29 +129,23 @@ document.addEventListener("DOMContentLoaded", function () {
 ///////////////////////////////////////////
 //ハンバーガーメニュー
 //////////////////////////////////////////
-// $(".hambager").on("click", function () {
-//   navOpen();
-// });
-// let navFlg = false;
-// function navOpen() {
-//   if (!navFlg) {
-//     $(".hamberger-wrap").addClass("is-ham-open");
-//     $(".drawer-menu").addClass("is-drawermenu-open");
-//     $("header").addClass("is-drawermenu-header");
-//     navFlg = true;
-//   } else {
-//     $(".hamberger-wrap").removeClass("is-ham-open");
-//     $(".drawer-menu").removeClass("is-drawermenu-open");
-//     $("header").removeClass("is-drawermenu-header");
-//     navFlg = false;
-//   }
-// }
-// // ページ内リンクをクリックしたときにメニューを閉じる
-// $('.drawer-menu a[href^="#"]').on("click", function () {
-//   if (navFlg) {
-//     navOpen(); // メニューが開いている場合は閉じる
-//   }
-// });
+$(".hambager").on("click", function () {
+  navOpen();
+});
+let navFlg = false;
+function navOpen() {
+  if (!navFlg) {
+    $(".hamberger-wrap").addClass("is-ham-open");
+    $(".drawer-menu").addClass("is-drawermenu-open");
+    $("header").addClass("is-drawermenu-header");
+    navFlg = true;
+  } else {
+    $(".hamberger-wrap").removeClass("is-ham-open");
+    $(".drawer-menu").removeClass("is-drawermenu-open");
+    $("header").removeClass("is-drawermenu-header");
+    navFlg = false;
+  }
+}
 
 ///////////////////////////////////////////
 //サイドバー アコーディオン

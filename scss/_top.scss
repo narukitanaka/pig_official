@@ -15,16 +15,48 @@ top
     max-width: 40rem;
     aspect-ratio: 1/1.14;
     background: url(../images/logo_mark.svg) no-repeat center / contain;
+    @include c.mq() {
+      top: v.pxtovw_sp(380);
+      left: 0;
+      width: 15.3rem;
+      background: url(../images/logo_mark02.svg) no-repeat center / contain;
+      z-index: 1;
+    }
+  }
+  .img-box {
+    @include c.mq() {
+      margin-bottom: 1.2rem;
+    }
   }
   .contents {
     position: absolute;
     top: v.pxtovw(167);
     left: v.pxtovw(120);
     z-index: 1;
+    margin-bottom: 1.5rem;
+    @include c.mq() {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding-left: v.pxtovw_sp(20);
+      z-index: 2;
+    }
     h1 {
       margin-bottom: 3.6rem;
+      @include c.mq() {
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+      }
       span {
         font-size: 3.2rem;
+        @include c.mq() {
+          font-size: 2.4rem;
+        }
+        &.sub-copy {
+          @include c.mq() {
+            font-size: 2rem;
+          }
+        }
       }
     }
     .sub-ttl {
@@ -32,21 +64,71 @@ top
       font-weight: 700;
     }
   }
+  .contact {
+    width: v.pxtovw_sp(366);
+    max-width: 45rem;
+    display: flex;
+    gap: 6px;
+    margin: 0 auto;
+    .tel,
+    .mail {
+      width: calc((100% / 2) - 3px);
+      aspect-ratio: 1/0.3;
+      a {
+        width: 100%;
+        height: 100%;
+        @include c.flex(center, center);
+        gap: 0.5rem;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: underline;
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba(49, 29, 4, 0.1);
+      }
+    }
+    .tel {
+      a {
+        background-color: #eaf0f1;
+        color: v.$txt-color;
+        border: 1px solid #e0ddd9;
+      }
+    }
+    .mail {
+      a {
+        background-color: v.$ttlTxt-color;
+        border: 1px solid #826a5a;
+      }
+    }
+  }
 }
 
 section {
   padding-top: 10rem;
+  @include c.mq() {
+    padding-top: 6rem;
+  }
 }
 
 #event {
+  @include c.mq() {
+    overflow: hidden;
+  }
   .block {
     align-items: center;
     gap: 7rem;
     margin-bottom: 2rem;
+    @include c.mq() {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5rem;
+    }
     .left {
       position: relative;
       text-align: center;
       flex-shrink: 0;
+      @include c.mq() {
+        width: 100%;
+      }
       &::before {
         position: absolute;
         top: -3rem;
@@ -57,14 +139,25 @@ section {
         border-radius: 50%;
         background-color: #fff;
         z-index: -1;
+        @include c.mq() {
+          top: -5rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
       p {
         &:first-of-type {
           font-size: 6.4rem;
           line-height: 1.5;
           font-weight: 500;
+          @include c.mq() {
+            font-size: 4.8rem;
+          }
           span {
             font-size: 3.2rem;
+            @include c.mq() {
+              font-size: 2.4rem;
+            }
           }
         }
         &:nth-of-type(2) {
@@ -72,12 +165,18 @@ section {
           line-height: 1.5;
           font-weight: 500;
           color: v.$ttlTxt-color;
+          @include c.mq() {
+            font-size: 2.4rem;
+          }
         }
         &:nth-of-type(3) {
           font-size: 6.4rem;
           line-height: 1.5;
           font-weight: 500;
           color: v.$ttlTxt-color;
+          @include c.mq() {
+            font-size: 4.8rem;
+          }
         }
         &:last-of-type {
           display: inline-block;
@@ -85,6 +184,21 @@ section {
           background-color: v.$bg-color03;
           border-radius: 2px;
           padding: 2px 10px;
+          @include c.mq() {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+      .img-wrap {
+        width: 100vw;
+        // margin-left: calc(((100vw - 90%) / 2) * -1);
+        gap: 1rem;
+        overflow-x: scroll;
+        .img-box {
+          width: 28rem;
+          border-radius: 3px;
+          flex-shrink: 0;
         }
       }
     }
@@ -95,6 +209,9 @@ section {
         padding-bottom: 1rem;
         border-bottom: 1px solid #e0ddd9;
         margin-bottom: 1rem;
+        @include c.mq() {
+          font-size: 2.4rem;
+        }
       }
       .txt {
         margin-bottom: 2rem;
@@ -102,9 +219,13 @@ section {
       > div {
         @include c.flex(start, center);
         gap: 1.5rem;
+        @include c.mq() {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
       .time {
-        width: 33rem;
+        width: 29rem;
         @include c.flex(start, center);
         gap: 5px;
         background-color: v.$bg-color03;
@@ -113,6 +234,9 @@ section {
           @include c.flex(center, center);
           gap: 4px;
           font-size: 2.4rem;
+          @include c.mq() {
+            font-size: 1.8rem;
+          }
           span {
             @include c.flex(center, center);
             width: 2.6rem;
@@ -122,6 +246,9 @@ section {
             color: #fff;
             border-radius: 3px;
             background-color: v.$ttlTxt-color;
+            @include c.mq() {
+              font-size: 1.3rem;
+            }
           }
         }
       }
@@ -142,15 +269,31 @@ section {
     max-width: 100rem;
     .block {
       justify-content: space-between;
+      @include c.mq() {
+        flex-direction: column;
+      }
     }
     .left {
+      @include c.mq() {
+        position: relative;
+      }
       h2 {
         margin-top: 1rem;
         margin-bottom: 2.5rem;
       }
+      .btn-wrap {
+        @include c.mq() {
+          position: absolute;
+          top: 4rem;
+          right: 0;
+        }
+      }
     }
     .right {
       width: 62rem;
+      @include c.mq() {
+        width: 100%;
+      }
       dl {
         border-bottom: 1px solid #e0ddd9;
         &:first-of-type {
@@ -161,9 +304,26 @@ section {
           @include c.flex(start, center);
           gap: 3rem;
           padding: 2rem 0;
+          transition: all 0.3s;
+          @include c.mq() {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+          }
           dt,
           dd {
             color: v.$subTxt-color02;
+            transition: all 0.3s;
+          }
+          &:hover {
+            dt,
+            dd {
+              color: v.$ttlTxt-color;
+            }
+            dt {
+              padding-left: 2rem;
+            }
           }
         }
       }
@@ -182,6 +342,11 @@ section {
     font-size: 2rem;
     text-align: center;
     background-color: #ccc;
+    @include c.mq() {
+      font-size: 1.6rem;
+      line-height: 1.7;
+      aspect-ratio: 1/1.5;
+    }
   }
 }
 
@@ -191,6 +356,9 @@ section {
   overflow: hidden;
   margin-top: 12rem;
   padding: 11rem 0;
+  @include c.mq() {
+    padding: 7rem 0 6rem;
+  }
   div,
   h2,
   dt,
@@ -203,9 +371,17 @@ section {
   }
   h2 {
     margin-bottom: 8rem;
+    @include c.mq() {
+      font-size: 2.4rem;
+      margin-bottom: 4.6rem;
+    }
   }
   .block {
     gap: 16rem;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 5rem;
+    }
   }
   .left {
     position: relative;
@@ -220,6 +396,9 @@ section {
       top: -2.4rem;
       right: -8rem;
       z-index: 1;
+      @include c.mq() {
+        right: 0;
+      }
       p {
         writing-mode: vertical-rl;
         text-orientation: upright;
@@ -231,9 +410,15 @@ section {
         padding: 1.5rem 2rem;
         border-radius: 3px;
         box-shadow: 4px 4px 0 rgba(130, 106, 90, 1);
+        @include c.mq() {
+          font-size: 1.6rem;
+        }
       }
     }
     .name {
+      @include c.mq() {
+        margin-bottom: 1.3rem;
+      }
       p {
         text-align: center;
         &:nth-of-type(2) {
@@ -247,6 +432,11 @@ section {
         &:last-of-type {
           color: #cfc1b8;
         }
+      }
+    }
+    .btn-wrap {
+      @include c.mq() {
+        @include c.flex(center, center);
       }
     }
   }
@@ -288,6 +478,9 @@ section {
             font-size: 4.5rem;
             color: #fff;
             line-height: 1.2;
+            @include c.mq() {
+              font-size: 2.65rem;
+            }
             &::before,
             &:after {
               content: "";
@@ -299,6 +492,12 @@ section {
               opacity: 0.5;
               position: absolute;
               z-index: -1;
+              @include c.mq() {
+                width: 11.8rem;
+                height: 10.3rem;
+                border-radius: 1.43rem;
+                filter: blur(35px);
+              }
             }
           }
         }
@@ -306,18 +505,33 @@ section {
       .block {
         @include c.flex(start, center);
         margin-bottom: 8rem;
+        @include c.mq() {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 14rem;
+        }
         .img-box {
           width: v.pxtovw(800);
           overflow: hidden;
+          @include c.mq() {
+            width: calc(100% + ((100vw - 100%) / 2));
+          }
         }
         .ttl-wrap {
           h2 {
             font-size: 3.2rem;
             color: v.$ttlTxt-color;
             margin-bottom: 1.5rem;
+            @include c.mq() {
+              font-size: 2.4rem;
+              margin-bottom: 1rem;
+            }
           }
           p {
             font-size: 2rem;
+            @include c.mq() {
+              font-size: 1.6rem;
+            }
           }
         }
       }
@@ -333,6 +547,9 @@ section {
         font-weight: 700;
         text-align: center;
         margin-bottom: 10rem;
+        @include c.mq() {
+          font-size: 1.6rem;
+        }
         span {
           display: block;
           width: 5px;
@@ -358,6 +575,9 @@ section {
         flex-wrap: wrap;
         gap: 1rem;
         padding: 0 v.pxtovw(34);
+        @include c.mq() {
+          flex-direction: column;
+        }
         .box {
           position: relative;
           width: calc((100% - 2rem) / 3);
@@ -365,6 +585,10 @@ section {
           border-radius: 6px;
           text-align: center;
           overflow: hidden;
+          @include c.mq() {
+            width: 100%;
+            padding: v.pxtovw_sp(30) v.pxtovw_sp(20) v.pxtovw_sp(100);
+          }
           .age {
             width: 9rem;
             border-radius: 30px;
@@ -390,6 +614,10 @@ section {
             width: v.pxtovw(300);
             max-width: 50rem;
             margin: 0 auto 1rem;
+            border-radius: 3px;
+            @include c.mq() {
+              width: 100%;
+            }
           }
           .btn-wrap {
             position: absolute;
@@ -401,6 +629,11 @@ section {
     }
     &.cases {
       position: relative;
+      .inner {
+        @include c.mq() {
+          width: 100%;
+        }
+      }
       .ttl-wrap {
         text-align: center;
         .sub-ttl {
@@ -415,11 +648,18 @@ section {
         font-weight: 500;
         text-align: center;
         margin-bottom: 6rem;
+        @include c.mq() {
+          font-size: 1.6rem;
+          margin-bottom: 4rem;
+        }
       }
       .top_pediatric-cases,
       .top_adult-cases {
         margin-bottom: 5rem;
         overflow: hidden;
+        @include c.mq() {
+          margin-left: v.pxtovw_sp(20);
+        }
         .swiper-slide {
           a {
             width: 100%;
@@ -440,6 +680,9 @@ section {
           .tag {
             font-size: 1.4rem;
             color: #826a5a;
+            @include c.mq() {
+              font-size: 1.3rem;
+            }
           }
           .ttl {
             @include c.flex(start, center);
@@ -451,6 +694,9 @@ section {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
+              @include c.mq() {
+                font-size: 1.6rem;
+              }
             }
             svg {
               flex-shrink: 0;
@@ -474,9 +720,15 @@ section {
           transform: rotate(180deg);
           opacity: 0.7;
           left: 5rem;
+          @include c.mq() {
+            left: v.pxtovw_sp(10);
+          }
         }
         .swiper-button-next {
           right: 5rem;
+          @include c.mq() {
+            right: v.pxtovw_sp(10);
+          }
         }
       }
       .btn-wrap {
@@ -491,21 +743,41 @@ section {
   border-bottom-left-radius: 6rem;
   border-bottom-right-radius: 6rem;
   padding-bottom: 11rem;
+  @include c.mq() {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding-bottom: 8rem;
+  }
   .contents {
     &.head {
       margin-bottom: 12rem;
+      @include c.mq() {
+        margin-bottom: 8rem;
+      }
       .inner {
         .en-ttl {
           right: 11.7rem;
           bottom: 10rem;
+          @include c.mq() {
+            right: 0;
+            bottom: 24rem;
+          }
           p {
             &::before {
               bottom: -2rem;
               right: 14rem;
+              @include c.mq() {
+                bottom: -1.5rem;
+                right: 10rem;
+              }
             }
             &::after {
               bottom: -8rem;
               right: -10rem;
+              @include c.mq() {
+                bottom: -4rem;
+                right: -1rem;
+              }
             }
           }
         }
@@ -516,6 +788,9 @@ section {
           border-top-right-radius: 30px;
           border-bottom-right-radius: 30px;
           margin-left: calc(((100vw - 1200px) / 2) * -1);
+          @include c.mq() {
+            margin-left: calc(((100vw - 100%) / 2) * -1);
+          }
         }
       }
     }
@@ -532,6 +807,10 @@ section {
 #adult {
   background-color: #fff;
   padding-bottom: 14rem;
+  @include c.mq() {
+    padding-top: 8rem;
+    padding-bottom: 30rem;
+  }
   .contents {
     &.head {
       margin-bottom: 11rem;
@@ -539,14 +818,29 @@ section {
         .en-ttl {
           left: 17.7rem;
           bottom: 2rem;
+          @include c.mq() {
+            left: auto;
+            right: 0;
+            bottom: -9rem;
+          }
           p {
             &::before {
               bottom: -5rem;
               left: 14rem;
+              @include c.mq() {
+                bottom: -1.5rem;
+                left: auto;
+                right: 10rem;
+              }
             }
             &::after {
               bottom: -2rem;
               left: -8rem;
+              @include c.mq() {
+                bottom: -4rem;
+                left: auto;
+                right: -1rem;
+              }
             }
           }
         }
@@ -554,6 +848,10 @@ section {
       .block {
         justify-content: space-between;
         flex-direction: row-reverse;
+        @include c.mq() {
+          flex-direction: column;
+          gap: 4rem;
+        }
         .img-box {
           border-top-left-radius: 30px;
           border-bottom-left-radius: 30px;
@@ -562,6 +860,9 @@ section {
       }
     }
     &.menu {
+      @include c.mq() {
+        margin-bottom: 2rem;
+      }
       .block {
         .box {
           background-color: v.$bg-color02;
@@ -573,6 +874,9 @@ section {
       background: url(../images/geka_bg.svg) no-repeat center/cover;
       border-radius: 6px;
       padding: 6rem 0;
+      @include c.mq() {
+        margin: 0 0 7rem;
+      }
       .text {
         text-align: center;
         margin-bottom: 3rem;
@@ -580,6 +884,10 @@ section {
           font-size: 2rem;
           line-height: 2.4;
           color: #fff;
+          @include c.mq() {
+            font-size: 1.6rem;
+            line-height: 2.6;
+          }
           span {
             width: 13.5rem;
             display: inline-block;
@@ -588,6 +896,11 @@ section {
             font-size: 2.8rem;
             font-weight: 700;
             color: v.$ttlTxt-color;
+            @include c.mq() {
+              font-size: 2.4rem;
+              line-height: 2;
+              width: 12rem;
+            }
           }
           &.hukidashi {
             position: relative;
@@ -615,9 +928,17 @@ section {
         padding: 5rem 0;
         margin: 0 auto 4rem;
         text-align: center;
+        @include c.mq() {
+          width: 90%;
+          padding: 5rem v.pxtovw_sp(20);
+          text-align: left;
+        }
         .img-box {
           width: 56.5rem;
           margin: 0 auto 2rem;
+          @include c.mq() {
+            width: v.pxtovw_sp(230);
+          }
         }
         h4 {
           font-size: 2rem;
@@ -625,6 +946,10 @@ section {
           font-weight: 500;
           text-decoration: underline;
           margin-bottom: 2rem;
+          @include c.mq() {
+            font-size: 1.6rem;
+            letter-spacing: 0;
+          }
         }
         p {
           font-size: 1.4rem;
@@ -644,6 +969,9 @@ section {
   padding-top: 8.5rem;
   padding-bottom: 3rem;
   background-color: #fff;
+  @include c.mq() {
+    background-color: #f7f7f7;
+  }
   .inner {
     max-width: 100rem;
     margin: 0;
@@ -651,6 +979,14 @@ section {
     padding-left: v.pxtovw(120);
     background-color: #f7f7f7;
     border-bottom-right-radius: 30px;
+    @include c.mq() {
+      width: 90%;
+      max-width: 60rem;
+      margin: 0 auto;
+      padding-top: v.pxtovw(120);
+      padding-left: 0;
+      background-color: transparent;
+    }
   }
   .ttl-wrap {
     .sub-ttl {
@@ -659,14 +995,24 @@ section {
     p {
       font-size: 2rem;
       margin-bottom: 5px;
+      @include c.mq() {
+        font-size: 1.6rem;
+      }
     }
   }
   h2 {
     margin-bottom: 5rem;
+    @include c.mq() {
+      font-size: 2.4rem;
+      margin-bottom: 3rem;
+    }
   }
   nav {
     width: 80%;
     max-width: 62rem;
+    @include c.mq() {
+      width: 100%;
+    }
     dl {
       border-bottom: 1px solid #cfc1b8;
       &:first-of-type {
@@ -680,6 +1026,15 @@ section {
         @include c.flex(start, center);
         gap: 3rem;
         padding: 2.4rem 0;
+        @include c.mq() {
+          gap: 1.5rem;
+        }
+        dt {
+          width: 5rem;
+          img {
+            width: 100%;
+          }
+        }
         dd {
           display: flex;
           flex-direction: column;
@@ -690,12 +1045,24 @@ section {
             font-size: 2.4rem;
             font-weight: 700;
             color: v.$ttlTxt-color;
+            @include c.mq() {
+              font-size: 2rem;
+            }
           }
         }
         .arrow {
           width: 4.8rem;
           height: 2.8rem;
           border-radius: 30px;
+          @include c.mq() {
+            width: 3rem;
+            height: 1.8rem;
+            border-radius: 18px;
+          }
+          svg {
+            width: 11px;
+            height: 11px;
+          }
         }
       }
     }
@@ -704,18 +1071,32 @@ section {
     position: absolute;
     top: 0;
     right: 0;
+    @include c.mq() {
+      top: -19rem;
+    }
     .img-box {
       overflow: hidden;
       &:first-of-type {
         width: v.pxtovw(600);
         border-top-left-radius: 3rem;
         border-bottom-left-radius: 3rem;
+        @include c.mq() {
+          width: v.pxtovw_sp(280);
+          border-top-left-radius: 1.5rem;
+          border-bottom-left-radius: 1.5rem;
+        }
       }
       &:nth-of-type(2) {
         width: 34.7rem;
         border-radius: 4rem;
         margin-top: -4rem;
         margin-left: 7rem;
+        @include c.mq() {
+          width: v.pxtovw_sp(180);
+          border-radius: 2rem;
+          margin-top: v.pxtovw_sp(-64);
+          margin-left: v.pxtovw_sp(-80);
+        }
       }
     }
   }
@@ -724,23 +1105,47 @@ section {
 #strength {
   background-color: #fff;
   padding-bottom: 7rem;
+  @include c.mq() {
+    padding-top: 8rem;
+  }
   .ttl-wrap {
     margin-bottom: 6rem;
+    @include c.mq() {
+      margin-bottom: 4rem;
+    }
     .sub-ttl {
       margin-bottom: 1.5rem;
     }
     p {
       font-size: 2rem;
+      @include c.mq() {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+    }
+    h2 {
+      @include c.mq() {
+        font-size: 2.4rem;
+        letter-spacing: 0.5px;
+      }
     }
   }
   .box {
     @include c.flex(start, start);
     margin-bottom: 6rem;
+    @include c.mq() {
+      flex-direction: column-reverse;
+      margin-bottom: 3rem;
+    }
     .img-box {
       width: 47rem;
       flex-shrink: 0;
       border-radius: 6px;
       overflow: hidden;
+      @include c.mq() {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
     }
     .text-box {
       flex-grow: 1;
@@ -751,20 +1156,38 @@ section {
         padding-bottom: 1.2rem;
         border-bottom: 1px solid #e0ddd9;
         margin-bottom: 2.6rem;
+        @include c.mq() {
+          font-size: 1.6rem;
+          letter-spacing: 0;
+          padding-bottom: 1rem;
+          margin-bottom: 1rem;
+        }
       }
       p {
         width: 45.5rem;
         letter-spacing: 0.5px;
+        @include c.mq() {
+          width: 100%;
+        }
       }
     }
     &.reverse {
       flex-direction: row-reverse;
+      @include c.mq() {
+        flex-direction: column-reverse;
+      }
       h3 {
         padding-left: 8rem;
+        @include c.mq() {
+          padding-left: 0;
+        }
       }
       p {
         margin-left: 8rem;
         line-height: 2;
+        @include c.mq() {
+          margin-left: 0;
+        }
       }
     }
   }
@@ -774,6 +1197,9 @@ section {
   overflow: hidden;
   background-color: #fff;
   padding-bottom: 9rem;
+  @include c.mq() {
+    padding-bottom: 4rem;
+  }
   .swiper-wrapper {
     transition-timing-function: linear !important;
     .swiper-slide {
