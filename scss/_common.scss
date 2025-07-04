@@ -301,3 +301,12 @@ div {
     white-space: nowrap;
   }
 }
+
+.hover_opacity {
+  a {
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

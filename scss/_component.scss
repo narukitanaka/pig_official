@@ -210,20 +210,53 @@ component
           }
         }
         .mail {
+          width: 100%;
+          aspect-ratio: 1/0.13;
+          border-radius: 6px;
+          background-color: v.$ttlTxt-color;
           margin-bottom: 2.8rem;
-          a {
-            @include c.flex(center, center);
-            gap: 1rem;
+          position: relative;
+          overflow: hidden;
+          transition: background-color 0.3s ease;
+          z-index: 0;
+          transition: all 0.3s ease;
+          @include c.mq() {
+            aspect-ratio: 1/0.15;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            aspect-ratio: 1/0.13;
-            border-radius: 6px;
-            background-color: v.$ttlTxt-color;
+            height: 100%;
+            background-color: v.$txt-color;
+            transition: left 0.3s ease;
+            z-index: 0;
+          }
+          &:hover {
+            scale: 0.95;
+            &::before {
+              left: 0;
+            }
+          }
+          span,
+          svg {
+            position: relative;
+            z-index: 1;
+          }
+          a {
+            position: relative;
+            @include c.flex(center, center);
+            width: 100%;
+            height: 100%;
+            gap: 1rem;
             font-size: 1.8rem;
             font-weight: 500;
             color: #fff;
+            z-index: 1;
             @include c.mq() {
               font-size: 1.6rem;
-              aspect-ratio: 1/0.15;
             }
           }
         }
@@ -309,5 +342,9 @@ component
     aspect-ratio: 1/0.63;
     background: url(../images/common-info_obj.svg) no-repeat center/contain;
     z-index: -1;
+  }
+  &.under {
+    margin-top: 20rem;
+    background: v.$bg-color01;
   }
 }

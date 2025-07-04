@@ -102,10 +102,12 @@ top
   }
 }
 
-section {
-  padding-top: 10rem;
-  @include c.mq() {
-    padding-top: 6rem;
+#top {
+  section {
+    padding-top: 10rem;
+    @include c.mq() {
+      padding-top: 6rem;
+    }
   }
 }
 
