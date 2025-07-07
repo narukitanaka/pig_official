@@ -42,6 +42,7 @@ top
       z-index: 2;
     }
     h1 {
+      font-size: clamp(3.2rem, v.pxtovw(40), 6.4rem);
       margin-bottom: 3.6rem;
       @include c.mq() {
         font-size: 3.2rem;
@@ -49,6 +50,7 @@ top
       }
       span {
         font-size: 3.2rem;
+        font-size: clamp(2.4rem, v.pxtovw(32), 4rem);
         @include c.mq() {
           font-size: 2.4rem;
         }
@@ -379,7 +381,7 @@ top
     }
   }
   .block {
-    gap: 16rem;
+    gap: clamp(10rem, v.pxtovw(160), 16rem);
     @include c.mq() {
       flex-direction: column;
       gap: 5rem;
@@ -477,7 +479,7 @@ top
           position: absolute;
           p {
             position: relative;
-            font-size: 4.5rem;
+            font-size: clamp(4rem, v.pxtovw(45), 4.5rem);
             color: #fff;
             line-height: 1.2;
             @include c.mq() {
@@ -521,7 +523,7 @@ top
         }
         .ttl-wrap {
           h2 {
-            font-size: 3.2rem;
+            font-size: clamp(2.8rem, v.pxtovw(32), 3.2rem);
             color: v.$ttlTxt-color;
             margin-bottom: 1.5rem;
             @include c.mq() {
@@ -587,9 +589,13 @@ top
           border-radius: 6px;
           text-align: center;
           overflow: hidden;
+          z-index: 1;
           @include c.mq() {
             width: 100%;
-            padding: v.pxtovw_sp(30) v.pxtovw_sp(20) v.pxtovw_sp(100);
+            max-width: 60rem;
+            margin: 0 auto;
+            padding: clamp(3rem, v.pxtovw_sp(30), 3rem) v.pxtovw_sp(20)
+              clamp(10rem, v.pxtovw_sp(100), 10rem);
           }
           .age {
             width: 9rem;
@@ -613,13 +619,19 @@ top
             margin-bottom: 2rem;
           }
           .img-box {
+            position: relative;
             width: v.pxtovw(300);
             max-width: 50rem;
             margin: 0 auto 1rem;
             border-radius: 3px;
+            z-index: 2;
             @include c.mq() {
               width: 100%;
             }
+          }
+          p {
+            position: relative;
+            z-index: 2;
           }
           .btn-wrap {
             position: absolute;
@@ -759,7 +771,7 @@ top
       .inner {
         .en-ttl {
           right: 11.7rem;
-          bottom: 10rem;
+          bottom: clamp(18rem, v.pxtovw(100), 10rem);
           @include c.mq() {
             right: 0;
             bottom: 24rem;
@@ -790,6 +802,9 @@ top
           border-top-right-radius: 30px;
           border-bottom-right-radius: 30px;
           margin-left: calc(((100vw - 1200px) / 2) * -1);
+          @include c.mq(pc-s) {
+            margin-left: calc((((100vw - 100%) / 2) + 1rem) * -1);
+          }
           @include c.mq() {
             margin-left: calc(((100vw - 100%) / 2) * -1);
           }
@@ -820,6 +835,7 @@ top
         .en-ttl {
           left: 17.7rem;
           bottom: 2rem;
+          bottom: clamp(0rem, v.pxtovw(20), 2rem);
           @include c.mq() {
             left: auto;
             right: 0;
@@ -857,7 +873,10 @@ top
         .img-box {
           border-top-left-radius: 30px;
           border-bottom-left-radius: 30px;
-          margin-right: calc(((100vw - 1200px) / 2) * -1);
+          margin-right: calc(((100vw - 100%) / 2) * -1);
+          @include c.mq(pc-s) {
+            margin-right: calc((((100vw - 100%) / 2) + 1rem) * -1);
+          }
         }
       }
     }
@@ -977,10 +996,15 @@ top
   .inner {
     max-width: 100rem;
     margin: 0;
-    padding: 8rem 0 6rem;
+    padding: clamp(8rem, v.pxtovw(80), 12rem) 0 clamp(6rem, v.pxtovw(60), 10rem);
     padding-left: v.pxtovw(120);
     background-color: #f7f7f7;
+    border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    @include c.mq(pc-s) {
+      padding: 8rem 0 6rem;
+      padding-left: 2rem;
+    }
     @include c.mq() {
       width: 90%;
       max-width: 60rem;
@@ -1010,8 +1034,9 @@ top
     }
   }
   nav {
-    width: 80%;
-    max-width: 62rem;
+    // width: 80%;
+    // max-width: 62rem;
+    width: clamp(55rem, v.pxtovw(620), 70rem);
     @include c.mq() {
       width: 100%;
     }
@@ -1044,7 +1069,7 @@ top
           line-height: 1.6;
           color: v.$subTxt-color02;
           span {
-            font-size: 2.4rem;
+            font-size: clamp(2rem, v.pxtovw(24), 2.4rem);
             font-weight: 700;
             color: v.$ttlTxt-color;
             @include c.mq() {

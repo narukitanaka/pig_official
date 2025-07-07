@@ -17,6 +17,8 @@ $breakpoints: (
   //スマホ
   "md": "screen and (max-width: 1023px)",
   //タブレット
+  "pc-s": "screen and (max-width: 1200px)",
+  //PC小サイズ
 ) !default;
 @mixin mq($breakpoint: sm) {
   @media #{map-get($breakpoints , $breakpoint)} {
@@ -196,9 +198,13 @@ input[type="button"] {
 .inner {
   max-width: 1200px;
   margin: 0 auto;
+  @include mq(pc-s) {
+    padding: 0 2rem;
+  }
   @include mq(md) {
     width: 85%;
     max-width: 1000px;
+    padding: 0;
   }
   @include mq() {
     width: 90%;
@@ -244,6 +250,7 @@ a {
   color: v.$txt-color;
   @include mq() {
     font-size: 1.4rem;
+    letter-spacing: 0px;
   }
 }
 div {

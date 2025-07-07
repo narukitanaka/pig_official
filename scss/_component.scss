@@ -201,11 +201,15 @@ component
             @include c.mq() {
               font-size: 2.4rem;
             }
-            span {
+            .small {
               font-size: 2rem;
               @include c.mq() {
                 font-size: 1.5rem;
               }
+            }
+            .underline {
+              text-decoration: underline;
+              text-decoration-thickness: 2px;
             }
           }
         }
@@ -324,6 +328,7 @@ component
       flex-shrink: 0;
       @include c.mq() {
         width: 100%;
+        max-height: 40rem;
       }
       iframe {
         margin-bottom: 1.5rem;
@@ -346,5 +351,8 @@ component
   &.under {
     margin-top: 20rem;
     background: v.$bg-color01;
+    @include c.mq() {
+      margin-top: 8rem;
+    }
   }
 }

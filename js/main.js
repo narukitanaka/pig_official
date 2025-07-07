@@ -148,17 +148,22 @@ function navOpen() {
 }
 
 ///////////////////////////////////////////
-//サイドバー アコーディオン
+//ドロワーメニュー アコーディオン
 ///////////////////////////////////////////
-// $(".sidebar-accordion nav").hide(); // 初期状態で非表示
-// $(".sidebar-accordion p").on("click", function (e) {
-//   $(this).next("nav").slideToggle("fast");
-//   if ($(this).hasClass("open")) {
-//     $(this).removeClass("open");
-//   } else {
-//     $(this).addClass("open");
-//   }
-// });
+$(".drawer-nav .child-menu").hide();
+$(".drawer-nav .parent-menu").on("click", function (e) {
+  if ($(e.target).is("a")) return;
+  const $targetMenu = $(this).children(".child-menu");
+  if ($targetMenu.is(":visible")) {
+    $targetMenu.slideUp("400");
+    $(this).removeClass("open");
+  } else {
+    $(".drawer-nav .child-menu").slideUp("400");
+    $(".drawer-nav li").removeClass("open");
+    $targetMenu.slideDown("400");
+    $(this).addClass("open");
+  }
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // GSAP アニメーション

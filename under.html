@@ -32,7 +32,7 @@
 
     <header class="fixed">
       <div class="header-inner">
-        <div class="logo img-box u-pc">
+        <div class="logo img-box u-pc hover_opacity">
           <a href="./">
             <img class="is_top" src="images/logo01.svg" alt="">
             <img class="is_fix" src="images/logo02.svg" alt="">
@@ -45,7 +45,7 @@
           </a>
         </div>
         <nav>
-          <ul>
+          <ul class="hover_opacity">
             <li class="drop-menu">
               <img class="is_top" src="images/header_icon_kids.svg" alt="">
               子どもの矯正
@@ -302,14 +302,106 @@
       <div class="drawer-menu_inner">
         <div class="nav-wrap">
           <nav>
-            <ul>
+            <ul class="drawer-nav">
               <li><a href="./">TOP</a></li>
-              <li>子どもの矯正</li>
-              <li>大人の矯正</li>
-              <li>診療案内</li>
-              <li>当院について</li>
-              <li><a href="#">医師紹介</a></li>
-              <li><a href="#">治療費用</a></li>
+              <li class="parent-menu">
+                <img class="is_top" src="images/header_icon_kids.svg" alt="">
+                子どもの矯正
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_10414_124" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12"
+                    height="12">
+                    <rect width="12" height="12" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_10414_124)">
+                    <path
+                      d="M10.1827 3L11 3.89235L6.54588 8.75277C6.4745 8.83112 6.38963 8.8933 6.29615 8.93573C6.20266 8.97816 6.10241 9 6.00116 9C5.8999 9 5.79965 8.97816 5.70616 8.93573C5.61268 8.8933 5.52781 8.83112 5.45644 8.75277L1 3.89235L1.81727 3.00084L6 7.56269L10.1827 3Z"
+                      fill="#311D04" />
+                  </g>
+                </svg>
+                <ul class="child-menu">
+                  <li><a href="./">プレオルソ</a></li>
+                  <li><a href="./">床矯正</a></li>
+                  <li><a href="./">マウスピース矯正</a></li>
+                  <li><a href="./">ワイヤー矯正</a></li>
+                  <li><a href="./">ヘッドギア・フェイスマスク</a></li>
+                </ul>
+              </li>
+              <li class="parent-menu">
+                <img class="is_top" src="images/header_icon_adult.svg" alt="">
+                大人の矯正
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_10414_124" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12"
+                    height="12">
+                    <rect width="12" height="12" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_10414_124)">
+                    <path
+                      d="M10.1827 3L11 3.89235L6.54588 8.75277C6.4745 8.83112 6.38963 8.8933 6.29615 8.93573C6.20266 8.97816 6.10241 9 6.00116 9C5.8999 9 5.79965 8.97816 5.70616 8.93573C5.61268 8.8933 5.52781 8.83112 5.45644 8.75277L1 3.89235L1.81727 3.00084L6 7.56269L10.1827 3Z"
+                      fill="#311D04" />
+                  </g>
+                </svg>
+                <ul class="child-menu">
+                  <li><a href="./">ワイヤー矯正</a></li>
+                  <li><a href="./">マウスピース矯正</a></li>
+                  <li><a href="./">部分矯正</a></li>
+                </ul>
+              </li>
+              <li class="parent-menu">
+                <img class="is_top" src="images/header_icon_information.svg" alt="">
+                診療案内
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_10414_124" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12"
+                    height="12">
+                    <rect width="12" height="12" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_10414_124)">
+                    <path
+                      d="M10.1827 3L11 3.89235L6.54588 8.75277C6.4745 8.83112 6.38963 8.8933 6.29615 8.93573C6.20266 8.97816 6.10241 9 6.00116 9C5.8999 9 5.79965 8.97816 5.70616 8.93573C5.61268 8.8933 5.52781 8.83112 5.45644 8.75277L1 3.89235L1.81727 3.00084L6 7.56269L10.1827 3Z"
+                      fill="#311D04" />
+                  </g>
+                </svg>
+                <ul class="child-menu">
+                  <li><a href="./">セラミック</a></li>
+                  <li><a href="./">インプラント</a></li>
+                  <li><a href="./">入れ歯</a></li>
+                  <li><a href="./">歯周病</a></li>
+                  <li><a href="./">小児歯科</a></li>
+                  <li><a href="./">親知らずの抜歯</a></li>
+                </ul>
+              </li>
+              <li class="parent-menu">
+                <img class="is_top" src="images/header_icon_clinic.svg" alt="">
+                当院について
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_10414_124" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="12"
+                    height="12">
+                    <rect width="12" height="12" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_10414_124)">
+                    <path
+                      d="M10.1827 3L11 3.89235L6.54588 8.75277C6.4745 8.83112 6.38963 8.8933 6.29615 8.93573C6.20266 8.97816 6.10241 9 6.00116 9C5.8999 9 5.79965 8.97816 5.70616 8.93573C5.61268 8.8933 5.52781 8.83112 5.45644 8.75277L1 3.89235L1.81727 3.00084L6 7.56269L10.1827 3Z"
+                      fill="#311D04" />
+                  </g>
+                </svg>
+                <ul class="child-menu">
+                  <li><a href="./">医院情報</a></li>
+                  <li><a href="./">アクセス</a></li>
+                  <li><a href="./">初めての方へ</a></li>
+                  <li><a href="./">新着情報</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="./">
+                  <img class="is_top" src="images/header_icon_doctor.svg" alt="">
+                  医師紹介
+                </a>
+              </li>
+              <li>
+                <a href="./">
+                  <img class="is_top" src="images/header_icon_price.svg" alt="">
+                  治療費用
+                </a>
+              </li>
             </ul>
           </nav>
         </div><!-- /.nav-wrap -->
@@ -340,7 +432,7 @@
     <section class="under-head page-temp">
       <div class="sub-ttl">Title Sample</div>
       <h1>H1タイトルが入りますH1タイトルが入ります</h1>
-      <p>
+      <p class="font-noto">
         任意のテキストが入ります。なおき矯正歯科・小児矯正歯科は矯正専門のクリニックとして豊中地域のみなさまの口腔内の健康をサポートいたします。
       </p>
       <div class="img-box obj-fit">
@@ -563,7 +655,7 @@
               <div class="tel">
                 <p>お電話でのご相談はこちら</p>
                 <a class="font-lora" href="tel:0740000000">
-                  <span>tel.</span>0740-00-0000
+                  <span class="small">tel.</span><span class="underline">0740-00-0000</span>
                 </a>
               </div>
               <div class="mail">
@@ -630,7 +722,7 @@
 
   <footer>
     <div class="inner">
-      <div class="nav-wrap">
+      <div class="nav-wrap hover_opacity">
 
         <div class="column">
           <p><a class="font-lora" href="./">TOP</a></p>

@@ -11,22 +11,36 @@ under
 }
 .under-head {
   margin: 28rem v.pxtovw(35) 11rem v.pxtovw(35);
+  @include c.mq() {
+    margin: v.pxtovw_sp(160) v.pxtovw_sp(20) 6rem;
+  }
   .sub-ttl {
     margin-bottom: 1.5rem;
   }
   h1 {
     margin-bottom: 2.4rem;
+    @include c.mq() {
+      font-size: 2.4rem;
+    }
   }
   p {
-    max-width: 55rem;
+    max-width: 60rem;
     font-size: 1.5rem;
+    letter-spacing: 0.5px;
     color: #99928a;
     margin-bottom: 9rem;
+    @include c.mq() {
+      font-size: 1.4rem;
+      margin-bottom: 8rem;
+    }
   }
   .img-box {
     aspect-ratio: 1/0.28;
     border-radius: 6px;
     overflow: hidden;
+    @include c.mq() {
+      aspect-ratio: 1/1;
+    }
   }
   &.page-temp {
     .img-box {
@@ -38,6 +52,9 @@ under
   &:not(:has(p)) {
     h1 {
       margin-bottom: 9rem;
+      @include c.mq() {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -51,6 +68,11 @@ under
     background-color: v.$bg-color02;
     margin-top: 6rem;
     margin-bottom: 4rem;
+    @include c.mq() {
+      font-size: 2rem;
+      line-height: 1.5;
+      margin-bottom: 3rem;
+    }
     &::before {
       position: absolute;
       top: 50%;
@@ -71,6 +93,11 @@ under
     font-weight: 700;
     margin-top: 6rem;
     margin-bottom: 4rem;
+    @include c.mq() {
+      font-size: 2rem;
+      line-height: 1.5;
+      margin-bottom: 3rem;
+    }
     &::before {
       position: absolute;
       top: 115%;
@@ -95,6 +122,11 @@ under
     padding-left: 2rem;
     margin-top: 5rem;
     margin-bottom: 3rem;
+    @include c.mq() {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      margin-bottom: 3rem;
+    }
     &::before {
       position: absolute;
       top: 50%;
@@ -106,6 +138,10 @@ under
       border-radius: 50%;
       background: v.$gradient01;
       filter: blur(2px);
+      @include c.mq() {
+        top: 1rem;
+        transform: none;
+      }
     }
   }
   ul {
@@ -115,6 +151,10 @@ under
       font-size: 1.8rem;
       padding-left: 3rem;
       margin-bottom: 8px;
+      @include c.mq() {
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -143,11 +183,19 @@ under
       text-align: center;
       vertical-align: middle;
       background-color: v.$bg-color02;
+      @include c.mq() {
+        width: 30%;
+        font-size: 1.5rem;
+      }
     }
     th,
     td {
       padding: 2rem;
       border: 1px solid #e0ddd9;
+      @include c.mq() {
+        padding: 1.3rem 1.5rem;
+        line-height: 1.5;
+      }
     }
   }
 }
@@ -155,12 +203,20 @@ under
 .under-content_wrap {
   .btn-wrap {
     margin-top: 3rem;
+    @include c.mq() {
+      @include c.flex(center, center);
+      margin-top: 2rem;
+    }
   }
 
   .block_img-txt {
     display: flex;
     gap: 4rem;
     margin: 6rem 0;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 2rem;
+    }
     .img-box {
       width: 44rem;
       flex-shrink: 0;
@@ -168,7 +224,6 @@ under
       overflow: hidden;
       @include c.mq() {
         width: 100%;
-        order: 1;
       }
     }
     .txt-box {
@@ -194,12 +249,18 @@ under
     }
     &.reverse {
       flex-direction: row-reverse;
+      @include c.mq() {
+        flex-direction: column;
+      }
     }
   }
 
   ul {
     background-color: v.$bg-color01;
     padding: 3rem 4rem;
+    @include c.mq() {
+      padding: 1.5rem 2rem;
+    }
     &.list-check {
       li {
         &::before {
@@ -227,6 +288,9 @@ under
       text-align: center;
       font-weight: 700;
       margin-bottom: 4rem;
+      @include c.mq() {
+        margin-bottom: 2.8rem;
+      }
     }
     .stand-arrow {
       @include c.flex(center, center);
@@ -235,8 +299,15 @@ under
       border-radius: 50%;
       background: url(../images/grade-noise.svg) no-repeat center / cover;
       margin: 0 auto 4rem;
+      @include c.mq() {
+        width: 5.2rem;
+      }
       svg {
         rotate: 90deg;
+        @include c.mq() {
+          width: 2.1rem;
+          height: 2.1rem;
+        }
       }
     }
     .img-box {
@@ -246,6 +317,9 @@ under
       border-radius: 6px;
       overflow: hidden;
       margin: 0 auto 4rem;
+      @include c.mq() {
+        width: 100%;
+      }
     }
   }
 
@@ -255,6 +329,9 @@ under
     padding: 5rem;
     background: url(../images/geka_bg.svg) no-repeat center/cover;
     border-radius: 6px;
+    @include c.mq() {
+      padding: v.pxtovw_sp(40) v.pxtovw_sp(15);
+    }
     .pickup-ttl {
       position: relative;
       font-family: "Noto Serif JP", serif;
@@ -262,6 +339,13 @@ under
       font-weight: 700;
       color: #fff;
       margin-bottom: 4rem;
+      @include c.mq() {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+        width: 85%;
+        margin: 0 auto 4rem;
+      }
       &::before {
         position: absolute;
         top: 50%;
@@ -276,16 +360,26 @@ under
           rgba(239, 202, 106, 1) 0%,
           rgba(239, 106, 106, 1) 100%
         );
+        @include c.mq() {
+          width: 3.5rem;
+          left: -5rem;
+        }
       }
     }
     .pickup-content {
       @include c.flex(start, start);
       gap: 4rem;
+      @include c.mq() {
+        flex-direction: column;
+      }
       .img-box {
         width: 36rem;
         border-radius: 6px;
         overflow: hidden;
         flex-shrink: 0;
+        @include c.mq() {
+          width: 100%;
+        }
       }
       p {
         color: #fff;
@@ -307,26 +401,59 @@ under
         color: v.$ttlTxt-color;
         @include c.flex(center, center);
         flex-direction: column;
+        @include c.mq() {
+          width: 7rem;
+          font-size: 3.2rem;
+        }
         span {
           font-size: 1.3rem;
+          @include c.mq() {
+            font-size: 1.1rem;
+          }
         }
       }
       .content {
         @include c.flex(space-between, start);
         gap: 4rem;
         padding-left: 4rem;
-        border-left: 1px solid #e0ddd9;
+        border-left: 2px solid #e0ddd9;
+        @include c.mq() {
+          flex-direction: column;
+          gap: 0;
+          padding-left: v.pxtovw_sp(15);
+        }
+        .txt-box {
+          @include c.mq() {
+            display: contents;
+          }
+        }
         .step-ttl {
           font-family: "Noto Serif JP", serif;
           font-size: 2.4rem;
           font-weight: 700;
           margin-bottom: 2.4rem;
+          @include c.mq() {
+            font-size: 1.8rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            order: 1;
+          }
+        }
+        p {
+          @include c.mq() {
+            order: 3;
+          }
         }
         .img-box {
           width: 36rem;
           border-radius: 6px;
           overflow: hidden;
           flex-shrink: 0;
+          @include c.mq() {
+            width: 100%;
+            margin-bottom: 2rem;
+            order: 2;
+          }
         }
       }
       &:last-of-type {
@@ -343,14 +470,34 @@ under
       font-weight: 700;
       padding-left: 2rem;
       margin-bottom: 1.5rem;
+      @include c.mq() {
+        font-size: 1.8rem;
+      }
+      @include c.mq() {
+        padding-left: 0;
+      }
     }
     table {
+      margin-top: 0;
+      th,
+      td {
+        @include c.mq() {
+          display: block;
+          font-size: 1.6rem;
+        }
+      }
       th {
         width: 60%;
         text-align: left;
+        @include c.mq() {
+          width: 100%;
+        }
       }
       td {
         text-align: right;
+        @include c.mq() {
+          text-align: left;
+        }
       }
     }
   }
@@ -360,6 +507,10 @@ under
     .content {
       @include c.flex(space-between, center);
       gap: 6rem;
+      @include c.mq() {
+        flex-direction: column;
+        gap: 3rem;
+      }
       .merit,
       .demerit {
         .ttl {
@@ -409,18 +560,44 @@ under
   .under-head {
     padding-bottom: 6rem;
     border-bottom: 1px solid #e0ddd9;
+    @include c.mq() {
+      padding-bottom: 4rem;
+    }
   }
 }
 .post-content_wrap {
   .inner {
     @include c.flex(between, start);
     gap: v.pxtovw(100);
+    @include c.mq() {
+      flex-direction: column;
+      gap: 8rem;
+    }
   }
   .main-content {
     width: 100%;
-    h2 {
+    > h2 {
       font-size: 2.4rem;
       margin-bottom: 5rem;
+      @include c.mq() {
+        position: relative;
+        font-size: 2rem;
+        margin-bottom: 3.5rem;
+        padding-left: 1rem;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(
+            180deg,
+            rgba(239, 202, 106, 1) 0%,
+            rgba(239, 106, 106, 1) 100%
+          );
+        }
+      }
     }
     .archive-wrap {
       dl {
@@ -429,9 +606,16 @@ under
           @include c.flex(start, center);
           gap: 4rem;
           padding: 2.4rem 0;
+          @include c.mq() {
+            flex-direction: column;
+            gap: 1rem;
+          }
           dt {
             width: 24rem;
             flex-shrink: 0;
+            @include c.mq() {
+              width: 100%;
+            }
             .img-box {
               aspect-ratio: 1/0.65;
               border-radius: 3px;
@@ -451,6 +635,7 @@ under
               color: #826a5a;
               @include c.mq() {
                 font-size: 1.3rem;
+                margin-bottom: 0.8rem;
               }
             }
             .ttl {
@@ -459,12 +644,20 @@ under
               -webkit-line-clamp: 2; /* 2行に制限 */
               -webkit-box-orient: vertical;
               overflow: hidden;
+              @include c.mq() {
+                font-size: 1.8rem;
+              }
             }
             .arrow {
               position: absolute;
               top: 50%;
               transform: translateY(-50%);
               right: 0;
+              @include c.mq() {
+                top: auto;
+                transform: none;
+                bottom: 0;
+              }
             }
           }
         }
@@ -476,11 +669,18 @@ under
     width: 100%;
     max-width: 26.5rem;
     flex-shrink: 0;
+    @include c.mq() {
+      max-width: 100%;
+    }
     .side-wrap {
       position: sticky;
       top: 0;
       padding-top: 14rem;
       margin-top: -14rem;
+      @include c.mq() {
+        padding-top: 0;
+        margin-top: 0;
+      }
       .category,
       .popular,
       .month {
@@ -516,6 +716,9 @@ under
               position: relative;
               display: block;
               padding: 2rem 3rem;
+              @include c.mq() {
+                font-size: 1.5rem;
+              }
               &::before {
                 position: absolute;
                 top: 50%;
@@ -527,6 +730,9 @@ under
                 border-radius: 50%;
                 background: v.$gradient01;
                 filter: blur(1px);
+                @include c.mq() {
+                  width: 10px;
+                }
               }
             }
           }
@@ -592,6 +798,9 @@ under
 .post-content_wrap {
   &.page-single {
     padding-top: 23rem;
+    @include c.mq() {
+      padding-top: 16rem;
+    }
     .post-ttl {
       .tag {
         font-size: 1.4rem;
@@ -606,11 +815,19 @@ under
         padding-bottom: 3.5rem;
         border-bottom: 1px solid #e0ddd9;
         margin-bottom: 6rem;
+        @include c.mq() {
+          font-size: 2.4rem;
+          letter-spacing: 0.5px;
+          margin-bottom: 4rem;
+        }
       }
     }
     .post-content {
       padding-bottom: 10rem;
       border-bottom: 1px solid #cfc1b8;
+      @include c.mq() {
+        padding-bottom: 4rem;
+      }
       .mokuji {
         margin: 5rem 0;
         @include c.flex(center, center);
@@ -618,6 +835,12 @@ under
         aspect-ratio: 1/0.32;
         border-radius: 3px;
         border: 1px solid #6a4735;
+        @include c.mq() {
+          margin: 4rem 0;
+          aspect-ratio: 1/0.71;
+          text-align: center;
+          line-height: 1.5;
+        }
       }
       table {
         th {
@@ -639,6 +862,9 @@ under
     .single-pagenation {
       margin-top: 4rem;
       text-align: center;
+      @include c.mq() {
+        margin-top: 2rem;
+      }
       .pagenation-wrap {
         position: relative;
         display: inline-block;
@@ -648,6 +874,10 @@ under
         width: 24rem;
         aspect-ratio: 1/0.25;
         margin: 0 auto;
+        @include c.mq() {
+          width: 20rem;
+          aspect-ratio: 1/0.2;
+        }
         a {
           @include c.flex(center, center);
           width: 100%;
@@ -670,6 +900,9 @@ under
         aspect-ratio: 1/1;
         border-radius: 6px;
         border: 1px solid #cfc1b8;
+        @include c.mq() {
+          width: 4rem;
+        }
         a {
           @include c.flex(center, center);
           width: 100%;
@@ -693,6 +926,9 @@ under
       }
       .prev {
         left: -8rem;
+        @include c.mq() {
+          left: -5rem;
+        }
         a {
           svg {
             transform: rotate(180deg);
@@ -701,6 +937,9 @@ under
       }
       .next {
         right: -8rem;
+        @include c.mq() {
+          right: -5rem;
+        }
       }
     }
   }
