@@ -14,12 +14,12 @@ top
     width: v.pxtovw(380);
     max-width: 40rem;
     aspect-ratio: 1/1.14;
-    background: url(../images/logo_mark.svg) no-repeat center / contain;
+    background: url(images/logo_mark.svg) no-repeat center / contain;
     @include c.mq() {
       top: v.pxtovw_sp(380);
       left: 0;
       width: 15.3rem;
-      background: url(../images/logo_mark02.svg) no-repeat center / contain;
+      background: url(images/logo_mark02.svg) no-repeat center / contain;
       z-index: 1;
     }
   }
@@ -355,7 +355,7 @@ top
 }
 
 #introduce {
-  background: url(../images/introduce_bg.jpg) no-repeat center/cover;
+  background: url(images/introduce_bg.jpg) no-repeat center/cover;
   border-radius: 3rem;
   overflow: hidden;
   margin-top: 12rem;
@@ -390,7 +390,8 @@ top
   .left {
     position: relative;
     .img-box {
-      width: 28rem;
+      width: 83%;
+      max-width: 40rem;
       margin-bottom: 2rem;
       border-radius: 3px;
       overflow: hidden;
@@ -892,7 +893,7 @@ top
     }
     &.geka {
       margin: 0 v.pxtovw(34) 10rem;
-      background: url(../images/geka_bg.svg) no-repeat center/cover;
+      background: url(images/geka_bg.svg) no-repeat center/cover;
       border-radius: 6px;
       padding: 6rem 0;
       @include c.mq() {
@@ -936,7 +937,7 @@ top
               content: "";
               width: 100%;
               aspect-ratio: 1/0.04;
-              background: url(../images/hukidashi-line.svg) no-repeat
+              background: url(images/hukidashi-line.svg) no-repeat
                 center/contain;
             }
           }
@@ -992,6 +993,7 @@ top
   background-color: #fff;
   @include c.mq() {
     background-color: #f7f7f7;
+    padding-top: 10rem !important;
   }
   .inner {
     max-width: 100rem;

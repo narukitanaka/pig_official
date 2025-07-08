@@ -266,7 +266,7 @@ under
         &::before {
           top: 5px;
           width: 2rem;
-          background: url(../images/icon_check.svg) no-repeat center / contain;
+          background: url(images/icon_check.svg) no-repeat center / contain;
         }
       }
     }
@@ -275,7 +275,7 @@ under
         &::before {
           top: 5px;
           width: 2rem;
-          background: url(../images/icon_alert.svg) no-repeat center / contain;
+          background: url(images/icon_alert.svg) no-repeat center / contain;
         }
       }
     }
@@ -297,7 +297,7 @@ under
       width: 7rem;
       aspect-ratio: 1/1;
       border-radius: 50%;
-      background: url(../images/grade-noise.svg) no-repeat center / cover;
+      background: url(images/grade-noise.svg) no-repeat center / cover;
       margin: 0 auto 4rem;
       @include c.mq() {
         width: 5.2rem;
@@ -327,7 +327,7 @@ under
     position: relative;
     margin: 8rem 0;
     padding: 5rem;
-    background: url(../images/geka_bg.svg) no-repeat center/cover;
+    background: url(images/geka_bg.svg) no-repeat center/cover;
     border-radius: 6px;
     @include c.mq() {
       padding: v.pxtovw_sp(40) v.pxtovw_sp(15);
@@ -538,7 +538,7 @@ under
         .ttl {
           border-bottom: 2px solid #ef6a6a;
           &::before {
-            background: url(../images/icon_merit.svg) no-repeat center / contain;
+            background: url(images/icon_merit.svg) no-repeat center / contain;
           }
         }
       }
@@ -546,8 +546,7 @@ under
         .ttl {
           border-bottom: 2px solid #0eb9c2;
           &::before {
-            background: url(../images/icon_demerit.svg) no-repeat center /
-              contain;
+            background: url(images/icon_demerit.svg) no-repeat center / contain;
           }
         }
       }
@@ -780,7 +779,7 @@ under
             content: "";
             width: 1.2rem;
             aspect-ratio: 1/1;
-            background: url(../images/arrow02.svg) no-repeat center/contain;
+            background: url(images/arrow02.svg) no-repeat center/contain;
           }
         }
         select {

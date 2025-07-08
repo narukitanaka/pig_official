@@ -1054,7 +1054,7 @@ component
   width: 10rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: url(../images/grade-noise.svg) no-repeat center/cover;
+  background: url(images/grade-noise.svg) no-repeat center/cover;
   transition: all 0.3s;
 }
 .btn-wrap .btn03 span svg {
@@ -1307,7 +1307,7 @@ component
   bottom: -18rem;
   width: 90rem;
   aspect-ratio: 1/0.63;
-  background: url(../images/common-info_obj.svg) no-repeat center/contain;
+  background: url(images/common-info_obj.svg) no-repeat center/contain;
   z-index: -1;
 }
 #common-info.under {
@@ -1893,14 +1893,14 @@ top
   width: 26.3888888889vw;
   max-width: 40rem;
   aspect-ratio: 1/1.14;
-  background: url(../images/logo_mark.svg) no-repeat center/contain;
+  background: url(images/logo_mark.svg) no-repeat center/contain;
 }
 @media screen and (max-width: 768px) {
   .fv::before {
     top: 101.3333333333vw;
     left: 0;
     width: 15.3rem;
-    background: url(../images/logo_mark02.svg) no-repeat center/contain;
+    background: url(images/logo_mark02.svg) no-repeat center/contain;
     z-index: 1;
   }
 }
@@ -2277,7 +2277,7 @@ top
 }
 
 #introduce {
-  background: url(../images/introduce_bg.jpg) no-repeat center/cover;
+  background: url(images/introduce_bg.jpg) no-repeat center/cover;
   border-radius: 3rem;
   overflow: hidden;
   margin-top: 12rem;
@@ -2320,7 +2320,8 @@ top
   position: relative;
 }
 #introduce .left .img-box {
-  width: 28rem;
+  width: 83%;
+  max-width: 40rem;
   margin-bottom: 2rem;
   border-radius: 3px;
   overflow: hidden;
@@ -2966,7 +2967,7 @@ top
 }
 #adult .contents.geka {
   margin: 0 2.3611111111vw 10rem;
-  background: url(../images/geka_bg.svg) no-repeat center/cover;
+  background: url(images/geka_bg.svg) no-repeat center/cover;
   border-radius: 6px;
   padding: 6rem 0;
 }
@@ -3020,7 +3021,7 @@ top
   content: "";
   width: 100%;
   aspect-ratio: 1/0.04;
-  background: url(../images/hukidashi-line.svg) no-repeat center/contain;
+  background: url(images/hukidashi-line.svg) no-repeat center/contain;
 }
 #adult .contents.geka .box {
   max-width: 80rem;
@@ -3077,6 +3078,7 @@ top
 @media screen and (max-width: 768px) {
   #treatment {
     background-color: #f7f7f7;
+    padding-top: 10rem !important;
   }
 }
 #treatment .inner {
@@ -3677,12 +3679,12 @@ under
 .under-content_wrap ul.list-check li::before {
   top: 5px;
   width: 2rem;
-  background: url(../images/icon_check.svg) no-repeat center/contain;
+  background: url(images/icon_check.svg) no-repeat center/contain;
 }
 .under-content_wrap ul.list-alert li::before {
   top: 5px;
   width: 2rem;
-  background: url(../images/icon_alert.svg) no-repeat center/contain;
+  background: url(images/icon_alert.svg) no-repeat center/contain;
 }
 .under-content_wrap .block_stand {
   margin: 8rem 0;
@@ -3705,7 +3707,7 @@ under
   width: 7rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: url(../images/grade-noise.svg) no-repeat center/cover;
+  background: url(images/grade-noise.svg) no-repeat center/cover;
   margin: 0 auto 4rem;
 }
 @media screen and (max-width: 768px) {
@@ -3739,7 +3741,7 @@ under
   position: relative;
   margin: 8rem 0;
   padding: 5rem;
-  background: url(../images/geka_bg.svg) no-repeat center/cover;
+  background: url(images/geka_bg.svg) no-repeat center/cover;
   border-radius: 6px;
 }
 @media screen and (max-width: 768px) {
@@ -3981,13 +3983,13 @@ under
   border-bottom: 2px solid #ef6a6a;
 }
 .under-content_wrap .block_merit-demerit .content .merit .ttl::before {
-  background: url(../images/icon_merit.svg) no-repeat center/contain;
+  background: url(images/icon_merit.svg) no-repeat center/contain;
 }
 .under-content_wrap .block_merit-demerit .content .demerit .ttl {
   border-bottom: 2px solid #0eb9c2;
 }
 .under-content_wrap .block_merit-demerit .content .demerit .ttl::before {
-  background: url(../images/icon_demerit.svg) no-repeat center/contain;
+  background: url(images/icon_demerit.svg) no-repeat center/contain;
 }
 
 #archive .under-head {
@@ -4230,7 +4232,7 @@ under
   content: "";
   width: 1.2rem;
   aspect-ratio: 1/1;
-  background: url(../images/arrow02.svg) no-repeat center/contain;
+  background: url(images/arrow02.svg) no-repeat center/contain;
 }
 .post-content_wrap aside .side-wrap .month select {
   width: 100%;

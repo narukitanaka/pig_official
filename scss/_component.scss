@@ -120,7 +120,7 @@ component
       width: 10rem;
       aspect-ratio: 1/1;
       border-radius: 50%;
-      background: url(../images/grade-noise.svg) no-repeat center/cover;
+      background: url(images/grade-noise.svg) no-repeat center/cover;
       transition: all 0.3s;
       svg {
         transition: all 0.3s;
@@ -345,7 +345,7 @@ component
     bottom: -18rem;
     width: 90rem;
     aspect-ratio: 1/0.63;
-    background: url(../images/common-info_obj.svg) no-repeat center/contain;
+    background: url(images/common-info_obj.svg) no-repeat center/contain;
     z-index: -1;
   }
   &.under {
