@@ -27,7 +27,7 @@
       font-size: clamp(1.5rem, v.pxtovw(18), 1.8rem);
       color: #fff;
       @include c.mq() {
-        font-size: v.pxtovw_sp(22);
+        font-size: clamp(1.4rem, v.pxtovw_sp(22), 2.2rem);
       }
     }
   }
@@ -82,7 +82,8 @@ About us 私たちについて
       padding-left: v.pxtovw(150);
       flex-grow: 1;
       @include c.mq(pc-s) {
-        padding-left: v.pxtovw(110);
+        // padding-left: v.pxtovw(110);
+        padding-left: 0;
       }
       h3 {
         font-size: clamp(3rem, v.pxtovw(52), 5.2rem);
@@ -134,9 +135,15 @@ About us 私たちについて
       @include c.mq() {
         width: v.pxtovw_sp(193);
         left: auto;
-        top: v.pxtovw_sp(750);
+        top: v.pxtovw_sp(600);
         right: v.pxtovw_sp(20);
         z-index: 3;
+      }
+      img {
+        @include c.mq() {
+          display: inline-block;
+          transform: scaleX(-1);
+        }
       }
     }
     &.logomark {
@@ -157,7 +164,7 @@ About us 私たちについて
       right: 0;
       @include c.mq() {
         width: v.pxtovw_sp(284);
-        top: v.pxtovw_sp(400);
+        top: v.pxtovw_sp(500);
         right: v.pxtovw_sp(-80);
         opacity: 0.8;
       }
@@ -166,7 +173,7 @@ About us 私たちについて
 }
 
 .wrap_beautiful {
-  background-image: url("../images/common/bg_noise.png"),
+  background-image: url("images/common/bg_noise.png"),
     linear-gradient(
       to bottom,
       v.$bg-color01 0%,
@@ -178,6 +185,9 @@ About us 私たちについて
   background-position: top, top;
   background-size: contain, cover;
   background-blend-mode: multiply, normal;
+  @include c.mq() {
+    background-size: cover, cover;
+  }
   .container {
     position: relative;
     width: 100%;
@@ -203,7 +213,6 @@ About us 私たちについて
     .col01 {
       height: 100%;
       > .img-box {
-        overflow: hidden;
         img {
           scale: 1.22 !important;
         }
@@ -292,7 +301,7 @@ About us 私たちについて
       height: 100%;
       @include c.mq() {
         top: v.pxtovw_sp(-66);
-        z-index: 4;
+        z-index: 3;
       }
     }
     .dot-line {
@@ -309,6 +318,14 @@ About us 私たちについて
       );
       @include c.mq() {
         height: calc(100% + (v.pxtovw_sp(66) + v.pxtovw_sp(200)));
+        background: repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          transparent 3px,
+          #707070 3px,
+          #707070 12px
+        );
+        opacity: 0.5;
       }
       &::before,
       &::after {
@@ -535,26 +552,26 @@ About us 私たちについて
         }
       }
       &.respect {
-        background: url(../images/about/about_value-img01.jpg) no-repeat
+        background: url(images/about/about_value-img01.jpg) no-repeat
           center/cover;
         @include c.mq() {
-          background: url(../images/about/about_value-img01_sp.jpg) no-repeat
+          background: url(images/about/about_value-img01_sp.jpg) no-repeat
             center/cover;
         }
       }
       &.greeting {
-        background: url(../images/about/about_value-img02.jpg) no-repeat
+        background: url(images/about/about_value-img02.jpg) no-repeat
           center/cover;
         @include c.mq() {
-          background: url(../images/about/about_value-img02_sp.jpg) no-repeat
+          background: url(images/about/about_value-img02_sp.jpg) no-repeat
             center/cover;
         }
       }
       &.promise {
-        background: url(../images/about/about_value-img03.jpg) no-repeat
+        background: url(images/about/about_value-img03.jpg) no-repeat
           center/cover;
         @include c.mq() {
-          background: url(../images/about/about_value-img03_sp.jpg) no-repeat
+          background: url(images/about/about_value-img03_sp.jpg) no-repeat
             center/cover;
         }
       }

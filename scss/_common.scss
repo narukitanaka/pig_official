@@ -13,6 +13,8 @@ common-style
 // ブレイクポイント
 // PC基準でコーディングする場合
 $breakpoints: (
+  "sm-s": "screen and (max-width: 430px)",
+  //スマホ 小
   "sm": "screen and (max-width: 750px)",
   //スマホ
   "md": "screen and (max-width: 1023px)",
@@ -223,7 +225,7 @@ a {
   font-weight: 500;
   color: v.$txt-color;
   @include mq() {
-    font-size: v.pxtovw_sp(26);
+    font-size: clamp(1.4rem, v.pxtovw_sp(26), 2.6rem);
     letter-spacing: 0.5px;
   }
 }
@@ -256,21 +258,21 @@ div {
   }
 }
 
-.h-scale {
-  .img-box {
-    overflow: hidden;
-  }
-  img {
-    transition: all 0.4s;
-  }
-  &:hover {
-    .img-box {
-      img {
-        transform: scale(1.15);
-      }
-    }
-  }
-}
+// .h-scale {
+//   .img-box {
+//     overflow: hidden;
+//   }
+//   img {
+//     transition: all 0.4s;
+//   }
+//   &:hover {
+//     .img-box {
+//       img {
+//         transform: scale(1.15);
+//       }
+//     }
+//   }
+// }
 
 .block {
   &:has(> .left, > .right) {
@@ -306,11 +308,14 @@ div {
 }
 
 .bg-noise {
-  background-image: url("../images/common/bg_noise.png");
+  background-image: url("images/common/bg_noise.png");
   background-repeat: repeat;
   background-position: top;
   background-size: contain;
   background-blend-mode: multiply;
+  @include mq() {
+    background-size: cover;
+  }
 }
 
 .bg-line {

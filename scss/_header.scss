@@ -279,11 +279,17 @@ header {
         margin-top: 1.8rem;
       }
       img {
+        width: v.pxtovw_sp(19);
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: v.pxtovw_sp(35);
         transition: all 0.3s;
+      }
+    }
+    .insta_accordion-trigger {
+      img {
+        width: v.pxtovw_sp(29);
       }
     }
     .accordion-content {
@@ -344,6 +350,7 @@ header {
           gap: v.pxtovw_sp(15);
           font-family: "Unbounded", sans-serif;
           font-size: v.pxtovw_sp(24);
+          // font-size: clamp(1.8rem, v.pxtovw_sp(24), 2.4rem);
           margin-bottom: v.pxtovw_sp(15);
           &::after {
             content: "";
@@ -362,7 +369,8 @@ header {
           padding-left: v.pxtovw_sp(40);
           @include c.flex(start, center);
           flex-wrap: wrap;
-          gap: v.pxtovw_sp(25);
+          column-gap: v.pxtovw_sp(25);
+          row-gap: v.pxtovw_sp(15);
           a {
             font-size: clamp(1.4rem, v.pxtovw_sp(16), 1.6rem);
             text-decoration: underline;
@@ -389,6 +397,7 @@ header {
             font-size: v.pxtovw_sp(22);
           }
           svg {
+            width: v.pxtovw_sp(19);
             position: absolute;
             top: 50%;
             transform: translateY(-50%);

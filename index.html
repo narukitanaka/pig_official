@@ -333,25 +333,25 @@
         <div class="block fadeIn">
 
           <div class="box u-pc">
-            <a class="h-scale" href="#">
+            <a href="#">
               <div class="img-box"><img src="images/top/top_ourbrand-storeimg01.jpg" alt="pigsty"></div>
               <div class="logo"><img src="images/common/logo_pigsty.svg" alt=""></div>
             </a>
           </div>
           <div class="box u-pc">
-            <a class="h-scale" href="#">
+            <a href="#">
               <div class="img-box"><img src="images/top/top_ourbrand-storeimg02.jpg" alt="pigsty a-z store"></div>
               <div class="logo"><img src="images/common/logo_pigsty-az.svg" alt=""></div>
             </a>
           </div>
           <div class="box u-pc">
-            <a class="h-scale" href="#">
+            <a href="#">
               <div class="img-box"><img src="images/top/top_ourbrand-storeimg03.jpg" alt="vivie"></div>
               <div class="logo"><img src="images/common/logo_vivie.svg" alt=""></div>
             </a>
           </div>
           <div class="box u-pc">
-            <a class="h-scale" href="#">
+            <a href="#">
               <div class="img-box"><img src="images/top/top_ourbrand-storeimg04.jpg" alt=""></div>
               <div class="logo"><img src="images/common/logo_nerver-chamges.svg"
                   alt="change forward some things will never changes"></div>
@@ -397,48 +397,6 @@
             </div>
             <div class="swiper-button-next font-unb">NEXT</div>
           </div>
-
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              // スマホ判定
-              function isMobile() {
-                return window.innerWidth <= 750;
-              }
-              let swiper;
-              function initSwiper() {
-                if (isMobile() && !swiper) {
-                  swiper = new Swiper('.ourbrand-swiper', {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    navigation: {
-                      nextEl: '.swiper-button-next',
-                      prevEl: '.swiper-button-prev',
-                    },
-                    on: {
-                      init: function () {
-                        updatePagination();
-                      },
-                      slideChange: function () {
-                        updatePagination();
-                      }
-                    }
-                  });
-                } else if (!isMobile() && swiper) {
-                  swiper.destroy(true, true);
-                  swiper = null;
-                }
-              }
-              function updatePagination() {
-                if (swiper) {
-                  const currentSlide = document.querySelector('.current-slide');
-                  const current = (swiper.activeIndex + 1).toString().padStart(2, '0');
-                  currentSlide.textContent = current;
-                }
-              }
-              initSwiper();
-              window.addEventListener('resize', initSwiper);
-            });
-          </script>
         </div>
 
         <div class="btn-wrap"><a class="btn red" href="#">VIEW MORE</a></div>

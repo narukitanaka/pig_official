@@ -1,59 +1,49 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 // Swiper
 ///////////////////////////////////////////////////////////////////////////////////////
-function initSwipers() {
-  // const caseSlider01 = document.querySelector(".top_pediatric-cases");
-  // if (caseSlider01) {
-  //   const caseSlider01Instance = new Swiper(caseSlider01, {
-  //     loop: true,
-  //     speed: 1500,
-  //     allowTouchMove: false,
-  //     slidesPerView: 1.11,
-  //     spaceBetween: 15,
-  //     autoplay: {
-  //       delay: 5000,
-  //       disableOnInteraction: false,
-  //     },
-  //     breakpoints: {
-  //       769: {
-  //         slidesPerView: 3,
-  //         spaceBetween: 24,
-  //       },
-  //     },
-  //     navigation: {
-  //       nextEl: ".swiper-button-next", // 変更
-  //       prevEl: ".swiper-button-prev", // 変更
-  //     },
-  //   });
-  // }
-  // const infinitSlider = document.querySelector(".top_infinit-slider");
-  // if (infinitSlider) {
-  //   const infinitSliderInstance = new Swiper(infinitSlider, {
-  //     loop: true,
-  //     speed: 8000,
-  //     allowTouchMove: false,
-  //     slidesPerView: 2.5,
-  //     spaceBetween: 15,
-  //     freeMode: {
-  //       enabled: true,
-  //       momentum: false,
-  //       sticky: true,
-  //     },
-  //     autoplay: {
-  //       delay: 0,
-  //       disableOnInteraction: false,
-  //     },
-  //     breakpoints: {
-  //       769: {
-  //         slidesPerView: 4.5,
-  //         spaceBetween: 30,
-  //       },
-  //     },
-  //   });
-  // }
-}
+// function initSwipers() {
+// }
+// document.addEventListener("DOMContentLoaded", function () {
+//   initSwipers();
+// });
 document.addEventListener("DOMContentLoaded", function () {
-  initSwipers();
+  // スマホ判定
+  function isMobile() {
+    return window.innerWidth <= 750;
+  }
+  let swiper;
+  function initSwiper() {
+    if (isMobile() && !swiper) {
+      swiper = new Swiper(".ourbrand-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            updatePagination();
+          },
+          slideChange: function () {
+            updatePagination();
+          },
+        },
+      });
+    } else if (!isMobile() && swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  }
+  function updatePagination() {
+    if (swiper) {
+      const currentSlide = document.querySelector(".current-slide");
+      const current = (swiper.activeIndex + 1).toString().padStart(2, "0");
+      currentSlide.textContent = current;
+    }
+  }
+  initSwiper();
+  window.addEventListener("resize", initSwiper);
 });
 
 ///////////////////////////////////////////
