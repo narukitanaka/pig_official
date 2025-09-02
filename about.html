@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="images/fav.png" />
+  <!-- <meta name="robots" content="index, follow"> -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- AdobeFonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/aig2oxm.css">
+  <!-- GoogleFonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Unbounded:wght@200..900&display=swap"
+    rel="stylesheet">
+
+  <title>PIG Inc.</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo img-box">
+        <a href="./">
+          <img class="is_top" src="images/common/logo_pig.svg" alt="">
+        </a>
+      </div>
+
+      <div class="navigation">
+        <nav>
+          <ul>
+            <li><a href="./">Top</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="business.html">Business</a></li>
+            <li><a href="company.html">Company</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="btn-area">
+          <button class="btn red btn-insta" href="#" target="_blank">
+            Instagram
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9">
+              <path id="iocn-arrow01" d="M5,0l5,9H0Z" transform="translate(10 9) rotate(180)" fill="#fff" />
+            </svg>
+          </button>
+          <a class="btn yellow" href="#" target="_blank">Recruit</a>
+        </div>
+      </div>
+
+      <div class="insta-wrap">
+        <div class="insta_accounts">
+          <div class="stores pigsty">
+            <p><img src="images/common/icon-insta.svg" alt="">Pigsty</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / アメ村店</a>
+              <a target="_blank" href="#">大阪 / 梅田店</a>
+              <a target="_blank" href="#">東京 / 原宿店</a>
+            </div>
+          </div>
+          <div class="stores pig_az">
+            <p><img src="images/common/icon-insta.svg" alt="">Pigsty a⇌z STORE</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / アメ村店</a>
+              <a target="_blank" href="#">大阪 / 中崎町店</a>
+              <a target="_blank" href="#">東京 / 渋谷店</a>
+              <a target="_blank" href="#">東京 / 下北沢店</a>
+            </div>
+          </div>
+          <div class="stores vivie">
+            <p><img src="images/common/icon-insta.svg" alt="">vivie</p>
+            <div class="links"><a target="_blank" href="#">大阪 / 中崎町店</a></div>
+          </div>
+          <div class="stores changes">
+            <p><img src="images/common/icon-insta.svg" alt="">CHANGES</p>
+            <div class="links"><a target="_blank" href="#">公式アカウント</a></div>
+          </div>
+          <div class="stores whole">
+            <p><img src="images/common/icon-insta.svg" alt="">WHOLESALE</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / 卸売事業アカウント</a>
+              <a target="_blank" href="#">東京 / 卸売事業アカウント</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hamberger-wrap">
+        <div class="ham-inner">
+          <p>Menu</p>
+          <div class="hambager-content">
+            <button type="button" class="hambager">
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+            </button>
+          </div><!-- /.hambager-content -->
+        </div>
+      </div><!-- hamberger-wrap -->
+
+    </div>
+  </header>
+
+  <div class="drawer-menu">
+    <div class="drawer-menu_inner">
+      <div class="links">
+
+        <button class="btn gray insta_accordion-trigger" href="" target="_blank">
+          Instagram
+          <img src="images/common/icon-arrow03_r-down.svg" alt="">
+        </button>
+        <div class="accordion-content">
+          <div class="instagram-accounts">
+            <div class="stores pigsty">
+              <p><img src="images/common/icon-insta_red.svg" alt="">Pigsty</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / アメ村店</a>
+                <a target="_blank" href="#">大阪 / 梅田店</a>
+                <a target="_blank" href="#">東京 / 原宿店</a>
+              </div>
+            </div>
+            <div class="stores pig_az">
+              <p><img src="images/common/icon-insta_red.svg" alt="">Pigsty a⇌z STORE</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / アメ村店</a>
+                <a target="_blank" href="#">大阪 / 中崎町店</a>
+                <a target="_blank" href="#">東京 / 渋谷店</a>
+                <a target="_blank" href="#">東京 / 下北沢店</a>
+              </div>
+            </div>
+            <div class="stores vivie">
+              <p><img src="images/common/icon-insta_red.svg" alt="">vivie</p>
+              <div class="links"><a target="_blank" href="#">大阪 / 中崎町店</a></div>
+            </div>
+            <div class="stores changes">
+              <p><img src="images/common/icon-insta_red.svg" alt="">CHANGES</p>
+              <div class="links"><a target="_blank" href="#">公式アカウント</a></div>
+            </div>
+            <div class="stores whole">
+              <p><img src="images/common/icon-insta_red.svg" alt="">WHOLESALE</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / 卸売事業アカウント</a>
+                <a target="_blank" href="#">東京 / 卸売事業アカウント</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn yellow" href="" target="_blank">
+          Recruit
+          <img src="images/common/icon-arrow03.svg" alt="">
+        </a>
+      </div>
+      <div class="nav-wrap">
+        <nav>
+          <ul>
+            <li>
+              <a href="about.html">
+                About Us<span>私たちについて</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="business.html">
+                Business<span>事業内容</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="wholesale.html">
+                Wholesale<span>卸売事業</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="company.html">
+                Company<span>会社概要</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="archive.html">
+                News<span>お知らせ一覧</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- /.nav-wrap -->
+
+      <div class="contact">
+        <a href="contact.html">
+          Contact
+          <p>
+            卸販売・採用等 各種<br>
+            お問い合わせこちら
+          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+            <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+              <path id="パス_10719" data-name="パス 10719"
+                d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <div class="info">
+        <p>有限会社ピーアイジー　（PIG Inc.）</p>
+        <p>
+          〒542-0086<br>
+          大阪市中央区西心斎橋1-7-14 大阪屋心斎橋西ビル3F
+        </p>
+        <div class="tel-fax">
+          <a href="tel:0662510289">TEL： 06-6251-0289</a>
+          <p>FAX：06-6245-3619</p>
+        </div>
+      </div>
+
+    </div><!-- /.drawer-menu_inner -->
+    <div class="logomark img-box"><img src="images/common/ashirai_logo-mark.svg" alt=""></div>
+  </div><!-- /.drawer-menu -->
+
+  <main>
+
+    <div class="bg-line"></div>
+
+    <div class="under-head">
+      <div class="fv img-box">
+        <picture>
+          <source srcset="images/about/under_head-kv_about_sp.jpg" media="(max-width: 750px)">
+          <img src="images/about/under_head-kv_about.jpg" alt="">
+        </picture>
+      </div>
+      <div class="kv_ttl-wrap">
+        <div class="en-ttl">About us</div>
+        <h1>私たちについて</h1>
+      </div>
+    </div>
+
+    <div class="breadcrumbs bg-noise">
+      <div class="inner">
+        <ul>
+          <li><a href="./">トップ</a></li>
+          <li>私たちについて</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hidden">
+      <section class="about_philosophy bg-noise">
+        <div class="inner">
+          <div class="ttl-wrap fadeIn">
+            <h2>Philosophy</h2>
+            <p>価値<span>を</span>つなぎ、新<span>たな</span>物語<span>を</span></p>
+          </div>
+          <div class="block fadeIn">
+            <div class="left">
+              <h3>
+                1点<span>モノ</span>。<br>
+                <span>だから、</span> 美しい。
+              </h3>
+              <p class="sub-text">Only one. Only beautiful.</p>
+              <p class="body">
+                誰かの時間をまとった一着と、まだ知らない誰かの感性が出会うことで、新しい物語が生まれる。<br>
+                私たちは、その一着が繋いでくれた価値を未来へつなぎ、新たなカルチャーを創造します。<br>
+                古着も、あたなの個性も、1点モノ。だから美しい。<br>
+                流行やルールに縛られず、“価値観で着る”時代へ。<br>
+                そんな出会いとワクワクを、私たちは届け続けます。
+              </p>
+            </div>
+            <div class="right">
+              <div class="img-box"><img src="images/about/about_img01.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="balloon img-box parallax"><img src="images/common/ashirai_balloon.png" alt=""></div>
+        <div class="logomark img-box"><img src="images/common/ashirai_logo-mark.svg" alt=""></div>
+        <div class="vertical-txt img-box parallax y-200"><img src="images/about/vertical-txt_philosophy.svg" alt="">
+        </div>
+      </section>
+
+
+      <div class="wrap_beautiful">
+        <div class="container">
+          <div class="col03 u-pc">
+            <div class="img-box obj-fit"><img class="parallax y30" src="images/about/about_img02.jpg" alt=""></div>
+            <div class="img-box obj-fit"><img class="parallax y-40" src="images/about/about_img03.jpg" alt=""></div>
+            <div class="img-box obj-fit"><img class="parallax y30" src="images/about/about_img04.jpg" alt=""></div>
+          </div>
+          <div class="col01 u-sp">
+            <div class="img-box obj-fit"><img class="parallax y100" src="images/about/about_img_beautiful_sp.jpg"
+                alt="">
+            </div>
+          </div>
+          <div class="block fadeIn">
+            <div class="img-box">
+              <picture>
+                <source srcset="images/top/fv_maintext-all_sp.svg" media="(max-width: 768px)">
+                <img src="images/top/fv_maintext-all.svg" alt="PIG is beautiful">
+              </picture>
+            </div>
+            <p class="sub-ttl">Value continues, Stories evolve.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="about_vision bg-noise">
+        <div class="inner">
+          <div class="ttl-wrap fadeIn">
+            <h2>Vision</h2>
+          </div>
+          <p class="fadeIn">
+            「PIG is Beautiful」<br>
+            それは、単なる言葉ではなく、私たちが目指す世界そのもの。<br class="u-pc">
+            美しい空間、美しい商品、美しい人。すべてがそろう場所、それがPIGです。
+          </p>
+
+          <div class="content">
+            <div class="line-posi">
+              <div class="dot-line"></div>
+            </div>
+            <div class="circle"></div>
+            <div class="block_img-text fadeIn">
+              <div class="img-box"><img class="parallax y60" src="images/about/about_vision-img01.jpg" alt=""></div>
+              <div class="text-box">
+                <div class="ttl">
+                  <p class="num">#01 - Space</p>
+                  <h3>空間<span>の</span>美しさ。</h3>
+                </div>
+                <p>
+                  美しさは、目に見えるものだけではなく、そこに流れる空気や人々の在り方によって生まれるもの。PIGは、古着というカルチャーを通じて「美しい」と感じる瞬間を創り続けます。
+                </p>
+              </div>
+            </div>
+            <div class="block_img-text reverse fadeIn">
+              <div class="img-box"><img class="parallax y-60" src="images/about/about_vision-img02.jpg" alt=""></div>
+              <div class="text-box">
+                <div class="ttl">
+                  <p class="num">#02 - Products</p>
+                  <h3>商品<span>の</span>美しさ。</h3>
+                </div>
+                <p>
+                  時代を超えて愛される一点ものの古着。その魅力を最大限に引き出し、常に“最高の一着”と出会える場所であり続ける。新しいトレンドにも、懐かしい名作にも出会える。そんな美しさを提供します。
+                </p>
+              </div>
+            </div>
+            <div class="block_img-text fadeIn">
+              <div class="img-box"><img class="parallax y60" src="images/about/about_vision-img03.jpg" alt=""></div>
+              <div class="text-box">
+                <div class="ttl">
+                  <p class="num">#03 - People.</p>
+                  <h3>人<span>の</span>美しさ。</h3>
+                </div>
+                <p>
+                  接客の温かさ、心を込めた言葉、頼れる知識。すべては「また来たい」と思ってもらうために。PIGのスタッフは、ただ服を売るのではなく、お客様にとっての“信頼できるパートナー”でありたいと考えています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="radio img-box"><img src="images/about/ashirai_radio.png" alt=""></div>
+        <div class="jacket img-box"><img src="images/about/ashirai_ma1.png" alt=""></div>
+        <div class="vertical-txt img-box parallax y-200"><img src="images/about/vertical-txt_ourvision.svg" alt="">
+        </div>
+      </section>
+
+
+      <div class="pin-wrap">
+        <section class="about_value bg-noise">
+          <div class="ttl-wrap">
+            <h2>Value</h2>
+          </div>
+
+          <div class="row-scroll">
+            <div class="box respect">
+              <div class="num">#01 - Respect</div>
+              <div class="text">
+                <h3>敬意<span>と</span>感謝<span>を</span>大切<span>に</span>する</h3>
+                <p>
+                  お客様、仲間、取引先…すべての人とのつながりを大切にし、感謝の気持ちを忘れません。ファッションはカルチャーであり、カルチャーは人との関係性の中で生まれるもの。相手を尊重し、共に成長していく姿勢を持ち続けます。
+                </p>
+              </div>
+            </div>
+            <div class="box greeting">
+              <div class="num">#02 - GREETING</div>
+              <div class="text">
+                <h3>気持ち<span>の</span>良い挨拶<span>を</span></h3>
+                <p>
+                  接客の温かさ、心を込めた言葉、頼れる知識。すべては「また来たい」と思ってもらうために。PIGのスタッフは、ただ服を売るのではなく、お客様にとっての“信頼できるパートナー”でありたいと考えています。
+                </p>
+              </div>
+            </div>
+            <div class="box promise">
+              <div class="num">#03 - PROMISE</div>
+              <div class="text">
+                <h3>約束<span>を</span>守る<span>ことが</span>信頼<span>を</span>生む</h3>
+                <p>
+                  接客の温かさ、心を込めた言葉、頼れる知識。すべては「また来たい」と思ってもらうために。PIGのスタッフは、ただ服を売るのではなく、お客様にとっての“信頼できるパートナー”でありたいと考えています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-container">
+            <div class="slider-track">
+              <div class="img-box"><img src="images/common/slider-txt_r-g-p.svg" alt=""></div>
+              <div class="img-box"><img src="images/common/slider-txt_r-g-p.svg" alt=""></div>
+            </div>
+          </div>
+
+        </section>
+
+        <div class="wrap_cta recruit bg-noise">
+          <div class="cta-inner fadeIn">
+            <div class="ttl-wrap">
+              <h2>Recruit</h2>
+              <p class="sub-ttl">採用情報</p>
+            </div>
+            <p>
+              古着が好き、<br class="u-sp">ビンテージカルチャーが好き。<br>
+              私たちは、そんな“好き”を<br class="u-sp">仕事にしたい人と、<br class="u-sp">新しい価値を共につくっていく<br class="u-sp">仲間を募集しています。
+            </p>
+            <div class="btn-wrap"><a class="btn red" href="recruit.html">VIEW MORE</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div class="back-top"><a href="#">BACK TO TOP</a></div>
+      <div class="footer-columns">
+        <div class="col01">
+          <div class="logo img-box"><a href="./"><img src="images/common/logo_pig.svg" alt="pig co.,ltd"></a></div>
+          <div>
+            <p>
+              〒541-0058<br>
+              大阪市中央区南久宝寺町3-4-9 大磯本社ビル2F
+            </p>
+            <p>
+              TEL : 06-6251-0289<br>
+              FAX : 06-6245-3619
+            </p>
+          </div>
+        </div>
+        <div class="col02">
+          <nav>
+            <ul>
+              <li><a href="about.html">私たちについて</a></li>
+              <li><a href="business.html">事業紹介</a></li>
+              <li><a href="wholesale.html">卸売事業</a></li>
+              <li><a href="company.html">会社概要</a></li>
+              <li><a href="archive.html">新着情報</a></li>
+              <li><a href="#">採用情報</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+              <li><a href="poricy.html">プライバシーポリシー</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="big-pig">PIG</div>
+    </div>
+    <div class="copy"><small>© 2025 PIG Co.,Ltd.</small></div>
+  </footer>
+
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

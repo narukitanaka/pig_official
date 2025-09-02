@@ -4,61 +4,140 @@
 footer
 *************************************************/
 footer {
-  padding-top: 8rem;
-  background-color: #fff;
+  position: relative;
+  background-color: #1d1d1d;
+  overflow: hidden;
+  z-index: 1;
   .inner {
-    .nav-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 8rem;
-      margin-bottom: 9rem;
+    position: relative;
+    max-width: v.pxtovw(1623);
+    @include c.mq() {
+      max-width: v.pxtovw_sp(629);
+    }
+  }
+  .back-top {
+    border-bottom: 1px solid #fff;
+    margin-bottom: v.pxtovw(55);
+    a {
+      display: block;
+      padding: v.pxtovw(25) 0;
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(1.4rem, v.pxtovw(20), 2rem);
+      text-align: center;
+      color: #fff;
       @include c.mq() {
-        display: none;
+        padding: v.pxtovw_sp(45) 0;
+        font-size: v.pxtovw_sp(20);
       }
-      .column {
-        max-width: 15.5rem;
-        p {
-          font-size: 1.6rem;
-          color: #101010 !important;
-          margin-bottom: 1.7rem;
+    }
+  }
+  .footer-columns {
+    @include c.flex(between, center);
+    padding-bottom: v.pxtovw(80);
+    @include c.mq() {
+      flex-direction: column-reverse;
+      padding-bottom: v.pxtovw_sp(73);
+    }
+    .col01 {
+      @include c.mq() {
+        @include c.flex(start, center);
+        gap: v.pxtovw_sp(125);
+        border-top: 1px solid #fff;
+        padding-top: v.pxtovw_sp(73);
+      }
+      .logo {
+        width: v.pxtovw(172);
+        margin-bottom: v.pxtovw(40);
+        @include c.mq() {
+          width: v.pxtovw_sp(172);
+          flex-shrink: 0;
         }
+      }
+      > div {
+        @include c.mq() {
+          flex-grow: 1;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+        color: #fff;
+        margin-bottom: 2.5rem;
+        @include c.mq() {
+          font-size: v.pxtovw_sp(22);
+          letter-spacing: 1px;
+        }
+        &:last-of-type {
+          font-size: clamp(1.4rem, v.pxtovw(16), 1.6rem);
+          margin-bottom: 0;
+          @include c.mq() {
+            font-size: v.pxtovw_sp(24);
+          }
+        }
+      }
+    }
+    .col02 {
+      position: relative;
+      margin-right: v.pxtovw(108);
+      z-index: 1;
+      @include c.mq() {
+        padding: v.pxtovw_sp(60) 0;
+      }
+      nav {
         ul {
           display: flex;
+          row-gap: v.pxtovw(29);
+          column-gap: v.pxtovw(125);
           flex-direction: column;
-          gap: 1rem;
+          flex-wrap: wrap;
+          height: 15rem;
+          @include c.mq() {
+            row-gap: v.pxtovw_sp(49);
+            column-gap: v.pxtovw_sp(160);
+            height: v.pxtovw_sp(350);
+          }
           li {
             a {
-              @include c.flex(start, center);
-              gap: 1rem;
-              color: v.$subTxt-color01;
-              svg {
-                path {
-                  fill: #99928a;
-                }
+              font-size: clamp(1.4rem, v.pxtovw(16), 1.6rem);
+              color: #fff;
+              transition: all 0.3s;
+              @include c.mq() {
+                font-size: v.pxtovw_sp(24);
+              }
+              &:hover {
+                color: v.$sub-color01;
               }
             }
           }
         }
       }
     }
-    .logo {
-      width: 28rem;
-      margin: 0 auto 3.8rem;
+  }
+  .copy {
+    position: relative;
+    background-color: #404040;
+    font-family: "Unbounded", sans-serif;
+    text-align: center;
+    color: #fff;
+    padding: 1rem 0;
+    z-index: 1;
+    @include c.mq() {
+      font-size: v.pxtovw_sp(20);
+      font-weight: 400;
     }
-    .insta_link {
-      width: 2.9rem;
-      aspect-ratio: 1/1;
-      margin: 0 auto 3.8rem;
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .copyright {
-      text-align: center;
-      padding: 2.3rem;
-      border-top: 1px solid #e0ddd9;
+  }
+  .big-pig {
+    position: absolute;
+    bottom: v.pxtovw(-180);
+    right: v.pxtovw(-120);
+    font-family: "Unbounded", sans-serif;
+    font-size: v.pxtovw(527);
+    font-weight: 400;
+    color: #fff;
+    opacity: 0.03;
+    @include c.mq() {
+      font-size: v.pxtovw_sp(362);
+      bottom: v.pxtovw_sp(440);
+      right: v.pxtovw_sp(-60);
     }
   }
 }

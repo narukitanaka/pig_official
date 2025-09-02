@@ -1,25 +1,26 @@
 // 変数の設定
-$txt-color: #311d04 !default;
-$subTxt-color01: #66615c;
-$subTxt-color02: #826a5a;
-$ttlTxt-color: #6a4735;
+$txt-color: #462f13 !default;
+$sub-color01: #d87159;
+$sub-color02: #ddb763;
+$sub-color03: #b34e36; // 濃い色 (sub-color01)
+$sub-color04: #b89a2e; // 濃い色 (sub-color02)
 
-$bg-color01: #faf7f5;
-$bg-color02: #f5ede9;
-$bg-color03: #e9e2de;
+$bg-color01: #fff7e8;
+$bg-color02: #d1c1a5;
+$bg-color03: #e3dbd0;
 
-$gradient01: linear-gradient(
-  135deg,
-  rgba(239, 202, 106, 1) 0%,
-  rgba(239, 106, 106, 1) 100%
-);
+// $gradient01: linear-gradient(
+//   135deg,
+//   rgba(239, 202, 106, 1) 0%,
+//   rgba(239, 106, 106, 1) 100%
+// );
 
-$shadow01: 0px 0px 8px rgba(#000, 0.16);
+// $shadow01: 0px 0px 8px rgba(#000, 0.16);
 
 //vwを自動計算
 @use "sass:math";
-$base-viewport: 1440; // ブレイクポイントはデザインボードに合わせてください
-$base-viewport_sp: 375; // ブレイクポイントはデザインボードに合わせてください
+$base-viewport: 1920; // ブレイクポイントはデザインボードに合わせてください
+$base-viewport_sp: 750; // ブレイクポイントはデザインボードに合わせてください
 
 @function pxtovw($size-in-px) {
   @return math.div($size-in-px, $base-viewport) * 100vw;

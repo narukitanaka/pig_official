@@ -13,11 +13,11 @@ common-style
 // ブレイクポイント
 // PC基準でコーディングする場合
 $breakpoints: (
-  "sm": "screen and (max-width: 768px)",
+  "sm": "screen and (max-width: 750px)",
   //スマホ
   "md": "screen and (max-width: 1023px)",
   //タブレット
-  "pc-s": "screen and (max-width: 1200px)",
+  "pc-s": "screen and (max-width: 1280px)",
   //PC小サイズ
 ) !default;
 @mixin mq($breakpoint: sm) {
@@ -164,12 +164,9 @@ html {
 
 body {
   scroll-behavior: smooth;
-  font-family: YakuHanJP, "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
-    "Noto Sans JP", Meiryo, sans-serif;
+  font-family: YakuHanJP, "Noto Sans JP", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
   min-height: 100dvh;
-  &#top {
-    background-color: v.$bg-color01;
-  }
 }
 
 .clearfix:after {
@@ -196,7 +193,7 @@ input[type="button"] {
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: v.pxtovw(1500);
   margin: 0 auto;
   @include mq(pc-s) {
     padding: 0 2rem;
@@ -207,30 +204,8 @@ input[type="button"] {
     padding: 0;
   }
   @include mq() {
-    width: 90%;
-    max-width: 600px;
-  }
-}
-
-h1,
-h2 {
-  font-family: "Noto Serif JP", serif;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 4rem;
-  line-height: 1.4;
-  color: v.$ttlTxt-color;
-  letter-spacing: 2px;
-}
-
-h2 {
-  font-size: 2.8rem;
-  line-height: 1.6;
-  letter-spacing: 2px;
-  @include mq() {
-    letter-spacing: 1px;
+    width: auto;
+    max-width: v.pxtovw_sp(630);
   }
 }
 
@@ -243,28 +218,28 @@ dd,
 th,
 td,
 a {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, v.pxtovw(18), 1.8rem);
   line-height: 1.7;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-weight: 500;
   color: v.$txt-color;
   @include mq() {
-    font-size: 1.4rem;
-    letter-spacing: 0px;
+    font-size: v.pxtovw_sp(26);
+    letter-spacing: 0.5px;
   }
 }
 div {
   line-height: 1;
 }
-// p {
-//   overflow-wrap: break-word;
-// }
 
 .font-noto {
-  font-family: "Noto Serif JP", serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
-.font-lora {
-  font-family: "Lora", serif;
+.font-unb {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+}
+.font-class {
+  font-family: "classico-urw", sans-serif;
 }
 
 .img-box {
@@ -286,11 +261,13 @@ div {
     overflow: hidden;
   }
   img {
-    transition: all 0.3s;
+    transition: all 0.4s;
   }
   &:hover {
-    img {
-      transform: scale(1.1);
+    .img-box {
+      img {
+        transform: scale(1.15);
+      }
     }
   }
 }
@@ -308,6 +285,16 @@ div {
     white-space: nowrap;
   }
 }
+.text-ell-line02 {
+  dd {
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* 2行に制限 */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
 
 .hover_opacity {
   a {
@@ -316,4 +303,40 @@ div {
       opacity: 0.5;
     }
   }
+}
+
+.bg-noise {
+  background-image: url("../images/common/bg_noise.png");
+  background-repeat: repeat;
+  background-position: top;
+  background-size: contain;
+  background-blend-mode: multiply;
+}
+
+.bg-line {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: url(images/common/bg_line.svg) no-repeat top/cover;
+  z-index: 1;
+  @include mq() {
+    background: url(images/common/bg_line_sp.svg) repeat top/contain;
+  }
+}
+
+.parallax-bg {
+  background-size: 125% !important;
+}
+// img {
+//   &.parallax {
+//     transform: scale(1.1);
+//   }
+// }
+
+// .hidden {
+//   overflow: hidden;
+// }
+
+.hidden {
+  overflow: hidden;
 }
