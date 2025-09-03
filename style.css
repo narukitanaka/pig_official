@@ -148,28 +148,37 @@ div {
 }
 
 .bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: url("images/common/bg_noise.png");
   background-repeat: repeat;
   background-position: top;
   background-size: contain;
-  background-blend-mode: multiply;
-}
-@media screen and (max-width: 750px) {
-  .bg-noise {
-    background-size: cover;
-  }
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .bg-line {
+  position: relative;
+}
+.bg-line::after {
+  content: "";
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: url(images/common/bg_line.svg) no-repeat top/cover;
+  inset: 0;
+  background: url(images/common/bg_line.svg) no-repeat top/contain;
+  pointer-events: none;
   z-index: 1;
 }
 @media screen and (max-width: 750px) {
-  .bg-line {
-    background: url(images/common/bg_line_sp.svg) repeat top/contain;
+  .bg-line::after {
+    background: url(images/common/bg_line_sp.svg) no-repeat top/contain;
   }
 }
 
@@ -1735,7 +1744,7 @@ footer {
   position: relative;
   background-color: #1d1d1d;
   overflow: hidden;
-  z-index: 1;
+  z-index: 3;
 }
 footer .inner {
   position: relative;
@@ -1822,13 +1831,15 @@ footer .footer-columns .col01 p:last-of-type {
   }
 }
 footer .footer-columns .col02 {
+  width: 40%;
   position: relative;
-  margin-right: 5.625vw;
   z-index: 1;
 }
 @media screen and (max-width: 750px) {
   footer .footer-columns .col02 {
+    width: 100%;
     padding: 8vw 0;
+    padding-right: 14.4vw;
   }
 }
 footer .footer-columns .col02 nav ul {
@@ -2046,7 +2057,6 @@ top
 }
 
 .wrap_about {
-  position: relative;
   padding: 10.78125vw 0 14.0625vw;
   background-color: #fff7e8;
   overflow: hidden;
@@ -2208,7 +2218,6 @@ top
 }
 
 .wrap_ourbrand {
-  position: relative;
   padding: 11.8rem 0 12.3rem;
   background-color: #d1c1a5;
   overflow: hidden;
@@ -2220,7 +2229,7 @@ top
 }
 .wrap_ourbrand .inner {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 .wrap_ourbrand .ttl-wrap {
   margin-bottom: 6.1458333333vw;
@@ -2323,7 +2332,7 @@ top
 .wrap_ourbrand .builds_01,
 .wrap_ourbrand .builds_02 {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
 }
 .wrap_ourbrand .builds_01 {
   width: 42.03125vw;
@@ -2383,9 +2392,11 @@ top
 .wrap_news .block .left {
   flex-shrink: 0;
 }
-.wrap_news .block .left > div {
-  position: sticky;
-  top: 6rem;
+@media screen and (max-width: 750px) {
+  .wrap_news .block .left > div {
+    position: sticky;
+    top: 6rem;
+  }
 }
 .wrap_news .block .left .ttl-wrap {
   margin-bottom: 4.5rem;
@@ -2495,6 +2506,7 @@ top
 .wrap_cta.wholesale {
   padding: 9.1666666667vw 4rem 7.2916666667vw;
   background: url(images/top/cta-wholesale_img01.jpg) no-repeat center/cover;
+  z-index: 2;
 }
 @media screen and (max-width: 750px) {
   .wrap_cta.wholesale {
@@ -2512,9 +2524,11 @@ top
   }
 }
 .wrap_cta.recruit .cta-inner {
+  position: relative;
   padding: 7.0833333333vw 4rem 4.9479166667vw;
   background: url(images/top/cta-recruit_img01.jpg) no-repeat center/cover;
   border-radius: 1.1458333333vw;
+  z-index: 2;
 }
 @media screen and (max-width: 750px) {
   .wrap_cta.recruit .cta-inner {
@@ -2578,12 +2592,12 @@ About us 私たちについて
 *************************************************/
 .about_philosophy {
   position: relative;
-  padding: 2.6041666667vw 0 4.1666666667vw;
+  padding: 2.6041666667vw 0 33.8541666667vw;
   background-color: #fff7e8;
 }
 @media screen and (max-width: 750px) {
   .about_philosophy {
-    padding: 9.3333333333vw 0;
+    padding: 9.3333333333vw 0 90.6666666667vw;
   }
 }
 .about_philosophy .inner {
@@ -2726,7 +2740,7 @@ About us 私たちについて
 .about_philosophy > .img-box.vertical-txt {
   width: 14.7916666667vw;
   aspect-ratio: 1/0.22;
-  top: 16.5625vw;
+  top: 20.8333333333vw;
   right: 0;
 }
 @media screen and (max-width: 750px) {
@@ -2739,15 +2753,13 @@ About us 私たちについて
 }
 
 .wrap_beautiful {
-  background-image: url("images/common/bg_noise.png"), linear-gradient(to bottom, #fff7e8 0%, #fff7e8 50%, #d1c1a5 50%, #d1c1a5 100%);
-  background-repeat: repeat, no-repeat;
-  background-position: top, top;
-  background-size: contain, cover;
-  background-blend-mode: multiply, normal;
+  position: absolute;
+  bottom: -15.8854166667vw;
+  z-index: 3;
 }
 @media screen and (max-width: 750px) {
   .wrap_beautiful {
-    background-size: cover, cover;
+    bottom: -74.6666666667vw;
   }
 }
 .wrap_beautiful .container {
@@ -2810,19 +2822,14 @@ About us 私たちについて
   }
 }
 
-.pin-spacer {
-  z-index: 2 !important;
-}
-
 .about_vision {
   position: relative;
-  padding: 5.46875vw 0 10.8333333333vw;
+  padding: 21.3541666667vw 0 10.8333333333vw;
   background-color: #d1c1a5;
-  z-index: 3;
 }
 @media screen and (max-width: 750px) {
   .about_vision {
-    padding: 14.6666666667vw 0 20vw;
+    padding: 93.3333333333vw 0 20vw;
   }
 }
 .about_vision .inner {
@@ -2901,8 +2908,8 @@ About us 私たちについて
 @media screen and (max-width: 750px) {
   .about_vision .content .dot-line {
     height: calc(100% + 35.4666666667vw);
-    background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, #707070 3px, #707070 12px);
-    opacity: 0.5;
+    background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, #707070 3px, #707070 8px);
+    opacity: 0.4;
   }
 }
 .about_vision .content .dot-line::before, .about_vision .content .dot-line::after {
@@ -3019,14 +3026,14 @@ About us 私たちについて
 .about_vision > .img-box.radio {
   width: 17.34375vw;
   aspect-ratio: 1/1.63;
-  top: 10.4166666667vw;
+  top: 26.5625vw;
   right: 6.1458333333vw;
   rotate: 19deg;
 }
 @media screen and (max-width: 750px) {
   .about_vision > .img-box.radio {
     width: 44.4vw;
-    top: 65.3333333333vw;
+    top: 144vw;
     right: -13.0208333333vw;
     z-index: 3;
   }
@@ -3059,10 +3066,14 @@ About us 私たちについて
     width: 25.3333333333vw;
     left: -0.6666666667vw;
     bottom: auto;
-    top: 49.3333333333vw;
+    top: 124vw;
     z-index: 1;
     opacity: 0.8;
   }
+}
+
+.pin-spacer {
+  z-index: 1 !important;
 }
 
 .about_value {

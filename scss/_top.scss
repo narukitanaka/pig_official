@@ -126,7 +126,6 @@ top
 }
 
 .wrap_about {
-  position: relative;
   padding: v.pxtovw(207) 0 v.pxtovw(270);
   background-color: v.$bg-color01;
   overflow: hidden;
@@ -184,7 +183,6 @@ top
       margin-bottom: 6.5rem;
       @include c.mq() {
         order: 3;
-        // font-size: v.pxtovw_sp(26);
         font-size: clamp(1.4rem, v.pxtovw_sp(26), 2.6rem);
       }
     }
@@ -263,7 +261,6 @@ top
 }
 
 .wrap_ourbrand {
-  position: relative;
   padding: 11.8rem 0 12.3rem;
   background-color: v.$bg-color02;
   overflow: hidden;
@@ -272,7 +269,7 @@ top
   }
   .inner {
     position: relative;
-    z-index: 3;
+    z-index: 2;
   }
   .ttl-wrap {
     margin-bottom: v.pxtovw(118);
@@ -361,7 +358,7 @@ top
   .builds_01,
   .builds_02 {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
   }
   .builds_01 {
     width: v.pxtovw(807);
@@ -410,8 +407,10 @@ top
     .left {
       flex-shrink: 0;
       > div {
-        position: sticky;
-        top: 6rem;
+        @include c.mq() {
+          position: sticky;
+          top: 6rem;
+        }
       }
       .ttl-wrap {
         margin-bottom: 4.5rem;
@@ -511,6 +510,7 @@ top
   &.wholesale {
     padding: v.pxtovw(176) 4rem v.pxtovw(140);
     background: url(images/top/cta-wholesale_img01.jpg) no-repeat center/cover;
+    z-index: 2;
     @include c.mq() {
       padding: v.pxtovw_sp(178) 0 v.pxtovw_sp(218);
       background: url(images/top/cta-wholesale_img01_sp.jpg) no-repeat
@@ -524,9 +524,11 @@ top
       padding: v.pxtovw_sp(47) v.pxtovw_sp(30);
     }
     .cta-inner {
+      position: relative;
       padding: v.pxtovw(136) 4rem v.pxtovw(95);
       background: url(images/top/cta-recruit_img01.jpg) no-repeat center/cover;
       border-radius: v.pxtovw(22);
+      z-index: 2;
       @include c.mq() {
         padding: v.pxtovw_sp(140) v.pxtovw_sp(40);
         border-radius: v.pxtovw_sp(40);

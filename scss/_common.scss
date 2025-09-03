@@ -308,39 +308,41 @@ div {
 }
 
 .bg-noise {
-  background-image: url("images/common/bg_noise.png");
-  background-repeat: repeat;
-  background-position: top;
-  background-size: contain;
-  background-blend-mode: multiply;
-  @include mq() {
-    background-size: cover;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0; // 親要素の内側にぴったり広がる
+    background-image: url("images/common/bg_noise.png");
+    background-repeat: repeat;
+    background-position: top;
+    background-size: contain;
+    mix-blend-mode: multiply; // 必要なら色に“乗算”で馴染ませる
+    pointer-events: none; // クリックを塞がない
+    z-index: 0;
   }
 }
 
 .bg-line {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: url(images/common/bg_line.svg) no-repeat top/cover;
-  z-index: 1;
-  @include mq() {
-    background: url(images/common/bg_line_sp.svg) repeat top/contain;
+  position: relative;
+  &::after {
+    content: "";
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    inset: 0; // 親要素の内側にぴったり広がる
+    background: url(images/common/bg_line.svg) no-repeat top/contain;
+    pointer-events: none;
+    z-index: 1;
+    @include mq() {
+      background: url(images/common/bg_line_sp.svg) no-repeat top/contain;
+    }
   }
 }
 
 .parallax-bg {
   background-size: 125% !important;
 }
-// img {
-//   &.parallax {
-//     transform: scale(1.1);
-//   }
-// }
-
-// .hidden {
-//   overflow: hidden;
-// }
 
 .hidden {
   overflow: hidden;
