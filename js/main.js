@@ -113,7 +113,9 @@ if (track) {
 ////////////////////////////////////////////////////////////////////////////////////////
 // GSAP アニメーション
 ///////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 //フェードイン
+//////////////////////////////////////////////////////
 const textElements = document.querySelectorAll(".fadeIn");
 if (textElements.length > 0) {
   textElements.forEach((element) => {
@@ -131,7 +133,33 @@ if (textElements.length > 0) {
   });
 }
 
+//////////////////////////////////////////////////////
+//順番にフェードイン
+//////////////////////////////////////////////////////
+const orderFadeInSections = document.querySelectorAll(".order-fadeIn");
+if (orderFadeInSections.length > 0) {
+  orderFadeInSections.forEach((section) => {
+    const fadeChildElements = section.querySelectorAll(".fadeChild");
+    if (fadeChildElements.length > 0) {
+      gsap.from(fadeChildElements, {
+        opacity: 0,
+        y: 20,
+        duration: 1.2,
+        ease: "power2.out",
+        stagger: 0.6, // 0.3秒ずつ遅延
+        scrollTrigger: {
+          trigger: section,
+          start: "top 60%",
+          once: true,
+        },
+      });
+    }
+  });
+}
+
+//////////////////////////////////////////////////////
 //さりげないパララックス
+//////////////////////////////////////////////////////
 const parallaxElements = document.querySelectorAll(".parallax");
 if (parallaxElements.length > 0) {
   parallaxElements.forEach((element) => {
@@ -157,7 +185,10 @@ if (parallaxElements.length > 0) {
     );
   });
 }
+
+//////////////////////////////////////////////////////
 //さりげないパララックス（背景画像）
+//////////////////////////////////////////////////////
 const parallaxBgElements = document.querySelectorAll(".parallax-bg");
 if (parallaxBgElements.length > 0) {
   parallaxBgElements.forEach((element) => {
@@ -184,19 +215,37 @@ if (parallaxBgElements.length > 0) {
   });
 }
 
+//////////////////////////////////////////////////////
 //スクロールで横スライド_about_value
+//////////////////////////////////////////////////////
 const aboutValueSection = document.querySelector(".pin-wrap");
 if (aboutValueSection) {
   const rowScroll = aboutValueSection.querySelector(".row-scroll");
+
+  // px→vw換算関数
+  const pxToVw = (px, base) => (window.innerWidth * px) / base;
+
+  // PC/SPで基準を切り替え
+  const getExtra = () => {
+    if (window.innerWidth <= 750) {
+      // SP基準：750px
+      return pxToVw(-30, 750); // ← 30pxぶんの余白をvw換算
+    } else {
+      // PC基準：1920px
+      return pxToVw(-210, 1920); // ← 210pxぶんの余白をvw換算
+    }
+  };
+
+  const getDistance = () =>
+    rowScroll.scrollWidth - document.documentElement.clientWidth - getExtra();
+
   gsap.to(rowScroll, {
-    x: () =>
-      -(rowScroll.scrollWidth - document.documentElement.clientWidth) + "px",
+    x: () => -getDistance() + "px",
     ease: "none",
     scrollTrigger: {
       trigger: aboutValueSection,
       start: "top top",
-      end: () =>
-        "+=" + (rowScroll.scrollWidth - document.documentElement.clientWidth),
+      end: () => "+=" + getDistance(),
       scrub: true,
       pin: true,
       anticipatePin: 1,
@@ -205,7 +254,9 @@ if (aboutValueSection) {
   });
 }
 
+//////////////////////////////////////////////////////
 //スクロールトリガーで.about_visionのトップが画面ボトムと重なったら、.circle要素がscale(0.2)から(1)になる
+//////////////////////////////////////////////////////
 const aboutVisionSection = document.querySelector(".about_vision .content");
 if (aboutVisionSection) {
   const circleElement = aboutVisionSection.querySelector(".circle");
@@ -224,4 +275,71 @@ if (aboutVisionSection) {
       },
     }
   );
+}
+//////////////////////////////////////////////////////
+//ファーストビューアニメーション
+//////////////////////////////////////////////////////
+// const fvSection = document.querySelector(".fv");
+// if (fvSection) {
+//   const mainCopy = fvSection.querySelector(".main-copy");
+//   const subCopy = fvSection.querySelector(".sub-copy");
+//   const header = document.querySelector("header");
+//   const fvTopics = fvSection.querySelector(".fv_topics");
+
+//   const tl = gsap.timeline();
+
+//   tl.fromTo(
+//     mainCopy,
+//     { opacity: 0, y: 40 },
+//     { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+//   )
+//     .fromTo(
+//       subCopy,
+//       { opacity: 0, y: 40 },
+//       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+//       "-=0.4" // 前のアニメーションと0.4秒重ねる
+//     )
+//     .fromTo(
+//       [header, fvTopics],
+//       {
+//         opacity: 0,
+//         y: function (index) {
+//           return index === 0 ? -20 : 20;
+//         },
+//       },
+//       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+//       "-=0.4"
+//     );
+// }
+const fvSection = document.querySelector(".fv");
+if (fvSection) {
+  const mainCopy = fvSection.querySelector(".main-copy");
+  const subCopy = fvSection.querySelector(".sub-copy");
+  const header = document.querySelector("header");
+  const fvTopics = fvSection.querySelector(".fv_topics");
+
+  const tl = gsap.timeline();
+
+  tl.fromTo(
+    mainCopy,
+    { opacity: 0, scale: 0, y: 40 },
+    { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.7)" }
+  )
+    .fromTo(
+      subCopy,
+      { opacity: 0, scale: 0, y: 40 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.7)" },
+      "-=0.4" // 前のアニメーションと0.4秒重ねる
+    )
+    .fromTo(
+      [header, fvTopics],
+      {
+        opacity: 0,
+        y: function (index) {
+          return index === 0 ? -40 : 40;
+        },
+      },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+      "-=0.4"
+    );
 }

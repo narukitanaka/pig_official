@@ -17,6 +17,8 @@ $breakpoints: (
   //スマホ 小
   "sm": "screen and (max-width: 750px)",
   //スマホ
+  "md-s": "screen and (max-width: 899px)",
+  //タブレット
   "md": "screen and (max-width: 1023px)",
   //タブレット
   "pc-s": "screen and (max-width: 1280px)",
@@ -220,7 +222,7 @@ dd,
 th,
 td,
 a {
-  font-size: clamp(1.5rem, v.pxtovw(18), 1.8rem);
+  font-size: clamp(1.4rem, v.pxtovw(18), 1.8rem);
   line-height: 1.7;
   font-weight: 500;
   color: v.$txt-color;

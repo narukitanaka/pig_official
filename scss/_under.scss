@@ -16,6 +16,7 @@
     .en-ttl {
       font-family: "Unbounded", sans-serif;
       font-size: clamp(4rem, v.pxtovw(60), 6rem);
+      font-weight: 400;
       color: #fff;
       margin-bottom: 1rem;
       @include c.mq() {
@@ -388,10 +389,15 @@ About us 私たちについて
           font-size: clamp(1.8rem, v.pxtovw(25), 2.5rem);
           font-weight: 600;
           @include c.mq() {
-            font-size: v.pxtovw_sp(25);
+            // font-size: v.pxtovw_sp(25);
+            font-size: clamp(1.8rem, v.pxtovw_sp(22), 2.5rem);
           }
           span {
             font-size: 2rem;
+            @include c.mq() {
+              // font-size: v.pxtovw_sp(20);
+              font-size: clamp(1.5rem, v.pxtovw_sp(20), 2rem);
+            }
           }
         }
       }
@@ -420,7 +426,7 @@ About us 私たちについて
       rotate: 19deg;
       @include c.mq() {
         width: v.pxtovw_sp(333);
-        top: v.pxtovw_sp(1080);
+        top: v.pxtovw_sp(1280);
         right: v.pxtovw(-250);
         z-index: 3;
       }
@@ -442,7 +448,7 @@ About us 私たちについて
     &.vertical-txt {
       width: v.pxtovw(200);
       aspect-ratio: 1/0.16;
-      bottom: v.pxtovw(383);
+      bottom: v.pxtovw(250);
       left: 0;
       z-index: 2;
       @include c.mq() {
@@ -510,6 +516,7 @@ About us 私たちについて
       .num {
         font-family: "Unbounded", sans-serif;
         font-size: clamp(3.2rem, v.pxtovw(50), 5rem);
+        font-weight: 400;
         @include c.mq() {
           font-size: v.pxtovw_sp(50);
           font-weight: 400;
@@ -517,7 +524,7 @@ About us 私たちについて
       }
       .text {
         h3 {
-          font-size: clamp(2rem, v.pxtovw(29), 2.9rem);
+          font-size: clamp(1.8rem, v.pxtovw(29), 2.9rem);
           margin-bottom: 2rem;
           @include c.mq() {
             font-size: v.pxtovw_sp(31);
@@ -533,7 +540,10 @@ About us 私たちについて
         }
         p {
           width: v.pxtovw(600);
+          font-size: clamp(1.3rem, v.pxtovw(18), 1.8rem);
+          line-height: 2;
           @include c.mq() {
+            font-size: clamp(1.3rem, v.pxtovw_sp(26), 2.6rem);
             text-align: center;
             line-height: 2.2;
             width: 100%;
@@ -580,9 +590,9 @@ About us 私たちについて
   .slider-track {
     display: flex;
     width: max-content;
-    animation: scrollSlider 40s linear infinite;
+    animation: scrollSlider 80s linear infinite;
     @include c.mq() {
-      animation: scrollSlider 60s linear infinite;
+      animation: scrollSlider 100s linear infinite;
     }
   }
   .slider-track {
@@ -597,10 +607,10 @@ About us 私たちについて
 
   @keyframes scrollSlider {
     0% {
-      transform: translateX(0);
+      transform: translateX(-50%);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(0);
     }
   }
 }

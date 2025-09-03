@@ -36,9 +36,10 @@ component
       }
     }
     .sub-ttl {
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, v.pxtovw(22), 2.2rem);
       color: #fff;
       @include c.mq() {
+        font-size: clamp(1.6rem, v.pxtovw_sp(22), 2.2rem);
         margin-bottom: v.pxtovw_sp(80);
       }
     }
@@ -125,7 +126,7 @@ component
   position: relative;
   display: inline-block;
   font-family: "Unbounded", sans-serif;
-  font-size: clamp(1.4rem, v.pxtovw(16), 1.6rem);
+  font-size: clamp(1.3rem, v.pxtovw(16), 1.6rem);
   font-weight: 400;
   color: v.$sub-color01;
   @include c.mq() {
@@ -221,10 +222,11 @@ component
 }
 
 .insta-wrap {
-  width: v.pxtovw(900);
+  width: clamp(60rem, v.pxtovw(900), 90rem);
   position: absolute;
   right: v.pxtovw(40);
-  top: 90%;
+  top: v.pxtovw(120);
+  top: clamp(7rem, v.pxtovw(120), 12rem);
   padding-top: 0;
   opacity: 0;
   visibility: hidden;
@@ -240,73 +242,49 @@ component
     padding: v.pxtovw(50) v.pxtovw(60) v.pxtovw(70) v.pxtovw(60);
     &::before {
       position: absolute;
-      top: -22px;
-      right: v.pxtovw(300);
+      top: v.pxtovw(-20);
+      right: v.pxtovw(290);
       content: "";
       width: 0;
       height: 0;
       border-style: solid;
-      border-right: 18px solid transparent;
-      border-left: 18px solid transparent;
-      border-bottom: 22px solid #d87159;
+      border-right: v.pxtovw(18) solid transparent;
+      border-left: v.pxtovw(18) solid transparent;
+      border-bottom: v.pxtovw(22) solid #d87159;
       border-top: 0;
       opacity: 0.9;
+      @include c.mq(pc-s) {
+        right: v.pxtovw(320);
+      }
+      @include c.mq(md) {
+        right: v.pxtovw(400);
+      }
     }
     p,
     a {
       color: #fff;
     }
     .stores {
-      margin-bottom: v.pxtovw(50);
-      &.pigsty {
-        p {
-          &::after {
-            width: v.pxtovw(610);
-          }
-        }
-      }
-      &.pig_az {
-        p {
-          &::after {
-            width: v.pxtovw(440);
-          }
-        }
-      }
-      &.vivie {
-        p {
-          &::after {
-            width: v.pxtovw(630);
-          }
-        }
-      }
-      &.changes {
-        p {
-          &::after {
-            width: v.pxtovw(550);
-          }
-        }
-      }
-      &.whole {
+      margin-bottom: v.pxtovw(60);
+      overflow: hidden;
+      &:last-of-type {
         margin-bottom: 0;
-        p {
-          &::after {
-            width: v.pxtovw(500);
-          }
-        }
       }
       p {
         position: relative;
-        @include c.flex(start, center);
+        display: inline-flex;
         gap: v.pxtovw(22);
         font-family: "Unbounded", sans-serif;
-        font-size: v.pxtovw(24);
+        font-size: clamp(1.6rem, v.pxtovw(24), 2.4rem);
+        font-weight: 400;
         margin-bottom: v.pxtovw(20);
         &::after {
           content: "";
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: 0;
+          left: calc(100% + 2rem);
+          width: 100rem;
           height: 1px;
           background-color: #fff;
         }
@@ -315,10 +293,11 @@ component
         }
       }
       .links {
-        padding-left: 5rem;
+        padding-left: v.pxtovw(50);
         @include c.flex(start, center);
         flex-wrap: wrap;
         gap: v.pxtovw(68);
+        row-gap: v.pxtovw(20);
         a {
           font-size: clamp(1.4rem, v.pxtovw(16), 1.6rem);
           text-decoration: underline;

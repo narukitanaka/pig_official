@@ -330,6 +330,29 @@ top
       .logo {
         position: absolute;
         @include c.center(true, true);
+        img {
+          width: 100%;
+        }
+      }
+      &.pigsty {
+        .logo {
+          width: v.pxtovw(144);
+        }
+      }
+      &.pig-az {
+        .logo {
+          width: v.pxtovw(133);
+        }
+      }
+      &.vivie {
+        .logo {
+          width: v.pxtovw(121);
+        }
+      }
+      &.changes {
+        .logo {
+          width: v.pxtovw(185);
+        }
       }
     }
 
@@ -385,7 +408,7 @@ top
 }
 
 .wrap_news {
-  padding: 16.9rem 0 13.9rem;
+  padding: v.pxtovw(169) 0 v.pxtovw(139);
   background-color: v.$bg-color01;
   overflow: hidden;
   @include c.mq() {
@@ -439,7 +462,7 @@ top
         gap: v.pxtovw(72);
         margin-bottom: 2.5rem;
         @include c.mq(md) {
-          gap: 1.5rem;
+          gap: 2rem;
         }
         @include c.mq() {
           flex-direction: column;
@@ -464,13 +487,13 @@ top
           > div {
             @include c.flex(start, center);
             gap: v.pxtovw(20);
-            margin-bottom: 1.5rem;
+            margin-bottom: v.pxtovw(15);
             @include c.mq() {
               gap: v.pxtovw_sp(28);
             }
             span {
               font-family: "Unbounded", sans-serif;
-              font-size: 1.2rem;
+              font-size: clamp(0.9rem, v.pxtovw(12), 1.2rem);
               @include c.mq() {
                 font-size: v.pxtovw_sp(20);
                 font-weight: 400;
@@ -484,7 +507,7 @@ top
               color: #fff;
               background-color: v.$sub-color01;
               border-radius: 100vmax;
-              padding: 3px 6px;
+              padding: 3px v.pxtovw(24);
               @include c.mq() {
                 padding: 5px 18px;
               }
@@ -511,6 +534,9 @@ top
     padding: v.pxtovw(176) 4rem v.pxtovw(140);
     background: url(images/top/cta-wholesale_img01.jpg) no-repeat center/cover;
     z-index: 2;
+    @include c.mq(md) {
+      background-size: 140% !important;
+    }
     @include c.mq() {
       padding: v.pxtovw_sp(178) 0 v.pxtovw_sp(218);
       background: url(images/top/cta-wholesale_img01_sp.jpg) no-repeat
