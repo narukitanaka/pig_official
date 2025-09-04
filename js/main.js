@@ -1,11 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 // Swiper
 ///////////////////////////////////////////////////////////////////////////////////////
-// function initSwipers() {
-// }
-// document.addEventListener("DOMContentLoaded", function () {
-//   initSwipers();
-// });
 document.addEventListener("DOMContentLoaded", function () {
   // スマホ判定
   function isMobile() {
@@ -44,6 +39,284 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   initSwiper();
   window.addEventListener("resize", initSwiper);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const pad2 = (n) => String(n).padStart(2, "0");
+
+  /**
+   * 各スライダーの数字付きページネーションを初期化
+   * @param {object} cfg
+   *  - container: スワイパー本体セレクタ
+   *  - next / prev: ナビゲーションボタンのセレクタ
+   *  - pagination: 数字表示の親（この中に .current-slide / .total-slides がある想定）
+   */
+  const makeNumberedSwiper = ({ container, next, prev, pagination }) => {
+    const root = document.querySelector(container);
+    const pag = document.querySelector(pagination);
+    if (!root || !pag) return null;
+
+    const currentEl = pag.querySelector(".current-slide");
+    const totalEl = pag.querySelector(".total-slides");
+
+    // 合計スライド数（loopを考慮して duplicate を除外）
+    const count = root.querySelectorAll(
+      ".swiper-slide:not(.swiper-slide-duplicate)"
+    ).length;
+    if (totalEl) totalEl.textContent = pad2(count);
+
+    const instance = new Swiper(root, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      // 必要なら breakpoints を追加してOK
+      // breakpoints: { 751: { slidesPerView: 1, spaceBetween: 24 } },
+      navigation: { nextEl: next, prevEl: prev },
+      // loop: true, // 使う場合はコメント解除。currentはrealIndexで更新されます
+      on: {
+        init() {
+          const idx = (this.realIndex ?? this.activeIndex) + 1;
+          if (currentEl) currentEl.textContent = pad2(idx);
+        },
+        slideChange() {
+          const idx = (this.realIndex ?? this.activeIndex) + 1;
+          if (currentEl) currentEl.textContent = pad2(idx);
+        },
+      },
+    });
+
+    return instance;
+  };
+
+  // 3つのスライダーを初期化（クラス名を揃えて使ってください）
+  const buyingSwiper = makeNumberedSwiper({
+    container: ".buying-swiper",
+    next: ".buying-swiper-button-next",
+    prev: ".buying-swiper-button-prev",
+    pagination: ".buying-swiper_pagenation",
+  });
+
+  const repairSwiper = makeNumberedSwiper({
+    container: ".repair-swiper",
+    next: ".repair-swiper-button-next",
+    prev: ".repair-swiper-button-prev",
+    pagination: ".repair-swiper_pagenation",
+  });
+
+  const saleSwiper = makeNumberedSwiper({
+    container: ".sale-swiper",
+    next: ".sale-swiper-button-next",
+    prev: ".sale-swiper-button-prev",
+    pagination: ".sale-swiper_pagenation",
+  });
+
+  const osakaSwiper = makeNumberedSwiper({
+    container: ".osaka-swiper",
+    next: ".osaka-swiper-button-next",
+    prev: ".osaka-swiper-button-prev",
+    pagination: ".osaka-swiper_pagenation",
+  });
+
+  const tokyoSwiper = makeNumberedSwiper({
+    container: ".tokyo-swiper",
+    next: ".tokyo-swiper-button-next",
+    prev: ".tokyo-swiper-button-prev",
+    pagination: ".tokyo-swiper_pagenation",
+  });
+});
+
+//同じページ内の.buying-swiperと.repair-swiperと.sale-swiperがpcとスマホの両方で動く.ourbrand-swiperと同じ仕様のswiperを作成。同じ画面内の各ページネーションが連動しないようにする
+document.addEventListener("DOMContentLoaded", function () {
+  // スマホ判定
+  function isMobile() {
+    return window.innerWidth <= 750;
+  }
+  let buyingSwiper;
+  let repairSwiper;
+  let saleSwiper;
+  let osakaSwiper;
+  let tokyoSwiper;
+
+  function initBuyingSwiper() {
+    if (isMobile() && !buyingSwiper) {
+      buyingSwiper = new Swiper(".buying-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".buying-swiper-button-next",
+          prevEl: ".buying-swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            updateBuyingPagination();
+          },
+          slideChange: function () {
+            updateBuyingPagination();
+          },
+        },
+      });
+    } else if (!isMobile() && buyingSwiper) {
+      buyingSwiper.destroy(true, true);
+      buyingSwiper = null;
+    }
+  }
+  function updateBuyingPagination() {
+    if (buyingSwiper) {
+      const currentSlide = document.querySelector(
+        ".buying-swiper .current-slide"
+      );
+      const current = (buyingSwiper.activeIndex + 1)
+        .toString()
+        .padStart(2, "0");
+      currentSlide.textContent = current;
+    }
+  }
+
+  function initRepairSwiper() {
+    if (isMobile() && !repairSwiper) {
+      repairSwiper = new Swiper(".repair-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".repair-swiper .swiper-button-next",
+          prevEl: ".repair-swiper .swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            updateRepairPagination();
+          },
+          slideChange: function () {
+            updateRepairPagination();
+          },
+        },
+      });
+    } else if (!isMobile() && repairSwiper) {
+      repairSwiper.destroy(true, true);
+      repairSwiper = null;
+    }
+  }
+  function updateRepairPagination() {
+    if (repairSwiper) {
+      const currentSlide = document.querySelector(
+        ".repair-swiper .current-slide"
+      );
+      const current = (repairSwiper.activeIndex + 1)
+        .toString()
+        .padStart(2, "0");
+      currentSlide.textContent = current;
+    }
+  }
+
+  function initSaleSwiper() {
+    if (isMobile() && !saleSwiper) {
+      saleSwiper = new Swiper(".sale-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".sale-swiper .swiper-button-next",
+          prevEl: ".sale-swiper .swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            updateSalePagination();
+          },
+          slideChange: function () {
+            updateSalePagination();
+          },
+        },
+      });
+    } else if (!isMobile() && saleSwiper) {
+      saleSwiper.destroy(true, true);
+      saleSwiper = null;
+    }
+  }
+  function updateSalePagination() {
+    if (saleSwiper) {
+      const currentSlide = document.querySelector(
+        ".sale-swiper .current-slide"
+      );
+      const current = (saleSwiper.activeIndex + 1).toString().padStart(2, "0");
+      currentSlide.textContent = current;
+    }
+  }
+
+  function initOsakaSwiper() {
+    if (isMobile() && !osakaSwiper) {
+      osakaSwiper = new Swiper(".osaka-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".osaka-swiper .swiper-button-next",
+          prevEl: ".osaka-swiper .swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            updateOsakaPagination();
+          },
+          slideChange: function () {
+            updateOsakaPagination();
+          },
+        },
+      });
+    } else if (!isMobile() && osakaSwiper) {
+      osakaSwiper.destroy(true, true);
+      osakaSwiper = null;
+    }
+  }
+  function updateOsakaPagination() {
+    if (osakaSwiper) {
+      const currentSlide = document.querySelector(
+        ".osaka-swiper .current-slide"
+      );
+      const current = (osakaSwiper.activeIndex + 1).toString().padStart(2, "0");
+      currentSlide.textContent = current;
+    }
+  }
+
+  function initTokyoSwiper() {
+    if (isMobile() && !tokyoSwiper) {
+      tokyoSwiper = new Swiper(".tokyo-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".tokyo-swiper .swiper-button-next",
+          prevEl: ".tokyo-swiper .swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            updateTokyoPagination();
+          },
+          slideChange: function () {
+            updateTokyoPagination();
+          },
+        },
+      });
+    } else if (!isMobile() && tokyoSwiper) {
+      tokyoSwiper.destroy(true, true);
+      tokyoSwiper = null;
+    }
+  }
+  function updateTokyoPagination() {
+    if (tokyoSwiper) {
+      const currentSlide = document.querySelector(
+        ".tokyo-swiper .current-slide"
+      );
+      const current = (tokyoSwiper.activeIndex + 1).toString().padStart(2, "0");
+      currentSlide.textContent = current;
+    }
+  }
+
+  initBuyingSwiper();
+  initRepairSwiper();
+  initSaleSwiper();
+  initOsakaSwiper();
+  initTokyoSwiper();
+  window.addEventListener("resize", function () {
+    initBuyingSwiper();
+    initRepairSwiper();
+    initSaleSwiper();
+    initOsakaSwiper();
+    initTokyoSwiper();
+  });
 });
 
 ///////////////////////////////////////////
@@ -279,38 +552,6 @@ if (aboutVisionSection) {
 //////////////////////////////////////////////////////
 //ファーストビューアニメーション
 //////////////////////////////////////////////////////
-// const fvSection = document.querySelector(".fv");
-// if (fvSection) {
-//   const mainCopy = fvSection.querySelector(".main-copy");
-//   const subCopy = fvSection.querySelector(".sub-copy");
-//   const header = document.querySelector("header");
-//   const fvTopics = fvSection.querySelector(".fv_topics");
-
-//   const tl = gsap.timeline();
-
-//   tl.fromTo(
-//     mainCopy,
-//     { opacity: 0, y: 40 },
-//     { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-//   )
-//     .fromTo(
-//       subCopy,
-//       { opacity: 0, y: 40 },
-//       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-//       "-=0.4" // 前のアニメーションと0.4秒重ねる
-//     )
-//     .fromTo(
-//       [header, fvTopics],
-//       {
-//         opacity: 0,
-//         y: function (index) {
-//           return index === 0 ? -20 : 20;
-//         },
-//       },
-//       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-//       "-=0.4"
-//     );
-// }
 const fvSection = document.querySelector(".fv");
 if (fvSection) {
   const mainCopy = fvSection.querySelector(".main-copy");

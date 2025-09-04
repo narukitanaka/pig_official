@@ -23,6 +23,7 @@ footer {
       padding: v.pxtovw(25) 0;
       font-family: "Unbounded", sans-serif;
       font-size: clamp(1.4rem, v.pxtovw(20), 2rem);
+      font-weight: 400;
       text-align: center;
       color: #fff;
       @include c.mq() {
@@ -118,13 +119,13 @@ footer {
     position: relative;
     background-color: #404040;
     font-family: "Unbounded", sans-serif;
+    font-weight: 400;
     text-align: center;
     color: #fff;
     padding: 1rem 0;
     z-index: 1;
     @include c.mq() {
       font-size: v.pxtovw_sp(20);
-      font-weight: 400;
     }
   }
   .big-pig {

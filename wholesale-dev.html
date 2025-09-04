@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="images/fav.png" />
+  <!-- <meta name="robots" content="index, follow"> -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- AdobeFonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/aig2oxm.css">
+  <!-- GoogleFonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Unbounded:wght@200..900&display=swap"
+    rel="stylesheet">
+
+  <title>PIG Inc.</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo img-box">
+        <a href="./">
+          <img class="is_top" src="images/common/logo_pig.svg" alt="">
+        </a>
+      </div>
+
+      <div class="navigation">
+        <nav>
+          <ul>
+            <li><a href="./">Top</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="business.html">Business</a></li>
+            <li><a href="company.html">Company</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="btn-area">
+          <button class="btn red btn-insta" href="#" target="_blank">
+            Instagram
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9">
+              <path id="iocn-arrow01" d="M5,0l5,9H0Z" transform="translate(10 9) rotate(180)" fill="#fff" />
+            </svg>
+          </button>
+          <a class="btn yellow" href="#" target="_blank">Recruit</a>
+        </div>
+      </div>
+
+      <div class="insta-wrap">
+        <div class="insta_accounts">
+          <div class="stores pigsty">
+            <p><img src="images/common/icon-insta.svg" alt="">Pigsty</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / アメ村店</a>
+              <a target="_blank" href="#">大阪 / 梅田店</a>
+              <a target="_blank" href="#">東京 / 原宿店</a>
+            </div>
+          </div>
+          <div class="stores pig_az">
+            <p><img src="images/common/icon-insta.svg" alt="">Pigsty a⇌z STORE</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / アメ村店</a>
+              <a target="_blank" href="#">大阪 / 中崎町店</a>
+              <a target="_blank" href="#">東京 / 渋谷店</a>
+              <a target="_blank" href="#">東京 / 下北沢店</a>
+            </div>
+          </div>
+          <div class="stores vivie">
+            <p><img src="images/common/icon-insta.svg" alt="">vivie</p>
+            <div class="links"><a target="_blank" href="#">大阪 / 中崎町店</a></div>
+          </div>
+          <div class="stores changes">
+            <p><img src="images/common/icon-insta.svg" alt="">CHANGES</p>
+            <div class="links"><a target="_blank" href="#">公式アカウント</a></div>
+          </div>
+          <div class="stores whole">
+            <p><img src="images/common/icon-insta.svg" alt="">WHOLESALE</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / 卸売事業アカウント</a>
+              <a target="_blank" href="#">東京 / 卸売事業アカウント</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hamberger-wrap">
+        <div class="ham-inner">
+          <p>Menu</p>
+          <div class="hambager-content">
+            <button type="button" class="hambager">
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+            </button>
+          </div><!-- /.hambager-content -->
+        </div>
+      </div><!-- hamberger-wrap -->
+
+    </div>
+  </header>
+
+  <div class="drawer-menu">
+    <div class="drawer-menu_inner">
+      <div class="links">
+
+        <button class="btn gray insta_accordion-trigger" href="" target="_blank">
+          Instagram
+          <!-- <img src="images/common/icon-arrow03_r-down.svg" alt=""> -->
+          <div class="bg-arow"></div>
+        </button>
+        <div class="accordion-content">
+          <div class="instagram-accounts">
+            <div class="stores pigsty">
+              <p><img src="images/common/icon-insta_red.svg" alt="">Pigsty</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / アメ村店</a>
+                <a target="_blank" href="#">大阪 / 梅田店</a>
+                <a target="_blank" href="#">東京 / 原宿店</a>
+              </div>
+            </div>
+            <div class="stores pig_az">
+              <p><img src="images/common/icon-insta_red.svg" alt="">Pigsty a⇌z STORE</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / アメ村店</a>
+                <a target="_blank" href="#">大阪 / 中崎町店</a>
+                <a target="_blank" href="#">東京 / 渋谷店</a>
+                <a target="_blank" href="#">東京 / 下北沢店</a>
+              </div>
+            </div>
+            <div class="stores vivie">
+              <p><img src="images/common/icon-insta_red.svg" alt="">vivie</p>
+              <div class="links"><a target="_blank" href="#">大阪 / 中崎町店</a></div>
+            </div>
+            <div class="stores changes">
+              <p><img src="images/common/icon-insta_red.svg" alt="">CHANGES</p>
+              <div class="links"><a target="_blank" href="#">公式アカウント</a></div>
+            </div>
+            <div class="stores whole">
+              <p><img src="images/common/icon-insta_red.svg" alt="">WHOLESALE</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / 卸売事業アカウント</a>
+                <a target="_blank" href="#">東京 / 卸売事業アカウント</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn yellow" href="" target="_blank">
+          Recruit
+          <img src="images/common/icon-arrow03.svg" alt="">
+        </a>
+      </div>
+      <div class="nav-wrap">
+        <nav>
+          <ul>
+            <li>
+              <a href="about.html">
+                About Us<span>私たちについて</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="business.html">
+                Business<span>事業内容</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="wholesale.html">
+                Wholesale<span>卸売事業</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="company.html">
+                Company<span>会社概要</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="archive.html">
+                News<span>お知らせ一覧</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- /.nav-wrap -->
+
+      <div class="contact">
+        <a href="contact.html">
+          Contact
+          <p>
+            卸販売・採用等 各種<br>
+            お問い合わせこちら
+          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+            <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+              <path id="パス_10719" data-name="パス 10719"
+                d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <div class="info">
+        <p>有限会社ピーアイジー　（PIG Inc.）</p>
+        <p>
+          〒542-0086<br>
+          大阪市中央区西心斎橋1-7-14 大阪屋心斎橋西ビル3F
+        </p>
+        <div class="tel-fax">
+          <a href="tel:0662510289">TEL： 06-6251-0289</a>
+          <p>FAX：06-6245-3619</p>
+        </div>
+      </div>
+
+    </div><!-- /.drawer-menu_inner -->
+    <div class="logomark img-box"><img src="images/common/ashirai_logo-mark.svg" alt=""></div>
+  </div><!-- /.drawer-menu -->
+
+  <main>
+
+    <div class="under-head">
+      <div class="fv img-box">
+        <picture>
+          <source srcset="images/wholesale/under_head-kv_wholesale_sp.jpg" media="(max-width: 750px)">
+          <img src="images/wholesale/under_head-kv_wholesale.jpg" alt="">
+        </picture>
+      </div>
+      <div class="kv_ttl-wrap">
+        <div class="en-ttl">Wholesale</div>
+        <h1>卸売事業</h1>
+      </div>
+    </div>
+
+    <div class="hidden">
+
+      <div class="breadcrumbs bg-noise bg-line">
+        <div class="inner">
+          <ul>
+            <li><a href="./">トップ</a></li>
+            <li>卸売事業</li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="wholesale_hand-pick bg-noise">
+        <div class="inner">
+          <div class="ttl-wrap">
+            <h2>Hand Pick</h2>
+            <p class="sub-ttl">アメリカ直輸入の厳選された商品</p>
+          </div>
+
+          <div class="block_img-text quality">
+            <div class="text-box">
+              <h3>
+                <span>Advantages</span><br>
+                高品質な商品
+              </h3>
+              <p>
+                弊社は海外に拠点を構え、提携するラグハウスから毎日、バイヤーがアメリカ古着の仕入れを行っています。<br>
+                現地で一点一点、状態やサイズを丁寧にチェックし、厳選した商品のみを買い付けています。<br>
+                日本到着後はすぐに洗濯を行い、そのまま店舗に並べられるよう清潔な状態で管理しています。
+              </p>
+            </div>
+            <div class="img-box"><img src="images/wholesale/wholesale_img01.jpg" alt=""></div>
+          </div>
+          <div class="block_img-text volume">
+            <div class="text-box">
+              <h3>
+                <span>Advantages</span><br>
+                豊富な品揃え
+              </h3>
+              <p>
+                商品構成はメンズ・レディースともに、ベーシックなアメカジから旬のトレンドアイテムまで幅広く展開しています。<br>
+                定番から個性派まで、バイヤーが厳選したアイテムをバランスよく取り揃えており、年代・性別を問わず多様なお客様のニーズにお応えします。
+              </p>
+            </div>
+            <div class="img-box"><img src="images/wholesale/wholesale_img02.jpg" alt=""></div>
+          </div>
+          <div class="block_img-text access">
+            <div class="text-box">
+              <h3>
+                <span>Advantages</span><br>
+                アクセス抜群の好立地
+              </h3>
+              <p>
+                大阪・東京ともに、駅近の利便性に優れた立地でアクセス抜群。ショールームでは、商品をアイテムごとに整理しているため、ボリュームがあっても効率よく全体を確認できます。<br>
+                バイヤー視点に立ち、「アクセスのしやすさ」と「見やすさ」にとことんこだわった空間設計を行っています。
+              </p>
+            </div>
+            <div class="img-box"><img src="images/wholesale/wholesale_img03.jpg" alt=""></div>
+          </div>
+
+        </div>
+        <div class="good img-box"><img src="images/wholesale/ashirai_good.png" alt=""></div>
+        <div class="logomark img-box"><img src="images/common/ashirai_logo-mark.svg" alt=""></div>
+        <div class="vertical-txt img-box">
+          <img src="images/wholesale/vertical-txt_wholesale.svg" alt="">
+        </div>
+      </section>
+
+
+      <section class="wholesale_warehouse bg-noise">
+        <div class="ttl-wrap">
+          <h2>Warehouse</h2>
+          <div class="sub-ttl">倉庫情報</div>
+        </div>
+
+        <div class="house-wrap bg-noise">
+          <div class="inner block">
+            <div class="left">
+              <div class="swiper osaka-swiper common-swip">
+                <div class="swiper-wrapper">
+                  <div class="box swiper-slide">
+                    <div class="img-box obj-fit"><img src="images/wholesale/warehouse_osaka01.jpg" alt="pigsty"></div>
+                  </div>
+                  <div class="box swiper-slide">
+                    <div class="img-box obj-fit"><img src="images/wholesale/warehouse_osaka02.jpg" alt="pigsty"></div>
+                  </div>
+                  <div class="box swiper-slide">
+                    <div class="img-box obj-fit"><img src="images/wholesale/warehouse_osaka03.jpg" alt="pigsty"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination-container osaka-swiper_pagenation">
+                <div class="osaka-swiper-button-prev btn-prev font-unb">PREV</div>
+                <div class="swiper-pagination-custom">
+                  <span class="current-slide font-unb">01</span>
+                  <span class="line"></span>
+                  <span class="total-slides font-unb">04</span>
+                </div>
+                <div class="osaka-swiper-button-next btn-next font-unb">NEXT</div>
+              </div>
+            </div>
+            <div class="right">
+              <h3>
+                <span>Pigsty Wholesale</span><br>
+                Osaka
+              </h3>
+              <p>
+                本街駅より徒歩5分、心斎橋駅より徒歩8分の好立地アクセス。床面積124坪のフロアに多数商品を展示しております。<br>
+                <small>※ お車の駐車場は近隣のパーキングへ駐車お願いします。</small>
+              </p>
+              <ul>
+                <li>
+                  〒541-0058<br>
+                  大阪市中央区南久宝寺町3-4-9 大磯本社ビル2F
+                  <a class="map" href="#" target="_blank">Google map</a>
+                </li>
+                <li>
+                  TEL : 090-3977-0289
+                </li>
+                <li>
+                  MAIL : pigwholesale@osaka.email.ne.jp
+                </li>
+                <li>
+                  <img src="images/common/icon-insta_red.svg" alt="">
+                  <a target="_blank" href="#">pigsty_wholesale</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="house-wrap bg-noise reverse">
+          <div class="inner block">
+            <div class="left">
+              <div class="swiper tokyo-swiper common-swip">
+                <div class="swiper-wrapper">
+                  <div class="box swiper-slide">
+                    <div class="img-box obj-fit"><img src="images/wholesale/warehouse_tokyo01.jpg" alt="pigsty"></div>
+                  </div>
+                  <div class="box swiper-slide">
+                    <div class="img-box obj-fit"><img src="images/wholesale/warehouse_tokyo02.jpg" alt="pigsty"></div>
+                  </div>
+                  <div class="box swiper-slide">
+                    <div class="img-box obj-fit"><img src="images/wholesale/warehouse_tokyo03.jpg" alt="pigsty"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination-container tokyo-swiper_pagenation">
+                <div class="tokyo-swiper-button-prev btn-prev font-unb">PREV</div>
+                <div class="swiper-pagination-custom">
+                  <span class="current-slide font-unb">01</span>
+                  <span class="line"></span>
+                  <span class="total-slides font-unb">04</span>
+                </div>
+                <div class="tokyo-swiper-button-next btn-next font-unb">NEXT</div>
+              </div>
+            </div>
+            <div class="right">
+              <h3>
+                <span>Pigsty Wholesale</span><br>
+                Tokyo
+              </h3>
+              <p>
+                JR原宿駅、東京メトロ千代田線 明治神宮前駅より徒歩6分の好立地アクセス。床面積 約50坪のフロアに多数商品を展示しております。<br>
+                <small>※ お車の駐車場は近隣のパーキングへ駐車お願いします。</small>
+              </p>
+              <ul>
+                <li>
+                  〒150-0001<br>
+                  東京都渋谷区神宮前3-22-10斉藤ビル新館3F
+                  <a class="map" href="#" target="_blank">Google map</a>
+                </li>
+                <li>
+                  TEL : 080-7932-2774
+                </li>
+                <li>
+                  MAIL : pigwholesale@tokyo.email.ne.jp
+                </li>
+                <li>
+                  <img src="images/common/icon-insta_red.svg" alt="">
+                  <a target="_blank" href="#">pigsty_wholesale_tokyo</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="img-box"><img src="images/wholesale/vertical-txt_pgsty-wholesale.svg" alt=""></div>
+            <div class="img-box"><img src="images/wholesale/vertical-txt_pgsty-wholesale.svg" alt=""></div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <section class="wholesale_overview bg-noise">
+      <div class="inner">
+        <div class="ttl-wrap">
+          <h2>Overview</h2>
+          <div class="sub-ttl">お取引概要</div>
+        </div>
+
+        <div class="box">
+          <h3>対象になるお客様</h3>
+          <div>
+            <p>
+              弊社の卸売は店舗をお持ちの方は勿論、個人でネットショップをされている方やセレクトショップ、新規開業の各種オーダー、リメイク商材等、幅広い方を対象にしております。
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <h3>商材について</h3>
+          <div>
+            <p>
+              全て弊社バイヤーのハンドピック商材で、アメリカ古着をメインに取り扱っております。<br>
+              <small>
+                ※リメイク商材等でのオーダーも承っております。<br>
+                ※商材によって対応できない場合もございますのでお気軽にご相談ください。
+              </small>
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <h3>アポイントメント制</h3>
+          <div>
+            <p>
+              弊社の卸売はアポイントメント制になります。<br>
+              <small>
+                ※アポイントに関しましては基本2時間制となります。<br>
+                ※午前のご案内に関しましては既存の顧客様を優先にしておりますので対応出来ない場合がございます。<br>
+                ※ イベント出店等で対応出来ない場合がございますので、事前に下記フォーム又はTELにてご予約ください。
+              </small>
+            </p>
+            <div class="apo">
+              <div class="time">
+                <p><strong>営業時間 :</strong></p>
+                <p>大阪倉庫 9:30 - 19:00<br>東京倉庫 10:30 - 20:00</p>
+              </div>
+              <div class="day">
+                <p><strong>定休日 :</strong></p>
+                <p>不定休</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <h3>ミニマムについて</h3>
+          <div>
+            <ul>
+              <li>税抜3万円以上となります。</li>
+              <li>
+                初回見学のみも可能です。事前に見学のみの旨をお伝えください。<br>
+                <small>※見学の場合1時間制となります。</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <h3>お支払いに関して</h3>
+          <div>
+            <ul>
+              <li>
+                現金払い、もしくは銀行振込<br>
+                <small>※銀行振込は、税抜5万円以上ご購入の方に限る</small>
+              </li>
+              <li>
+                東京倉庫のみクレジット支払いも利用可能<br>
+                <small>※銀行振込は、税抜5万円以上ご購入の方に限る</small>
+              </li>
+              <li>
+                発送は、入金確認後となりますのでご了承ください。<br>
+                <small>※銀行振込を選択の場合、2週間を目途にご入金が無ければキャンセルとさせて頂くことがあります。</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="cart img-box"><img src="images/wholesale/ashirai_cart.png" alt=""></div>
+      <div class="wareset img-box"><img src="images/wholesale/ashirai_wareset.png" alt=""></div>
+      <div class="vertical-txt img-box">
+        <img src="images/wholesale/vertical-txt_overview.svg" alt="">
+      </div>
+    </section>
+
+    <section class="wholesale_order bg-noise">
+      <div class="inner">
+        <diiv class="block">
+          <div class="left img-box">
+            <img src="images/wholesale/wholesale_img04.png" alt="">
+          </div>
+          <div class="right">
+            <div class="ttl-wrap">
+              <h2>Order Sales</h2>
+              <p class="sub-ttl">オーダー販売について</p>
+            </div>
+            <p>
+              各ジャンル・ファブリック・patch等、 One Itemに集中し数量を確保したい時などお問い合わせ下さい。<br>
+              尚、アソート販売等もアイテムにより対応できるので下記お問い合わせフォームよりお問い合わせ下さい。
+            </p>
+          </div>
+        </diiv>
+      </div>
+    </section>
+
+    <section id="wholesale-form" class="wholesale_contact">
+      <div class="inner">
+        <div class="ttl-wrap">
+          <h2>Contact Form</h2>
+          <div class="sub-ttl">卸販売に関するお問い合わせはこちら</div>
+        </div>
+
+        <div class="tel">
+          <div>
+            <a href="te:0665998617">
+              <p>OSAKA<span>お電話でのお問い合わせ</span></p>
+              <p>06-6599-8617<span>受付時間 10 : 00 - 18:00 (土日祝休)</span></p>
+            </a>
+          </div>
+          <div>
+            <a href="te:0665998617">
+              <p>TOKYO<span>お電話でのお問い合わせ</span></p>
+              <p>06-6599-8617<span>受付時間 10 : 00 - 18:00 (土日祝休)</span></p>
+            </a>
+          </div>
+        </div>
+
+        <p class="note">初回見学 60分無料。お気軽にご相談ください！</p>
+
+        <div class="form-wrap">
+          <!-- 
+            以下の項目のフォームをtable形式で作成。
+            wp化後にcontact form7で実装予定。
+
+            「お客様の種別　必須」//チェックボックス
+            「希望倉庫　必須」//チェックボックス
+            「取扱商品」//チェックボックス
+            
+            「お客様情報　必須」(これがthで、以下がtd)
+            　ー「店舗名/会社名（または個人名）」//テキスト
+            　ー「郵便番号」//テキスト
+            　ー「住所」//テキスト
+            　ー「 ご担当者 お名前（全角）必須」//テキスト
+            　ー「 ご担当者 ふりがな（全角）（全角）必須」//テキスト
+            　ー「 お電話番号 必須」//電話
+            　ー「 メールアドレス 必須」//メールアドレス
+            　ー「 メールアドレス （確認）必須」//メールアドレス
+
+            「お問い合わせ内容」//テキストエリア
+          -->
+          <form action="#" method="post">
+            <table>
+              <tr>
+                <th>お客様の種別　必須</th>
+                <td>
+                  <label><input type="checkbox" name="type" value="実店舗">実店舗</label>
+                  <label><input type="checkbox" name="type" value="ネットショップ">ネットショップ</label>
+                  <label><input type="checkbox" name="type" value="セレクトショップ">セレクトショップ</label>
+                  <label><input type="checkbox" name="type" value="新規開業">新規開業</label>
+                  <label><input type="checkbox" name="type" value="その他">その他</label>
+                </td>
+              </tr>
+              <tr>
+                <th>希望倉庫　必須</th>
+                <td>
+                  <label><input type="checkbox" name="warehouse" value="大阪倉庫">大阪倉庫</label>
+                  <label><input type="checkbox" name="warehouse" value="東京倉庫">東京倉庫</label>
+                  <label><input type="checkbox" name="warehouse" value="両方">両方</label>
+                </td>
+              </tr>
+              <tr>
+                <th>取扱商品</th>
+                <td>
+                  <label><input type="checkbox" name="items" value="メンズ古着">メンズ古着</label>
+                  <label><input type="checkbox" name="items" value="レディース古着">レディース古着</label>
+                  <label><input type="checkbox" name="items" value="キッズ古着">キッズ古着</label>
+                  <label><input type="checkbox" name="items" value="リメイク商材">リメイク商材</label>
+                  <label><input type="checkbox" name="items" value="その他">その他</label>
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">お客様情報　必須</th>
+              </tr>
+              <tr>
+                <th>店舗名/会社名（または個人名）</th>
+                <td><input type="text" name="company_name"></td>
+              </tr>
+              <tr>
+                <th>郵便番号</th>
+                <td><input type="text" name="postal_code"></td>
+              </tr>
+              <tr>
+                <th>住所</th>
+                <td><input type="text" name="address"></td>
+              </tr>
+              <tr>
+                <th>ご担当者 お名前（全角）必須</th>
+                <td><input type="text" name="name" required></td>
+              </tr>
+              <tr>
+                <th>ご担当者 ふりがな（全角）（全角）必須</th>
+                <td><input type="text" name="name_kana" required></td>
+              </tr>
+              <tr>
+                <th>お電話番号 必須</th>
+                <td><input type="tel" name="tel" required></td>
+              </tr>
+              <tr>
+                <th>メールアドレス 必須</th>
+                <td><input type="email" name="email" required></td>
+              </tr>
+              <tr>
+                <th>メールアドレス （確認）必須</th>
+                <td><input type="email" name="email_confirm" required></td>
+              </tr>
+              <tr>
+                <th>お問い合わせ内容</th>
+                <td><textarea name="inquiry" rows="6"></textarea></td>
+              </tr>
+            </table>
+
+            <div class="policy">
+              <div class="poli-wrap">
+                <p>
+                  有限会社PIG（以下「当社」）は、お客様の個人情報をお預かりするにあたり、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築します。<br>
+                  当社は個人情報に関する法令を遵守し、個人情報保護の重要性の認識と取組みを徹底し、個人情報の適切な取扱いと保護を推進致します。<br>
+                  <br>
+                  個人情報の管理<br>
+                  当社は、お客さまの個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体
+                  ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー
+                </p>
+              </div>
+            </div>
+
+            <div class="agree">
+              <label>
+                <input type="checkbox" name="agree" required>
+                <span>プライバシーポリシーに同意する</span>
+              </label>
+            </div>
+
+            <div class="announce">
+              <p>
+                48時間以内に連絡がない場合、メールがブロックされている恐れがありますので、<br>
+                お問い合わせいただいた倉庫まで直接お電話いただくか、直接メールにてご連絡をお願いいたします。<br>
+                ※土日、祝日は対応出来ない場合がございますのでご了承下さい。
+              </p>
+            </div>
+
+            <button type="submit" class="btn red">入力内容の確認</button>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div class="back-top"><a href="#">BACK TO TOP</a></div>
+      <div class="footer-columns">
+        <div class="col01">
+          <div class="logo img-box"><a href="./"><img src="images/common/logo_pig.svg" alt="pig co.,ltd"></a></div>
+          <div>
+            <p>
+              〒541-0058<br>
+              大阪市中央区南久宝寺町3-4-9 大磯本社ビル2F
+            </p>
+            <p>
+              TEL : 06-6251-0289<br>
+              FAX : 06-6245-3619
+            </p>
+          </div>
+        </div>
+        <div class="col02">
+          <nav>
+            <ul>
+              <li><a href="about.html">私たちについて</a></li>
+              <li><a href="business.html">事業紹介</a></li>
+              <li><a href="wholesale.html">卸売事業</a></li>
+              <li><a href="company.html">会社概要</a></li>
+              <li><a href="archive.html">新着情報</a></li>
+              <li><a href="#">採用情報</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+              <li><a href="poricy.html">プライバシーポリシー</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="big-pig">PIG</div>
+    </div>
+    <div class="copy"><small>© 2025 PIG Co.,Ltd.</small></div>
+  </footer>
+
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

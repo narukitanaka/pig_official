@@ -86,6 +86,7 @@ top
           }
           .time {
             font-size: clamp(1.4rem, v.pxtovw(16), 1.6rem);
+            font-weight: 400;
             @include c.mq() {
               font-size: clamp(1.2rem, v.pxtovw_sp(20), 2rem);
             }
@@ -490,6 +491,7 @@ top
             margin-bottom: v.pxtovw(15);
             @include c.mq() {
               gap: v.pxtovw_sp(28);
+              margin-bottom: v.pxtovw_sp(20);
             }
             span {
               font-family: "Unbounded", sans-serif;
@@ -509,7 +511,7 @@ top
               border-radius: 100vmax;
               padding: 3px v.pxtovw(24);
               @include c.mq() {
-                padding: 5px 18px;
+                padding: v.pxtovw_sp(5) v.pxtovw_sp(18);
               }
             }
           }

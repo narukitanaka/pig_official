@@ -137,9 +137,16 @@ component
     position: absolute;
     bottom: -0.5rem;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 1.5px;
     background-color: v.$sub-color01;
+    transition: width 0.3s ease;
+    @include c.mq() {
+      width: 100%;
+    }
+  }
+  &:hover::after {
+    width: 100%;
   }
   svg {
     vertical-align: middle;
@@ -218,6 +225,33 @@ component
   }
   .swiper-button-next {
     right: clamp(-4.8rem, v.pxtovw(-60), -6rem);
+  }
+}
+.buying-swiper_pagenation,
+.repair-swiper_pagenation,
+.sale-swiper_pagenation,
+.osaka-swiper_pagenation,
+.tokyo-swiper_pagenation {
+  @include c.flex(center, center);
+  gap: v.pxtovw(10);
+  margin-top: v.pxtovw(35);
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-pagination-custom {
+    font-size: 1.2rem;
+  }
+  .swiper-pagination-custom {
+    @include c.flex(center, center);
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    .line {
+      display: inline-block;
+      width: v.pxtovw(30);
+      height: 1px;
+      background-color: v.$txt-color;
+      margin: 0 v.pxtovw(23);
+    }
   }
 }
 
