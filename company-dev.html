@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="images/fav.png" />
+  <!-- <meta name="robots" content="index, follow"> -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- AdobeFonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/aig2oxm.css">
+  <!-- GoogleFonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Unbounded:wght@200..900&display=swap"
+    rel="stylesheet">
+
+  <title>PIG Inc.</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo img-box">
+        <a href="./">
+          <img class="is_top" src="images/common/logo_pig.svg" alt="">
+        </a>
+      </div>
+
+      <div class="navigation">
+        <nav>
+          <ul>
+            <li><a href="./">Top</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="business.html">Business</a></li>
+            <li><a href="company.html">Company</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="btn-area">
+          <button class="btn red btn-insta" href="#" target="_blank">
+            Instagram
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9">
+              <path id="iocn-arrow01" d="M5,0l5,9H0Z" transform="translate(10 9) rotate(180)" fill="#fff" />
+            </svg>
+          </button>
+          <a class="btn yellow" href="#" target="_blank">Recruit</a>
+        </div>
+      </div>
+
+      <div class="insta-wrap">
+        <div class="insta_accounts">
+          <div class="stores pigsty">
+            <p><img src="images/common/icon-insta.svg" alt="">Pigsty</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / アメ村店</a>
+              <a target="_blank" href="#">大阪 / 梅田店</a>
+              <a target="_blank" href="#">東京 / 原宿店</a>
+            </div>
+          </div>
+          <div class="stores pig_az">
+            <p><img src="images/common/icon-insta.svg" alt="">Pigsty a⇌z STORE</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / アメ村店</a>
+              <a target="_blank" href="#">大阪 / 中崎町店</a>
+              <a target="_blank" href="#">東京 / 渋谷店</a>
+              <a target="_blank" href="#">東京 / 下北沢店</a>
+            </div>
+          </div>
+          <div class="stores vivie">
+            <p><img src="images/common/icon-insta.svg" alt="">vivie</p>
+            <div class="links"><a target="_blank" href="#">大阪 / 中崎町店</a></div>
+          </div>
+          <div class="stores changes">
+            <p><img src="images/common/icon-insta.svg" alt="">CHANGES</p>
+            <div class="links"><a target="_blank" href="#">公式アカウント</a></div>
+          </div>
+          <div class="stores whole">
+            <p><img src="images/common/icon-insta.svg" alt="">WHOLESALE</p>
+            <div class="links">
+              <a target="_blank" href="#">大阪 / 卸売事業アカウント</a>
+              <a target="_blank" href="#">東京 / 卸売事業アカウント</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hamberger-wrap">
+        <div class="ham-inner">
+          <p>Menu</p>
+          <div class="hambager-content">
+            <button type="button" class="hambager">
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+              <span class="c-line"></span>
+            </button>
+          </div><!-- /.hambager-content -->
+        </div>
+      </div><!-- hamberger-wrap -->
+
+    </div>
+  </header>
+
+  <div class="drawer-menu">
+    <div class="drawer-menu_inner">
+      <div class="links">
+
+        <button class="btn gray insta_accordion-trigger" href="" target="_blank">
+          Instagram
+          <!-- <img src="images/common/icon-arrow03_r-down.svg" alt=""> -->
+          <div class="bg-arow"></div>
+        </button>
+        <div class="accordion-content">
+          <div class="instagram-accounts">
+            <div class="stores pigsty">
+              <p><img src="images/common/icon-insta_red.svg" alt="">Pigsty</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / アメ村店</a>
+                <a target="_blank" href="#">大阪 / 梅田店</a>
+                <a target="_blank" href="#">東京 / 原宿店</a>
+              </div>
+            </div>
+            <div class="stores pig_az">
+              <p><img src="images/common/icon-insta_red.svg" alt="">Pigsty a⇌z STORE</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / アメ村店</a>
+                <a target="_blank" href="#">大阪 / 中崎町店</a>
+                <a target="_blank" href="#">東京 / 渋谷店</a>
+                <a target="_blank" href="#">東京 / 下北沢店</a>
+              </div>
+            </div>
+            <div class="stores vivie">
+              <p><img src="images/common/icon-insta_red.svg" alt="">vivie</p>
+              <div class="links"><a target="_blank" href="#">大阪 / 中崎町店</a></div>
+            </div>
+            <div class="stores changes">
+              <p><img src="images/common/icon-insta_red.svg" alt="">CHANGES</p>
+              <div class="links"><a target="_blank" href="#">公式アカウント</a></div>
+            </div>
+            <div class="stores whole">
+              <p><img src="images/common/icon-insta_red.svg" alt="">WHOLESALE</p>
+              <div class="links">
+                <a target="_blank" href="#">大阪 / 卸売事業アカウント</a>
+                <a target="_blank" href="#">東京 / 卸売事業アカウント</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn yellow" href="" target="_blank">
+          Recruit
+          <img src="images/common/icon-arrow03.svg" alt="">
+        </a>
+      </div>
+      <div class="nav-wrap">
+        <nav>
+          <ul>
+            <li>
+              <a href="about.html">
+                About Us<span>私たちについて</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="business.html">
+                Business<span>事業内容</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="wholesale.html">
+                Wholesale<span>卸売事業</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="company.html">
+                Company<span>会社概要</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="archive.html">
+                News<span>お知らせ一覧</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+                  <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+                    <path id="パス_10719" data-name="パス 10719"
+                      d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- /.nav-wrap -->
+
+      <div class="contact">
+        <a href="contact.html">
+          Contact
+          <p>
+            卸販売・採用等 各種<br>
+            お問い合わせこちら
+          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="19.202" height="29.99" viewBox="0 0 19.202 29.99">
+            <g id="icon-arrow03" transform="translate(111.286 29.99) rotate(180)">
+              <path id="パス_10719" data-name="パス 10719"
+                d="M111.286,4.207,107.079,0,92.084,15,107.079,29.99l4.207-4.207L100.5,15Z" fill="#fff" />
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <div class="info">
+        <p>有限会社ピーアイジー　（PIG Inc.）</p>
+        <p>
+          〒542-0086<br>
+          大阪市中央区西心斎橋1-7-14 大阪屋心斎橋西ビル3F
+        </p>
+        <div class="tel-fax">
+          <a href="tel:0662510289">TEL： 06-6251-0289</a>
+          <p>FAX：06-6245-3619</p>
+        </div>
+      </div>
+
+    </div><!-- /.drawer-menu_inner -->
+    <div class="logomark img-box"><img src="images/common/ashirai_logo-mark.svg" alt=""></div>
+  </div><!-- /.drawer-menu -->
+
+  <main>
+
+    <div class="under-head">
+      <div class="fv img-box">
+        <picture>
+          <source srcset="images/company/under_head-kv_company_sp.jpg" media="(max-width: 750px)">
+          <img src="images/company/under_head-kv_company.jpg" alt="">
+        </picture>
+      </div>
+      <div class="kv_ttl-wrap">
+        <div class="en-ttl">Company</div>
+        <h1>会社概要</h1>
+      </div>
+    </div>
+
+    <div class="hidden">
+      <div class="breadcrumbs bg-noise bg-line">
+        <div class="inner">
+          <ul>
+            <li><a href="./">トップ</a></li>
+            <li>会社概要</li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="company_message bg-noise">
+        <div class="inner">
+          <div class="ttl-wrap">
+            <h2>Massage</h2>
+            <p class="sub-ttl">代表挨拶</p>
+          </div>
+          <div class="block">
+            <div class="left">
+              <div class="img-box daihyo"><img src="images/company/company_message01.jpg" alt=""></div>
+              <div class="pig img-box"><img src="images/common/ashirai_real-pig.png" alt=""></div>
+            </div>
+            <div class="right">
+              <div>
+                <span>代表取締役</span>
+                <p>西上 奥人</p>
+              </div>
+              <p>
+                フリーマーケットでの活動を経て、1999年に「Pigsty used clothing」として大阪・東心斎橋にオープン。<br>
+                気がつけば2025年、26年目になりました。なんやかんや続けてこれたのは、ほんまにみなさんのおかげです。<br>
+                お客様、スタッフ、取引先の皆様、国内外問わずすべての出会いに感謝！<br>
+                最初は、ただただアメリカの古着Vintageに夢中でした。<br>
+                地図と電話帳片手に全米を走り回って、スリフト漁って、デッドストック探して、時には廃墟にも潜り込んで(許可済)…<br>
+                あの頃のドキドキときたら、今でも忘れられません。<br>
+                日本にはない空気感、服も家具もアンティークもポスターも、見つけた瞬間の”これや！”っていうあの高揚感。<br>
+                アドレナリン出まくりで…それがあるから、やめられへんし、やめる気もない。<br>
+                「流行をつくる」そんな野心と遊び心を忘れずに、これからも”おっ！”と驚いてもらえるような提案をしていきます。<br>
+                これからもPigstyをよろしくお願いします！
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="logomark img-box"><img src="images/common/ashirai_logo-mark.svg" alt=""></div>
+        <div class="vertical-txt img-box">
+          <img src="images/company/vertical-txt_message.svg" alt="">
+        </div>
+      </section>
+    </div>
+
+    <section class="company_profile bg-noise">
+      <div class="inner">
+        <div class="ttl-wrap">
+          <h2>Company Profile</h2>
+          <p class="sub-ttl">会社概要</p>
+        </div>
+        <div class="profile">
+          <dl>
+            <dt>社名</dt>
+            <dd>有限会社ピーアイジー　(PIG Inc.)</dd>
+          </dl>
+          <dl>
+            <dt>代表取締役</dt>
+            <dd>西上 奥人</dd>
+          </dl>
+          <dl>
+            <dt>本社所在地</dt>
+            <dd>
+              〒542-0086<br>
+              大阪市中央区西心斎橋1-7-14 大阪屋心斎橋西ビル3F
+              <a target="_blank" href="https://maps.app.goo.gl/pnSDKBtmLT1V5VHt9">Googlemapでみる</a>
+            </dd>
+          </dl>
+          <dl>
+            <dt>連絡先</dt>
+            <dd>
+              <p>TEL : 06-6251-0289</p>
+              <p>FAX : 06-6245-3619</p>
+              <p>Mail : pig@oct.email.ne.jp</p>
+            </dd>
+          </dl>
+          <dl>
+            <dt>営業時間</dt>
+            <dd>平日 10:00-20:00</dd>
+          </dl>
+          <dl>
+            <dt>設立</dt>
+            <dd>1999年6月</dd>
+          </dl>
+          <dl>
+            <dt>資本金</dt>
+            <dd>300万円</dd>
+          </dl>
+          <dl>
+            <dt>店舗数</dt>
+            <dd>
+              <table>
+                <tr>
+                  <th>Pigsty></th>
+                  <td>3店舗</td>
+                </tr>
+                <tr>
+                  <th>Pigsty a ⇔ z></th>
+                  <td>4店舗</td>
+                </tr>
+                <tr>
+                  <th>vivie</th>
+                  <td>1店舗</td>
+                </tr>
+              </table>
+            </dd>
+          </dl>
+          <dl>
+            <dt>従業員数</dt>
+            <dd>60名 (2025年6月現在)</dd>
+          </dl>
+          <dl>
+            <dt>事業内容</dt>
+            <dd>
+              衣料品中古衣料品の販売、並びに輸出入
+              衣料品の製造、販売、並びに輸出入
+              服飾雑貨、装飾品及び日用雑貨の販売並びに輸出入
+              家具、照明器具、美術工芸品の販売並びに輸出入
+            </dd>
+          </dl>
+        </div>
+        <div class="img-box"><img src="images/company/company_profile01.png" alt=""></div>
+      </div>
+      <div class="vertical-txt img-box">
+        <img src="images/company/vertical-txt_company.svg" alt="">
+      </div>
+    </section>
+
+
+    <section class="company_history bg-noise">
+      <div class="inner">
+
+        <div class="ttl-wrap">
+          <h2>History</h2>
+          <p class="sub-ttl">これまでの歩み</p>
+        </div>
+
+        <div class="block">
+          <div class="left">
+            <div class="img-box"><img src="images/company/company_histry01.jpg" alt=""></div>
+          </div>
+          <div class="right">
+            <p>
+              アメリカから厳選した古着を独自ルートで仕入れ、年代・ジャンルを問わず幅広く展開。<br>
+              人・モノ・場所にこだわり、様々なシーンでお客様に喜んで頂ける楽しんで頂ける店舗作りと、卸売事業に取り組んでおります。
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <span class="circle"></span>
+          <div class="time-wrap">
+            <div class="box y1999">
+              <div class="year">1999</div>
+              <div class="txt">
+                <p>
+                  Pigstyとして<br>
+                  大阪市東心斎橋宝ビル3FにOpen
+                </p>
+              </div>
+              <div class="img-box"><img src="images/company/ashirai_histry01.png" alt=""></div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box">
+              <div class="year">2005</div>
+              <div class="txt">
+                <p>
+                  大阪市中央区西心斎橋<br>
+                  アメリカ村に移転
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box">
+              <div class="year">2006</div>
+              <div class="txt">
+                <p>有限会社ピーアイジーとして法人化</p>
+              </div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box y2007">
+              <div class="year">2007</div>
+              <div class="txt">
+                <p>大阪市北区にPigsty梅田店 OPEN</p>
+              </div>
+              <div class="img-box"><img src="images/company/ashirai_histry02.png" alt=""></div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box">
+              <div class="year">2010</div>
+              <div class="txt">
+                <p>
+                  東京都渋谷区に<br>
+                  Pigsty渋谷神宮前店 OPEN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box">
+              <div class="year">2019</div>
+              <div class="txt">
+                <p>
+                  大阪市北区にPigsty a⇄z と<br>
+                  vivie中崎店 OPEN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box y2020">
+              <div class="year">2020</div>
+              <div class="txt">
+                <p>製造販売部門 ONE WAY 発足</p>
+              </div>
+              <div class="img-box"><img src="images/company/ashirai_histry03.png" alt=""></div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box">
+              <div class="year">2021</div>
+              <div class="txt">
+                <p>
+                  東京都世田谷区北沢に<br>
+                  Pigsty 下北沢店 11月下旬OPEN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box">
+              <div class="year">2022</div>
+              <div class="txt">
+                <p>
+                  Pigstyとして<br>
+                  大阪市中央区西心斎橋に
+                  Pigsty a⇄z アメ村店 OPEN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box y2022">
+              <div class="year">2022</div>
+              <div class="txt">
+                <p>
+                  東京都渋谷区に<br>
+                  Pigsty原宿店 OPEN
+                </p>
+              </div>
+              <div class="img-box"><img src="images/company/ashirai_histry04.png" alt=""></div>
+            </div>
+          </div>
+          <div class="time-wrap">
+            <div class="box">
+              <div class="year">2025</div>
+              <div class="txt">
+                <p>
+                  東京都渋谷区神宮前にて<br>
+                  東京卸 始動
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="goes-on">
+          <p class="main">THE STORY GOES ON.</p>
+          <p class="sub">Thank you to everyone, always.</p>
+        </div>
+      </div>
+      <div class="vertical-txt01 img-box">
+        <img src="images/company/vertical-txt_ourhistory.svg" alt="">
+      </div>
+      <div class="vertical-txt02 img-box">
+        <img src="images/company/vertical-txt_ourhistory.svg" alt="">
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div class="back-top"><a href="#">BACK TO TOP</a></div>
+      <div class="footer-columns">
+        <div class="col01">
+          <div class="logo img-box"><a href="./"><img src="images/common/logo_pig.svg" alt="pig co.,ltd"></a></div>
+          <div>
+            <p>
+              〒541-0058<br>
+              大阪市中央区南久宝寺町3-4-9 大磯本社ビル2F
+            </p>
+            <p>
+              TEL : 06-6251-0289<br>
+              FAX : 06-6245-3619
+            </p>
+          </div>
+        </div>
+        <div class="col02">
+          <nav>
+            <ul>
+              <li><a href="about.html">私たちについて</a></li>
+              <li><a href="business.html">事業紹介</a></li>
+              <li><a href="wholesale.html">卸売事業</a></li>
+              <li><a href="company.html">会社概要</a></li>
+              <li><a href="archive.html">新着情報</a></li>
+              <li><a href="#">採用情報</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+              <li><a href="poricy.html">プライバシーポリシー</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="big-pig">PIG</div>
+    </div>
+    <div class="copy"><small>© 2025 PIG Co.,Ltd.</small></div>
+  </footer>
+
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

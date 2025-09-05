@@ -583,14 +583,14 @@
       </div>
     </section>
 
-    <section id="wholesale-form" class="wholesale_contact">
+    <section id="wholesale-form" class="wholesale_contact bg-noise">
       <div class="inner">
         <div class="ttl-wrap">
           <h2>Contact Form</h2>
           <div class="sub-ttl">卸販売に関するお問い合わせはこちら</div>
         </div>
 
-        <div class="tel">
+        <div class="contact-tel">
           <div>
             <a href="te:0665998617">
               <p>OSAKA<span>お電話でのお問い合わせ</span></p>
@@ -631,71 +631,71 @@
           <form action="#" method="post">
             <table>
               <tr>
-                <th>お客様の種別　必須</th>
+                <th>お客様の種別<span>＊必須</span></th>
                 <td>
-                  <label><input type="checkbox" name="type" value="実店舗">実店舗</label>
-                  <label><input type="checkbox" name="type" value="ネットショップ">ネットショップ</label>
-                  <label><input type="checkbox" name="type" value="セレクトショップ">セレクトショップ</label>
-                  <label><input type="checkbox" name="type" value="新規開業">新規開業</label>
-                  <label><input type="checkbox" name="type" value="その他">その他</label>
+                  <label><input type="checkbox" name="type" value="個人" required>個人</label>
+                  <label><input type="checkbox" name="type" value="法人">法人</label>
                 </td>
               </tr>
               <tr>
-                <th>希望倉庫　必須</th>
+                <th>希望倉庫<span>＊必須</span></th>
                 <td>
-                  <label><input type="checkbox" name="warehouse" value="大阪倉庫">大阪倉庫</label>
+                  <label><input type="checkbox" name="warehouse" value="大阪倉庫" required>大阪倉庫</label>
                   <label><input type="checkbox" name="warehouse" value="東京倉庫">東京倉庫</label>
-                  <label><input type="checkbox" name="warehouse" value="両方">両方</label>
+                  <p><span>※ 大阪と東京で受付が異なりますので、ご希望される倉庫にご連絡お願いします。</span></p>
                 </td>
               </tr>
               <tr>
                 <th>取扱商品</th>
                 <td>
-                  <label><input type="checkbox" name="items" value="メンズ古着">メンズ古着</label>
-                  <label><input type="checkbox" name="items" value="レディース古着">レディース古着</label>
-                  <label><input type="checkbox" name="items" value="キッズ古着">キッズ古着</label>
-                  <label><input type="checkbox" name="items" value="リメイク商材">リメイク商材</label>
-                  <label><input type="checkbox" name="items" value="その他">その他</label>
+                  <label><input type="checkbox" name="items" value="Mens">Mens</label>
+                  <label><input type="checkbox" name="items" value="Ladies">Ladies</label>
+                  <label><input type="checkbox" name="items" value="どちらも">どちらも</label>
                 </td>
               </tr>
               <tr>
-                <th colspan="2">お客様情報　必須</th>
-              </tr>
-              <tr>
-                <th>店舗名/会社名（または個人名）</th>
-                <td><input type="text" name="company_name"></td>
-              </tr>
-              <tr>
-                <th>郵便番号</th>
-                <td><input type="text" name="postal_code"></td>
-              </tr>
-              <tr>
-                <th>住所</th>
-                <td><input type="text" name="address"></td>
-              </tr>
-              <tr>
-                <th>ご担当者 お名前（全角）必須</th>
-                <td><input type="text" name="name" required></td>
-              </tr>
-              <tr>
-                <th>ご担当者 ふりがな（全角）（全角）必須</th>
-                <td><input type="text" name="name_kana" required></td>
-              </tr>
-              <tr>
-                <th>お電話番号 必須</th>
-                <td><input type="tel" name="tel" required></td>
-              </tr>
-              <tr>
-                <th>メールアドレス 必須</th>
-                <td><input type="email" name="email" required></td>
-              </tr>
-              <tr>
-                <th>メールアドレス （確認）必須</th>
-                <td><input type="email" name="email_confirm" required></td>
+                <th>お客様情報<span>＊必須</span></th>
+                <td>
+                  <div class="customer-info">
+                    <div class="info-row">
+                      <label>● 店舗名 / 会社名（または個人名）</label>
+                      <input type="text" name="company_name">
+                    </div>
+                    <div class="info-row">
+                      <label>● 郵便番号</label>
+                      <input type="text" name="postal_code">
+                    </div>
+                    <div class="info-row">
+                      <label>● 住所</label>
+                      <input type="text" name="address">
+                    </div>
+                    <div class="info-row">
+                      <label>● ご担当者 お名前（全角） ＊必須</label>
+                      <input type="text" name="name" required>
+                    </div>
+                    <div class="info-row">
+                      <label>● ご担当者 ふりがな（全角） ＊必須</label>
+                      <input type="text" name="name_kana" required>
+                    </div>
+                    <div class="info-row">
+                      <label>● お電話番号＊必須</label>
+                      <input type="tel" name="tel" required>
+                    </div>
+                    <div class="info-row">
+                      <label>● メールアドレス ＊必須</label>
+                      <input type="email" name="email" required autocomplete="email">
+                      <p>info@zipanguworks.comからメールをお送りさせていただきますので、指定受信されている方は解除をお願いします。</p>
+                    </div>
+                    <div class="info-row">
+                      <label>● メールアドレス（確認） ＊必須</label>
+                      <input type="email" name="email_confirm" required autocomplete="email">
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th>お問い合わせ内容</th>
-                <td><textarea name="inquiry" rows="6"></textarea></td>
+                <td><textarea name="inquiry" rows="6" placeholder="記入例 )  1000字以内でご記載をお願いします"></textarea></td>
               </tr>
             </table>
 
@@ -703,8 +703,10 @@
               <div class="poli-wrap">
                 <p>
                   有限会社PIG（以下「当社」）は、お客様の個人情報をお預かりするにあたり、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築します。<br>
-                  当社は個人情報に関する法令を遵守し、個人情報保護の重要性の認識と取組みを徹底し、個人情報の適切な取扱いと保護を推進致します。<br>
-                  <br>
+                  当社は個人情報に関する法令を遵守し、個人情報保護の重要性の認識と取組みを徹底し、個人情報の適切な取扱いと保護を推進致します。
+                </p>
+
+                <p>
                   個人情報の管理<br>
                   当社は、お客さまの個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体
                   ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー
@@ -727,11 +729,14 @@
               </p>
             </div>
 
-            <button type="submit" class="btn red">入力内容の確認</button>
+            <div class="submit-wrap"><button type="submit" class="btn red">入力内容の確認</button></div>
 
           </form>
         </div>
 
+      </div>
+      <div class="vertical-txt img-box">
+        <img src="images/common/vertical-txt_contact-form.svg" alt="">
       </div>
     </section>
 

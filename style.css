@@ -1337,6 +1337,188 @@ component
   text-decoration: underline;
 }
 
+.form-wrap {
+  border-radius: 1.0416666667vw;
+  background-color: #e3dbd0;
+  position: relative;
+  z-index: 4;
+}
+.form-wrap form {
+  padding: 2.6041666667vw 0 4.4791666667vw;
+  width: 52.0833333333vw;
+  margin: 0 auto;
+}
+.form-wrap form table {
+  width: 100%;
+}
+.form-wrap form table tr {
+  position: relative;
+}
+.form-wrap form table tr::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px; /* 線の太さ */
+  background-image: repeating-linear-gradient(to right, #707070 0, #707070 2px, transparent 2px, transparent 4px);
+}
+.form-wrap form table tr:last-of-type::after {
+  display: none;
+}
+.form-wrap form table tr:has(.customer-info) th {
+  vertical-align: top;
+}
+.form-wrap form table tr:has(.customer-info) td {
+  position: relative;
+}
+.form-wrap form table tr:has(.customer-info) td::before {
+  content: "";
+  position: absolute;
+  left: 0; /* ← 左端に配置 */
+  top: 50%; /* 縦中央基準 */
+  transform: translateY(-50%);
+  width: 1px; /* 線の太さ */
+  height: calc(100% - 4.1666666667vw);
+  background-image: repeating-linear-gradient(to bottom, #707070 0, #707070 2px, transparent 2px, transparent 4px);
+}
+.form-wrap form table tr:has(textarea) th {
+  vertical-align: top;
+}
+.form-wrap form table th,
+.form-wrap form table td {
+  padding: 2.0833333333vw 0;
+  vertical-align: middle;
+}
+.form-wrap form table th {
+  width: 22%;
+}
+.form-wrap form table th span {
+  font-size: clamp(1.2rem, 0.7291666667vw, 1.4rem);
+  color: #d87159;
+  margin-left: 0.6770833333vw;
+}
+.form-wrap form table td {
+  padding-left: 3.4375vw;
+}
+.form-wrap form table td input[type=text],
+.form-wrap form table td input[type=email],
+.form-wrap form table td input[type=tel],
+.form-wrap form table td textarea {
+  width: 100%;
+  font-size: clamp(1.3rem, 0.7291666667vw, 1.4rem);
+  background-color: #fff;
+  border-radius: 0.5208333333vw;
+  border: 0.5px solid #707070;
+}
+.form-wrap form table td input[type=text],
+.form-wrap form table td input[type=email],
+.form-wrap form table td input[type=tel] {
+  padding: 0.6770833333vw 1.0416666667vw;
+}
+.form-wrap form table td textarea {
+  padding: 1.25vw 1.5625vw;
+  height: clamp(20rem, 15.625vw, 30rem);
+}
+.form-wrap form table td textarea::-moz-placeholder {
+  opacity: 0.6;
+}
+.form-wrap form table td textarea::placeholder {
+  opacity: 0.6;
+}
+.form-wrap form table td label {
+  font-size: clamp(1.3rem, 0.8333333333vw, 1.6rem);
+}
+.form-wrap form table td label:has(input[type=checkbox]) {
+  width: 9.1145833333vw;
+  display: inline-flex;
+  gap: 0.9895833333vw;
+  padding: 0.625vw 0.8333333333vw;
+  font-size: clamp(1.2rem, 0.7291666667vw, 1.4rem);
+  border-radius: 0.4166666667vw;
+  border: 0.5px solid #707070;
+  background-color: #fff;
+  margin-right: 1.0416666667vw;
+}
+.form-wrap form table td label:has(input[type=checkbox]):last-of-type {
+  margin-right: 0;
+}
+.form-wrap form table td .info-row {
+  margin-bottom: 2.5rem;
+}
+.form-wrap form table td .info-row:last-of-type {
+  margin-bottom: 0;
+}
+.form-wrap form table td .info-row label {
+  display: block;
+  margin-bottom: 0.9375vw;
+}
+.form-wrap form table td p {
+  font-size: 1rem;
+  margin-top: 0.2604166667vw;
+}
+.form-wrap form table td p span {
+  color: #d87159;
+}
+.form-wrap form .policy {
+  height: 6.0416666667vw;
+  border: 1px solid #462f13;
+  border-radius: 0.5208333333vw;
+  margin-bottom: 1.7708333333vw;
+}
+.form-wrap form .policy .poli-wrap {
+  padding: 0.8854166667vw 1.5625vw 1.25vw;
+  height: 100%;
+  overflow-y: scroll;
+}
+.form-wrap form .policy .poli-wrap p {
+  font-size: 1rem;
+  margin-bottom: 0.5208333333vw;
+}
+.form-wrap form .agree {
+  position: relative;
+  padding-bottom: 2.1875vw;
+  margin-bottom: 1.3541666667vw;
+}
+.form-wrap form .agree::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px; /* 線の太さ */
+  background-image: repeating-linear-gradient(to right, #707070 0, #707070 2px, transparent 2px, transparent 4px);
+}
+.form-wrap form .agree label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  font-size: 1.2rem;
+}
+.form-wrap form .agree label input {
+  width: clamp(1.3rem, 0.9375vw, 1.8rem);
+  height: clamp(1.3rem, 0.9375vw, 1.8rem);
+  background-color: transparent !important;
+}
+.form-wrap form .announce {
+  margin-bottom: 2.3958333333vw;
+}
+.form-wrap form .announce p {
+  font-size: 1.2rem;
+  line-height: 2;
+  text-align: center;
+}
+.form-wrap form .submit-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrap form button {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+}
+
 /*************************************************
 header
 *************************************************/
@@ -4111,4 +4293,495 @@ Wholesale 卸売事業
 .wholesale_order .right > p {
   max-width: 31.7708333333vw;
   line-height: 2;
+}
+
+.wholesale_contact {
+  padding: 5.5208333333vw 0 4.5833333333vw;
+  background-color: #d1c1a5;
+}
+.wholesale_contact .inner {
+  width: 72.7083333333vw;
+}
+.wholesale_contact .ttl-wrap {
+  margin-bottom: 3.6979166667vw;
+}
+.wholesale_contact .ttl-wrap h2 {
+  margin-bottom: 1.3020833333vw;
+}
+.wholesale_contact .contact-tel {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6145833333vw;
+  margin-bottom: 1.4583333333vw;
+}
+.wholesale_contact .contact-tel > div {
+  width: calc(100% - 0.8072916667vw);
+  border-radius: 1.0416666667vw;
+  background-color: #e3dbd0;
+  padding: 1.25vw;
+}
+.wholesale_contact .contact-tel > div a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.6875vw;
+  width: 100%;
+  height: 100%;
+}
+.wholesale_contact .contact-tel > div a p {
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(1.6rem, 1.3541666667vw, 2.6rem);
+  line-height: 1.4;
+  font-weight: 400;
+  color: #d87159;
+  text-align: center;
+}
+.wholesale_contact .contact-tel > div a p span {
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: clamp(1.2rem, 0.7291666667vw, 1.4rem);
+  font-weight: 500;
+  color: #462f13;
+}
+.wholesale_contact .note {
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(216, 113, 89, 0.65);
+  text-align: center;
+  padding: 1.0416666667vw 0;
+  border-radius: 1.0416666667vw;
+  margin-bottom: 3.4375vw;
+}
+.wholesale_contact > .img-box {
+  position: absolute;
+}
+.wholesale_contact > .img-box.vertical-txt {
+  width: 10.4166666667vw;
+  top: 31.25vw;
+  right: 0;
+}
+
+/*************************************************
+Contact お問い合わせ
+*************************************************/
+.contact_wrap01 {
+  padding: 1.71875vw 0 6.0416666667vw;
+  background-color: #fff7e8;
+}
+.contact_wrap01 .inner {
+  width: 72.7083333333vw;
+}
+.contact_wrap01 .inner > p {
+  text-align: center;
+  line-height: 2.4;
+  margin-bottom: 4.21875vw;
+}
+.contact_wrap01 .contact-root {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6145833333vw;
+}
+.contact_wrap01 .contact-root > div {
+  width: calc(100% - 0.8072916667vw);
+  border-radius: 1.0416666667vw;
+  background-color: #e3dbd0;
+  padding: 1.40625vw;
+}
+.contact_wrap01 .contact-root > div a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.6458333333vw;
+  width: 100%;
+  height: 100%;
+}
+.contact_wrap01 .contact-root > div a div {
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(1.8rem, 1.875vw, 3.6rem);
+  font-weight: 400;
+  color: #d87159;
+}
+.contact_wrap01 .contact-root > div a p {
+  display: inline-block;
+  font-size: clamp(1.3rem, 0.8333333333vw, 1.6rem);
+  font-weight: 600;
+  color: #d87159;
+}
+.contact_wrap01 .contact-root > div a svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.8229166667vw;
+  width: 0.5729166667vw;
+}
+.contact_wrap01 .contact-root > div a svg path {
+  fill: #d87159;
+}
+.contact_wrap01 > .img-box {
+  position: absolute;
+}
+.contact_wrap01 > .img-box.logomark {
+  width: 58.4895833333vw;
+  aspect-ratio: 1/0.38;
+  top: -5.2083333333vw;
+  right: -21.875vw;
+}
+
+.contact_wrap02 {
+  padding: 5.5208333333vw 0 4.5833333333vw;
+  background-color: #d1c1a5;
+}
+.contact_wrap02 .inner {
+  width: 72.7083333333vw;
+}
+.contact_wrap02 .ttl-wrap {
+  margin-bottom: 4.2708333333vw;
+}
+.contact_wrap02 .ttl-wrap h2 {
+  margin-bottom: 1.3020833333vw;
+}
+.contact_wrap02 .form-wrap form table .customer-info label span {
+  font-size: clamp(1.2rem, 0.7291666667vw, 1.4rem);
+  color: #d87159;
+  margin-left: 1.4rem;
+}
+.contact_wrap02 > .img-box {
+  position: absolute;
+}
+.contact_wrap02 > .img-box.vertical-txt {
+  width: 10.4166666667vw;
+  top: 18.2291666667vw;
+  right: 0;
+}
+
+/*************************************************
+component 会社概要
+*************************************************/
+.company_message {
+  padding: 2.96875vw 0 7.7604166667vw;
+  background-color: #fff7e8;
+}
+.company_message .ttl-wrap {
+  margin-bottom: 3.125vw;
+}
+.company_message .ttl-wrap h2 {
+  margin-bottom: 0.5208333333vw;
+  text-align: left;
+}
+.company_message .ttl-wrap .sub-ttl {
+  color: #462f13;
+  text-align: left;
+}
+.company_message .block {
+  gap: 9.21875vw;
+}
+.company_message .block .left {
+  position: relative;
+  flex-shrink: 0;
+  padding-left: 5.9895833333vw;
+}
+.company_message .block .left .daihyo {
+  width: 23.8020833333vw;
+  border-radius: 10.0520833333vw;
+  overflow: hidden;
+}
+.company_message .block .left .pig {
+  position: absolute;
+  width: 12.4479166667vw;
+  top: -2.6041666667vw;
+  left: 10.4166666667vw;
+}
+.company_message .block .right {
+  flex-grow: 1;
+}
+.company_message .block .right > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.9791666667vw;
+  margin-bottom: 2.7604166667vw;
+}
+.company_message .block .right > div span {
+  font-weight: 600;
+  color: #d87159;
+}
+.company_message .block .right > div p {
+  font-size: clamp(1.6rem, 1.6666666667vw, 3.2rem);
+}
+.company_message .block .right p {
+  width: 31.25vw;
+  line-height: 2.2;
+}
+.company_message > .img-box {
+  position: absolute;
+}
+.company_message > .img-box.logomark {
+  width: 58.4895833333vw;
+  aspect-ratio: 1/0.38;
+  top: -5.2083333333vw;
+  right: -21.875vw;
+}
+.company_message > .img-box.vertical-txt {
+  width: 10.4166666667vw;
+  top: 7.2916666667vw;
+  right: 0;
+}
+
+.company_profile {
+  padding: 5.2083333333vw 0 7.7604166667vw;
+  background-color: #d1c1a5;
+}
+.company_profile .inner {
+  position: relative;
+}
+.company_profile .inner .img-box {
+  position: absolute;
+  width: 34.1145833333vw;
+  top: 13.8020833333vw;
+  right: -5.0520833333vw;
+}
+.company_profile .ttl-wrap {
+  margin-bottom: 5.2083333333vw;
+}
+.company_profile .ttl-wrap h2 {
+  margin-bottom: 1.5625vw;
+}
+.company_profile .profile {
+  position: relative;
+  padding-left: 4.84375vw;
+  z-index: 3;
+}
+.company_profile .profile dl {
+  width: 34.1145833333vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.1458333333vw 2.6041666667vw;
+  background-color: rgba(227, 219, 208, 0.6);
+  border-radius: 1.1458333333vw;
+  margin-bottom: 0.5208333333vw;
+}
+.company_profile .profile dl:last-of-type {
+  margin-bottom: 0;
+}
+.company_profile .profile dl dt {
+  width: 28%;
+  font-weight: 600;
+  color: #d87159;
+}
+.company_profile .profile dl dd {
+  width: 72%;
+  font-size: clamp(1.2rem, 0.8333333333vw, 1.6rem);
+  line-height: 2;
+}
+.company_profile .profile dl dd a {
+  font-size: clamp(1rem, 0.7291666667vw, 1.4rem);
+  color: #d87159;
+  text-decoration: underline;
+}
+.company_profile .profile dl dd table {
+  width: 100%;
+  table-layout: fixed;
+}
+.company_profile .profile dl dd table th {
+  width: 38%;
+}
+.company_profile .profile dl dd table th,
+.company_profile .profile dl dd table td {
+  line-height: 1.8;
+}
+.company_profile > .img-box {
+  position: absolute;
+}
+.company_profile > .img-box.vertical-txt {
+  width: 14.0625vw;
+  top: 9.53125vw;
+  left: -2.0833333333vw;
+}
+
+.company_history {
+  padding: 5.2083333333vw 0 7.7604166667vw;
+  background-color: #fff7e8;
+}
+.company_history .ttl-wrap {
+  margin-bottom: 5.2083333333vw;
+}
+.company_history .ttl-wrap h2 {
+  text-align: left;
+  margin-bottom: 1.5625vw;
+}
+.company_history .ttl-wrap .sub-ttl {
+  text-align: left;
+}
+.company_history .block {
+  align-items: center;
+  gap: 7.2395833333vw;
+  margin-left: -2.03125vw;
+  margin-bottom: 5.46875vw;
+}
+.company_history .block .left .img-box {
+  width: 39.7916666667vw;
+  border-radius: 9.5833333333vw;
+  overflow: hidden;
+}
+.company_history .block .right p {
+  width: 26.25vw;
+  line-height: 2.4;
+}
+.company_history .timeline {
+  position: relative;
+  width: 49.9479166667vw;
+  margin: 0 auto 6.4583333333vw;
+}
+.company_history .timeline .circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
+  width: 53.28125vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #ddb763;
+  opacity: 0.1;
+}
+.company_history .timeline .time-wrap {
+  margin-bottom: 0.9895833333vw;
+}
+.company_history .timeline .time-wrap .box {
+  position: relative;
+  width: 50%;
+  display: inline-block;
+}
+.company_history .timeline .time-wrap .box::before {
+  content: "";
+  position: absolute;
+  top: 1.1458333333vw;
+  width: 1.3541666667vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 3px solid #d87159;
+}
+.company_history .timeline .time-wrap .box::after {
+  content: "";
+  position: absolute;
+  top: 3.4895833333vw;
+  width: 2px;
+  height: calc(100% - 2.6041666667vw);
+  background-color: #d87159;
+}
+.company_history .timeline .time-wrap .box .year {
+  position: relative;
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(4rem, 3.125vw, 6rem);
+  font-weight: 400;
+  color: #d87159;
+  margin-bottom: 0.625vw;
+  z-index: 2;
+}
+.company_history .timeline .time-wrap .box .txt {
+  position: relative;
+  width: 18.4895833333vw;
+  z-index: 2;
+}
+.company_history .timeline .time-wrap .box .txt p {
+  padding: 1.25vw 1.9791666667vw;
+  background-color: rgba(227, 219, 208, 0.6);
+  border-radius: 1.1458333333vw;
+}
+.company_history .timeline .time-wrap .box .img-box {
+  position: absolute;
+  z-index: 1;
+}
+.company_history .timeline .time-wrap .box.y1999 .img-box {
+  width: 16.9791666667vw;
+  right: -11.09375vw;
+  bottom: -1.3541666667vw;
+}
+.company_history .timeline .time-wrap .box.y2007 .img-box {
+  width: 11.71875vw;
+  left: -9.6354166667vw;
+  bottom: -4.375vw;
+  z-index: 3;
+}
+.company_history .timeline .time-wrap .box.y2020 .img-box {
+  width: 12.65625vw;
+  right: -11.0416666667vw;
+  bottom: -3.1770833333vw;
+  z-index: 1;
+}
+.company_history .timeline .time-wrap .box.y2022 .img-box {
+  width: 9.6354166667vw;
+  left: -8.59375vw;
+  bottom: -6.40625vw;
+  z-index: 3;
+}
+.company_history .timeline .time-wrap:nth-of-type(odd) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.company_history .timeline .time-wrap:nth-of-type(odd) .box {
+  padding-left: 6.6145833333vw;
+}
+.company_history .timeline .time-wrap:nth-of-type(odd) .box::before {
+  left: -0.6770833333vw;
+}
+.company_history .timeline .time-wrap:nth-of-type(odd) .box::after {
+  left: -1px;
+}
+.company_history .timeline .time-wrap:nth-of-type(odd) .box div,
+.company_history .timeline .time-wrap:nth-of-type(odd) .box p {
+  text-align: left;
+}
+.company_history .timeline .time-wrap:nth-of-type(2n) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.company_history .timeline .time-wrap:nth-of-type(2n) .box {
+  padding-right: 6.6145833333vw;
+}
+.company_history .timeline .time-wrap:nth-of-type(2n) .box::before {
+  right: -0.6770833333vw;
+}
+.company_history .timeline .time-wrap:nth-of-type(2n) .box::after {
+  right: -1px;
+}
+.company_history .timeline .time-wrap:nth-of-type(2n) .box div,
+.company_history .timeline .time-wrap:nth-of-type(2n) .box p {
+  text-align: right;
+}
+.company_history .timeline .time-wrap:last-of-type {
+  margin-bottom: 0;
+}
+.company_history .goes-on p {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+  color: #d87159;
+  text-align: center;
+}
+.company_history .goes-on p.main {
+  font-size: clamp(4rem, 3.125vw, 6rem);
+}
+.company_history > .img-box {
+  position: absolute;
+}
+.company_history > .img-box.vertical-txt01 {
+  width: 14.0625vw;
+  top: 11.4583333333vw;
+  right: 0;
+}
+.company_history > .img-box.vertical-txt02 {
+  width: 14.0625vw;
+  bottom: 10vw;
+  left: -2.0833333333vw;
 }
