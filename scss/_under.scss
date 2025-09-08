@@ -650,7 +650,9 @@ Business 事業内容
         right: v.pxtovw(-80);
         width: v.pxtovw(300);
         img {
-          filter: drop-shadow(6px 8px 15px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(
+            v.pxtovw(6) v.pxtovw(8) v.pxtovw(15) rgba(0, 0, 0, 0.25)
+          );
         }
       }
     }
@@ -668,6 +670,12 @@ Business 事業内容
     margin: 0 0 v.pxtovw(75) auto;
     padding-bottom: v.pxtovw(75);
     border-bottom: 1px solid v.$sub-color01;
+    @include c.mq(md) {
+      max-width: v.pxtovw(1400);
+    }
+    @include c.mq(md-s) {
+      max-width: v.pxtovw(1500);
+    }
     &.buying {
       .text-box {
         &::before {
@@ -708,7 +716,7 @@ Business 事業内容
       }
       h3 {
         position: relative;
-        font-size: clamp(1.8rem, v.pxtovw(26), 2.6rem);
+        font-size: clamp(1.6rem, v.pxtovw(26), 2.6rem);
         color: v.$sub-color01;
         margin-bottom: v.pxtovw(35);
         z-index: 2;
@@ -738,7 +746,7 @@ Business 事業内容
     > div {
       h3 {
         font-family: "Unbounded", sans-serif;
-        font-size: clamp(3.2rem, v.pxtovw(50), 5rem);
+        font-size: clamp(2.4rem, v.pxtovw(50), 5rem);
         font-weight: 400;
         line-height: 0.9;
         color: v.$sub-color01;
@@ -747,7 +755,7 @@ Business 事業内容
         margin-bottom: v.pxtovw(30);
         span {
           font-family: "Noto Sans JP", sans-serif;
-          font-size: clamp(1.4rem, v.pxtovw(18), 1.8rem);
+          font-size: clamp(1.2rem, v.pxtovw(18), 1.8rem);
           font-weight: 500;
         }
       }
@@ -776,6 +784,10 @@ Business 事業内容
 .business_brand {
   padding: v.pxtovw(111) 0 v.pxtovw(146);
   background-color: v.$bg-color02;
+  .inner {
+    position: relative;
+    z-index: 1;
+  }
   .ttl-wrap {
     margin-bottom: v.pxtovw(101);
     h2 {
@@ -833,10 +845,13 @@ Business 事業内容
     .shop-info {
       @include c.flex(between, start);
       padding: 0 v.pxtovw(151) 0 v.pxtovw(78);
+      @include c.mq(md-s) {
+        padding: 0 v.pxtovw(80) 0 v.pxtovw(78);
+      }
     }
     .text {
       h3 {
-        font-size: clamp(1.8rem, v.pxtovw(26), 2.6rem);
+        font-size: clamp(1.5rem, v.pxtovw(26), 2.6rem);
         font-weight: 600;
         margin-bottom: v.pxtovw(40);
       }
@@ -941,6 +956,10 @@ Wholesale 卸売事業
     margin: 0 auto v.pxtovw(100);
     padding-bottom: v.pxtovw(100);
     border-bottom: 1px solid v.$sub-color01;
+    @include c.mq(md) {
+      max-width: v.pxtovw(1400);
+      gap: v.pxtovw(60);
+    }
     &.quality {
       .text-box {
         &::before {
@@ -950,6 +969,9 @@ Wholesale 卸売事業
     }
     &.volume {
       flex-direction: row-reverse;
+      @include c.mq(md-s) {
+        flex-direction: column;
+      }
       .text-box {
         &::before {
           content: "#02";
@@ -1044,6 +1066,9 @@ Wholesale 卸売事業
     border-radius: v.pxtovw(320);
     z-index: 1;
     overflow: hidden;
+    @include c.mq(md) {
+      border-radius: v.pxtovw(120);
+    }
     &.reverse {
       margin-bottom: 0;
       .block {
@@ -1055,9 +1080,14 @@ Wholesale 卸売事業
       padding: v.pxtovw(80) 0;
       align-items: center;
       gap: v.pxtovw(218);
+      @include c.mq(md) {
+        width: v.pxtovw(1500);
+        gap: v.pxtovw(100);
+      }
     }
     .left {
-      width: v.pxtovw(410);
+      // width: v.pxtovw(410);
+      width: clamp(25rem, v.pxtovw(410), 41rem);
       flex-shrink: 0;
       .img-box {
         width: 100%;
@@ -1200,6 +1230,9 @@ Wholesale 卸売事業
         .apo {
           @include c.flex(center, center);
           gap: v.pxtovw(22);
+          @include c.mq(md-s) {
+            flex-direction: column;
+          }
           div {
             @include c.flex(start, center);
             width: calc(100% - (v.pxtovw(22) / 2));
@@ -1214,7 +1247,11 @@ Wholesale 卸売事業
               gap: v.pxtovw(15);
             }
             p {
+              font-size: clamp(1.2rem, v.pxtovw(18), 1.8rem);
               color: v.$sub-color01;
+              @include c.mq(md-s) {
+                font-size: clamp(1.4rem, v.pxtovw(18), 1.8rem);
+              }
               strong {
                 font-weight: 600;
               }
@@ -1290,7 +1327,8 @@ Wholesale 卸売事業
       }
     }
     > p {
-      max-width: v.pxtovw(610);
+      // max-width: v.pxtovw(610);
+      max-width: clamp(35rem, v.pxtovw(610), 61rem);
       line-height: 2;
     }
   }
@@ -1301,6 +1339,9 @@ Wholesale 卸売事業
   background-color: v.$bg-color02;
   .inner {
     width: v.pxtovw(1396);
+    @include c.mq(md) {
+      width: clamp(65rem, v.pxtovw(1450), 145rem);
+    }
   }
   .ttl-wrap {
     margin-bottom: v.pxtovw(71);
@@ -1319,11 +1360,24 @@ Wholesale 卸売事業
       border-radius: v.pxtovw(20);
       background-color: v.$bg-color03;
       padding: v.pxtovw(24);
+      transition: all 0.3s;
+      &:hover {
+        background-color: v.$sub-color01;
+        a {
+          p,
+          p span {
+            color: #fff;
+          }
+        }
+      }
       a {
         @include c.flex(center, center);
         gap: v.pxtovw(90);
         width: 100%;
         height: 100%;
+        @include c.mq(md) {
+          gap: v.pxtovw(40);
+        }
         p {
           font-family: "Unbounded", sans-serif;
           font-size: clamp(1.6rem, v.pxtovw(26), 2.6rem);
@@ -1331,18 +1385,37 @@ Wholesale 卸売事業
           font-weight: 400;
           color: v.$sub-color01;
           text-align: center;
+          transition: all 0.3s;
           span {
             display: block;
             font-family: "Noto Sans JP", sans-serif;
-            font-size: clamp(1.2rem, v.pxtovw(14), 1.4rem);
+            font-size: clamp(1rem, v.pxtovw(14), 1.4rem);
             font-weight: 500;
             color: v.$txt-color;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+  .form-wrap {
+    form {
+      table {
+        tr {
+          td {
+            &:has(input[type="checkbox"]) {
+              > div {
+                display: flex;
+                gap: v.pxtovw(20);
+              }
+            }
           }
         }
       }
     }
   }
   .note {
+    position: relative;
     font-weight: 600;
     color: #fff;
     background-color: rgba(v.$sub-color01, 0.65);
@@ -1350,6 +1423,7 @@ Wholesale 卸売事業
     padding: v.pxtovw(20) 0;
     border-radius: v.pxtovw(20);
     margin-bottom: v.pxtovw(66);
+    z-index: 1;
   }
   > .img-box {
     position: absolute;
@@ -1385,6 +1459,18 @@ Contact お問い合わせ
       border-radius: v.pxtovw(20);
       background-color: v.$bg-color03;
       padding: v.pxtovw(27);
+      transition: all 0.3s;
+      &:hover {
+        background-color: v.$sub-color01;
+        a {
+          div,
+          p,
+          svg path {
+            color: #fff;
+            fill: #fff;
+          }
+        }
+      }
       a {
         position: relative;
         @include c.flex(center, center);
@@ -1396,12 +1482,14 @@ Contact お問い合わせ
           font-size: clamp(1.8rem, v.pxtovw(36), 3.6rem);
           font-weight: 400;
           color: v.$sub-color01;
+          transition: all 0.3s;
         }
         p {
           display: inline-block;
           font-size: clamp(1.3rem, v.pxtovw(16), 1.6rem);
           font-weight: 600;
           color: v.$sub-color01;
+          transition: all 0.3s;
         }
         svg {
           position: absolute;
@@ -1411,6 +1499,7 @@ Contact お問い合わせ
           width: v.pxtovw(11);
           path {
             fill: v.$sub-color01;
+            transition: all 0.3s;
           }
         }
       }
@@ -1431,7 +1520,8 @@ Contact お問い合わせ
   padding: v.pxtovw(106) 0 v.pxtovw(88);
   background-color: v.$bg-color02;
   .inner {
-    width: v.pxtovw(1396);
+    // width: v.pxtovw(1396);
+    width: clamp(65rem, v.pxtovw(1396), 1396rem);
   }
   .ttl-wrap {
     margin-bottom: v.pxtovw(82);
@@ -1448,6 +1538,15 @@ Contact お問い合わせ
               font-size: clamp(1.2rem, v.pxtovw(14), 1.4rem);
               color: v.$sub-color01;
               margin-left: 1.4rem;
+            }
+          }
+        }
+        td {
+          div {
+            label {
+              &:has(input[type="checkbox"]) {
+                margin-right: v.pxtovw(20);
+              }
             }
           }
         }
@@ -1483,6 +1582,9 @@ component 会社概要
   }
   .block {
     gap: v.pxtovw(177);
+    @include c.mq(md) {
+      gap: v.pxtovw(110);
+    }
     .left {
       position: relative;
       flex-shrink: 0;
@@ -1513,9 +1615,12 @@ component 会社概要
           font-size: clamp(1.6rem, v.pxtovw(32), 3.2rem);
         }
       }
-      p {
+      > p {
         width: v.pxtovw(600);
         line-height: 2.2;
+        @include c.mq(md) {
+          width: v.pxtovw(800);
+        }
       }
     }
   }
@@ -1558,7 +1663,7 @@ component 会社概要
     padding-left: v.pxtovw(93);
     z-index: 3;
     dl {
-      width: v.pxtovw(655);
+      width: clamp(38rem, v.pxtovw(655), 65.5rem);
       @include c.flex(start, center);
       padding: v.pxtovw(22) v.pxtovw(50);
       background-color: rgba(v.$bg-color03, 0.6);
@@ -1608,6 +1713,7 @@ component 会社概要
 .company_history {
   padding: v.pxtovw(100) 0 v.pxtovw(149);
   background-color: v.$bg-color01;
+  overflow: hidden;
   .ttl-wrap {
     margin-bottom: v.pxtovw(100);
     h2 {
@@ -1622,7 +1728,11 @@ component 会社概要
     align-items: center;
     gap: v.pxtovw(139);
     margin-left: v.pxtovw(-39);
-    margin-bottom: v.pxtovw(105);
+    // margin-bottom: v.pxtovw(105);
+    margin-bottom: clamp(6rem, v.pxtovw(105), 10.5rem);
+    @include c.mq(md) {
+      gap: v.pxtovw(80);
+    }
     .left {
       .img-box {
         width: v.pxtovw(764);
@@ -1634,12 +1744,16 @@ component 会社概要
       p {
         width: v.pxtovw(504);
         line-height: 2.4;
+        @include c.mq(md) {
+          width: v.pxtovw(750);
+        }
       }
     }
   }
   .timeline {
     position: relative;
-    width: v.pxtovw(959);
+    // width: v.pxtovw(959);
+    width: clamp(55rem, v.pxtovw(959), 95.9rem);
     margin: 0 auto v.pxtovw(124);
     .circle {
       position: absolute;
@@ -1684,7 +1798,8 @@ component 会社概要
         }
         .txt {
           position: relative;
-          width: v.pxtovw(355);
+          // width: v.pxtovw(355);
+          width: clamp(22.5rem, v.pxtovw(355), 35.5rem);
           z-index: 2;
           p {
             padding: v.pxtovw(24) v.pxtovw(38);
@@ -1698,14 +1813,16 @@ component 会社概要
         }
         &.y1999 {
           .img-box {
-            width: v.pxtovw(326);
+            // width: v.pxtovw(326);
+            width: clamp(20rem, v.pxtovw(326), 32.6rem);
             right: v.pxtovw(-213);
             bottom: v.pxtovw(-26);
           }
         }
         &.y2007 {
           .img-box {
-            width: v.pxtovw(225);
+            // width: v.pxtovw(225);
+            width: clamp(12rem, v.pxtovw(255), 22.5rem);
             left: v.pxtovw(-185);
             bottom: v.pxtovw(-84);
             z-index: 3;
@@ -1713,7 +1830,8 @@ component 会社概要
         }
         &.y2020 {
           .img-box {
-            width: v.pxtovw(243);
+            // width: v.pxtovw(243);
+            width: clamp(14rem, v.pxtovw(243), 24.3rem);
             right: v.pxtovw(-212);
             bottom: v.pxtovw(-61);
             z-index: 1;
@@ -1721,7 +1839,8 @@ component 会社概要
         }
         &.y2022 {
           .img-box {
-            width: v.pxtovw(185);
+            // width: v.pxtovw(185);
+            width: clamp(10rem, v.pxtovw(185), 18.5rem);
             left: v.pxtovw(-165);
             bottom: v.pxtovw(-123);
             z-index: 3;
@@ -1787,6 +1906,88 @@ component 会社概要
       width: v.pxtovw(270);
       bottom: v.pxtovw(192);
       left: v.pxtovw(-40);
+    }
+  }
+}
+
+/*************************************************
+Privacy Policy プライバシーポリシー
+*************************************************/
+.policy_wrap {
+  padding: v.pxtovw(110) 0 v.pxtovw(118);
+  background-color: v.$bg-color01;
+  .inner {
+    max-width: v.pxtovw(1200);
+  }
+  .block {
+    margin-bottom: v.pxtovw(100);
+    h2 {
+      font-size: clamp(2.2rem, v.pxtovw(40), 4rem);
+      color: v.$sub-color01;
+      padding-bottom: v.pxtovw(27);
+      border-bottom: 1px solid v.$sub-color01;
+      margin-bottom: v.pxtovw(50);
+    }
+    p {
+      line-height: 2.2;
+      margin-bottom: v.pxtovw(50);
+    }
+    .txt {
+      margin-bottom: v.pxtovw(73);
+    }
+    ol {
+      > li {
+        font-size: clamp(1.5rem, v.pxtovw(20), 2rem);
+        list-style: decimal;
+        padding-left: v.pxtovw(20);
+        margin-bottom: v.pxtovw(40);
+        &::marker {
+          font-size: clamp(1.5rem, v.pxtovw(24), 2.4rem);
+        }
+        span {
+          display: inline-block;
+          margin-top: v.pxtovw(25);
+          font-size: clamp(1.4rem, v.pxtovw(18), 1.8rem);
+        }
+      }
+      &:has(ul) {
+        > li {
+          font-size: clamp(1.5rem, v.pxtovw(22), 2.2rem);
+        }
+        ul {
+          margin-top: v.pxtovw(32);
+          li {
+            list-style: disc;
+            margin-bottom: v.pxtovw(15);
+            &::marker {
+              font-size: clamp(1rem, v.pxtovw(12), 1.2rem);
+            }
+          }
+        }
+      }
+    }
+  }
+  .company {
+    div {
+      font-size: clamp(1.5rem, v.pxtovw(22), 2.2rem);
+      margin-bottom: v.pxtovw(27);
+    }
+    p {
+      line-height: 2;
+    }
+  }
+  > .img-box {
+    position: absolute;
+    &.logomark {
+      width: v.pxtovw(1123);
+      aspect-ratio: 1/0.38;
+      top: v.pxtovw(-80);
+      left: v.pxtovw(-97);
+    }
+    &.vertical-txt {
+      width: v.pxtovw(284);
+      top: v.pxtovw(140);
+      right: 0;
     }
   }
 }

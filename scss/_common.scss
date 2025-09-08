@@ -222,7 +222,8 @@ dd,
 th,
 td,
 a {
-  font-size: clamp(1.4rem, v.pxtovw(18), 1.8rem);
+  // font-size: clamp(1.4rem, v.pxtovw(18), 1.8rem);
+  font-size: clamp(1.3rem, v.pxtovw(18), 1.8rem);
   line-height: 1.7;
   font-weight: 500;
   color: v.$txt-color;
