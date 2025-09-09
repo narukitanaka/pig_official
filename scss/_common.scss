@@ -228,7 +228,7 @@ a {
   font-weight: 500;
   color: v.$txt-color;
   @include mq() {
-    font-size: clamp(1.4rem, v.pxtovw_sp(26), 2.6rem);
+    font-size: clamp(1.3rem, v.pxtovw_sp(26), 2.6rem);
     letter-spacing: 0.5px;
   }
 }

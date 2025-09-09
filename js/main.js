@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", initSwiper);
 });
 
+////////////////////////////////////////////////////////////////////////////////////////
+//Swiper;
+////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   const pad2 = (n) => String(n).padStart(2, "0");
 
@@ -373,6 +376,42 @@ $(".insta_accordion-trigger").on("click", function (e) {
   const $panel = $btn.next(".accordion-content"); // 兄弟を取得
   $btn.toggleClass("open");
   $panel.stop(true, true).slideToggle("fast");
+});
+
+///////////////////////////////////////////
+//事業内容ページのアコーディオン（スマホのみ）
+///////////////////////////////////////////
+function initBusinessAccordion() {
+  if (window.innerWidth <= 750) {
+    $(".business_acord_hide").hide();
+    $(".business_acord_trigger").removeClass("open");
+
+    // .business_selling 内の最初のアコーディオンを開く
+    $(".business_selling .business_acord_trigger").first().addClass("open");
+    $(".business_selling .business_acord_hide").first().show();
+
+    // .business_brans 内の最初のアコーディオンを開く
+    $(".business_brand .business_acord_trigger").first().addClass("open");
+    $(".business_brand .business_acord_hide").first().show();
+  } else {
+    $(".business_acord_hide").show();
+    $(".business_acord_trigger").removeClass("open");
+  }
+}
+// 初期化実行
+initBusinessAccordion();
+
+$(".business_acord_trigger").on("click", function (e) {
+  if (window.innerWidth <= 750) {
+    e.preventDefault();
+    const $btn = $(this);
+    const $panel = $btn.next(".business_acord_hide");
+    $btn.toggleClass("open");
+    $panel.stop(true, true).slideToggle("fast");
+  }
+});
+$(window).on("resize", function () {
+  initBusinessAccordion();
 });
 
 ///////////////////////////////////////////

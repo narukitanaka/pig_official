@@ -89,7 +89,7 @@ a {
   th,
   td,
   a {
-    font-size: clamp(1.4rem, 3.4666666667vw, 2.6rem);
+    font-size: clamp(1.3rem, 3.4666666667vw, 2.6rem);
     letter-spacing: 0.5px;
   }
 }
@@ -1204,22 +1204,51 @@ component
   gap: 0.5208333333vw;
   margin-top: 1.8229166667vw;
 }
-.buying-swiper_pagenation .swiper-button-prev,
-.buying-swiper_pagenation .swiper-button-next,
+@media screen and (max-width: 750px) {
+  .buying-swiper_pagenation,
+  .repair-swiper_pagenation,
+  .sale-swiper_pagenation,
+  .osaka-swiper_pagenation,
+  .tokyo-swiper_pagenation {
+    gap: 2.1333333333vw;
+    margin-top: 4.6666666667vw;
+  }
+}
+.buying-swiper_pagenation .btn-prev,
+.buying-swiper_pagenation .btn-next,
 .buying-swiper_pagenation .swiper-pagination-custom,
-.repair-swiper_pagenation .swiper-button-prev,
-.repair-swiper_pagenation .swiper-button-next,
+.repair-swiper_pagenation .btn-prev,
+.repair-swiper_pagenation .btn-next,
 .repair-swiper_pagenation .swiper-pagination-custom,
-.sale-swiper_pagenation .swiper-button-prev,
-.sale-swiper_pagenation .swiper-button-next,
+.sale-swiper_pagenation .btn-prev,
+.sale-swiper_pagenation .btn-next,
 .sale-swiper_pagenation .swiper-pagination-custom,
-.osaka-swiper_pagenation .swiper-button-prev,
-.osaka-swiper_pagenation .swiper-button-next,
+.osaka-swiper_pagenation .btn-prev,
+.osaka-swiper_pagenation .btn-next,
 .osaka-swiper_pagenation .swiper-pagination-custom,
-.tokyo-swiper_pagenation .swiper-button-prev,
-.tokyo-swiper_pagenation .swiper-button-next,
+.tokyo-swiper_pagenation .btn-prev,
+.tokyo-swiper_pagenation .btn-next,
 .tokyo-swiper_pagenation .swiper-pagination-custom {
   font-size: 1.2rem;
+}
+@media screen and (max-width: 750px) {
+  .buying-swiper_pagenation .btn-prev,
+  .buying-swiper_pagenation .btn-next,
+  .buying-swiper_pagenation .swiper-pagination-custom,
+  .repair-swiper_pagenation .btn-prev,
+  .repair-swiper_pagenation .btn-next,
+  .repair-swiper_pagenation .swiper-pagination-custom,
+  .sale-swiper_pagenation .btn-prev,
+  .sale-swiper_pagenation .btn-next,
+  .sale-swiper_pagenation .swiper-pagination-custom,
+  .osaka-swiper_pagenation .btn-prev,
+  .osaka-swiper_pagenation .btn-next,
+  .osaka-swiper_pagenation .swiper-pagination-custom,
+  .tokyo-swiper_pagenation .btn-prev,
+  .tokyo-swiper_pagenation .btn-next,
+  .tokyo-swiper_pagenation .swiper-pagination-custom {
+    font-size: 2.6666666667vw;
+  }
 }
 .buying-swiper_pagenation .swiper-pagination-custom,
 .repair-swiper_pagenation .swiper-pagination-custom,
@@ -1233,6 +1262,15 @@ component
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 750px) {
+  .buying-swiper_pagenation .swiper-pagination-custom,
+  .repair-swiper_pagenation .swiper-pagination-custom,
+  .sale-swiper_pagenation .swiper-pagination-custom,
+  .osaka-swiper_pagenation .swiper-pagination-custom,
+  .tokyo-swiper_pagenation .swiper-pagination-custom {
+    gap: 4vw;
+  }
+}
 .buying-swiper_pagenation .swiper-pagination-custom .line,
 .repair-swiper_pagenation .swiper-pagination-custom .line,
 .sale-swiper_pagenation .swiper-pagination-custom .line,
@@ -1243,6 +1281,47 @@ component
   height: 1px;
   background-color: #462f13;
   margin: 0 1.1979166667vw;
+}
+@media screen and (max-width: 750px) {
+  .buying-swiper_pagenation .swiper-pagination-custom .line,
+  .repair-swiper_pagenation .swiper-pagination-custom .line,
+  .sale-swiper_pagenation .swiper-pagination-custom .line,
+  .osaka-swiper_pagenation .swiper-pagination-custom .line,
+  .tokyo-swiper_pagenation .swiper-pagination-custom .line {
+    width: 6.6666666667vw;
+    height: 1.5px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .handpick-swiper-pagination {
+    gap: 2.1333333333vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .handpick-swiper-pagination .btn-prev,
+  .handpick-swiper-pagination .btn-next,
+  .handpick-swiper-pagination .swiper-pagination-custom {
+    font-size: 2.6666666667vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .handpick-swiper-pagination .swiper-pagination-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    gap: 4vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .handpick-swiper-pagination .swiper-pagination-custom .line {
+    display: inline-block;
+    width: 6.6666666667vw;
+    height: 1.5px;
+    background-color: #462f13;
+    margin: 0 1.1979166667vw;
+  }
 }
 
 .insta-wrap {
@@ -1343,10 +1422,21 @@ component
   position: relative;
   z-index: 4;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap {
+    border-radius: 2.6666666667vw;
+  }
+}
 .form-wrap form {
   padding: 2.6041666667vw 0 4.4791666667vw;
   width: clamp(60rem, 52.0833333333vw, 100rem);
   margin: 0 auto;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form {
+    padding: 8vw 4vw 14.6666666667vw;
+    width: 100%;
+  }
 }
 .form-wrap form table {
   width: 100%;
@@ -1363,14 +1453,42 @@ component
   height: 1px; /* 線の太さ */
   background-image: repeating-linear-gradient(to right, #707070 0, #707070 2px, transparent 2px, transparent 4px);
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table tr:first-of-type th {
+    padding-top: 0;
+  }
+}
 .form-wrap form table tr:last-of-type::after {
   display: none;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table tr:last-of-type th {
+    text-align: center;
+    padding-bottom: 9.3333333333vw;
+  }
 }
 .form-wrap form table tr:has(.customer-info) th {
   vertical-align: top;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table tr:has(.customer-info) th {
+    font-size: clamp(1.6rem, 4.8vw, 3.6rem);
+    text-align: center;
+    margin-bottom: 8vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table tr:has(.customer-info) th span {
+    display: none;
+  }
+}
 .form-wrap form table tr:has(.customer-info) td {
   position: relative;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table tr:has(.customer-info) td {
+    padding-bottom: 9.8666666667vw;
+  }
 }
 .form-wrap form table tr:has(.customer-info) td::before {
   content: "";
@@ -1382,6 +1500,11 @@ component
   height: calc(100% - 4.1666666667vw);
   background-image: repeating-linear-gradient(to bottom, #707070 0, #707070 2px, transparent 2px, transparent 4px);
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table tr:has(.customer-info) td::before {
+    display: none;
+  }
+}
 .form-wrap form table tr:has(textarea) th {
   vertical-align: top;
 }
@@ -1389,6 +1512,12 @@ component
 .form-wrap form table td {
   padding: 2.0833333333vw 0;
   vertical-align: middle;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table th,
+  .form-wrap form table td {
+    display: block;
+  }
 }
 .form-wrap form table th {
   width: 22%;
@@ -1398,13 +1527,33 @@ component
     width: 25%;
   }
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table th {
+    width: 100%;
+    font-size: clamp(1.5rem, 3.7333333333vw, 2.8rem);
+    padding: 6.2666666667vw 0 3.4666666667vw;
+  }
+}
 .form-wrap form table th span {
   font-size: clamp(1.2rem, 0.7291666667vw, 1.4rem);
   color: #d87159;
   margin-left: 0.6770833333vw;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table th span {
+    font-size: clamp(1.2rem, 2.6666666667vw, 2rem);
+    margin-left: 3.7333333333vw;
+  }
+}
 .form-wrap form table td {
   padding-left: 3.4375vw;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table td {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 5.7333333333vw;
+  }
 }
 .form-wrap form table td input[type=text],
 .form-wrap form table td input[type=email],
@@ -1416,14 +1565,36 @@ component
   border-radius: 0.5208333333vw;
   border: 0.5px solid #707070;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table td input[type=text],
+  .form-wrap form table td input[type=email],
+  .form-wrap form table td input[type=tel],
+  .form-wrap form table td textarea {
+    font-size: clamp(1.4rem, 3.4666666667vw, 2.6rem);
+    border-radius: 1.0666666667vw;
+  }
+}
 .form-wrap form table td input[type=text],
 .form-wrap form table td input[type=email],
 .form-wrap form table td input[type=tel] {
   padding: 0.6770833333vw 1.0416666667vw;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table td input[type=text],
+  .form-wrap form table td input[type=email],
+  .form-wrap form table td input[type=tel] {
+    padding: 2.6666666667vw 4vw;
+  }
+}
 .form-wrap form table td textarea {
   padding: 1.25vw 1.5625vw;
   height: clamp(20rem, 15.625vw, 30rem);
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table td textarea {
+    padding: 4vw;
+    height: 79.4666666667vw;
+  }
 }
 .form-wrap form table td textarea::-moz-placeholder {
   opacity: 0.6;
@@ -1431,8 +1602,17 @@ component
 .form-wrap form table td textarea::placeholder {
   opacity: 0.6;
 }
+.form-wrap form table td > div:has(input[type=checkbox]) {
+  display: flex;
+  gap: 3.2vw;
+}
 .form-wrap form table td label {
   font-size: clamp(1.3rem, 0.8333333333vw, 1.6rem);
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table td label {
+    font-size: clamp(1.5rem, 3.7333333333vw, 2.8rem);
+  }
 }
 .form-wrap form table td label:has(input[type=checkbox]) {
   width: clamp(13rem, 9.1145833333vw, 17.5rem);
@@ -1444,22 +1624,63 @@ component
   border: 0.5px solid #707070;
   background-color: #fff;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table td label:has(input[type=checkbox]) {
+    width: calc(100% - 1.6vw);
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
+    gap: 3.6vw;
+    padding: 3.6vw 2.6666666667vw;
+    border-radius: 1.0666666667vw;
+  }
+}
 .form-wrap form table td label:has(input[type=checkbox]):last-of-type {
   margin-right: 0;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form table td label:has(input[type=checkbox]) input[type=checkbox] {
+    width: 3.7333333333vw;
+    aspect-ratio: 1/1;
+  }
+}
 .form-wrap form table td .info-row {
   margin-bottom: 2.5rem;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table td .info-row {
+    margin-bottom: 4.8vw;
+  }
 }
 .form-wrap form table td .info-row:last-of-type {
   margin-bottom: 0;
 }
 .form-wrap form table td .info-row label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5208333333vw;
   margin-bottom: 0.9375vw;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table td .info-row label {
+    margin-bottom: 3.0666666667vw;
+    gap: 2.6666666667vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table td .info-row label .req {
+    font-size: clamp(1rem, 2.6666666667vw, 2rem);
+    color: #d87159;
+  }
 }
 .form-wrap form table td p {
   font-size: 1rem;
   margin-top: 0.2604166667vw;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table td p {
+    font-size: clamp(1.2rem, 2.6666666667vw, 2rem);
+    color: #626262;
+    margin-top: 3.3333333333vw;
+  }
 }
 .form-wrap form table td p span {
   color: #d87159;
@@ -1470,19 +1691,43 @@ component
   border-radius: 0.5208333333vw;
   margin-bottom: 1.7708333333vw;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form .policy {
+    height: 34rem;
+    border-radius: 1.3333333333vw;
+    margin-bottom: 9.3333333333vw;
+  }
+}
 .form-wrap form .policy .poli-wrap {
   padding: 0.8854166667vw 1.5625vw 1.25vw;
   height: 100%;
   overflow-y: scroll;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form .policy .poli-wrap {
+    padding: 4vw;
+  }
+}
 .form-wrap form .policy .poli-wrap p {
   font-size: 1rem;
   margin-bottom: 0.5208333333vw;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form .policy .poli-wrap p {
+    font-size: clamp(1.3rem, 2.9333333333vw, 2.2rem);
+    margin-bottom: 2.6666666667vw;
+  }
 }
 .form-wrap form .agree {
   position: relative;
   padding-bottom: 2.1875vw;
   margin-bottom: 1.3541666667vw;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form .agree {
+    padding-bottom: 8vw;
+    margin-bottom: 7.4666666667vw;
+  }
 }
 .form-wrap form .agree::after {
   content: "";
@@ -1500,18 +1745,41 @@ component
   gap: 1.3rem;
   font-size: 1.2rem;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form .agree label {
+    font-size: clamp(1.5rem, 3.7333333333vw, 2.8rem);
+  }
+}
 .form-wrap form .agree label input {
   width: clamp(1.3rem, 0.9375vw, 1.8rem);
   height: clamp(1.3rem, 0.9375vw, 1.8rem);
   background-color: transparent !important;
 }
+@media screen and (max-width: 750px) {
+  .form-wrap form .agree label input {
+    width: 6.4vw;
+    height: 6.4vw;
+  }
+}
 .form-wrap form .announce {
   margin-bottom: 2.3958333333vw;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form .announce {
+    margin-bottom: 8.9333333333vw;
+  }
 }
 .form-wrap form .announce p {
   font-size: 1.2rem;
   line-height: 2;
   text-align: center;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form .announce p {
+    font-size: clamp(1.2rem, 2.9333333333vw, 2.2rem);
+    color: #626262;
+    text-align: left;
+  }
 }
 .form-wrap form .submit-wrap {
   display: flex;
@@ -4016,8 +4284,22 @@ Business 事業内容
   padding: 7.3958333333vw 0 4.9479166667vw;
   background-color: #fff7e8;
 }
+@media screen and (max-width: 750px) {
+  .business_selling {
+    padding: 9.2vw 0 18vw;
+  }
+}
+.business_selling .inner {
+  position: relative;
+  z-index: 1;
+}
 .business_selling .ttl-wrap {
   margin-bottom: 3.75vw;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .ttl-wrap {
+    margin-bottom: 8vw;
+  }
 }
 .business_selling .ttl-wrap h2 {
   text-align: left;
@@ -4033,10 +4315,22 @@ Business 事業内容
   color: #462f13;
   text-align: left;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .ttl-wrap .sub-ttl {
+    font-size: clamp(1.2rem, 3.4666666667vw, 2.6rem);
+  }
+}
 .business_selling .block {
   align-items: flex-end;
   gap: 8.59375vw;
   margin-bottom: 9.6354166667vw;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .block {
+    flex-direction: column;
+    gap: 17.2vw;
+    margin-bottom: 23.3333333333vw;
+  }
 }
 .business_selling .block .left {
   position: relative;
@@ -4046,11 +4340,24 @@ Business 事業内容
   border-radius: 9.5833333333vw;
   overflow: hidden;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .block .left .img-box {
+    width: 100%;
+    border-radius: 24.5333333333vw;
+  }
+}
 .business_selling .block .left .pig {
   position: absolute;
   bottom: -3.90625vw;
   right: -4.1666666667vw;
   width: 15.625vw;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .block .left .pig {
+    bottom: -13.8666666667vw;
+    right: -7.2vw;
+    width: 39.8666666667vw;
+  }
 }
 .business_selling .block .left .pig img {
   filter: drop-shadow(0.3125vw 0.4166666667vw 0.78125vw rgba(0, 0, 0, 0.25));
@@ -4079,11 +4386,28 @@ Business 事業内容
     max-width: 78.125vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text {
+    position: relative;
+    flex-direction: column;
+    gap: 8.4vw;
+    max-width: none;
+    margin-left: 0;
+    margin-bottom: 25.8666666667vw;
+    padding-bottom: 9.0666666667vw;
+    border-bottom: 1px solid #707070;
+  }
+}
 .business_selling .block_img-text.buying .text-box::before {
   content: "#01";
 }
 .business_selling .block_img-text.repair {
   flex-direction: row-reverse;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text.repair {
+    flex-direction: column;
+  }
 }
 .business_selling .block_img-text.repair .text-box::before {
   content: "#02";
@@ -4092,6 +4416,12 @@ Business 事業内容
   border-bottom: none;
   margin-bottom: 5.2083333333vw;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text.sale {
+    border-bottom: 1px solid #707070;
+    margin-bottom: 15.6vw;
+  }
+}
 .business_selling .block_img-text.sale .text-box::before {
   content: "#03";
 }
@@ -4099,16 +4429,29 @@ Business 事業内容
   position: relative;
   flex-grow: 1;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text .text-box {
+    display: contents;
+  }
+}
 .business_selling .block_img-text .text-box::before {
   position: absolute;
   top: -1.5625vw;
-  right: -1.3333333333vw;
+  right: -0.5208333333vw;
   font-family: "Unbounded", sans-serif;
   font-size: 10.5729166667vw;
   font-weight: 500;
   color: #d1c1a5;
   z-index: 1;
   opacity: 0.2;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text .text-box::before {
+    font-size: 27.0666666667vw;
+    top: -13.3333333333vw;
+    right: auto;
+    left: 0;
+  }
 }
 .business_selling .block_img-text .text-box h3 {
   position: relative;
@@ -4117,28 +4460,67 @@ Business 事業内容
   margin-bottom: 1.8229166667vw;
   z-index: 2;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text .text-box h3 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    order: 1;
+    margin-bottom: 0;
+  }
+}
 .business_selling .block_img-text .text-box h3 span {
   font-family: "Unbounded", sans-serif;
   font-size: clamp(3.2rem, 2.6041666667vw, 5rem);
   font-weight: 400;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text .text-box h3 span {
+    font-size: clamp(2.4rem, 8vw, 6rem);
+  }
+}
 .business_selling .block_img-text .text-box p {
   line-height: 2.2;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text .text-box p {
+    order: 3;
+  }
 }
 .business_selling .block_img-text .images-box {
   position: relative;
   width: clamp(30rem, 28.6458333333vw, 55rem);
   flex-shrink: 0;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text .images-box {
+    width: 100%;
+    order: 2;
+  }
+}
 .business_selling .block_img-text .images-box .img-box {
   border-radius: 6.7708333333vw;
   overflow: hidden;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .block_img-text .images-box .img-box {
+    border-radius: 17.3333333333vw;
+  }
 }
 .business_selling .column03 {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5.2083333333vw;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .column03 {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_selling .column03 > div {
+    width: 100%;
+    border: 2px solid #d87159;
+  }
 }
 .business_selling .column03 > div h3 {
   font-family: "Unbounded", sans-serif;
@@ -4150,14 +4532,53 @@ Business 事業内容
   border-bottom: 1px solid #d87159;
   margin-bottom: 1.5625vw;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .column03 > div h3 {
+    position: relative;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    margin-bottom: 0;
+    padding: 7.2vw 6.1333333333vw 5.7333333333vw;
+    border-bottom: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_selling .column03 > div h3.open::before {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+}
 .business_selling .column03 > div h3 span {
   font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(1.2rem, 0.9375vw, 1.8rem);
   font-weight: 500;
 }
+@media screen and (max-width: 750px) {
+  .business_selling .column03 > div h3 span {
+    font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_selling .column03 > div h3::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    right: 7.0666666667vw;
+    content: "";
+    width: 5.4666666667vw;
+    aspect-ratio: 1/1;
+    background: url(images/common/icon-arrow02.svg) no-repeat center/contain;
+  }
+}
 .business_selling .column03 > div p {
   font-size: clamp(1.3rem, 0.8333333333vw, 1.6rem);
   line-height: 2;
+}
+@media screen and (max-width: 750px) {
+  .business_selling .column03 > div p {
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+    line-height: 2.2;
+    padding: 8vw;
+    border-top: 2px dashed #d87159;
+  }
 }
 .business_selling > .img-box {
   position: absolute;
@@ -4168,15 +4589,36 @@ Business 事業内容
   top: -5.2083333333vw;
   right: -21.875vw;
 }
+@media screen and (max-width: 750px) {
+  .business_selling > .img-box.logomark {
+    width: 107.6vw;
+    top: 3.3333333333vw;
+    right: 0;
+  }
+}
 .business_selling > .img-box.vertical-txt {
   width: 10.4166666667vw;
   top: 44.2708333333vw;
   left: 0;
 }
+@media screen and (max-width: 750px) {
+  .business_selling > .img-box.vertical-txt {
+    width: 26.6666666667vw;
+    top: 116vw;
+    left: auto;
+    right: -9.0666666667vw;
+    opacity: 0.8;
+  }
+}
 
 .business_brand {
   padding: 5.78125vw 0 7.6041666667vw;
   background-color: #d1c1a5;
+}
+@media screen and (max-width: 750px) {
+  .business_brand {
+    padding: 12.4vw 0 14.4vw;
+  }
 }
 .business_brand .inner {
   position: relative;
@@ -4185,29 +4627,72 @@ Business 事業内容
 .business_brand .ttl-wrap {
   margin-bottom: 5.2604166667vw;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .ttl-wrap {
+    margin-bottom: 8.9333333333vw;
+  }
+}
 .business_brand .ttl-wrap h2 {
   margin-bottom: 0.78125vw;
+}
+@media screen and (max-width: 750px) {
+  .business_brand .ttl-wrap h2 {
+    margin-bottom: 2.6666666667vw;
+  }
 }
 .business_brand .box {
   margin-bottom: 5.2083333333vw;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box {
+    padding-bottom: 16.2666666667vw;
+    border-bottom: 1px solid #707070;
+    margin-bottom: 18.5333333333vw;
+  }
+}
 .business_brand .box:last-of-type {
   margin-bottom: 0;
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
 .business_brand .box.pigsty .logo {
   width: 10.7291666667vw;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box.pigsty .logo {
+    width: 27.4666666667vw;
+  }
+}
 .business_brand .box.pig-az .logo {
   width: 8.6979166667vw;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box.pig-az .logo {
+    width: 22.2666666667vw;
+  }
+}
 .business_brand .box.vivie .logo {
   width: 9.1145833333vw;
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box.vivie .logo {
+    width: 23.3333333333vw;
+  }
 }
 .business_brand .box.changes {
   margin-bottom: 0;
 }
 .business_brand .box.changes .logo {
   width: 12.7083333333vw;
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box.changes .logo {
+    width: 32.5333333333vw;
+  }
 }
 .business_brand .box .img-wrap {
   position: relative;
@@ -4228,6 +4713,13 @@ Business 事業内容
   overflow: hidden;
   margin-bottom: 3.90625vw;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box .img-box {
+    aspect-ratio: 1/1.15;
+    border-radius: 30.6666666667vw;
+    margin-bottom: 11.3333333333vw;
+  }
+}
 .business_brand .box .img-box img {
   filter: brightness(0.35);
 }
@@ -4242,26 +4734,74 @@ Business 事業内容
     padding: 0 4.1666666667vw 0 4.0625vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-info {
+    flex-direction: column;
+    gap: 10.6666666667vw;
+  }
+}
 .business_brand .box .text h3 {
   font-size: clamp(1.5rem, 1.3541666667vw, 2.6rem);
   font-weight: 600;
   margin-bottom: 2.0833333333vw;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box .text h3 {
+    font-size: clamp(1.5rem, 4.5333333333vw, 3.4rem);
+    margin-bottom: 6.6666666667vw;
+  }
+}
 .business_brand .box .text p {
   max-width: 36.6666666667vw;
   line-height: 2.2;
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .text p {
+    max-width: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list {
+    width: 100%;
+  }
 }
 .business_brand .box .shop-list ul {
   padding-left: 2.6041666667vw;
   border-left: 1px solid #707070;
   margin-bottom: 2.7083333333vw;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list ul {
+    padding-left: 0;
+    border-left: 0;
+    margin-bottom: 8.6666666667vw;
+    border: 2px solid #d87159;
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list ul > div {
+    padding: 5.8666666667vw 5.8666666667vw 9.8666666667vw;
+    border-top: 2px dashed #d87159;
+  }
+}
 .business_brand .box .shop-list ul li {
-  font-weight: 600;
   margin-bottom: 0.9375vw;
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list ul li {
+    margin-bottom: 3.3333333333vw;
+  }
 }
 .business_brand .box .shop-list ul li:last-of-type {
   margin-bottom: 0;
+}
+.business_brand .box .shop-list ul li a {
+  font-weight: 600;
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list ul li a {
+    text-decoration: underline;
+  }
 }
 .business_brand .box .shop-list ul p {
   font-family: "Unbounded", sans-serif;
@@ -4270,7 +4810,40 @@ Business 事業内容
   color: #d87159;
   margin-bottom: 1.3020833333vw;
 }
-.business_brand .box .shop-list a {
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list ul p {
+    position: relative;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+    padding: 5.3333333333vw 0;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list ul p.open::before {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list ul p::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    right: 7.0666666667vw;
+    content: "";
+    width: 5.4666666667vw;
+    aspect-ratio: 1/1;
+    background: url(images/common/icon-arrow02.svg) no-repeat center/contain;
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list .btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.business_brand .box .shop-list .btn-wrap a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4282,6 +4855,16 @@ Business 事業内容
   border: 1px solid #d87159;
   border-radius: 100vmax;
 }
+@media screen and (max-width: 750px) {
+  .business_brand .box .shop-list .btn-wrap a {
+    width: 43.0666666667vw;
+    aspect-ratio: 1/0.22;
+    font-size: clamp(1.3rem, 2.9333333333vw, 2.2rem);
+    color: #fff;
+    background-color: #d87159;
+    border: none;
+  }
+}
 .business_brand > .img-box {
   position: absolute;
 }
@@ -4290,10 +4873,20 @@ Business 事業内容
   top: 15.625vw;
   right: 0;
 }
+@media screen and (max-width: 750px) {
+  .business_brand > .img-box.vertical-txt {
+    width: 28.4vw;
+    top: 47.0666666667vw;
+    right: auto;
+    left: -1.3333333333vw;
+    opacity: 0.8;
+  }
+}
 
 .business_wholesale {
   padding: 7.5vw 0 10.9375vw;
   background-color: #fff7e8;
+  padding: 13.3333333333vw 0 18.4vw;
 }
 .business_wholesale .inner {
   position: relative;
@@ -4302,24 +4895,60 @@ Business 事業内容
 .business_wholesale .ttl-wrap {
   margin-bottom: 2.8125vw;
 }
+@media screen and (max-width: 750px) {
+  .business_wholesale .ttl-wrap {
+    margin-bottom: 6.9333333333vw;
+  }
+}
 .business_wholesale .ttl-wrap h2 {
   text-align: left;
   margin-bottom: 0.5208333333vw;
 }
+@media screen and (max-width: 750px) {
+  .business_wholesale .ttl-wrap h2 {
+    text-align: center;
+  }
+}
 .business_wholesale .ttl-wrap .sub-ttl {
   text-align: left;
   color: #462f13;
+}
+@media screen and (max-width: 750px) {
+  .business_wholesale .ttl-wrap .sub-ttl {
+    text-align: center;
+  }
 }
 .business_wholesale p {
   max-width: 28.8541666667vw;
   line-height: 2;
   margin-bottom: 3.8020833333vw;
 }
+@media screen and (max-width: 750px) {
+  .business_wholesale p {
+    max-width: none;
+    margin-bottom: 8vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .business_wholesale .btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .business_wholesale .img-box {
   position: absolute;
   top: 0;
   right: -1.0416666667vw;
   width: clamp(0rem, 48.75vw, 93.6rem);
+  margin-left: -4vw;
+}
+@media screen and (max-width: 750px) {
+  .business_wholesale .img-box {
+    position: static;
+    width: 94.4vw;
+    margin-bottom: 10.4vw;
+  }
 }
 
 /*************************************************
@@ -4330,14 +4959,40 @@ Wholesale 卸売事業
   padding: 2.96875vw 0 4.1666666667vw;
   background-color: #fff7e8;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick {
+    padding: 9.2vw 0 24.4vw;
+  }
+}
 .wholesale_hand-pick .ttl-wrap {
   margin-bottom: 7.8125vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .ttl-wrap {
+    margin-bottom: 23.3333333333vw;
+  }
 }
 .wholesale_hand-pick .ttl-wrap h2 {
   margin-bottom: 0.5208333333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .ttl-wrap h2 {
+    margin-bottom: 2.6666666667vw;
+  }
+}
 .wholesale_hand-pick .ttl-wrap .sub-ttl {
   color: #462f13;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .ttl-wrap .sub-ttl {
+    font-size: clamp(1.2rem, 3.7333333333vw, 2.8rem);
+    letter-spacing: 1.5px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .swiper-handpick {
+    padding-top: 4.6666666667vw;
+  }
 }
 .wholesale_hand-pick .block_img-text {
   display: flex;
@@ -4353,6 +5008,17 @@ Wholesale 卸売事業
   .wholesale_hand-pick .block_img-text {
     max-width: 72.9166666667vw;
     gap: 3.125vw;
+    margin-bottom: 6.8vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text {
+    position: relative;
+    flex-direction: column;
+    max-width: none;
+    gap: 6vw;
+    padding-bottom: 8vw;
+    border-bottom: 1px solid #918779;
   }
 }
 .wholesale_hand-pick .block_img-text.quality .text-box::before {
@@ -4373,12 +5039,22 @@ Wholesale 卸売事業
   border-bottom: none;
   margin-bottom: 0;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text.access {
+    border-bottom: 1px solid #918779;
+  }
+}
 .wholesale_hand-pick .block_img-text.access .text-box::before {
   content: "#03";
 }
 .wholesale_hand-pick .block_img-text .text-box {
   position: relative;
   flex-grow: 1;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text .text-box {
+    display: contents;
+  }
 }
 .wholesale_hand-pick .block_img-text .text-box::before {
   position: absolute;
@@ -4391,6 +5067,14 @@ Wholesale 卸売事業
   z-index: 1;
   opacity: 0.2;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text .text-box::before {
+    font-size: 27.0666666667vw;
+    top: -7.3333333333vw;
+    right: auto;
+    left: 0;
+  }
+}
 .wholesale_hand-pick .block_img-text .text-box h3 {
   position: relative;
   font-size: clamp(2rem, 1.9791666667vw, 3.8rem);
@@ -4400,13 +5084,29 @@ Wholesale 卸売事業
   margin-bottom: 1.8229166667vw;
   z-index: 2;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text .text-box h3 {
+    font-size: clamp(1.5rem, 5.3333333333vw, 4rem);
+    order: 1;
+  }
+}
 .wholesale_hand-pick .block_img-text .text-box h3 span {
   font-family: "Unbounded", sans-serif;
   font-size: clamp(1.4rem, 1.0416666667vw, 2rem);
   font-weight: 400;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text .text-box h3 span {
+    font-size: clamp(1.3rem, 2.9333333333vw, 2.2rem);
+  }
+}
 .wholesale_hand-pick .block_img-text .text-box p {
   line-height: 2.2;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text .text-box p {
+    order: 3;
+  }
 }
 .wholesale_hand-pick .block_img-text .img-box {
   position: relative;
@@ -4415,6 +5115,23 @@ Wholesale 卸売事業
   overflow: hidden;
   flex-shrink: 0;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .block_img-text .img-box {
+    width: 100%;
+    border-radius: 17.3333333333vw;
+    order: 2;
+  }
+}
+.wholesale_hand-pick .handpick-swiper-pagination {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick .handpick-swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .wholesale_hand-pick > .img-box {
   position: absolute;
 }
@@ -4422,6 +5139,13 @@ Wholesale 卸売事業
   width: 18.28125vw;
   top: 5.7291666667vw;
   right: 0;
+  z-index: 1;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick > .img-box.good {
+    width: 36vw;
+    top: 35.7333333333vw;
+  }
 }
 .wholesale_hand-pick > .img-box.logomark {
   width: 58.4895833333vw;
@@ -4429,10 +5153,26 @@ Wholesale 卸売事業
   top: -5.2083333333vw;
   right: -21.875vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick > .img-box.logomark {
+    width: 107.6vw;
+    top: 3.3333333333vw;
+    right: 0;
+  }
+}
 .wholesale_hand-pick > .img-box.vertical-txt {
   width: 10.4166666667vw;
   top: 15.625vw;
   left: 0;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_hand-pick > .img-box.vertical-txt {
+    width: 28.4vw;
+    top: 46.8vw;
+    left: auto;
+    right: -10.6666666667vw;
+    opacity: 0.8;
+  }
 }
 
 .wholesale_warehouse {
@@ -4440,11 +5180,26 @@ Wholesale 卸売事業
   padding: 6.4583333333vw 0 7.5520833333vw;
   background-color: #d1c1a5;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse {
+    padding: 10.8vw 0 18.5333333333vw;
+  }
+}
 .wholesale_warehouse .ttl-wrap {
   margin-bottom: 4.0104166667vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .ttl-wrap {
+    margin-bottom: 9.4666666667vw;
+  }
+}
 .wholesale_warehouse .ttl-wrap h2 {
   margin-bottom: 0.5208333333vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .ttl-wrap h2 {
+    margin-bottom: 2.6666666667vw;
+  }
 }
 .wholesale_warehouse .house-wrap {
   position: relative;
@@ -4460,11 +5215,22 @@ Wholesale 卸売事業
     border-radius: 6.25vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap {
+    border-radius: 26.6666666667vw;
+    margin: 0 auto 10.4vw;
+  }
+}
 .wholesale_warehouse .house-wrap.reverse {
   margin-bottom: 0;
 }
 .wholesale_warehouse .house-wrap.reverse .block {
   flex-direction: row-reverse;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap.reverse .block {
+    flex-direction: column;
+  }
 }
 .wholesale_warehouse .house-wrap .inner {
   width: 62.5vw;
@@ -4478,15 +5244,36 @@ Wholesale 卸売事業
     gap: 5.2083333333vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .inner {
+    max-width: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 9.3333333333vw 4vw 20.1333333333vw;
+    gap: 8.6666666667vw;
+  }
+}
 .wholesale_warehouse .house-wrap .left {
   width: clamp(25rem, 21.3541666667vw, 41rem);
   flex-shrink: 0;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .left {
+    width: 100%;
+    order: 2;
+  }
 }
 .wholesale_warehouse .house-wrap .left .img-box {
   width: 100%;
   aspect-ratio: 1/1.2;
   border-radius: 4.1666666667vw;
   overflow: hidden;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .left .img-box {
+    aspect-ratio: 1/0.65;
+    border-radius: 10.6666666667vw;
+  }
 }
 .wholesale_warehouse .house-wrap .left .img-box img {
   width: 100%;
@@ -4495,8 +5282,19 @@ Wholesale 卸売事業
 .wholesale_warehouse .house-wrap .left .tokyo-swiper_pagenation {
   margin-top: 2.34375vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .left .osaka-swiper_pagenation,
+  .wholesale_warehouse .house-wrap .left .tokyo-swiper_pagenation {
+    margin-top: 9.3333333333vw;
+  }
+}
 .wholesale_warehouse .house-wrap .right {
   flex-grow: 1;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right {
+    display: contents;
+  }
 }
 .wholesale_warehouse .house-wrap .right h3 {
   font-family: "Unbounded", sans-serif;
@@ -4506,26 +5304,73 @@ Wholesale 卸売事業
   color: #d87159;
   margin-bottom: 1.3020833333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right h3 {
+    font-size: clamp(2.4rem, 8vw, 6rem);
+    text-align: center;
+    order: 1;
+  }
+}
 .wholesale_warehouse .house-wrap .right h3 span {
   font-size: clamp(1.4rem, 1.0416666667vw, 2rem);
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right h3 span {
+    font-size: clamp(1.3rem, 2.6666666667vw, 2rem);
+  }
 }
 .wholesale_warehouse .house-wrap .right p {
   font-size: clamp(1.3rem, 0.8333333333vw, 1.6rem);
   line-height: 2;
   margin-bottom: 2.0833333333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right p {
+    max-width: 74.8vw;
+    font-size: clamp(1.3rem, 3.4666666667vw, 2.6rem);
+    line-height: 2.2;
+    order: 3;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right p small {
+    display: block;
+    margin-top: 3.3333333333vw;
+  }
+}
 .wholesale_warehouse .house-wrap .right ul {
   border-top: 1px solid #918779;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right ul {
+    max-width: 74.8vw;
+    border-top: 2px solid #918779;
+    order: 4;
+  }
 }
 .wholesale_warehouse .house-wrap .right ul li {
   font-size: clamp(1.3rem, 0.8333333333vw, 1.6rem);
   padding: 1.3020833333vw 0;
   border-bottom: 1px solid #918779;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right ul li {
+    font-size: clamp(1.3rem, 3.4666666667vw, 2.6rem);
+    padding: 6.4vw 0;
+    border-bottom: 2px solid #918779;
+  }
+}
 .wholesale_warehouse .house-wrap .right ul li:has(.map) {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right ul li:has(.map) {
+    flex-direction: column;
+    align-items: start;
+    gap: 4vw;
+  }
 }
 .wholesale_warehouse .house-wrap .right ul li:has(.map) a {
   display: flex;
@@ -4540,14 +5385,32 @@ Wholesale 卸売事業
   border-radius: 100vmax;
   background-color: #d87159;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right ul li:has(.map) a {
+    width: 36vw;
+    aspect-ratio: 1/0.25;
+    font-size: clamp(1.2rem, 2.6666666667vw, 2rem);
+  }
+}
 .wholesale_warehouse .house-wrap .right ul li:has(img) {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 0.9375vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right ul li:has(img) {
+    gap: 3.4666666667vw;
+  }
+}
 .wholesale_warehouse .house-wrap .right ul li:has(img) img {
   width: 1.3020833333vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_warehouse .house-wrap .right ul li:has(img) img {
+    margin-top: 1.3333333333vw;
+    width: 6.8vw;
+  }
 }
 .wholesale_warehouse .house-wrap .right ul li:has(img) a {
   text-decoration: underline;
@@ -4586,19 +5449,45 @@ Wholesale 卸売事業
   padding: 5.0520833333vw 0 6.3020833333vw;
   background-color: #fff7e8;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview {
+    padding: 14.2666666667vw 0 14.8vw;
+    overflow: hidden;
+  }
+}
 .wholesale_overview .inner {
   max-width: 62.5vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .inner {
+    max-width: 92vw;
+  }
 }
 .wholesale_overview .ttl-wrap {
   margin-bottom: 3.8020833333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview .ttl-wrap {
+    margin-bottom: 9.8666666667vw;
+  }
+}
 .wholesale_overview .ttl-wrap h2 {
   margin-bottom: 0.5208333333vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .ttl-wrap h2 {
+    margin-bottom: 2.6666666667vw;
+  }
 }
 .wholesale_overview .box {
   position: relative;
   margin-bottom: 2.6041666667vw;
   z-index: 2;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box {
+    margin-bottom: 9.7333333333vw;
+  }
 }
 .wholesale_overview .box:last-of-type {
   margin-bottom: 0;
@@ -4611,28 +5500,54 @@ Wholesale 卸売事業
   border-bottom: 1px solid #d87159;
   margin-bottom: 1.5625vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box h3 {
+    font-size: clamp(1.5rem, 4.5333333333vw, 3.4rem);
+    padding-bottom: 2.6666666667vw;
+    margin-bottom: 5.3333333333vw;
+  }
+}
 .wholesale_overview .box > div {
   padding: 1.71875vw 2.6041666667vw 2.03125vw;
   background-color: rgba(227, 219, 208, 0.4);
   border-radius: 1.1458333333vw;
 }
-.wholesale_overview .box > div > p small {
-  display: block;
-  margin-top: 0.78125vw;
-  line-height: 2;
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div {
+    padding: 4vw;
+    padding-bottom: 6.6666666667vw;
+    background-color: rgba(227, 219, 208, 0.7);
+    border-radius: 2.9333333333vw;
+  }
 }
-.wholesale_overview .box > div:has(.apo) > p {
+.wholesale_overview .box > div > p {
   margin-bottom: 1.3020833333vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div > p {
+    line-height: 2;
+    margin-bottom: 2.6666666667vw;
+  }
+}
+.wholesale_overview .box > div:not(:has(ul)) p {
+  margin-bottom: 0;
 }
 .wholesale_overview .box > div:has(.apo) .apo {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.1458333333vw;
+  margin-top: 1.8229166667vw;
 }
 @media screen and (max-width: 899px) {
   .wholesale_overview .box > div:has(.apo) .apo {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(.apo) .apo {
+    gap: 5.3333333333vw;
+    margin-top: 6.5333333333vw;
   }
 }
 .wholesale_overview .box > div:has(.apo) .apo div {
@@ -4645,14 +5560,31 @@ Wholesale 卸売事業
   border: 1px solid #d87159;
   border-radius: 0.5208333333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(.apo) .apo div {
+    border-radius: 1.3333333333vw;
+    padding: 5.3333333333vw 6vw;
+  }
+}
 .wholesale_overview .box > div:has(.apo) .apo div.time {
   gap: 3.125vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(.apo) .apo div.time {
+    gap: 0;
+  }
 }
 .wholesale_overview .box > div:has(.apo) .apo div.day {
   gap: 0.78125vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(.apo) .apo div.day {
+    gap: 0;
+  }
+}
 .wholesale_overview .box > div:has(.apo) .apo div p {
   font-size: clamp(1.2rem, 0.9375vw, 1.8rem);
+  font-weight: 600;
   color: #d87159;
 }
 @media screen and (max-width: 899px) {
@@ -4660,8 +5592,23 @@ Wholesale 卸売事業
     font-size: clamp(1.4rem, 0.9375vw, 1.8rem);
   }
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(.apo) .apo div p {
+    font-size: clamp(1.2rem, 3.4666666667vw, 2.6rem);
+  }
+}
 .wholesale_overview .box > div:has(.apo) .apo div p strong {
   font-weight: 600;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(.apo) .apo div p:first-of-type {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(.apo) .apo div p:last-of-type {
+    line-height: 2.4;
+  }
 }
 .wholesale_overview .box > div ul {
   padding-left: 1.0416666667vw;
@@ -4670,6 +5617,11 @@ Wholesale 卸売事業
   list-style-type: disc;
   margin-bottom: 1.3020833333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div ul li {
+    margin-bottom: 5.3333333333vw;
+  }
+}
 .wholesale_overview .box > div ul li small {
   display: block;
   margin-top: 0.5208333333vw;
@@ -4677,6 +5629,52 @@ Wholesale 卸売事業
 }
 .wholesale_overview .box > div ul li:last-of-type {
   margin-bottom: 0;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(p) ul,
+  .wholesale_overview .box > div > ul ul {
+    padding-left: 4vw;
+  }
+}
+.wholesale_overview .box > div:has(p) ul li,
+.wholesale_overview .box > div > ul ul li {
+  font-size: clamp(1.2rem, 0.7291666667vw, 1.4rem);
+  margin-bottom: 0.2604166667vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div:has(p) ul li,
+  .wholesale_overview .box > div > ul ul li {
+    font-size: clamp(1.2rem, 2.9333333333vw, 2.2rem);
+    color: #626262;
+    margin-bottom: 4vw;
+  }
+}
+.wholesale_overview .box > div:has(p) ul li::marker,
+.wholesale_overview .box > div > ul ul li::marker {
+  content: "※ ";
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div > ul {
+    padding-left: 4vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div > ul > li::marker {
+    font-size: 2.4vw;
+  }
+}
+.wholesale_overview .box > div > ul ul {
+  margin-top: 0.5208333333vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div > ul ul {
+    margin-top: 2.4vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview .box > div > ul ul li {
+    margin-left: -4vw;
+  }
 }
 .wholesale_overview > .img-box {
   position: absolute;
@@ -4687,34 +5685,89 @@ Wholesale 卸売事業
   right: 6.25vw;
   z-index: 1;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview > .img-box.cart {
+    width: 41.7333333333vw;
+    top: 28.8vw;
+    right: -14.6666666667vw;
+  }
+}
 .wholesale_overview > .img-box.wareset {
   width: 24.5833333333vw;
   bottom: 21.3541666667vw;
   right: 6.25vw;
   z-index: 1;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_overview > .img-box.wareset {
+    width: 62.9333333333vw;
+    bottom: auto;
+    top: 250.6666666667vw;
+    right: -28vw;
+  }
+}
 .wholesale_overview > .img-box.vertical-txt {
   width: 10.4166666667vw;
   top: 15.625vw;
   left: 0;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_overview > .img-box.vertical-txt {
+    width: 26.6666666667vw;
+    top: 94.8vw;
+    left: auto;
+    right: -9.0666666667vw;
+    opacity: 0.8;
+  }
 }
 
 .wholesale_order {
   padding: 4.84375vw 0 5.1041666667vw;
   background-color: rgba(208, 170, 69, 0.5);
 }
+@media screen and (max-width: 750px) {
+  .wholesale_order {
+    padding: 11.0666666667vw 0 15.6vw;
+  }
+}
 .wholesale_order .block {
   gap: 4.53125vw;
   margin-left: -1.71875vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_order .block {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .wholesale_order .left {
   width: 40.8333333333vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_order .left {
+    width: 96vw;
+    margin-left: -4vw;
+    margin-bottom: 5.3333333333vw;
+    order: 2;
+  }
 }
 .wholesale_order .right {
   padding-top: 2.3958333333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_order .right {
+    display: contents;
+  }
+}
 .wholesale_order .right .ttl-wrap {
   margin-bottom: 3.5416666667vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_order .right .ttl-wrap {
+    margin-bottom: 6.8vw;
+    order: 1;
+  }
 }
 .wholesale_order .right .ttl-wrap h2 {
   font-family: "Unbounded", sans-serif;
@@ -4723,19 +5776,52 @@ Wholesale 卸売事業
   text-align: left;
   margin-bottom: 1.0416666667vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_order .right .ttl-wrap h2 {
+    font-size: clamp(2.4rem, 8vw, 6rem);
+    text-align: center;
+  }
+}
 .wholesale_order .right .ttl-wrap .sub-ttl {
   font-size: clamp(1.4rem, 0.9375vw, 1.8rem);
   text-align: left;
   color: #462f13;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_order .right .ttl-wrap .sub-ttl {
+    font-size: clamp(1.3rem, 3.4666666667vw, 2.6rem);
+    text-align: center;
+  }
+}
 .wholesale_order .right > p {
   max-width: clamp(35rem, 31.7708333333vw, 61rem);
   line-height: 2;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_order .right > p {
+    max-width: none;
+    line-height: 2.4;
+    order: 3;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_order .btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7.0666666667vw;
+    order: 4;
+  }
 }
 
 .wholesale_contact {
   padding: 5.5208333333vw 0 4.5833333333vw;
   background-color: #d1c1a5;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_contact {
+    padding: 11.2vw 0 11.0666666667vw;
+  }
 }
 .wholesale_contact .inner {
   width: 72.7083333333vw;
@@ -4745,11 +5831,32 @@ Wholesale 卸売事業
     width: clamp(65rem, 75.5208333333vw, 145rem);
   }
 }
+@media screen and (max-width: 750px) {
+  .wholesale_contact .inner {
+    max-width: none;
+    width: 92vw;
+  }
+}
 .wholesale_contact .ttl-wrap {
   margin-bottom: 3.6979166667vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_contact .ttl-wrap {
+    margin-bottom: 6.6666666667vw;
+  }
+}
 .wholesale_contact .ttl-wrap h2 {
   margin-bottom: 1.3020833333vw;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_contact .ttl-wrap h2 {
+    margin-bottom: 4vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_contact .ttl-wrap .sub-ttl {
+    line-height: 1.8;
+  }
 }
 .wholesale_contact .contact-tel {
   position: relative;
@@ -4760,12 +5867,26 @@ Wholesale 卸売事業
   gap: 1.6145833333vw;
   margin-bottom: 1.4583333333vw;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_contact .contact-tel {
+    flex-direction: column;
+    gap: 2.9333333333vw;
+    margin-bottom: 9.3333333333vw;
+  }
+}
 .wholesale_contact .contact-tel > div {
   width: calc(100% - 0.8072916667vw);
   border-radius: 1.0416666667vw;
   background-color: #e3dbd0;
   padding: 1.25vw;
   transition: all 0.3s;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_contact .contact-tel > div {
+    width: 100%;
+    border-radius: 2.6666666667vw;
+    padding: 5.3333333333vw 4vw;
+  }
 }
 .wholesale_contact .contact-tel > div:hover {
   background-color: #d87159;
@@ -4787,6 +5908,12 @@ Wholesale 卸売事業
     gap: 2.0833333333vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .wholesale_contact .contact-tel > div a {
+    justify-content: space-between;
+    gap: 0.6666666667vw;
+  }
+}
 .wholesale_contact .contact-tel > div a p {
   font-family: "Unbounded", sans-serif;
   font-size: clamp(1.6rem, 1.3541666667vw, 2.6rem);
@@ -4796,6 +5923,12 @@ Wholesale 卸売事業
   text-align: center;
   transition: all 0.3s;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_contact .contact-tel > div a p {
+    font-size: clamp(1.5rem, 5.0666666667vw, 3.8rem);
+    line-height: 1.6;
+  }
+}
 .wholesale_contact .contact-tel > div a p span {
   display: block;
   font-family: "Noto Sans JP", sans-serif;
@@ -4803,6 +5936,22 @@ Wholesale 卸売事業
   font-weight: 500;
   color: #462f13;
   transition: all 0.3s;
+}
+@media screen and (max-width: 750px) {
+  .wholesale_contact .contact-tel > div a p span {
+    font-size: clamp(1.2rem, 2.9333333333vw, 2.2rem);
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_contact .contact-tel > div a p:first-of-type {
+    padding-left: 4vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .wholesale_contact .contact-tel > div a p:last-of-type {
+    text-align: left;
+    font-size: clamp(1.4rem, 4.2666666667vw, 3.2rem);
+  }
 }
 .wholesale_contact .form-wrap form table tr td:has(input[type=checkbox]) > div {
   display: flex;
@@ -4819,6 +5968,14 @@ Wholesale 卸売事業
   margin-bottom: 3.4375vw;
   z-index: 1;
 }
+@media screen and (max-width: 750px) {
+  .wholesale_contact .note {
+    font-size: clamp(1.2rem, 3.2vw, 2.4rem);
+    padding: 3.3333333333vw;
+    border-radius: 2.6666666667vw;
+    margin-bottom: 11.3333333333vw;
+  }
+}
 .wholesale_contact > .img-box {
   position: absolute;
 }
@@ -4826,6 +5983,11 @@ Wholesale 卸売事業
   width: 10.4166666667vw;
   top: 31.25vw;
   right: 0;
+}
+@media screen and (max-width: 1023px) {
+  .wholesale_contact > .img-box.vertical-txt {
+    display: none;
+  }
 }
 
 /*************************************************
@@ -4948,6 +6110,11 @@ component 会社概要
   padding: 2.96875vw 0 7.7604166667vw;
   background-color: #fff7e8;
 }
+@media screen and (max-width: 750px) {
+  .company_message {
+    padding: 9.2vw 0 13.3333333333vw;
+  }
+}
 .company_message .ttl-wrap {
   margin-bottom: 3.125vw;
 }
@@ -4967,6 +6134,14 @@ component 会社概要
     gap: 5.7291666667vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .company_message .block {
+    position: relative;
+    flex-direction: column;
+    gap: 8vw;
+    z-index: 2;
+  }
+}
 .company_message .block .left {
   position: relative;
   flex-shrink: 0;
@@ -4977,11 +6152,23 @@ component 会社概要
   border-radius: 10.0520833333vw;
   overflow: hidden;
 }
+@media screen and (max-width: 750px) {
+  .company_message .block .left .daihyo {
+    width: 60.9333333333vw;
+    border-radius: 25.7333333333vw;
+    margin: 0 auto;
+  }
+}
 .company_message .block .left .pig {
   position: absolute;
   width: 12.4479166667vw;
   top: -2.6041666667vw;
   left: 10.4166666667vw;
+}
+@media screen and (max-width: 750px) {
+  .company_message .block .left .pig {
+    display: none;
+  }
 }
 .company_message .block .right {
   flex-grow: 1;
@@ -4993,12 +6180,29 @@ component 会社概要
   gap: 1.9791666667vw;
   margin-bottom: 2.7604166667vw;
 }
+@media screen and (max-width: 750px) {
+  .company_message .block .right > div {
+    margin-bottom: 10.5333333333vw;
+    justify-content: center;
+    gap: 4.4vw;
+  }
+}
 .company_message .block .right > div span {
   font-weight: 600;
   color: #d87159;
 }
+@media screen and (max-width: 750px) {
+  .company_message .block .right > div span {
+    font-size: clamp(1.2rem, 2.9333333333vw, 2.2rem);
+  }
+}
 .company_message .block .right > div p {
   font-size: clamp(1.6rem, 1.6666666667vw, 3.2rem);
+}
+@media screen and (max-width: 750px) {
+  .company_message .block .right > div p {
+    font-size: clamp(1.6rem, 4.5333333333vw, 3.4rem);
+  }
 }
 .company_message .block .right > p {
   width: 31.25vw;
@@ -5007,6 +6211,11 @@ component 会社概要
 @media screen and (max-width: 1023px) {
   .company_message .block .right > p {
     width: 41.6666666667vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .company_message .block .right > p {
+    width: 100%;
   }
 }
 .company_message > .img-box {
@@ -5018,15 +6227,36 @@ component 会社概要
   top: -5.2083333333vw;
   right: -21.875vw;
 }
+@media screen and (max-width: 750px) {
+  .company_message > .img-box.logomark {
+    width: 107.6vw;
+    top: 3.3333333333vw;
+    right: 0;
+  }
+}
 .company_message > .img-box.vertical-txt {
   width: 10.4166666667vw;
   top: 7.2916666667vw;
   right: 0;
 }
+@media screen and (max-width: 750px) {
+  .company_message > .img-box.vertical-txt {
+    width: 35.8666666667vw;
+    top: 49.0666666667vw;
+    left: auto;
+    right: -8.9333333333vw;
+    opacity: 0.8;
+  }
+}
 
 .company_profile {
   padding: 5.2083333333vw 0 7.7604166667vw;
   background-color: #d1c1a5;
+}
+@media screen and (max-width: 750px) {
+  .company_profile {
+    padding: 14.8vw 0 15.0666666667vw;
+  }
 }
 .company_profile .inner {
   position: relative;
@@ -5037,26 +6267,63 @@ component 会社概要
   top: 13.8020833333vw;
   right: -5.0520833333vw;
 }
+@media screen and (max-width: 750px) {
+  .company_profile .inner .img-box {
+    width: 70.5333333333vw;
+    top: 47.3333333333vw;
+    right: 0;
+  }
+}
 .company_profile .ttl-wrap {
   margin-bottom: 5.2083333333vw;
 }
+@media screen and (max-width: 750px) {
+  .company_profile .ttl-wrap {
+    margin-bottom: 116.1333333333vw;
+  }
+}
 .company_profile .ttl-wrap h2 {
   margin-bottom: 1.5625vw;
+}
+@media screen and (max-width: 750px) {
+  .company_profile .ttl-wrap h2 {
+    line-height: 1.2;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 750px) {
+  .company_profile .ttl-wrap .sub-ttl {
+    text-align: left;
+  }
 }
 .company_profile .profile {
   position: relative;
   padding-left: 4.84375vw;
   z-index: 3;
 }
+@media screen and (max-width: 750px) {
+  .company_profile .profile {
+    padding-left: 0;
+  }
+}
 .company_profile .profile dl {
   width: clamp(38rem, 34.1145833333vw, 65.5rem);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 1.1458333333vw 2.6041666667vw;
+  padding: 1.1458333333vw 1.9270833333vw 1.1458333333vw 2.6041666667vw;
   background-color: rgba(227, 219, 208, 0.6);
   border-radius: 1.1458333333vw;
   margin-bottom: 0.5208333333vw;
+}
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl {
+    width: 92vw;
+    padding: 5.0666666667vw 4.1333333333vw;
+    margin-left: -4vw;
+    margin-bottom: 2.9333333333vw;
+    border-radius: 2.9333333333vw;
+  }
 }
 .company_profile .profile dl:last-of-type {
   margin-bottom: 0;
@@ -5066,15 +6333,48 @@ component 会社概要
   font-weight: 600;
   color: #d87159;
 }
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl dt {
+    width: 38%;
+  }
+}
 .company_profile .profile dl dd {
   width: 72%;
   font-size: clamp(1.2rem, 0.8333333333vw, 1.6rem);
   line-height: 2;
 }
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl dd {
+    width: 62%;
+    font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+  }
+}
 .company_profile .profile dl dd a {
   font-size: clamp(1rem, 0.7291666667vw, 1.4rem);
   color: #d87159;
   text-decoration: underline;
+}
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl dd a {
+    display: block;
+    margin-top: 2.6666666667vw;
+    font-size: clamp(1.2rem, 2.9333333333vw, 2.2rem);
+  }
+}
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl dd ul li {
+    list-style-type: disc;
+    font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+    margin-bottom: 1.71875vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl dd ul li::marker {
+    font-size: 2vw;
+  }
+}
+.company_profile .profile dl dd ul li:last-of-type {
+  margin-bottom: 0;
 }
 .company_profile .profile dl dd table {
   width: 100%;
@@ -5083,9 +6383,20 @@ component 会社概要
 .company_profile .profile dl dd table th {
   width: 38%;
 }
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl dd table th {
+    width: 50%;
+  }
+}
 .company_profile .profile dl dd table th,
 .company_profile .profile dl dd table td {
   line-height: 1.8;
+}
+@media screen and (max-width: 750px) {
+  .company_profile .profile dl dd table th,
+  .company_profile .profile dl dd table td {
+    font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+  }
 }
 .company_profile > .img-box {
   position: absolute;
@@ -5095,21 +6406,56 @@ component 会社概要
   top: 9.53125vw;
   left: -2.0833333333vw;
 }
+@media screen and (max-width: 750px) {
+  .company_profile > .img-box.vertical-txt {
+    width: 36vw;
+    top: 60vw;
+    left: -9.3333333333vw;
+    opacity: 0.8;
+  }
+}
 
 .company_history {
   padding: 5.2083333333vw 0 7.7604166667vw;
   background-color: #fff7e8;
   overflow: hidden;
 }
+@media screen and (max-width: 750px) {
+  .company_history {
+    padding: 9.3333333333vw 0 13.4666666667vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .company_history .inner {
+    max-width: none;
+    width: 92vw;
+  }
+}
 .company_history .ttl-wrap {
   margin-bottom: 5.2083333333vw;
+}
+@media screen and (max-width: 750px) {
+  .company_history .ttl-wrap {
+    margin-bottom: 6.8vw;
+  }
 }
 .company_history .ttl-wrap h2 {
   text-align: left;
   margin-bottom: 1.5625vw;
 }
+@media screen and (max-width: 750px) {
+  .company_history .ttl-wrap h2 {
+    text-align: center;
+    margin-bottom: 2.6666666667vw;
+  }
+}
 .company_history .ttl-wrap .sub-ttl {
   text-align: left;
+}
+@media screen and (max-width: 750px) {
+  .company_history .ttl-wrap .sub-ttl {
+    text-align: center;
+  }
 }
 .company_history .block {
   align-items: center;
@@ -5122,10 +6468,22 @@ component 会社概要
     gap: 4.1666666667vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .company_history .block {
+    gap: 13.0666666667vw;
+    flex-direction: column;
+  }
+}
 .company_history .block .left .img-box {
   width: 39.7916666667vw;
   border-radius: 9.5833333333vw;
   overflow: hidden;
+}
+@media screen and (max-width: 750px) {
+  .company_history .block .left .img-box {
+    width: 100%;
+    border-radius: 24.5333333333vw;
+  }
 }
 .company_history .block .right p {
   width: 26.25vw;
@@ -5136,10 +6494,22 @@ component 会社概要
     width: 39.0625vw;
   }
 }
+@media screen and (max-width: 750px) {
+  .company_history .block .right p {
+    width: 100%;
+    padding-left: 4vw;
+  }
+}
 .company_history .timeline {
   position: relative;
   width: clamp(55rem, 49.9479166667vw, 95.9rem);
   margin: 0 auto 6.4583333333vw;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline {
+    width: 100%;
+    margin-bottom: 14.4vw;
+  }
 }
 .company_history .timeline .circle {
   position: absolute;
@@ -5154,13 +6524,29 @@ component 会社概要
   background-color: #ddb763;
   opacity: 0.1;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .circle {
+    display: none;
+  }
+}
 .company_history .timeline .time-wrap {
   margin-bottom: 0.9895833333vw;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap {
+    padding: 0 4vw;
+    margin-bottom: 4.6666666667vw;
+  }
 }
 .company_history .timeline .time-wrap .box {
   position: relative;
   width: 50%;
   display: inline-block;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box {
+    width: 100%;
+  }
 }
 .company_history .timeline .time-wrap .box::before {
   content: "";
@@ -5171,6 +6557,12 @@ component 会社概要
   border-radius: 50%;
   border: 3px solid #d87159;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box::before {
+    top: 1.3333333333vw;
+    width: 3.4666666667vw;
+  }
+}
 .company_history .timeline .time-wrap .box::after {
   content: "";
   position: absolute;
@@ -5178,6 +6570,12 @@ component 会社概要
   width: 2px;
   height: calc(100% - 2.6041666667vw);
   background-color: #d87159;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box::after {
+    top: 7.3333333333vw;
+    height: calc(100% - 4vw);
+  }
 }
 .company_history .timeline .time-wrap .box .year {
   position: relative;
@@ -5188,15 +6586,33 @@ component 会社概要
   margin-bottom: 0.625vw;
   z-index: 2;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box .year {
+    font-size: clamp(1.5rem, 8vw, 6rem);
+    margin-bottom: 2vw;
+  }
+}
 .company_history .timeline .time-wrap .box .txt {
   position: relative;
   width: clamp(22.5rem, 18.4895833333vw, 35.5rem);
   z-index: 2;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box .txt {
+    width: 100%;
+  }
+}
 .company_history .timeline .time-wrap .box .txt p {
   padding: 1.25vw 1.9791666667vw;
   background-color: rgba(227, 219, 208, 0.6);
   border-radius: 1.1458333333vw;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box .txt p {
+    font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+    padding: 3.3333333333vw 4.6666666667vw;
+    border-radius: 2.9333333333vw;
+  }
 }
 .company_history .timeline .time-wrap .box .img-box {
   position: absolute;
@@ -5207,11 +6623,27 @@ component 会社概要
   right: -11.09375vw;
   bottom: -1.3541666667vw;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box.y1999 .img-box {
+    width: clamp(15rem, 42.6666666667vw, 30rem);
+    right: -8vw;
+    bottom: 0;
+  }
+}
 .company_history .timeline .time-wrap .box.y2007 .img-box {
   width: clamp(12rem, 13.28125vw, 22.5rem);
   left: -9.6354166667vw;
   bottom: -4.375vw;
   z-index: 3;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box.y2007 .img-box {
+    width: clamp(12rem, 30.6666666667vw, 26rem);
+    left: auto;
+    right: -4vw;
+    bottom: -13.3333333333vw;
+    z-index: 1;
+  }
 }
 .company_history .timeline .time-wrap .box.y2020 .img-box {
   width: clamp(14rem, 12.65625vw, 24.3rem);
@@ -5219,11 +6651,29 @@ component 会社概要
   bottom: -3.1770833333vw;
   z-index: 1;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box.y2020 .img-box {
+    width: clamp(13rem, 29.7333333333vw, 22.3rem);
+    left: auto;
+    right: -4vw;
+    bottom: -13.3333333333vw;
+    z-index: 1;
+  }
+}
 .company_history .timeline .time-wrap .box.y2022 .img-box {
   width: clamp(10rem, 9.6354166667vw, 18.5rem);
   left: -8.59375vw;
   bottom: -6.40625vw;
   z-index: 3;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap .box.y2022 .img-box {
+    width: clamp(8rem, 22vw, 16.5rem);
+    left: auto;
+    right: 0;
+    bottom: -13.3333333333vw;
+    z-index: 1;
+  }
 }
 .company_history .timeline .time-wrap:nth-of-type(odd) {
   display: flex;
@@ -5233,11 +6683,26 @@ component 会社概要
 .company_history .timeline .time-wrap:nth-of-type(odd) .box {
   padding-left: 6.6145833333vw;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap:nth-of-type(odd) .box {
+    padding-left: 8.9333333333vw;
+  }
+}
 .company_history .timeline .time-wrap:nth-of-type(odd) .box::before {
   left: -0.6770833333vw;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap:nth-of-type(odd) .box::before {
+    left: 0;
+  }
+}
 .company_history .timeline .time-wrap:nth-of-type(odd) .box::after {
   left: -1px;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap:nth-of-type(odd) .box::after {
+    left: 1.7333333333vw;
+  }
 }
 .company_history .timeline .time-wrap:nth-of-type(odd) .box div,
 .company_history .timeline .time-wrap:nth-of-type(odd) .box p {
@@ -5251,18 +6716,51 @@ component 会社概要
 .company_history .timeline .time-wrap:nth-of-type(2n) .box {
   padding-right: 6.6145833333vw;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap:nth-of-type(2n) .box {
+    padding-right: 0;
+    padding-left: 8.9333333333vw;
+  }
+}
 .company_history .timeline .time-wrap:nth-of-type(2n) .box::before {
   right: -0.6770833333vw;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap:nth-of-type(2n) .box::before {
+    right: auto;
+    left: 0;
+  }
+}
 .company_history .timeline .time-wrap:nth-of-type(2n) .box::after {
   right: -1px;
+}
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap:nth-of-type(2n) .box::after {
+    right: auto;
+    left: 1.7333333333vw;
+  }
 }
 .company_history .timeline .time-wrap:nth-of-type(2n) .box div,
 .company_history .timeline .time-wrap:nth-of-type(2n) .box p {
   text-align: right;
 }
+@media screen and (max-width: 750px) {
+  .company_history .timeline .time-wrap:nth-of-type(2n) .box div,
+  .company_history .timeline .time-wrap:nth-of-type(2n) .box p {
+    text-align: left;
+  }
+}
 .company_history .timeline .time-wrap:last-of-type {
   margin-bottom: 0;
+}
+.company_history .timeline .time-wrap:last-of-type .box::after {
+  background-color: transparent;
+  border-left: 2px dashed #d87159;
+}
+@media screen and (max-width: 750px) {
+  .company_history .goes-on {
+    padding-left: 14.8vw;
+  }
 }
 .company_history .goes-on p {
   font-family: "Unbounded", sans-serif;
@@ -5270,8 +6768,25 @@ component 会社概要
   color: #d87159;
   text-align: center;
 }
+@media screen and (max-width: 750px) {
+  .company_history .goes-on p {
+    text-align: left;
+    line-height: 1.4;
+  }
+}
 .company_history .goes-on p.main {
   font-size: clamp(4rem, 3.125vw, 6rem);
+}
+@media screen and (max-width: 750px) {
+  .company_history .goes-on p.main {
+    font-size: clamp(2.4rem, 8vw, 6rem);
+    margin-bottom: 3.3333333333vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .company_history .goes-on p.sub {
+    font-size: clamp(1.3rem, 2.9333333333vw, 2.2rem);
+  }
 }
 .company_history > .img-box {
   position: absolute;
@@ -5281,10 +6796,22 @@ component 会社概要
   top: 11.4583333333vw;
   right: 0;
 }
+@media screen and (max-width: 750px) {
+  .company_history > .img-box.vertical-txt01 {
+    width: 36vw;
+    top: 186.6666666667vw;
+    right: -5.3333333333vw;
+  }
+}
 .company_history > .img-box.vertical-txt02 {
   width: 14.0625vw;
   bottom: 10vw;
   left: -2.0833333333vw;
+}
+@media screen and (max-width: 750px) {
+  .company_history > .img-box.vertical-txt02 {
+    display: none;
+  }
 }
 
 /*************************************************

@@ -295,46 +295,193 @@
             <p class="sub-ttl">アメリカ直輸入の厳選された商品</p>
           </div>
 
-          <div class="block_img-text quality">
-            <div class="text-box">
-              <h3>
-                <span>Advantages</span><br>
-                高品質な商品
-              </h3>
-              <p>
-                弊社は海外に拠点を構え、提携するラグハウスから毎日、バイヤーがアメリカ古着の仕入れを行っています。<br>
-                現地で一点一点、状態やサイズを丁寧にチェックし、厳選した商品のみを買い付けています。<br>
-                日本到着後はすぐに洗濯を行い、そのまま店舗に並べられるよう清潔な状態で管理しています。
-              </p>
+          <div id="handpick">
+            <div class="block_img-text quality">
+              <div class="text-box">
+                <h3>
+                  <span>Advantages</span><br>
+                  高品質な商品
+                </h3>
+                <p>
+                  弊社は海外に拠点を構え、提携するラグハウスから毎日、バイヤーがアメリカ古着の仕入れを行っています。<br>
+                  現地で一点一点、状態やサイズを丁寧にチェックし、厳選した商品のみを買い付けています。<br>
+                  日本到着後はすぐに洗濯を行い、そのまま店舗に並べられるよう清潔な状態で管理しています。
+                </p>
+              </div>
+              <div class="img-box"><img src="images/wholesale/wholesale_img01.jpg" alt=""></div>
             </div>
-            <div class="img-box"><img src="images/wholesale/wholesale_img01.jpg" alt=""></div>
-          </div>
-          <div class="block_img-text volume">
-            <div class="text-box">
-              <h3>
-                <span>Advantages</span><br>
-                豊富な品揃え
-              </h3>
-              <p>
-                商品構成はメンズ・レディースともに、ベーシックなアメカジから旬のトレンドアイテムまで幅広く展開しています。<br>
-                定番から個性派まで、バイヤーが厳選したアイテムをバランスよく取り揃えており、年代・性別を問わず多様なお客様のニーズにお応えします。
-              </p>
+            <div class="block_img-text volume">
+              <div class="text-box">
+                <h3>
+                  <span>Advantages</span><br>
+                  豊富な品揃え
+                </h3>
+                <p>
+                  商品構成はメンズ・レディースともに、ベーシックなアメカジから旬のトレンドアイテムまで幅広く展開しています。<br>
+                  定番から個性派まで、バイヤーが厳選したアイテムをバランスよく取り揃えており、年代・性別を問わず多様なお客様のニーズにお応えします。
+                </p>
+              </div>
+              <div class="img-box"><img src="images/wholesale/wholesale_img02.jpg" alt=""></div>
             </div>
-            <div class="img-box"><img src="images/wholesale/wholesale_img02.jpg" alt=""></div>
-          </div>
-          <div class="block_img-text access">
-            <div class="text-box">
-              <h3>
-                <span>Advantages</span><br>
-                アクセス抜群の好立地
-              </h3>
-              <p>
-                大阪・東京ともに、駅近の利便性に優れた立地でアクセス抜群。ショールームでは、商品をアイテムごとに整理しているため、ボリュームがあっても効率よく全体を確認できます。<br>
-                バイヤー視点に立ち、「アクセスのしやすさ」と「見やすさ」にとことんこだわった空間設計を行っています。
-              </p>
+            <div class="block_img-text access">
+              <div class="text-box">
+                <h3>
+                  <span>Advantages</span><br>
+                  アクセス抜群の好立地
+                </h3>
+                <p>
+                  大阪・東京ともに、駅近の利便性に優れた立地でアクセス抜群。ショールームでは、商品をアイテムごとに整理しているため、ボリュームがあっても効率よく全体を確認できます。<br>
+                  バイヤー視点に立ち、「アクセスのしやすさ」と「見やすさ」にとことんこだわった空間設計を行っています。
+                </p>
+              </div>
+              <div class="img-box"><img src="images/wholesale/wholesale_img03.jpg" alt=""></div>
             </div>
-            <div class="img-box"><img src="images/wholesale/wholesale_img03.jpg" alt=""></div>
           </div>
+          <div class="swiper-pagination-container handpick-swiper-pagination">
+            <button class="handpick-swiper-button-prev btn-prev font-unb" type="button">PREV</button>
+            <div class="swiper-pagination-custom">
+              <span class="current-slide font-unb">01</span>
+              <span class="line"></span>
+              <span class="total-slides font-unb">03</span>
+            </div>
+            <button class="handpick-swiper-button-next btn-next font-unb" type="button">NEXT</button>
+          </div>
+
+          <script>
+            (function () {
+              const cfg = {
+                breakpoint: 750,
+                parent: "#handpick",
+                slide: ".block_img-text",
+                containerClass: "swiper-handpick",
+                uiRoot: ".handpick-swiper-pagination",          // ← あなたのUIラッパ
+                uiPrev: ".handpick-swiper-button-prev",
+                uiNext: ".handpick-swiper-button-next",
+                uiCurrent: ".current-slide",
+                uiTotal: ".total-slides",
+                options: {
+                  slidesPerView: 1,
+                  spaceBetween: 16,
+                  // ループする場合は loop:true にしてOK（下のgetTotalで重複分を除外）
+                  // loop: true,
+                },
+              };
+
+              const mql = window.matchMedia(`(max-width: ${cfg.breakpoint}px)`);
+              const root = document.querySelector(cfg.parent);
+              if (!root) return;
+
+              let placeholder = null;
+              let container = null;
+              let swiper = null;
+              let prevBtn = null, nextBtn = null, curEl = null, totalEl = null;
+              let prevHandler = null, nextHandler = null;
+
+              function pad2(n) { return String(n).padStart(2, "0"); }
+              function getTotal(sw) {
+                // loop時に重複スライドを除外
+                if (!sw) return 0;
+                const all = Array.from(sw.slides || []);
+                const real = all.filter(s => !s.classList.contains("swiper-slide-duplicate"));
+                return (real.length || all.length || 0);
+              }
+              function getCurrent(sw) {
+                if (!sw) return 1;
+                // loop:trueなら realIndex、そうでなければ activeIndex
+                const idx = (typeof sw.realIndex === "number") ? sw.realIndex : sw.activeIndex;
+                return (idx || 0) + 1;
+              }
+
+              function enable() {
+                if (container) return;
+
+                const blocks = Array.from(root.querySelectorAll(`:scope > ${cfg.slide}`));
+                if (!blocks.length) return;
+
+                // UI要素を取得
+                const ui = document.querySelector(cfg.uiRoot);
+                if (!ui) return;
+                prevBtn = ui.querySelector(cfg.uiPrev);
+                nextBtn = ui.querySelector(cfg.uiNext);
+                curEl = ui.querySelector(cfg.uiCurrent);
+                totalEl = ui.querySelector(cfg.uiTotal);
+
+                // プレースホルダ
+                placeholder = document.createComment(`${cfg.containerClass} placeholder`);
+                root.insertBefore(placeholder, blocks[0]);
+
+                // Swiper DOMを構築
+                container = document.createElement("div");
+                container.className = `swiper ${cfg.containerClass}`;
+                const wrapper = document.createElement("div");
+                wrapper.className = "swiper-wrapper";
+
+                blocks.forEach((b) => {
+                  const slide = document.createElement("div");
+                  slide.className = "swiper-slide";
+                  slide.appendChild(b); // move
+                  wrapper.appendChild(slide);
+                });
+
+                container.appendChild(wrapper);
+                root.insertBefore(container, placeholder);
+
+                // 起動
+                swiper = new Swiper(`.${cfg.containerClass}`, Object.assign({}, cfg.options));
+
+                // UI初期表示
+                const total = getTotal(swiper) || blocks.length;
+                if (totalEl) totalEl.textContent = pad2(total);
+                if (curEl) curEl.textContent = pad2(getCurrent(swiper));
+
+                // スライド変化で更新
+                swiper.on("slideChange", () => {
+                  if (curEl) curEl.textContent = pad2(getCurrent(swiper));
+                  if (totalEl) totalEl.textContent = pad2(getTotal(swiper));
+                });
+
+                // PREV/NEXT連動
+                if (prevBtn) {
+                  prevHandler = () => swiper.slidePrev();
+                  prevBtn.addEventListener("click", prevHandler);
+                }
+                if (nextBtn) {
+                  nextHandler = () => swiper.slideNext();
+                  nextBtn.addEventListener("click", nextHandler);
+                }
+              }
+
+              function disable() {
+                if (!container) return;
+
+                // イベント解除
+                if (prevBtn && prevHandler) prevBtn.removeEventListener("click", prevHandler);
+                if (nextBtn && nextHandler) nextBtn.removeEventListener("click", nextHandler);
+                prevHandler = nextHandler = null;
+
+                if (swiper) { swiper.destroy(true, true); swiper = null; }
+
+                // 元の順序で戻す（placeholderの直前に逆順で挿入）
+                const slides = Array.from(container.querySelectorAll(".swiper-slide"));
+                for (let i = slides.length - 1; i >= 0; i--) {
+                  const block = slides[i].firstElementChild;
+                  if (block && placeholder && placeholder.parentNode) {
+                    root.insertBefore(block, placeholder);
+                  }
+                }
+
+                container.remove(); container = null;
+                placeholder.remove(); placeholder = null;
+              }
+
+              function onChange(e) { e.matches ? enable() : disable(); }
+
+              onChange(mql);
+              if (mql.addEventListener) mql.addEventListener("change", onChange);
+              else mql.addListener(onChange); // 古いブラウザ向け
+            })();
+          </script>
+
 
         </div>
         <div class="good img-box"><img src="images/wholesale/ashirai_good.png" alt=""></div>
@@ -493,25 +640,25 @@
           <h3>商材について</h3>
           <div>
             <p>
-              全て弊社バイヤーのハンドピック商材で、アメリカ古着をメインに取り扱っております。<br>
-              <small>
-                ※リメイク商材等でのオーダーも承っております。<br>
-                ※商材によって対応できない場合もございますのでお気軽にご相談ください。
-              </small>
+              全て弊社バイヤーのハンドピック商材で、アメリカ古着をメインに取り扱っております。
             </p>
+            <ul>
+              <li>リメイク商材等でのオーダーも承っております。</li>
+              <li>商材によって対応できない場合もございますのでお気軽にご相談ください。</li>
+            </ul>
           </div>
         </div>
         <div class="box">
           <h3>アポイントメント制</h3>
           <div>
             <p>
-              弊社の卸売はアポイントメント制になります。<br>
-              <small>
-                ※アポイントに関しましては基本2時間制となります。<br>
-                ※午前のご案内に関しましては既存の顧客様を優先にしておりますので対応出来ない場合がございます。<br>
-                ※ イベント出店等で対応出来ない場合がございますので、事前に下記フォーム又はTELにてご予約ください。
-              </small>
+              弊社の卸売はアポイントメント制になります。
             </p>
+            <ul>
+              <li>アポイントに関しましては基本2時間制となります。</li>
+              <li>午前のご案内に関しましては既存の顧客様を優先にしておりますので対応出来ない場合がございます。</li>
+              <li>イベント出店等で対応出来ない場合がございますので、事前に下記フォーム又はTELにてご予約ください。</li>
+            </ul>
             <div class="apo">
               <div class="time">
                 <p><strong>営業時間 :</strong></p>
@@ -531,7 +678,9 @@
               <li>税抜3万円以上となります。</li>
               <li>
                 初回見学のみも可能です。事前に見学のみの旨をお伝えください。<br>
-                <small>※見学の場合1時間制となります。</small>
+                <ul>
+                  <li>見学の場合1時間制となります。</li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -541,16 +690,22 @@
           <div>
             <ul>
               <li>
-                現金払い、もしくは銀行振込<br>
-                <small>※銀行振込は、税抜5万円以上ご購入の方に限る</small>
+                現金払い、もしくは銀行振込
+                <ul>
+                  <li>銀行振込は、税抜5万円以上ご購入の方に限る</li>
+                </ul>
               </li>
               <li>
-                東京倉庫のみクレジット支払いも利用可能<br>
-                <small>※銀行振込は、税抜5万円以上ご購入の方に限る</small>
+                東京倉庫のみクレジット支払いも利用可能
+                <ul>
+                  <li>銀行振込は、税抜5万円以上ご購入の方に限る</li>
+                </ul>
               </li>
               <li>
-                発送は、入金確認後となりますのでご了承ください。<br>
-                <small>※銀行振込を選択の場合、2週間を目途にご入金が無ければキャンセルとさせて頂くことがあります。</small>
+                発送は、入金確認後となりますのでご了承ください。
+                <ul>
+                  <li>銀行振込を選択の場合、2週間を目途にご入金が無ければキャンセルとさせて頂くことがあります。</li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -579,6 +734,7 @@
               尚、アソート販売等もアイテムにより対応できるので下記お問い合わせフォームよりお問い合わせ下さい。
             </p>
           </div>
+          <div class="btn-wrap u-sp"><a class="btn red" href="#">View More</a></div>
         </diiv>
       </div>
     </section>
@@ -587,19 +743,19 @@
       <div class="inner">
         <div class="ttl-wrap">
           <h2>Contact Form</h2>
-          <div class="sub-ttl">卸販売に関するお問い合わせはこちら</div>
+          <div class="sub-ttl">卸販売に関する<br class="u-sp">お問い合わせはこちら</div>
         </div>
 
         <div class="contact-tel">
           <div>
             <a href="te:0665998617">
-              <p>OSAKA<span>お電話でのお問い合わせ</span></p>
+              <p>OSAKA<span class="u-pc">お電話でのお問い合わせ</span></p>
               <p>06-6599-8617<span>受付時間 10 : 00 - 18:00 (土日祝休)</span></p>
             </a>
           </div>
           <div>
             <a href="te:0665998617">
-              <p>TOKYO<span>お電話でのお問い合わせ</span></p>
+              <p>TOKYO<span class="u-pc">お電話でのお問い合わせ</span></p>
               <p>06-6599-8617<span>受付時間 10 : 00 - 18:00 (土日祝休)</span></p>
             </a>
           </div>
@@ -646,7 +802,7 @@
                     <label><input type="checkbox" name="warehouse" value="大阪倉庫" required>大阪倉庫</label>
                     <label><input type="checkbox" name="warehouse" value="東京倉庫">東京倉庫</label>
                   </div>
-                  <p><span>※ 大阪と東京で受付が異なりますので、ご希望される倉庫にご連絡お願いします。</span></p>
+                  <p class="u-pc"><span>※ 大阪と東京で受付が異なりますので、ご希望される倉庫にご連絡お願いします。</span></p>
                 </td>
               </tr>
               <tr>
@@ -664,36 +820,50 @@
                 <td>
                   <div class="customer-info">
                     <div class="info-row">
-                      <label>● 店舗名 / 会社名（または個人名）</label>
+                      <label><span class="u-pc">● </span>店舗名 / 会社名（または個人名）</label>
                       <input type="text" name="company_name">
                     </div>
                     <div class="info-row">
-                      <label>● 郵便番号</label>
+                      <label>
+                        <span class="u-pc">● </span>郵便番号
+                      </label>
                       <input type="text" name="postal_code">
                     </div>
                     <div class="info-row">
-                      <label>● 住所</label>
+                      <label>
+                        <span class="u-pc">● </span>住所
+                      </label>
                       <input type="text" name="address">
                     </div>
                     <div class="info-row">
-                      <label>● ご担当者 お名前（全角） ＊必須</label>
+                      <label>
+                        <span class="u-pc">● </span>ご担当者 お名前（全角） <span class="req">＊必須</span>
+                      </label>
                       <input type="text" name="name" required>
                     </div>
                     <div class="info-row">
-                      <label>● ご担当者 ふりがな（全角） ＊必須</label>
+                      <label>
+                        <span class="u-pc">● </span>ご担当者 ふりがな（全角） <span class="req">＊必須</span>
+                      </label>
                       <input type="text" name="name_kana" required>
                     </div>
                     <div class="info-row">
-                      <label>● お電話番号＊必須</label>
+                      <label>
+                        <span class="u-pc">● </span>お電話番号 <span class="req">＊必須</span>
+                      </label>
                       <input type="tel" name="tel" required>
                     </div>
                     <div class="info-row">
-                      <label>● メールアドレス ＊必須</label>
+                      <label>
+                        <span class="u-pc">● </span>メールアドレス <span class="req">＊必須</span>
+                      </label>
                       <input type="email" name="email" required autocomplete="email">
                       <p>info@zipanguworks.comからメールをお送りさせていただきますので、指定受信されている方は解除をお願いします。</p>
                     </div>
                     <div class="info-row">
-                      <label>● メールアドレス（確認） ＊必須</label>
+                      <label>
+                        <span class="u-pc">● </span>メールアドレス（確認） <span class="req">＊必須</span>
+                      </label>
                       <input type="email" name="email_confirm" required autocomplete="email">
                     </div>
                   </div>
