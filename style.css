@@ -7262,10 +7262,13 @@ Privacy Policy プライバシーポリシー
     margin-bottom: 13.3333333333vw;
   }
 }
+.policy_wrap .block ol {
+  padding-left: 1.5625vw;
+}
 .policy_wrap .block ol > li {
   font-size: clamp(1.5rem, 1.0416666667vw, 2rem);
   list-style: decimal;
-  padding-left: 1.0416666667vw;
+  padding-left: 0.5208333333vw;
   margin-bottom: 2.0833333333vw;
 }
 @media screen and (max-width: 750px) {
@@ -7304,6 +7307,7 @@ Privacy Policy プライバシーポリシー
 }
 .policy_wrap .block ol:has(ul) ul {
   margin-top: 1.6666666667vw;
+  padding-left: 1.0416666667vw;
 }
 @media screen and (max-width: 750px) {
   .policy_wrap .block ol:has(ul) ul {
@@ -7313,6 +7317,12 @@ Privacy Policy プライバシーポリシー
 .policy_wrap .block ol:has(ul) ul li {
   list-style: disc;
   margin-bottom: 0.78125vw;
+}
+@media screen and (max-width: 750px) {
+  .policy_wrap .block ol:has(ul) ul li {
+    font-size: clamp(1.3rem, 2.9333333333vw, 2.2rem);
+    margin-bottom: 2.6666666667vw;
+  }
 }
 .policy_wrap .block ol:has(ul) ul li::marker {
   font-size: clamp(1rem, 0.625vw, 1.2rem);

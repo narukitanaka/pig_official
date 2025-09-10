@@ -2964,10 +2964,11 @@ Privacy Policy プライバシーポリシー
       }
     }
     ol {
+      padding-left: v.pxtovw(30);
       > li {
         font-size: clamp(1.5rem, v.pxtovw(20), 2rem);
         list-style: decimal;
-        padding-left: v.pxtovw(20);
+        padding-left: v.pxtovw(10);
         margin-bottom: v.pxtovw(40);
         @include c.mq() {
           font-size: clamp(1.3rem, v.pxtovw_sp(24), 2.4rem);
@@ -2999,12 +3000,17 @@ Privacy Policy プライバシーポリシー
         }
         ul {
           margin-top: v.pxtovw(32);
+          padding-left: v.pxtovw(20);
           @include c.mq() {
             margin-top: v.pxtovw_sp(30);
           }
           li {
             list-style: disc;
             margin-bottom: v.pxtovw(15);
+            @include c.mq() {
+              font-size: clamp(1.3rem, v.pxtovw_sp(22), 2.2rem);
+              margin-bottom: v.pxtovw_sp(20);
+            }
             &::marker {
               font-size: clamp(1rem, v.pxtovw(12), 1.2rem);
             }
