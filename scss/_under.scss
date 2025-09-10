@@ -13,6 +13,9 @@
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 3;
+    @include c.mq() {
+      width: 100%;
+    }
     .en-ttl {
       font-family: "Unbounded", sans-serif;
       font-size: clamp(4rem, v.pxtovw(60), 6rem);
@@ -2087,12 +2090,25 @@ Contact お問い合わせ
 .contact_wrap01 {
   padding: v.pxtovw(33) 0 v.pxtovw(116);
   background-color: v.$bg-color01;
+  @include c.mq() {
+    padding: v.pxtovw_sp(83) 0 v.pxtovw_sp(116);
+  }
   .inner {
     width: v.pxtovw(1396);
+    @include c.mq() {
+      max-width: none;
+      width: v.pxtovw_sp(690);
+    }
     > p {
       text-align: center;
       line-height: 2.4;
       margin-bottom: v.pxtovw(81);
+      @include c.mq() {
+        max-width: v.pxtovw_sp(630);
+        line-height: 2.2;
+        text-align: left;
+        margin: 0 auto v.pxtovw_sp(94);
+      }
     }
   }
   .contact-root {
@@ -2100,12 +2116,21 @@ Contact お問い合わせ
     z-index: 4;
     @include c.flex(center, center);
     gap: v.pxtovw(31);
+    @include c.mq() {
+      flex-direction: column;
+      gap: v.pxtovw_sp(27);
+    }
     > div {
       width: calc(100% - (v.pxtovw(31) / 2));
       border-radius: v.pxtovw(20);
       background-color: v.$bg-color03;
       padding: v.pxtovw(27);
       transition: all 0.3s;
+      @include c.mq() {
+        width: 100%;
+        border-radius: v.pxtovw_sp(20);
+        padding: v.pxtovw_sp(40) v.pxtovw_sp(80) v.pxtovw_sp(40) v.pxtovw_sp(45);
+      }
       &:hover {
         background-color: v.$sub-color01;
         a {
@@ -2123,12 +2148,18 @@ Contact お問い合わせ
         gap: v.pxtovw(70);
         width: 100%;
         height: 100%;
+        @include c.mq() {
+          @include c.flex(between, center);
+        }
         div {
           font-family: "Unbounded", sans-serif;
           font-size: clamp(1.8rem, v.pxtovw(36), 3.6rem);
           font-weight: 400;
           color: v.$sub-color01;
           transition: all 0.3s;
+          @include c.mq() {
+            font-size: clamp(1.5rem, v.pxtovw_sp(38), 3.8rem);
+          }
         }
         p {
           display: inline-block;
@@ -2136,6 +2167,10 @@ Contact お問い合わせ
           font-weight: 600;
           color: v.$sub-color01;
           transition: all 0.3s;
+          @include c.mq() {
+            font-size: clamp(1.2rem, v.pxtovw_sp(26), 2.6rem);
+            font-weight: 500;
+          }
         }
         svg {
           position: absolute;
@@ -2143,6 +2178,10 @@ Contact お問い合わせ
           transform: translateY(-50%);
           right: v.pxtovw(35);
           width: v.pxtovw(11);
+          @include c.mq() {
+            width: v.pxtovw_sp(19);
+            right: v.pxtovw_sp(-50);
+          }
           path {
             fill: v.$sub-color01;
             transition: all 0.3s;
@@ -2158,6 +2197,11 @@ Contact お問い合わせ
       aspect-ratio: 1/0.38;
       top: v.pxtovw(-100);
       right: v.pxtovw(-420);
+      @include c.mq() {
+        width: v.pxtovw_sp(807);
+        top: v.pxtovw_sp(25);
+        right: 0;
+      }
     }
   }
 }
@@ -2165,25 +2209,84 @@ Contact お問い合わせ
 .contact_wrap02 {
   padding: v.pxtovw(106) 0 v.pxtovw(88);
   background-color: v.$bg-color02;
+  @include c.mq() {
+    padding: v.pxtovw_sp(92) 0 v.pxtovw_sp(59);
+  }
   .inner {
-    // width: v.pxtovw(1396);
     width: clamp(65rem, v.pxtovw(1396), 1396rem);
+    @include c.mq() {
+      max-width: none;
+      width: v.pxtovw_sp(690);
+    }
   }
   .ttl-wrap {
     margin-bottom: v.pxtovw(82);
+    @include c.mq() {
+      margin-bottom: v.pxtovw_sp(77);
+    }
     h2 {
       margin-bottom: v.pxtovw(25);
+      @include c.mq() {
+        margin-bottom: v.pxtovw_sp(30);
+      }
     }
   }
   .form-wrap {
     form {
+      @include c.mq() {
+        padding-top: v.pxtovw_sp(92);
+        padding-bottom: v.pxtovw_sp(132);
+      }
       table {
+        tr {
+          &:last-of-type {
+            th {
+              @include c.mq() {
+                padding-top: v.pxtovw_sp(80);
+                font-weight: 600;
+              }
+            }
+          }
+        }
         .customer-info {
+          display: block;
           label {
-            span {
+            position: relative;
+            .req {
               font-size: clamp(1.2rem, v.pxtovw(14), 1.4rem);
               color: v.$sub-color01;
               margin-left: 1.4rem;
+              @include c.mq() {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: v.pxtovw_sp(37);
+                font-size: clamp(1.2rem, v.pxtovw_sp(20), 2rem);
+                // margin-left: v.pxtovw_sp(28);
+              }
+            }
+          }
+          .shubetsu {
+            > label {
+              .req {
+                @include c.mq() {
+                  position: static;
+                  margin-left: v.pxtovw_sp(22);
+                  transform: none;
+                }
+              }
+            }
+            div {
+              @include c.mq() {
+                display: flex;
+                gap: v.pxtovw_sp(23);
+              }
+              label {
+                @include c.mq() {
+                  width: calc(100% - (v.pxtovw_sp(23) / 2));
+                  margin: 0;
+                }
+              }
             }
           }
         }
@@ -2205,6 +2308,9 @@ Contact お問い合わせ
       width: v.pxtovw(200);
       top: v.pxtovw(350);
       right: 0;
+      @include c.mq() {
+        display: none;
+      }
     }
   }
 }
@@ -2814,24 +2920,48 @@ Privacy Policy プライバシーポリシー
 .policy_wrap {
   padding: v.pxtovw(110) 0 v.pxtovw(118);
   background-color: v.$bg-color01;
+  @include c.mq() {
+    padding: v.pxtovw_sp(111) 0 v.pxtovw_sp(101);
+  }
   .inner {
     max-width: v.pxtovw(1200);
+    @include c.mq() {
+      position: relative;
+      max-width: v.pxtovw_sp(690);
+      z-index: 2;
+    }
   }
   .block {
     margin-bottom: v.pxtovw(100);
+    @include c.mq() {
+      margin-bottom: v.pxtovw_sp(124);
+    }
     h2 {
       font-size: clamp(2.2rem, v.pxtovw(40), 4rem);
+      line-height: 1.5;
       color: v.$sub-color01;
       padding-bottom: v.pxtovw(27);
       border-bottom: 1px solid v.$sub-color01;
       margin-bottom: v.pxtovw(50);
+      @include c.mq() {
+        font-size: clamp(1.8rem, v.pxtovw_sp(40), 4rem);
+        margin-bottom: v.pxtovw_sp(50);
+        padding-bottom: v.pxtovw_sp(20);
+      }
     }
     p {
       line-height: 2.2;
       margin-bottom: v.pxtovw(50);
+      @include c.mq() {
+        font-size: clamp(1.3rem, v.pxtovw_sp(24), 2.4rem);
+        margin-bottom: v.pxtovw_sp(70);
+      }
     }
     .txt {
       margin-bottom: v.pxtovw(73);
+      @include c.mq() {
+        margin-bottom: v.pxtovw_sp(100);
+      }
     }
     ol {
       > li {
@@ -2839,21 +2969,39 @@ Privacy Policy プライバシーポリシー
         list-style: decimal;
         padding-left: v.pxtovw(20);
         margin-bottom: v.pxtovw(40);
+        @include c.mq() {
+          font-size: clamp(1.3rem, v.pxtovw_sp(24), 2.4rem);
+          margin-left: v.pxtovw_sp(30);
+          margin-bottom: v.pxtovw_sp(75);
+        }
         &::marker {
           font-size: clamp(1.5rem, v.pxtovw(24), 2.4rem);
+          @include c.mq() {
+            font-size: clamp(1.2em, v.pxtovw_sp(20), 2rem);
+          }
         }
         span {
           display: inline-block;
           margin-top: v.pxtovw(25);
           font-size: clamp(1.4rem, v.pxtovw(18), 1.8rem);
+          @include c.mq() {
+            margin-top: v.pxtovw_sp(30);
+            font-size: clamp(1.2rem, v.pxtovw_sp(22), 2.2rem);
+          }
         }
       }
       &:has(ul) {
         > li {
           font-size: clamp(1.5rem, v.pxtovw(22), 2.2rem);
+          @include c.mq() {
+            font-size: clamp(1.3rem, v.pxtovw_sp(24), 2.4rem);
+          }
         }
         ul {
           margin-top: v.pxtovw(32);
+          @include c.mq() {
+            margin-top: v.pxtovw_sp(30);
+          }
           li {
             list-style: disc;
             margin-bottom: v.pxtovw(15);
@@ -2869,9 +3017,16 @@ Privacy Policy プライバシーポリシー
     div {
       font-size: clamp(1.5rem, v.pxtovw(22), 2.2rem);
       margin-bottom: v.pxtovw(27);
+      @include c.mq() {
+        font-size: clamp(1.3rem, v.pxtovw_sp(24), 2.4rem);
+        margin-bottom: v.pxtovw_sp(30);
+      }
     }
     p {
       line-height: 2;
+      @include c.mq() {
+        font-size: clamp(1.3rem, v.pxtovw_sp(22), 2.2rem);
+      }
     }
   }
   > .img-box {
@@ -2881,11 +3036,19 @@ Privacy Policy プライバシーポリシー
       aspect-ratio: 1/0.38;
       top: v.pxtovw(-80);
       left: v.pxtovw(-97);
+      @include c.mq() {
+        width: v.pxtovw_sp(807);
+        top: v.pxtovw_sp(25);
+        left: v.pxtovw_sp(-50);
+      }
     }
     &.vertical-txt {
       width: v.pxtovw(284);
       top: v.pxtovw(140);
       right: 0;
+      @include c.mq() {
+        display: none;
+      }
     }
   }
 }

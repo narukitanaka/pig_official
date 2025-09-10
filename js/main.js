@@ -379,6 +379,18 @@ $(".insta_accordion-trigger").on("click", function (e) {
 });
 
 ///////////////////////////////////////////
+//一覧ページ　カテゴリーアコーディオン（スマホのみ）
+///////////////////////////////////////////
+$(".accordion-hide").hide();
+$(".cate_accordion-trigger").on("click", function (e) {
+  e.preventDefault(); // a要素に変える場合の保険
+  const $btn = $(this);
+  const $panel = $btn.next(".accordion-hide"); // 兄弟を取得
+  $btn.toggleClass("open");
+  $panel.stop(true, true).slideToggle("fast");
+});
+
+///////////////////////////////////////////
 //事業内容ページのアコーディオン（スマホのみ）
 ///////////////////////////////////////////
 function initBusinessAccordion() {

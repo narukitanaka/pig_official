@@ -338,37 +338,39 @@
           <form action="#" method="post">
             <table>
               <tr>
-                <th>お客様情報<span>＊必須</span></th>
+                <th>お客様情報</th>
                 <td>
                   <div class="customer-info">
-                    <div class="info-row">
-                      <label>● お客様の種別 <span>＊必須</span></label>
-                      <label><input type="checkbox" name="type" value="個人" required>個人のご相談</label>
-                      <label><input type="checkbox" name="type" value="法人">法人のご相談</label>
+                    <div class="info-row shubetsu">
+                      <label><span class="u-pc">● </span>お客様の種別 <span class="req">＊必須</span></label>
+                      <div>
+                        <label><input type="checkbox" name="type" value="個人" required>個人のご相談</label>
+                        <label><input type="checkbox" name="type" value="法人">法人のご相談</label>
+                      </div>
                     </div>
                     <div class="info-row">
-                      <label>● 会社名（事業者の場合のみ）</label>
+                      <label><span class="u-pc">● </span>会社名（事業者の場合のみ）</label>
                       <input type="text" name="company_name">
                     </div>
                     <div class="info-row">
-                      <label>● お名前（全角） <span>＊必須</span></label>
+                      <label><span class="u-pc">● </span>お名前（全角） <span class="req">＊必須</span></label>
                       <input type="text" name="name" required>
                     </div>
                     <div class="info-row">
-                      <label>● フリガナ（全角） <span>＊必須</span></label>
+                      <label><span class="u-pc">● </span>フリガナ（全角） <span class="req">＊必須</span></label>
                       <input type="text" name="name_kana" required>
                     </div>
                     <div class="info-row">
-                      <label>● お電話番号 <span>＊必須</span></label>
+                      <label><span class="u-pc">● </span>お電話番号 <span class="req">＊必須</span></label>
                       <input type="tel" name="tel" required>
                     </div>
                     <div class="info-row">
-                      <label>● メールアドレス <span>＊必須</span></label>
+                      <label><span class="u-pc">● </span>メールアドレス <span class="req">＊必須</span></label>
                       <input type="email" name="email" required autocomplete="email">
                       <p>info@zipanguworks.comからメールをお送りさせていただきますので、指定受信されている方は解除をお願いします。</p>
                     </div>
                     <div class="info-row">
-                      <label>● メールアドレス（確認） <span>＊必須</span></label>
+                      <label><span class="u-pc">● </span>メールアドレス（確認） <span class="req">＊必須</span></label>
                       <input type="email" name="email_confirm" required autocomplete="email">
                     </div>
                   </div>
@@ -420,6 +422,20 @@
         <img src="images/common/vertical-txt_contact-form.svg" alt="">
       </div>
     </section>
+
+    <div class="wrap_cta recruit bg-noise">
+      <div class="cta-inner fadeIn">
+        <div class="ttl-wrap">
+          <h2>Recruit</h2>
+          <p class="sub-ttl">採用情報</p>
+        </div>
+        <p>
+          古着が好き、<br class="u-sp">ビンテージカルチャーが好き。<br>
+          私たちは、そんな“好き”を<br class="u-sp">仕事にしたい人と、<br class="u-sp">新しい価値を共につくっていく<br class="u-sp">仲間を募集しています。
+        </p>
+        <div class="btn-wrap"><a class="btn red" href="recruit.html">View More</a></div>
+      </div>
+    </div>
 
   </main>
 
