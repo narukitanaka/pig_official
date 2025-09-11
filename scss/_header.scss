@@ -342,6 +342,9 @@ header {
       padding: v.pxtovw_sp(30);
       background-color: v.$bg-color03;
       border-radius: v.pxtovw_sp(20);
+      .instagram-accounts {
+        overflow: hidden;
+      }
       .stores {
         margin-bottom: v.pxtovw_sp(50);
         &:last-of-type {
@@ -391,18 +394,18 @@ header {
         }
         p {
           position: relative;
-          @include c.flex(start, center);
+          display: inline-flex;
+          align-items: center;
           gap: v.pxtovw_sp(15);
           font-family: "Unbounded", sans-serif;
           font-size: v.pxtovw_sp(24);
-          // font-size: clamp(1.8rem, v.pxtovw_sp(24), 2.4rem);
           margin-bottom: v.pxtovw_sp(15);
           &::after {
             content: "";
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: 0;
+            left: calc(100% + v.pxtovw_sp(20));
             height: 1px;
             background-color: v.$sub-color01;
           }

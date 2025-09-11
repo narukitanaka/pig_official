@@ -322,6 +322,163 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+////////////////////////////////////////////////////////////////////////////////////////
+//Swiper　wholesale_Hand Pick
+////////////////////////////////////////////////////////////////////////////////////////
+(function () {
+  const cfg = {
+    breakpoint: 750,
+    parent: "#handpick",
+    slide: ".block_img-text",
+    containerClass: "swiper-handpick",
+    uiRoot: ".handpick-swiper-pagination", // ← あなたのUIラッパ
+    uiPrev: ".handpick-swiper-button-prev",
+    uiNext: ".handpick-swiper-button-next",
+    uiCurrent: ".current-slide",
+    uiTotal: ".total-slides",
+    options: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      // ループする場合は loop:true にしてOK（下のgetTotalで重複分を除外）
+      // loop: true,
+    },
+  };
+
+  const mql = window.matchMedia(`(max-width: ${cfg.breakpoint}px)`);
+  const root = document.querySelector(cfg.parent);
+  if (!root) return;
+
+  let placeholder = null;
+  let container = null;
+  let swiper = null;
+  let prevBtn = null,
+    nextBtn = null,
+    curEl = null,
+    totalEl = null;
+  let prevHandler = null,
+    nextHandler = null;
+
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
+  function getTotal(sw) {
+    // loop時に重複スライドを除外
+    if (!sw) return 0;
+    const all = Array.from(sw.slides || []);
+    const real = all.filter(
+      (s) => !s.classList.contains("swiper-slide-duplicate")
+    );
+    return real.length || all.length || 0;
+  }
+  function getCurrent(sw) {
+    if (!sw) return 1;
+    // loop:trueなら realIndex、そうでなければ activeIndex
+    const idx =
+      typeof sw.realIndex === "number" ? sw.realIndex : sw.activeIndex;
+    return (idx || 0) + 1;
+  }
+
+  function enable() {
+    if (container) return;
+
+    const blocks = Array.from(root.querySelectorAll(`:scope > ${cfg.slide}`));
+    if (!blocks.length) return;
+
+    // UI要素を取得
+    const ui = document.querySelector(cfg.uiRoot);
+    if (!ui) return;
+    prevBtn = ui.querySelector(cfg.uiPrev);
+    nextBtn = ui.querySelector(cfg.uiNext);
+    curEl = ui.querySelector(cfg.uiCurrent);
+    totalEl = ui.querySelector(cfg.uiTotal);
+
+    // プレースホルダ
+    placeholder = document.createComment(`${cfg.containerClass} placeholder`);
+    root.insertBefore(placeholder, blocks[0]);
+
+    // Swiper DOMを構築
+    container = document.createElement("div");
+    container.className = `swiper ${cfg.containerClass}`;
+    const wrapper = document.createElement("div");
+    wrapper.className = "swiper-wrapper";
+
+    blocks.forEach((b) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+      slide.appendChild(b); // move
+      wrapper.appendChild(slide);
+    });
+
+    container.appendChild(wrapper);
+    root.insertBefore(container, placeholder);
+
+    // 起動
+    swiper = new Swiper(
+      `.${cfg.containerClass}`,
+      Object.assign({}, cfg.options)
+    );
+
+    // UI初期表示
+    const total = getTotal(swiper) || blocks.length;
+    if (totalEl) totalEl.textContent = pad2(total);
+    if (curEl) curEl.textContent = pad2(getCurrent(swiper));
+
+    // スライド変化で更新
+    swiper.on("slideChange", () => {
+      if (curEl) curEl.textContent = pad2(getCurrent(swiper));
+      if (totalEl) totalEl.textContent = pad2(getTotal(swiper));
+    });
+
+    // PREV/NEXT連動
+    if (prevBtn) {
+      prevHandler = () => swiper.slidePrev();
+      prevBtn.addEventListener("click", prevHandler);
+    }
+    if (nextBtn) {
+      nextHandler = () => swiper.slideNext();
+      nextBtn.addEventListener("click", nextHandler);
+    }
+  }
+
+  function disable() {
+    if (!container) return;
+
+    // イベント解除
+    if (prevBtn && prevHandler)
+      prevBtn.removeEventListener("click", prevHandler);
+    if (nextBtn && nextHandler)
+      nextBtn.removeEventListener("click", nextHandler);
+    prevHandler = nextHandler = null;
+
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+
+    // 元の順序で戻す（placeholderの直前に逆順で挿入）
+    const slides = Array.from(container.querySelectorAll(".swiper-slide"));
+    for (let i = slides.length - 1; i >= 0; i--) {
+      const block = slides[i].firstElementChild;
+      if (block && placeholder && placeholder.parentNode) {
+        root.insertBefore(block, placeholder);
+      }
+    }
+
+    container.remove();
+    container = null;
+    placeholder.remove();
+    placeholder = null;
+  }
+
+  function onChange(e) {
+    e.matches ? enable() : disable();
+  }
+
+  onChange(mql);
+  if (mql.addEventListener) mql.addEventListener("change", onChange);
+  else mql.addListener(onChange); // 古いブラウザ向け
+})();
+
 ///////////////////////////////////////////
 //ハンバーガーメニュー
 //////////////////////////////////////////
@@ -482,8 +639,53 @@ if (orderFadeInSections.length > 0) {
 }
 
 //////////////////////////////////////////////////////
+//scale0から１に拡大しながらにフェードイン
+//////////////////////////////////////////////////////
+const scaleFadeInElements = document.querySelectorAll(".scale-fadeIn");
+if (scaleFadeInElements.length > 0) {
+  scaleFadeInElements.forEach((element) => {
+    gsap.from(element, {
+      opacity: 0,
+      scale: 0,
+      duration: 0.8,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 60%",
+        once: true,
+      },
+    });
+  });
+}
+
+//////////////////////////////////////////////////////
 //さりげないパララックス
 //////////////////////////////////////////////////////
+// const parallaxElements = document.querySelectorAll(".parallax");
+// if (parallaxElements.length > 0) {
+//   parallaxElements.forEach((element) => {
+//     let yValue = 150;
+//     element.classList.forEach((cls) => {
+//       if (/^y-?\d+$/.test(cls)) {
+//         yValue = parseInt(cls.replace("y", ""), 10);
+//       }
+//     });
+//     gsap.fromTo(
+//       element,
+//       { y: yValue },
+//       {
+//         y: 0,
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: element,
+//           start: "top bottom",
+//           end: "bottom top",
+//           scrub: true,
+//         },
+//       }
+//     );
+//   });
+// }
 const parallaxElements = document.querySelectorAll(".parallax");
 if (parallaxElements.length > 0) {
   parallaxElements.forEach((element) => {
@@ -493,6 +695,15 @@ if (parallaxElements.length > 0) {
         yValue = parseInt(cls.replace("y", ""), 10);
       }
     });
+
+    // スマホかつ.sp-para-noneクラスがある場合はパララックス無効
+    if (
+      window.innerWidth <= 750 &&
+      element.classList.contains("sp-para-none")
+    ) {
+      return; // パララックス処理をスキップ
+    }
+
     gsap.fromTo(
       element,
       { y: yValue },
@@ -579,7 +790,7 @@ if (aboutValueSection) {
 }
 
 //////////////////////////////////////////////////////
-//スクロールトリガーで.about_visionのトップが画面ボトムと重なったら、.circle要素がscale(0.2)から(1)になる
+//About Us_Vision .circle要素がscale(0)から(1)になる
 //////////////////////////////////////////////////////
 const aboutVisionSection = document.querySelector(".about_vision .content");
 if (aboutVisionSection) {
@@ -600,14 +811,98 @@ if (aboutVisionSection) {
     }
   );
 }
+
+//////////////////////////////////////////////////////
+//Company_History circle要素がscale(0)から(1)になる
+//////////////////////////////////////////////////////
+const timelineSection = document.querySelector(".timeline");
+if (timelineSection) {
+  const circleElements = timelineSection.querySelectorAll(".circle");
+  circleElements.forEach((circle) => {
+    gsap.fromTo(
+      circle,
+      { scale: 0 },
+      {
+        scale: 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: circle,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+          // markers: true,
+        },
+      }
+    );
+  });
+}
+
+//////////////////////////////////////////////////////
+//archive-list .circle要素がscale(0)から(1)になる
+//////////////////////////////////////////////////////
+const archiveListSection = document.querySelector(".archive-list");
+if (archiveListSection) {
+  const circleElements = archiveListSection.querySelectorAll(".circle");
+  circleElements.forEach((circle) => {
+    gsap.fromTo(
+      circle,
+      { scale: 0 },
+      {
+        scale: 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: circle,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+          // markers: true,
+        },
+      }
+    );
+  });
+}
+
 //////////////////////////////////////////////////////
 //ファーストビューアニメーション
 //////////////////////////////////////////////////////
+// const fvSection = document.querySelector(".fv");
+// if (fvSection) {
+//   const mainCopy = fvSection.querySelector(".main-copy");
+//   const subCopy = fvSection.querySelector(".sub-copy");
+//   const header = document.querySelector("header");
+//   const fvTopics = fvSection.querySelector(".fv_topics");
+
+//   const tl = gsap.timeline();
+
+//   tl.fromTo(
+//     mainCopy,
+//     { opacity: 0, scale: 0, y: 40 },
+//     { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.7)" }
+//   )
+//     .fromTo(
+//       subCopy,
+//       { opacity: 0, scale: 0, y: 40 },
+//       { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.7)" },
+//       "-=0.4" // 前のアニメーションと0.4秒重ねる
+//     )
+//     .fromTo(
+//       [header, fvTopics],
+//       {
+//         opacity: 0,
+//         y: function (index) {
+//           return index === 0 ? -40 : 40;
+//         },
+//       },
+//       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+//       "-=0.4"
+//     );
+// }
 const fvSection = document.querySelector(".fv");
 if (fvSection) {
   const mainCopy = fvSection.querySelector(".main-copy");
   const subCopy = fvSection.querySelector(".sub-copy");
   const header = document.querySelector("header");
+  const hambergerWrap = document.querySelector(".hamberger-wrap");
   const fvTopics = fvSection.querySelector(".fv_topics");
 
   const tl = gsap.timeline();
@@ -624,11 +919,11 @@ if (fvSection) {
       "-=0.4" // 前のアニメーションと0.4秒重ねる
     )
     .fromTo(
-      [header, fvTopics],
+      [header, hambergerWrap, fvTopics],
       {
         opacity: 0,
         y: function (index) {
-          return index === 0 ? -40 : 40;
+          return index === 0 || index === 1 ? -40 : 40;
         },
       },
       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },

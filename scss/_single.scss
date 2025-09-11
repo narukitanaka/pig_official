@@ -4,7 +4,8 @@
 single
 *************************************************/
 .single-content {
-  max-width: v.pxtovw(850);
+  // max-width: v.pxtovw(850);
+  max-width: clamp(44rem, v.pxtovw(850), 85rem);
   @include c.mq() {
     max-width: none;
   }
@@ -94,6 +95,10 @@ single
       @include c.mq() {
         margin: v.pxtovw_sp(44) 0;
       }
+      a {
+        color: v.$sub-color01;
+        text-decoration: underline;
+      }
     }
     h2,
     h3 {
@@ -102,7 +107,7 @@ single
     }
     h2 {
       position: relative;
-      font-size: clamp(2rem, v.pxtovw(28), 2.8rem);
+      font-size: clamp(1.7rem, v.pxtovw(28), 2.8rem);
       background-color: v.$bg-color03;
       padding: v.pxtovw(12) v.pxtovw(28) v.pxtovw(15);
       margin: v.pxtovw(60) 0 v.pxtovw(50);
@@ -125,10 +130,10 @@ single
       }
     }
     h3 {
-      font-size: clamp(1.8rem, v.pxtovw(24), 2.4rem);
+      font-size: clamp(1.6rem, v.pxtovw(24), 2.4rem);
       display: inline-block;
       padding-bottom: v.pxtovw(8);
-      border-bottom: 1px solid v.$txt-color;
+      border-bottom: 1px solid #707070;
       @include c.mq() {
         display: block;
         font-size: clamp(1.6rem, v.pxtovw_sp(28), 2.8rem);

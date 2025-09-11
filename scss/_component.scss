@@ -402,6 +402,7 @@ component
     table {
       width: 100%;
       tr {
+        display: block;
         position: relative;
         &::after {
           content: "";

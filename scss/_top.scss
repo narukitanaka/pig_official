@@ -539,6 +539,9 @@ top
     @include c.mq(md) {
       background-size: 140% !important;
     }
+    @include c.mq(md-s) {
+      background-size: 150% !important;
+    }
     @include c.mq() {
       padding: v.pxtovw_sp(178) 0 v.pxtovw_sp(218);
       background: url(images/top/cta-wholesale_img01_sp.jpg) no-repeat

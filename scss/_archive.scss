@@ -47,7 +47,7 @@ aside {
       margin-bottom: v.pxtovw(10);
     }
     .sub-ttl {
-      font-size: clamp(1.8rem, v.pxtovw(22), 2.2rem);
+      font-size: clamp(1.3rem, v.pxtovw(22), 2.2rem);
       color: v.$txt-color;
       text-align: left;
     }
@@ -67,7 +67,7 @@ aside {
           position: relative;
           padding-left: v.pxtovw(50);
           font-family: "Unbounded", sans-serif;
-          font-size: clamp(1.6rem, v.pxtovw(22), 2.2rem);
+          font-size: clamp(1.5rem, v.pxtovw(22), 2.2rem);
           font-weight: 400;
           transition: all 0.3s;
           &:hover {
@@ -177,7 +177,7 @@ aside {
   }
   .archive-list {
     position: relative;
-    max-width: v.pxtovw(850);
+    max-width: clamp(44rem, v.pxtovw(850), 85rem);
     @include c.mq() {
       max-width: none;
     }
@@ -205,7 +205,9 @@ aside {
       }
       &:not(:last-of-type) {
         &::before {
-          display: none;
+          @include c.mq() {
+            display: none;
+          }
         }
       }
       &::before {
@@ -244,11 +246,11 @@ aside {
     }
     &.vertical-txt {
       width: v.pxtovw(213);
-      top: v.pxtovw(140);
+      top: v.pxtovw(340);
       right: 0;
       @include c.mq() {
         width: v.pxtovw_sp(213);
-        top: v.pxtovw_sp(391);
+        top: v.pxtovw_sp(591);
         right: v.pxtovw_sp(-32);
       }
     }

@@ -135,6 +135,9 @@ About us 私たちについて
       aspect-ratio: 1/1.53;
       top: 6.8rem;
       left: v.pxtovw(50);
+      @include c.mq(md-s) {
+        top: -1rem;
+      }
       @include c.mq() {
         width: v.pxtovw_sp(193);
         left: auto;
@@ -216,7 +219,7 @@ About us 私たちについて
       position: absolute;
       @include c.center(true, true);
       .img-box {
-        width: clamp(60rem, v.pxtovw(965), 96.5rem);
+        width: clamp(40rem, v.pxtovw(965), 96.5rem);
         margin-bottom: 2rem;
         @include c.mq() {
           width: v.pxtovw_sp(540);
@@ -363,8 +366,11 @@ About us 私たちについて
         width: 100%;
         border-radius: v.pxtovw_sp(130);
       }
-      img {
-        scale: 1.25 !important;
+      .parallax {
+        scale: 1.2;
+        @include c.mq() {
+          scale: 1.3;
+        }
       }
     }
     .text-box {
@@ -517,7 +523,7 @@ About us 私たちについて
       }
       .num {
         font-family: "Unbounded", sans-serif;
-        font-size: clamp(3.2rem, v.pxtovw(50), 5rem);
+        font-size: clamp(2.2rem, v.pxtovw(50), 5rem);
         font-weight: 400;
         @include c.mq() {
           font-size: v.pxtovw_sp(50);
@@ -526,15 +532,15 @@ About us 私たちについて
       }
       .text {
         h3 {
-          font-size: clamp(1.8rem, v.pxtovw(29), 2.9rem);
-          margin-bottom: 2rem;
+          font-size: clamp(1.6rem, v.pxtovw(29), 2.9rem);
+          margin-bottom: v.pxtovw(20);
           @include c.mq() {
             font-size: v.pxtovw_sp(31);
             text-align: center;
             margin-bottom: v.pxtovw_sp(420);
           }
           span {
-            font-size: clamp(1.6rem, v.pxtovw(22), 2.2rem);
+            font-size: clamp(1.3rem, v.pxtovw(22), 2.2rem);
             @include c.mq() {
               font-size: v.pxtovw_sp(24);
             }
@@ -542,7 +548,7 @@ About us 私たちについて
         }
         p {
           width: v.pxtovw(600);
-          font-size: clamp(1.3rem, v.pxtovw(18), 1.8rem);
+          font-size: clamp(1.2rem, v.pxtovw(18), 1.8rem);
           line-height: 2;
           @include c.mq() {
             font-size: clamp(1.3rem, v.pxtovw_sp(26), 2.6rem);
@@ -667,6 +673,12 @@ Business 事業内容
         @include c.mq() {
           width: 100%;
           border-radius: v.pxtovw_sp(184);
+        }
+        .parallax {
+          scale: 1.2;
+          @include c.mq() {
+            scale: 1.3;
+          }
         }
       }
       .pig {
@@ -811,6 +823,12 @@ Business 事業内容
         @include c.mq() {
           border-radius: v.pxtovw_sp(130);
         }
+        .parallax {
+          scale: 1.2;
+          @include c.mq() {
+            scale: 1.3;
+          }
+        }
       }
     }
   }
@@ -879,6 +897,9 @@ Business 事業内容
           padding: v.pxtovw_sp(60);
           border-top: 2px dashed v.$sub-color01;
         }
+        @include c.mq(sm-s) {
+          border-top: 1px dashed v.$sub-color01;
+        }
       }
     }
   }
@@ -897,11 +918,11 @@ Business 事業内容
     }
     &.vertical-txt {
       width: v.pxtovw(200);
-      top: v.pxtovw(850);
+      top: v.pxtovw(1050);
       left: 0;
       @include c.mq() {
         width: v.pxtovw_sp(200);
-        top: v.pxtovw_sp(870);
+        top: v.pxtovw_sp(1070);
         left: auto;
         right: v.pxtovw_sp(-68);
         opacity: 0.8;
@@ -933,6 +954,8 @@ Business 事業内容
     }
   }
   .box {
+    margin-top: -8rem;
+    padding-top: 8rem;
     margin-bottom: v.pxtovw(100);
     @include c.mq() {
       padding-bottom: v.pxtovw_sp(122);
@@ -953,12 +976,24 @@ Business 事業内容
           width: v.pxtovw_sp(206);
         }
       }
+      .parallax {
+        scale: 1;
+        @include c.mq() {
+          scale: 1.2;
+        }
+      }
     }
     &.pig-az {
       .logo {
         width: v.pxtovw(167);
         @include c.mq() {
           width: v.pxtovw_sp(167);
+        }
+      }
+      .parallax {
+        scale: 1;
+        @include c.mq() {
+          scale: 1.2;
         }
       }
     }
@@ -969,6 +1004,12 @@ Business 事業内容
           width: v.pxtovw_sp(175);
         }
       }
+      .parallax {
+        scale: 1;
+        @include c.mq() {
+          scale: 1.2;
+        }
+      }
     }
     &.changes {
       margin-bottom: 0;
@@ -976,6 +1017,12 @@ Business 事業内容
         width: v.pxtovw(244);
         @include c.mq() {
           width: v.pxtovw_sp(244);
+        }
+      }
+      .parallax {
+        scale: 1;
+        @include c.mq() {
+          scale: 1.2;
         }
       }
     }
@@ -1004,6 +1051,9 @@ Business 事業内容
       }
       img {
         filter: brightness(0.35);
+        @include c.mq() {
+          filter: brightness(0.6);
+        }
       }
     }
     .shop-info {
@@ -1052,7 +1102,7 @@ Business 事業内容
         > div {
           @include c.mq() {
             padding: v.pxtovw_sp(44) v.pxtovw_sp(44) v.pxtovw_sp(74);
-            border-top: 2px dashed v.$sub-color01;
+            border-top: 1px dashed v.$sub-color01;
           }
         }
         li {
@@ -1065,8 +1115,12 @@ Business 事業内容
           }
           a {
             font-weight: 600;
+            transition: all 0.3s;
             @include c.mq() {
               text-decoration: underline;
+            }
+            &:hover {
+              color: v.$sub-color01;
             }
           }
         }
@@ -1111,13 +1165,15 @@ Business 事業内容
         }
         a {
           @include c.flex(center, center);
-          width: v.pxtovw(301);
+          // width: v.pxtovw(301);
+          width: clamp(15rem, v.pxtovw(301), 30.1rem);
           aspect-ratio: 1/0.18;
           font-family: "Unbounded", sans-serif;
           font-weight: 400;
           color: v.$sub-color01;
           border: 1px solid v.$sub-color01;
           border-radius: 100vmax;
+          transition: all 0.3s;
           @include c.mq() {
             width: v.pxtovw_sp(323);
             aspect-ratio: 1/0.22;
@@ -1125,6 +1181,10 @@ Business 事業内容
             color: #fff;
             background-color: v.$sub-color01;
             border: none;
+          }
+          &:hover {
+            background-color: v.$sub-color01;
+            color: #fff;
           }
         }
       }
@@ -1134,11 +1194,11 @@ Business 事業内容
     position: absolute;
     &.vertical-txt {
       width: v.pxtovw(200);
-      top: v.pxtovw(300);
+      top: v.pxtovw(500);
       right: 0;
       @include c.mq() {
         width: v.pxtovw_sp(213);
-        top: v.pxtovw_sp(353);
+        top: v.pxtovw_sp(553);
         right: auto;
         left: v.pxtovw_sp(-10);
         opacity: 0.8;
@@ -1266,7 +1326,7 @@ Wholesale 卸売事業
     }
     &.volume {
       flex-direction: row-reverse;
-      @include c.mq(md-s) {
+      @include c.mq() {
         flex-direction: column;
       }
       .text-box {
@@ -1349,6 +1409,12 @@ Wholesale 卸売事業
         border-radius: v.pxtovw_sp(130);
         order: 2;
       }
+      .parallax {
+        scale: 1.2;
+        @include c.mq() {
+          scale: 1.3;
+        }
+      }
     }
   }
   .handpick-swiper-pagination {
@@ -1382,11 +1448,11 @@ Wholesale 卸売事業
     }
     &.vertical-txt {
       width: v.pxtovw(200);
-      top: v.pxtovw(300);
+      top: v.pxtovw(500);
       left: 0;
       @include c.mq() {
         width: v.pxtovw_sp(213);
-        top: v.pxtovw_sp(351);
+        top: v.pxtovw_sp(451);
         left: auto;
         right: v.pxtovw_sp(-80);
         opacity: 0.8;
@@ -1474,6 +1540,12 @@ Wholesale 卸売事業
         img {
           width: 100%;
         }
+        .parallax {
+          scale: 1.2;
+          @include c.mq() {
+            scale: 1.3;
+          }
+        }
       }
       .osaka-swiper_pagenation,
       .tokyo-swiper_pagenation {
@@ -1503,7 +1575,7 @@ Wholesale 卸売事業
         span {
           font-size: clamp(1.4rem, v.pxtovw(20), 2rem);
           @include c.mq() {
-            font-size: clamp(1.3rem, v.pxtovw_sp(20), 2rem);
+            font-size: clamp(1rem, v.pxtovw_sp(20), 2rem);
           }
         }
       }
@@ -1542,9 +1614,12 @@ Wholesale 卸売事業
           }
           &:has(.map) {
             @include c.flex(between, center);
-            @include c.mq() {
+            @include c.mq(md) {
               flex-direction: column;
               align-items: start;
+              gap: 1rem;
+            }
+            @include c.mq() {
               gap: v.pxtovw_sp(30);
             }
             a {
@@ -1557,9 +1632,13 @@ Wholesale 卸売事業
               color: #fff;
               border-radius: 100vmax;
               background-color: v.$sub-color01;
+              @include c.mq(md) {
+                width: 11rem;
+                aspect-ratio: 1/0.25;
+                font-size: 1.1rem;
+              }
               @include c.mq() {
                 width: v.pxtovw_sp(270);
-                aspect-ratio: 1/0.25;
                 font-size: clamp(1.2rem, v.pxtovw_sp(20), 2rem);
               }
             }
@@ -1769,18 +1848,28 @@ Wholesale 卸売事業
       > ul ul {
         @include c.mq() {
           padding-left: v.pxtovw_sp(30);
+          margin-left: v.pxtovw_sp(-30);
         }
         li {
+          list-style-type: none;
+          position: relative;
           font-size: clamp(1.2rem, v.pxtovw(14), 1.4rem);
           margin-bottom: v.pxtovw(5);
+          padding-left: v.pxtovw(18);
           @include c.mq() {
             font-size: clamp(1.2rem, v.pxtovw_sp(22), 2.2rem);
             color: #626262;
             margin-bottom: v.pxtovw_sp(30);
+            padding-left: v.pxtovw_sp(30);
           }
-          &::marker {
-            content: "※ ";
+          &::before {
+            content: "※";
+            position: absolute;
+            left: 0;
           }
+          // &::marker {
+          //   content: "※ ";
+          // }
         }
       }
       > ul {
@@ -1813,34 +1902,34 @@ Wholesale 卸売事業
     position: absolute;
     &.cart {
       width: v.pxtovw(313);
-      top: v.pxtovw(250);
+      top: v.pxtovw(450);
       right: v.pxtovw(120);
       z-index: 1;
       @include c.mq() {
         width: v.pxtovw_sp(313);
-        top: v.pxtovw_sp(216);
+        top: v.pxtovw_sp(416);
         right: v.pxtovw_sp(-110);
       }
     }
     &.wareset {
       width: v.pxtovw(472);
-      bottom: v.pxtovw(410);
+      bottom: v.pxtovw(210);
       right: v.pxtovw(120);
       z-index: 1;
       @include c.mq() {
         width: v.pxtovw_sp(472);
         bottom: auto;
-        top: v.pxtovw_sp(1880);
+        top: v.pxtovw_sp(2080);
         right: v.pxtovw_sp(-210);
       }
     }
     &.vertical-txt {
       width: v.pxtovw(200);
-      top: v.pxtovw(300);
+      top: v.pxtovw(500);
       left: 0;
       @include c.mq() {
         width: v.pxtovw_sp(200);
-        top: v.pxtovw_sp(711);
+        top: v.pxtovw_sp(811);
         left: auto;
         right: v.pxtovw_sp(-68);
         opacity: 0.8;
@@ -2094,7 +2183,7 @@ Contact お問い合わせ
     padding: v.pxtovw_sp(83) 0 v.pxtovw_sp(116);
   }
   .inner {
-    width: v.pxtovw(1396);
+    width: clamp(65rem, v.pxtovw(1396), 139.6rem);
     @include c.mq() {
       max-width: none;
       width: v.pxtovw_sp(690);
@@ -2153,7 +2242,7 @@ Contact お問い合わせ
         }
         div {
           font-family: "Unbounded", sans-serif;
-          font-size: clamp(1.8rem, v.pxtovw(36), 3.6rem);
+          font-size: clamp(1.6rem, v.pxtovw(36), 3.6rem);
           font-weight: 400;
           color: v.$sub-color01;
           transition: all 0.3s;
@@ -2163,7 +2252,7 @@ Contact お問い合わせ
         }
         p {
           display: inline-block;
-          font-size: clamp(1.3rem, v.pxtovw(16), 1.6rem);
+          font-size: clamp(1.1rem, v.pxtovw(16), 1.6rem);
           font-weight: 600;
           color: v.$sub-color01;
           transition: all 0.3s;
@@ -2177,7 +2266,10 @@ Contact お問い合わせ
           top: 50%;
           transform: translateY(-50%);
           right: v.pxtovw(35);
-          width: v.pxtovw(11);
+          width: clamp(0.7rem, v.pxtovw(11), 1.1rem);
+          @include c.mq(md-s) {
+            right: 1rem;
+          }
           @include c.mq() {
             width: v.pxtovw_sp(19);
             right: v.pxtovw_sp(-50);
@@ -2422,11 +2514,11 @@ component 会社概要
     }
     &.vertical-txt {
       width: v.pxtovw(200);
-      top: v.pxtovw(140);
+      top: v.pxtovw(340);
       right: 0;
       @include c.mq() {
         width: v.pxtovw_sp(269);
-        top: v.pxtovw_sp(368);
+        top: v.pxtovw_sp(568);
         left: auto;
         right: v.pxtovw_sp(-67);
         opacity: 0.8;
@@ -2446,7 +2538,7 @@ component 会社概要
     .img-box {
       position: absolute;
       width: v.pxtovw(655);
-      top: v.pxtovw(265);
+      top: v.pxtovw(465);
       right: v.pxtovw(-97);
       @include c.mq() {
         width: v.pxtovw_sp(529);
@@ -2502,7 +2594,7 @@ component 会社概要
         font-weight: 600;
         color: v.$sub-color01;
         @include c.mq() {
-          width: 38%;
+          width: 34%;
         }
       }
       dd {
@@ -2510,7 +2602,7 @@ component 会社概要
         font-size: clamp(1.2rem, v.pxtovw(16), 1.6rem);
         line-height: 2;
         @include c.mq() {
-          width: 62%;
+          width: 66%;
           font-size: clamp(1.3rem, v.pxtovw_sp(24), 2.4rem);
         }
         a {
@@ -2564,11 +2656,11 @@ component 会社概要
     position: absolute;
     &.vertical-txt {
       width: v.pxtovw(270);
-      top: v.pxtovw(183);
+      top: v.pxtovw(383);
       left: v.pxtovw(-40);
       @include c.mq() {
         width: v.pxtovw_sp(270);
-        top: v.pxtovw_sp(450);
+        top: v.pxtovw_sp(850);
         left: v.pxtovw_sp(-70);
         opacity: 0.8;
       }
@@ -2630,6 +2722,12 @@ component 会社概要
           width: 100%;
           border-radius: v.pxtovw_sp(184);
         }
+        img {
+          scale: 1.2;
+          @include c.mq() {
+            scale: 1.3;
+          }
+        }
       }
     }
     .right {
@@ -2650,9 +2748,11 @@ component 会社概要
     position: relative;
     width: clamp(55rem, v.pxtovw(959), 95.9rem);
     margin: 0 auto v.pxtovw(124);
+    z-index: 2;
     @include c.mq() {
       width: 100%;
       margin-bottom: v.pxtovw_sp(108);
+      // z-index: 2;
     }
     .circle {
       position: absolute;
@@ -2691,6 +2791,9 @@ component 会社概要
             top: v.pxtovw_sp(10);
             width: v.pxtovw_sp(26);
           }
+          @include c.mq(md-s) {
+            border: 2px solid v.$sub-color01;
+          }
         }
         &::after {
           content: "";
@@ -2702,6 +2805,9 @@ component 会社概要
           @include c.mq() {
             top: v.pxtovw_sp(55);
             height: calc(100% - v.pxtovw_sp(30));
+          }
+          @include c.mq(md-s) {
+            width: 1px;
           }
         }
         .year {
@@ -2815,6 +2921,9 @@ component 会社概要
             @include c.mq() {
               left: v.pxtovw_sp(13);
             }
+            @include c.mq(sm-s) {
+              left: 6px;
+            }
           }
           div,
           p {
@@ -2843,6 +2952,9 @@ component 会社概要
               right: auto;
               left: v.pxtovw_sp(13);
             }
+            @include c.mq(sm-s) {
+              left: 6px;
+            }
           }
           div,
           p {
@@ -2859,6 +2971,9 @@ component 会社概要
           &::after {
             background-color: transparent;
             border-left: 2px dashed v.$sub-color01;
+            @include c.mq(md-s) {
+              border-left: 1px dashed v.$sub-color01;
+            }
           }
         }
       }
@@ -2895,17 +3010,17 @@ component 会社概要
     position: absolute;
     &.vertical-txt01 {
       width: v.pxtovw(270);
-      top: v.pxtovw(220);
+      top: v.pxtovw(420);
       right: 0;
       @include c.mq() {
         width: v.pxtovw_sp(270);
-        top: v.pxtovw_sp(1400);
+        top: v.pxtovw_sp(1600);
         right: v.pxtovw_sp(-40);
       }
     }
     &.vertical-txt02 {
       width: v.pxtovw(270);
-      bottom: v.pxtovw(192);
+      bottom: v.pxtovw(92);
       left: v.pxtovw(-40);
       @include c.mq() {
         display: none;
@@ -2924,7 +3039,8 @@ Privacy Policy プライバシーポリシー
     padding: v.pxtovw_sp(111) 0 v.pxtovw_sp(101);
   }
   .inner {
-    max-width: v.pxtovw(1200);
+    // max-width: v.pxtovw(1200);
+    max-width: clamp(60rem, v.pxtovw(1200), 120rem);
     @include c.mq() {
       position: relative;
       max-width: v.pxtovw_sp(690);
@@ -3050,7 +3166,7 @@ Privacy Policy プライバシーポリシー
     }
     &.vertical-txt {
       width: v.pxtovw(284);
-      top: v.pxtovw(140);
+      top: v.pxtovw(340);
       right: 0;
       @include c.mq() {
         display: none;

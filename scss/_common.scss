@@ -261,22 +261,6 @@ div {
   }
 }
 
-// .h-scale {
-//   .img-box {
-//     overflow: hidden;
-//   }
-//   img {
-//     transition: all 0.4s;
-//   }
-//   &:hover {
-//     .img-box {
-//       img {
-//         transform: scale(1.15);
-//       }
-//     }
-//   }
-// }
-
 .block {
   &:has(> .left, > .right) {
     display: flex;
@@ -340,6 +324,13 @@ div {
     @include mq() {
       background: url(images/common/bg_line_sp.svg) no-repeat top/contain;
     }
+  }
+}
+
+.img-box {
+  &:has(.parallax) {
+    transform: translateZ(0) !important;
+    isolation: isolate !important;
   }
 }
 
