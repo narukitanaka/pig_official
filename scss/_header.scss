@@ -17,7 +17,10 @@ header {
 
     .logo {
       width: clamp(9rem, v.pxtovw(180), 18rem);
-      @include c.mq(md-s) {
+      // @include c.mq(md-s) {
+      //   width: v.pxtovw_sp(100);
+      // }
+      @include c.mq(md) {
         width: v.pxtovw_sp(100);
       }
       @include c.mq() {
@@ -30,7 +33,10 @@ header {
       gap: v.pxtovw(42);
     }
     nav {
-      @include c.mq(md-s) {
+      // @include c.mq(md-s) {
+      //   display: none;
+      // }
+      @include c.mq(md) {
         display: none;
       }
       ul {
@@ -68,11 +74,14 @@ header {
     .btn-area {
       display: flex;
       gap: v.pxtovw(22);
-      @include c.mq(md-s) {
+      // @include c.mq(md-s) {
+      //   display: none;
+      // }
+      @include c.mq(md) {
         display: none;
       }
       .btn {
-        width: clamp(14rem, v.pxtovw(188), 18.8rem);
+        width: clamp(13.5rem, v.pxtovw(188), 18.8rem);
         aspect-ratio: 1/0.29;
         svg {
           width: clamp(0.7rem, v.pxtovw(10), 1rem);
@@ -92,7 +101,14 @@ header {
 //ハンバーガーボタン
 .hamberger-wrap {
   display: none;
-  @include c.mq(md-s) {
+  // @include c.mq(md-s) {
+  //   display: block;
+  //   position: fixed;
+  //   top: v.pxtovw_sp(15);
+  //   right: v.pxtovw_sp(25);
+  //   z-index: 1000;
+  // }
+  @include c.mq(md) {
     display: block;
     position: fixed;
     top: v.pxtovw_sp(15);
@@ -265,7 +281,7 @@ header {
   top: 0;
   right: 0;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   padding-top: v.pxtovw_sp(120);
   transform: translateX(100%);
   background-color: v.$sub-color01;
@@ -284,8 +300,13 @@ header {
     max-width: v.pxtovw_sp(450);
     height: calc(100vh - v.pxtovw_sp(194));
     overflow-y: scroll;
+    scrollbar-width: none; /* Firefox 用 */
+    -ms-overflow-style: none; /* IE, Edge レガシー 用 */
     margin: 0 auto;
     z-index: 999;
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera 用 */
+    }
     @include c.mq() {
       max-width: v.pxtovw_sp(629);
       height: calc(100vh - v.pxtovw_sp(194));

@@ -100,6 +100,9 @@ aside {
 }
 
 .main-contents {
+  @include c.mq() {
+    width: 100%;
+  }
   .cate-acord_wrap {
     @include c.mq() {
       margin-bottom: v.pxtovw_sp(83);
@@ -177,7 +180,7 @@ aside {
   }
   .archive-list {
     position: relative;
-    max-width: clamp(44rem, v.pxtovw(850), 85rem);
+    max-width: clamp(50rem, v.pxtovw(850), 85rem);
     @include c.mq() {
       max-width: none;
     }

@@ -402,8 +402,11 @@ component
     table {
       width: 100%;
       tr {
-        display: block;
+        display: flex;
         position: relative;
+        @include c.mq() {
+          display: block;
+        }
         &::after {
           content: "";
           position: absolute;
@@ -512,8 +515,13 @@ component
         }
       }
       td {
+        width: 78%;
         padding-left: v.pxtovw(66);
+        @include c.mq(md) {
+          width: 75%;
+        }
         @include c.mq() {
+          width: 100%;
           padding-left: 0;
           padding-top: 0;
           padding-bottom: v.pxtovw_sp(43);
@@ -645,12 +653,24 @@ component
         @include c.mq() {
           padding: v.pxtovw_sp(30);
         }
-        p {
-          font-size: 1rem;
-          margin-bottom: v.pxtovw(10);
-          @include c.mq() {
-            font-size: clamp(1.3rem, v.pxtovw_sp(22), 2.2rem);
-            margin-bottom: v.pxtovw_sp(20);
+        > div {
+          margin-bottom: 2rem;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          .ttl {
+            margin-bottom: 1rem;
+          }
+          p {
+            font-size: 1rem;
+            margin-bottom: v.pxtovw(10);
+            @include c.mq() {
+              font-size: clamp(1.3rem, v.pxtovw_sp(22), 2.2rem);
+              margin-bottom: v.pxtovw_sp(20);
+            }
+          }
+          .list {
+            line-height: 2;
           }
         }
       }

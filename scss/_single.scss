@@ -4,8 +4,7 @@
 single
 *************************************************/
 .single-content {
-  // max-width: v.pxtovw(850);
-  max-width: clamp(44rem, v.pxtovw(850), 85rem);
+  max-width: clamp(50rem, v.pxtovw(850), 85rem);
   @include c.mq() {
     max-width: none;
   }
@@ -231,7 +230,7 @@ single
         width: clamp(20rem, v.pxtovw(258), 25.8rem);
         font-size: clamp(1.8rem, v.pxtovw(24), 2.4rem);
         @include c.mq() {
-          width: clamp(20rem, v.pxtovw_sp(258), 25.8rem);
+          width: clamp(11rem, v.pxtovw_sp(258), 25.8rem);
           font-size: clamp(1.5rem, v.pxtovw_sp(24), 2.4rem);
         }
       }
@@ -244,7 +243,7 @@ single
       aspect-ratio: 1/0.3;
       @include c.mq() {
         position: static;
-        width: clamp(12rem, v.pxtovw_sp(146), 14.6rem);
+        width: clamp(8rem, v.pxtovw_sp(144), 14.4rem);
         aspect-ratio: 1/0.36;
       }
       a {
@@ -259,7 +258,8 @@ single
         transition: all 0.3s;
         @include c.mq() {
           font-size: clamp(1.2rem, v.pxtovw_sp(20), 2rem);
-          border: 2px solid v.$txt-color;
+          border: 1px solid v.$txt-color;
+          padding-top: 2px;
         }
         &:hover {
           color: v.$sub-color01;

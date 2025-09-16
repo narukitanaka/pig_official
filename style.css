@@ -1447,8 +1447,13 @@ component
   width: 100%;
 }
 .form-wrap form table tr {
-  display: block;
+  display: flex;
   position: relative;
+}
+@media screen and (max-width: 750px) {
+  .form-wrap form table tr {
+    display: block;
+  }
 }
 .form-wrap form table tr::after {
   content: "";
@@ -1552,10 +1557,17 @@ component
   }
 }
 .form-wrap form table td {
+  width: 78%;
   padding-left: 3.4375vw;
+}
+@media screen and (max-width: 1023px) {
+  .form-wrap form table td {
+    width: 75%;
+  }
 }
 @media screen and (max-width: 750px) {
   .form-wrap form table td {
+    width: 100%;
     padding-left: 0;
     padding-top: 0;
     padding-bottom: 5.7333333333vw;
@@ -1714,15 +1726,27 @@ component
     padding: 4vw;
   }
 }
-.form-wrap form .policy .poli-wrap p {
+.form-wrap form .policy .poli-wrap > div {
+  margin-bottom: 2rem;
+}
+.form-wrap form .policy .poli-wrap > div:last-of-type {
+  margin-bottom: 0;
+}
+.form-wrap form .policy .poli-wrap > div .ttl {
+  margin-bottom: 1rem;
+}
+.form-wrap form .policy .poli-wrap > div p {
   font-size: 1rem;
   margin-bottom: 0.5208333333vw;
 }
 @media screen and (max-width: 750px) {
-  .form-wrap form .policy .poli-wrap p {
+  .form-wrap form .policy .poli-wrap > div p {
     font-size: clamp(1.3rem, 2.9333333333vw, 2.2rem);
     margin-bottom: 2.6666666667vw;
   }
+}
+.form-wrap form .policy .poli-wrap > div .list {
+  line-height: 2;
 }
 .form-wrap form .agree {
   position: relative;
@@ -1906,7 +1930,7 @@ header .header-inner {
 header .header-inner .logo {
   width: clamp(9rem, 9.375vw, 18rem);
 }
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 1023px) {
   header .header-inner .logo {
     width: 13.3333333333vw;
   }
@@ -1922,7 +1946,7 @@ header .header-inner .navigation {
   align-items: center;
   gap: 2.1875vw;
 }
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 1023px) {
   header .header-inner nav {
     display: none;
   }
@@ -1962,13 +1986,13 @@ header .header-inner .btn-area {
   display: flex;
   gap: 1.1458333333vw;
 }
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 1023px) {
   header .header-inner .btn-area {
     display: none;
   }
 }
 header .header-inner .btn-area .btn {
-  width: clamp(14rem, 9.7916666667vw, 18.8rem);
+  width: clamp(13.5rem, 9.7916666667vw, 18.8rem);
   aspect-ratio: 1/0.29;
 }
 header .header-inner .btn-area .btn svg {
@@ -1985,7 +2009,7 @@ header .header-inner .btn-area .btn-insta {
 .hamberger-wrap {
   display: none;
 }
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 1023px) {
   .hamberger-wrap {
     display: block;
     position: fixed;
@@ -2166,7 +2190,7 @@ header .header-inner .btn-area .btn-insta {
   top: 0;
   right: 0;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   padding-top: 16vw;
   transform: translateX(100%);
   background-color: #d87159;
@@ -2189,8 +2213,13 @@ header .header-inner .btn-area .btn-insta {
   max-width: 60vw;
   height: calc(100vh - 25.8666666667vw);
   overflow-y: scroll;
+  scrollbar-width: none; /* Firefox 用 */
+  -ms-overflow-style: none; /* IE, Edge レガシー 用 */
   margin: 0 auto;
   z-index: 999;
+}
+.drawer-menu .drawer-menu_inner::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera 用 */
 }
 @media screen and (max-width: 750px) {
   .drawer-menu .drawer-menu_inner {
@@ -3320,6 +3349,11 @@ aside .cate-list ul li a.active::before {
 }
 
 @media screen and (max-width: 750px) {
+  .main-contents {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
   .main-contents .cate-acord_wrap {
     margin-bottom: 11.0666666667vw;
   }
@@ -3392,7 +3426,7 @@ aside .cate-list ul li a.active::before {
 }
 .main-contents .archive-list {
   position: relative;
-  max-width: clamp(44rem, 44.2708333333vw, 85rem);
+  max-width: clamp(50rem, 44.2708333333vw, 85rem);
 }
 @media screen and (max-width: 750px) {
   .main-contents .archive-list {
@@ -3489,7 +3523,7 @@ aside .cate-list ul li a.active::before {
 single
 *************************************************/
 .single-content {
-  max-width: clamp(44rem, 44.2708333333vw, 85rem);
+  max-width: clamp(50rem, 44.2708333333vw, 85rem);
 }
 @media screen and (max-width: 750px) {
   .single-content {
@@ -3749,7 +3783,7 @@ single
 }
 @media screen and (max-width: 750px) {
   .single-content .single-pagenation .back a {
-    width: clamp(20rem, 34.4vw, 25.8rem);
+    width: clamp(11rem, 34.4vw, 25.8rem);
     font-size: clamp(1.5rem, 3.2vw, 2.4rem);
   }
 }
@@ -3764,7 +3798,7 @@ single
   .single-content .single-pagenation .prev,
   .single-content .single-pagenation .next {
     position: static;
-    width: clamp(12rem, 19.4666666667vw, 14.6rem);
+    width: clamp(8rem, 19.2vw, 14.4rem);
     aspect-ratio: 1/0.36;
   }
 }
@@ -3786,7 +3820,8 @@ single
   .single-content .single-pagenation .prev a,
   .single-content .single-pagenation .next a {
     font-size: clamp(1.2rem, 2.6666666667vw, 2rem);
-    border: 2px solid #462f13;
+    border: 1px solid #462f13;
+    padding-top: 2px;
   }
 }
 .single-content .single-pagenation .prev a:hover,
@@ -4590,7 +4625,7 @@ Business 事業内容
   }
 }
 .business_selling .ttl-wrap .sub-ttl {
-  font-size: clamp(1.8rem, 1.4583333333vw, 2.8rem);
+  font-size: clamp(1.5rem, 1.4583333333vw, 2.8rem);
   color: #462f13;
   text-align: left;
 }
@@ -5258,12 +5293,16 @@ Business 事業内容
   }
 }
 .business_wholesale .ttl-wrap .sub-ttl {
+  font-size: clamp(1.5rem, 1.4583333333vw, 2.8rem);
   text-align: left;
   color: #462f13;
+  padding-left: 1.0416666667vw;
 }
 @media screen and (max-width: 750px) {
   .business_wholesale .ttl-wrap .sub-ttl {
+    font-size: clamp(1.4rem, 3.4666666667vw, 2.6rem);
     text-align: center;
+    padding-left: 0;
   }
 }
 .business_wholesale p {

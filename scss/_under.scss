@@ -647,7 +647,7 @@ Business 事業内容
       }
     }
     .sub-ttl {
-      font-size: clamp(1.8rem, v.pxtovw(28), 2.8rem);
+      font-size: clamp(1.5rem, v.pxtovw(28), 2.8rem);
       color: v.$txt-color;
       text-align: left;
       @include c.mq() {
@@ -1228,10 +1228,14 @@ Business 事業内容
       }
     }
     .sub-ttl {
+      font-size: clamp(1.5rem, v.pxtovw(28), 2.8rem);
       text-align: left;
       color: v.$txt-color;
+      padding-left: v.pxtovw(20);
       @include c.mq() {
+        font-size: clamp(1.4rem, v.pxtovw_sp(26), 2.6rem);
         text-align: center;
+        padding-left: 0;
       }
     }
   }
