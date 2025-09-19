@@ -191,6 +191,14 @@ component
           right: -2.5rem;
         }
       }
+      &:first-of-type {
+        flex-shrink: 0;
+      }
+      &:last-of-type {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
   }
 }
@@ -297,6 +305,7 @@ component
   }
 }
 
+//ヘッダーのインスタグラムメニュー
 .insta-wrap {
   width: clamp(60rem, v.pxtovw(900), 90rem);
   position: absolute;
@@ -383,6 +392,7 @@ component
   }
 }
 
+//フォーム雛形
 .form-wrap {
   border-radius: v.pxtovw(20);
   background-color: v.$bg-color03;
@@ -705,6 +715,10 @@ component
         @include c.mq() {
           font-size: clamp(1.5rem, v.pxtovw_sp(28), 2.8rem);
         }
+        .wpcf7-list-item {
+          @include c.flex(center, center);
+          gap: 1.3rem;
+        }
         input {
           width: clamp(1.3rem, v.pxtovw(18), 1.8rem);
           height: clamp(1.3rem, v.pxtovw(18), 1.8rem);
@@ -742,6 +756,7 @@ component
   }
 }
 
+//投稿リストカード
 .archive-list {
   dl {
     display: flex;
@@ -808,12 +823,149 @@ component
   }
 }
 
+//投稿一覧のページネーション
 .pagination {
+  position: relative;
   margin-top: v.pxtovw(107);
+  z-index: 2;
   @include c.mq() {
     margin-top: v.pxtovw_sp(101);
   }
-  p {
-    text-align: center;
+  .nav-links {
+    @include c.flex(center, center);
+    gap: v.pxtovw(10);
+    span,
+    a {
+      @include c.flex(center, center);
+      width: clamp(5rem, v.pxtovw(76), 7.6rem);
+      aspect-ratio: 1/0.62;
+      border: 1px solid v.$txt-color;
+      border-radius: v.pxtovw(24);
+      font-family: "Unbounded", sans-serif;
+      font-size: clamp(1.3rem, v.pxtovw(18), 1.8rem);
+      font-weight: 400;
+      @include c.mq() {
+        width: clamp(4rem, v.pxtovw_sp(95), 9.5rem);
+        border: clamp(0.1rem, v.pxtovw_sp(2), 0.2rem) solid v.$txt-color;
+        border-radius: v.pxtovw_sp(30);
+        font-size: v.pxtovw_sp(22);
+      }
+    }
+    a {
+      transition: all 0.3s;
+      &:hover {
+        background-color: v.$sub-color01;
+        color: #fff;
+        border: 1px solid v.$sub-color01;
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+    .current {
+      background-color: v.$sub-color01;
+      color: #fff;
+      border: 1px solid v.$sub-color01;
+    }
+    .dots {
+      padding-top: 10px;
+      font-family: "Noto Sans JP", sans-serif;
+      border: none;
+    }
+    .prev,
+    .next {
+      svg {
+        width: clamp(0.5rem, v.pxtovw(9), 0.9rem);
+        @include c.mq() {
+          width: v.pxtovw_sp(10);
+        }
+        path {
+          fill: v.$txt-color;
+          transition: all 0.3s;
+        }
+      }
+    }
+    .prev {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
   }
+}
+
+//フォームの確認画面
+.no-scroll {
+  overflow: hidden;
+}
+.cf7-modal[hidden] {
+  display: none;
+}
+.cf7-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+.cf7-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.cf7-modal__content {
+  position: relative;
+  margin: min(8vh, 6rem) auto;
+  max-width: 72rem;
+  background: #fff;
+  padding: 4rem 3rem;
+  border-radius: 1rem;
+  max-height: 80vh;
+  overflow: auto;
+  width: calc(100% - 3rem);
+}
+.cf7-confirm-table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    @include c.mq() {
+      display: flex !important;
+    }
+  }
+  th,
+  td {
+    padding: 2rem 0 !important;
+    border-bottom: 1px solid #707070;
+    text-align: left;
+    vertical-align: top;
+    @include c.mq() {
+      width: 50% !important;
+      font-size: clamp(1.4rem, v.pxtovw_sp(20), 2rem) !important;
+    }
+  }
+  th {
+    @include c.mq() {
+      text-align: left !important;
+    }
+  }
+}
+.cf7-modal__buttons {
+  @include c.flex(center, center);
+  gap: 2rem;
+  margin-top: 4rem;
+  .btn {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 100vmax;
+    &.js-close-confirm {
+      border: 1px solid v.$txt-color;
+      color: v.$txt-color;
+    }
+  }
+  .wpcf7-spinner {
+    display: none;
+  }
+}
+.wpcf7-list-item {
+  margin: 0 !important;
 }

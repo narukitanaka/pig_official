@@ -584,7 +584,7 @@ $(window).on("resize", function () {
 });
 
 ///////////////////////////////////////////
-//無限スライダ-
+//無限テキストスライダ-
 ///////////////////////////////////////////
 const track = document.querySelector(".slider-track");
 if (track) {
@@ -661,31 +661,6 @@ if (scaleFadeInElements.length > 0) {
 //////////////////////////////////////////////////////
 //さりげないパララックス
 //////////////////////////////////////////////////////
-// const parallaxElements = document.querySelectorAll(".parallax");
-// if (parallaxElements.length > 0) {
-//   parallaxElements.forEach((element) => {
-//     let yValue = 150;
-//     element.classList.forEach((cls) => {
-//       if (/^y-?\d+$/.test(cls)) {
-//         yValue = parseInt(cls.replace("y", ""), 10);
-//       }
-//     });
-//     gsap.fromTo(
-//       element,
-//       { y: yValue },
-//       {
-//         y: 0,
-//         ease: "none",
-//         scrollTrigger: {
-//           trigger: element,
-//           start: "top bottom",
-//           end: "bottom top",
-//           scrub: true,
-//         },
-//       }
-//     );
-//   });
-// }
 const parallaxElements = document.querySelectorAll(".parallax");
 if (parallaxElements.length > 0) {
   parallaxElements.forEach((element) => {
@@ -865,38 +840,6 @@ if (archiveListSection) {
 //////////////////////////////////////////////////////
 //ファーストビューアニメーション
 //////////////////////////////////////////////////////
-// const fvSection = document.querySelector(".fv");
-// if (fvSection) {
-//   const mainCopy = fvSection.querySelector(".main-copy");
-//   const subCopy = fvSection.querySelector(".sub-copy");
-//   const header = document.querySelector("header");
-//   const fvTopics = fvSection.querySelector(".fv_topics");
-
-//   const tl = gsap.timeline();
-
-//   tl.fromTo(
-//     mainCopy,
-//     { opacity: 0, scale: 0, y: 40 },
-//     { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.7)" }
-//   )
-//     .fromTo(
-//       subCopy,
-//       { opacity: 0, scale: 0, y: 40 },
-//       { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.7)" },
-//       "-=0.4" // 前のアニメーションと0.4秒重ねる
-//     )
-//     .fromTo(
-//       [header, fvTopics],
-//       {
-//         opacity: 0,
-//         y: function (index) {
-//           return index === 0 ? -40 : 40;
-//         },
-//       },
-//       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-//       "-=0.4"
-//     );
-// }
 const fvSection = document.querySelector(".fv");
 if (fvSection) {
   const mainCopy = fvSection.querySelector(".main-copy");

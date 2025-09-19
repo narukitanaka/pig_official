@@ -300,7 +300,7 @@ div {
     content: "";
     position: absolute;
     inset: 0; // 親要素の内側にぴったり広がる
-    background-image: url("images/common/bg_noise.png");
+    background-image: url("../images/common/bg_noise.png");
     background-repeat: repeat;
     background-position: top;
     background-size: contain;
@@ -318,11 +318,11 @@ div {
     width: 100vw;
     height: 100vh;
     inset: 0; // 親要素の内側にぴったり広がる
-    background: url(images/common/bg_line.svg) no-repeat top/contain;
+    background: url(../images/common/bg_line.svg) no-repeat top/contain;
     pointer-events: none;
     z-index: 1;
     @include mq() {
-      background: url(images/common/bg_line_sp.svg) no-repeat top/contain;
+      background: url(../images/common/bg_line_sp.svg) no-repeat top/contain;
     }
   }
 }

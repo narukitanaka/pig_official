@@ -141,13 +141,13 @@ single
     }
     .wp-block-image {
       margin: v.pxtovw(50) 0;
-      border-radius: v.pxtovw(25);
       overflow: hidden;
       @include c.mq() {
         margin: v.pxtovw_sp(57) 0;
       }
       img {
         max-width: 100%;
+        border-radius: v.pxtovw(25);
       }
     }
     ul {
@@ -174,37 +174,41 @@ single
         }
       }
     }
-    table {
+    .wp-block-table {
       margin: v.pxtovw(50) 0;
-      table-layout: fixed;
-      width: 100%;
-      border-collapse: collapse;
-      th,
-      td {
-        padding: v.pxtovw(25) v.pxtovw(15);
-        border: 1px solid #e0ddd9;
-        @include c.mq() {
-          padding: v.pxtovw_sp(30) v.pxtovw_sp(20);
-        }
+      @include c.mq() {
+        margin: v.pxtovw_sp(30) 0;
       }
-      th {
-        width: 25%;
-        font-size: clamp(1.8rem, v.pxtovw(24), 2.2rem);
-        font-weight: 600;
-        text-align: center;
-        color: #fff;
-        vertical-align: middle;
-        background-color: v.$sub-color01;
-        @include c.mq() {
-          width: 35%;
-          font-size: clamp(1.5rem, v.pxtovw_sp(22), 2.2rem);
-          padding: v.pxtovw_sp(30) v.pxtovw_sp(10);
+      table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        th,
+        td {
+          padding: v.pxtovw(25) v.pxtovw(15);
+          border: 1px solid v.$txt-color;
+          @include c.mq() {
+            padding: v.pxtovw_sp(30) v.pxtovw_sp(20);
+          }
         }
-      }
-      td {
-        background-color: #fff;
-        @include c.mq() {
-          font-size: clamp(1.5rem, v.pxtovw_sp(22), 2.2rem);
+        th {
+          width: 25%;
+          font-size: clamp(1.8rem, v.pxtovw(24), 2.2rem);
+          font-weight: 600;
+          text-align: center;
+          color: #fff;
+          vertical-align: middle;
+          background-color: v.$sub-color01;
+          @include c.mq() {
+            width: 35%;
+            font-size: clamp(1.5rem, v.pxtovw_sp(22), 2.2rem);
+            padding: v.pxtovw_sp(30) v.pxtovw_sp(10);
+          }
+        }
+        td {
+          @include c.mq() {
+            font-size: clamp(1.5rem, v.pxtovw_sp(22), 2.2rem);
+          }
         }
       }
     }
@@ -219,8 +223,9 @@ single
       position: relative;
       display: inline-block;
       @include c.mq() {
-        position: static;
-        @include c.flex(between, center);
+        display: block;
+        // position: static;
+        // @include c.flex(between, center);
       }
     }
     .back {
@@ -242,7 +247,7 @@ single
       width: clamp(12rem, v.pxtovw(146), 14.6rem);
       aspect-ratio: 1/0.3;
       @include c.mq() {
-        position: static;
+        // position: static;
         width: clamp(8rem, v.pxtovw_sp(144), 14.4rem);
         aspect-ratio: 1/0.36;
       }
@@ -287,6 +292,9 @@ single
     }
     .prev {
       left: -15rem;
+      @include c.mq() {
+        left: 0;
+      }
       a {
         svg {
           left: 2rem;
@@ -299,6 +307,9 @@ single
     }
     .next {
       right: -15rem;
+      @include c.mq() {
+        right: 0;
+      }
       a {
         svg {
           right: 2rem;

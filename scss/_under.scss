@@ -210,8 +210,10 @@ About us 私たちについて
     .col01 {
       height: 100%;
       > .img-box {
-        img {
-          scale: 1.22 !important;
+        .parallax {
+          @include c.mq() {
+            scale: 1.1;
+          }
         }
       }
     }
@@ -559,26 +561,26 @@ About us 私たちについて
         }
       }
       &.respect {
-        background: url(images/about/about_value-img01.jpg) no-repeat
+        background: url(../images/about/about_value-img01.jpg) no-repeat
           center/cover;
         @include c.mq() {
-          background: url(images/about/about_value-img01_sp.jpg) no-repeat
+          background: url(../images/about/about_value-img01_sp.jpg) no-repeat
             center/cover;
         }
       }
       &.greeting {
-        background: url(images/about/about_value-img02.jpg) no-repeat
+        background: url(../images/about/about_value-img02.jpg) no-repeat
           center/cover;
         @include c.mq() {
-          background: url(images/about/about_value-img02_sp.jpg) no-repeat
+          background: url(../images/about/about_value-img02_sp.jpg) no-repeat
             center/cover;
         }
       }
       &.promise {
-        background: url(images/about/about_value-img03.jpg) no-repeat
+        background: url(../images/about/about_value-img03.jpg) no-repeat
           center/cover;
         @include c.mq() {
-          background: url(images/about/about_value-img03_sp.jpg) no-repeat
+          background: url(../images/about/about_value-img03_sp.jpg) no-repeat
             center/cover;
         }
       }
@@ -883,7 +885,7 @@ Business 事業内容
             content: "";
             width: v.pxtovw_sp(41);
             aspect-ratio: 1/1;
-            background: url(images/common/icon-arrow02.svg) no-repeat
+            background: url(../images/common/icon-arrow02.svg) no-repeat
               center/contain;
           }
         }
@@ -1153,7 +1155,7 @@ Business 事業内容
               content: "";
               width: v.pxtovw_sp(41);
               aspect-ratio: 1/1;
-              background: url(images/common/icon-arrow02.svg) no-repeat
+              background: url(../images/common/icon-arrow02.svg) no-repeat
                 center/contain;
             }
           }
@@ -2138,8 +2140,28 @@ Wholesale 卸売事業
           td {
             &:has(input[type="checkbox"]) {
               > div {
-                display: flex;
-                gap: v.pxtovw(20);
+                &:has(input[type="checkbox"]) {
+                  @include c.mq() {
+                    display: block;
+                  }
+                }
+                .wpcf7-checkbox {
+                  display: flex;
+                  gap: v.pxtovw(20);
+                  @include c.mq() {
+                    gap: v.pxtovw_sp(10);
+                  }
+                  .wpcf7-list-item {
+                    @include c.mq() {
+                      width: calc(100% - (v.pxtovw_sp(10) / 2));
+                    }
+                    label {
+                      @include c.mq() {
+                        width: 100%;
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -2300,6 +2322,22 @@ Contact お問い合わせ
       }
     }
   }
+  &.thanks {
+    h2 {
+      font-size: clamp(1.8rem, v.pxtovw(32), 3.2rem);
+      line-height: 1.5;
+      text-align: center;
+      margin: v.pxtovw(40) 0 v.pxtovw(60);
+      @include c.mq() {
+        font-size: clamp(1.5rem, v.pxtovw_sp(32), 3.2rem);
+        font-weight: 600;
+        margin: v.pxtovw_sp(40) 0 v.pxtovw_sp(60);
+      }
+    }
+    .btn-wrap {
+      @include c.flex(center, center);
+    }
+  }
 }
 
 .contact_wrap02 {
@@ -2373,14 +2411,21 @@ Contact お問い合わせ
               }
             }
             div {
-              @include c.mq() {
-                display: flex;
-                gap: v.pxtovw_sp(23);
-              }
-              label {
+              .wpcf7-checkbox {
                 @include c.mq() {
-                  width: calc(100% - (v.pxtovw_sp(23) / 2));
-                  margin: 0;
+                  display: flex;
+                  gap: v.pxtovw_sp(23);
+                }
+                .wpcf7-list-item {
+                  @include c.mq() {
+                    width: calc(100% - (v.pxtovw_sp(23) / 2));
+                  }
+                }
+                label {
+                  @include c.mq() {
+                    width: 100%;
+                    margin: 0;
+                  }
                 }
               }
             }
