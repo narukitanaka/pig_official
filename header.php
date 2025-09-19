@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <!-- favicon -->
-  <link rel="icon" type="image/png" href="images/fav.png" />
+  <link rel="icon" type="image/ico" href="<?php echo get_template_directory_uri(); ?>/images/common/favicon.ico" />
   <!-- <meta name="robots" content="index, follow"> -->
   <meta name="format-detection" content="telephone=no">
   <!-- css -->
@@ -26,6 +26,24 @@
   <title>PIG Inc.</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
+
+  <meta property="og:title" content="PIG.Inc">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pig1999.com/">
+  <meta property="og:image" content="https://pig1999.com/wp-content/themes/pig_official/images/common/meta-img.png">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="PIG.Inc">
+  <meta property="og:locale" content="ja_JP">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "PIG.Inc",
+      "alternateName": ["有限会社ピーアイジー"],      
+      "url": "https://pig1999.com/",
+      "image": "https://pig1999.com/wp-content/themes/pig_official/images/common/meta-img.png"
+    }
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
